@@ -1,6 +1,6 @@
- ![](https://coursesandconferences.wellcomeconnectingscience.org/wp-content/themes/wcc_courses_and_conferences/dist/assets/svg/logo.svg) 
-   
-   
+ ![](https://coursesandconferences.wellcomeconnectingscience.org/wp-content/themes/wcc_courses_and_conferences/dist/assets/svg/logo.svg)
+
+
 # Helminth Bioinformatics (Asia) (Virtual)
 Practical hands-on training in helminth genome analysis.
 
@@ -49,53 +49,54 @@ xx
 
 
 ## Course manual
-**Module 1 - xx
+**Module 1 - WormBase Parasite 1
      - [Introductory presentation](presentations/)
-     - [Online manual](manuals/module_artemis/module_artemis.md)  
+     - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)
-  
-**Module 2 - xx 
-     - [Introductory presentation](presentations/) 
-     - [Online manual](manuals/module_linux_scripting/module_linux_scripting.md)  
+
+**Module 2 - Unix
+     - [Introductory presentation](presentations/)
+     - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)  
-  
-**Module 3 - xx  
-     - [Introductory presentation](presentations/) 
-     - [Online manual](manuals/module_shortread_mapping/module_shortread_mapping.md)  
+
+**Module 3 - WormBase Parasite 2  
+     - [Introductory presentation](presentations/)
+     - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)
-  
-**Module 4 - xx
-     - [Introductory presentation](presentations/)  
-     - [Online manual](manuals/module_phylogenetics/module_phylogenetics.md)  
-     - [Manual PDF version](manuals/)  
-  
-**Module 5 - xx  
+
+**Module 4 - Project Introduction and Planning
      - [Introductory presentation](presentations/)  
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)  
-  
-**Module 6 - xx 
+
+**Module 5 - R and RStudio  
+     - [Introductory presentation](presentations/)  
+     - [Online manual](manuals/)  
+     - [Manual PDF version](manuals/)  
+
+**Module 6 - Genome Variation
      - [Introductory presentation](presentations/)  
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)   
-  
-**Task 1 - xx
+
+**Module 6 - Transcriptomics 1
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)
-  
-**Task 2 - xx
-     - [Introductory presentation](presentations/) 
+
+**Module 7 - Transcriptomics 2
+     - [Introductory presentation](presentations/)
      - [Online manual](manuals/)  
-     - [Manual PDF version](manuals/) 
-  
+     - [Manual PDF version](manuals/)
+
+**Project
+
 **Appendix**  
      - [Manual PDF version](manuals/)  
 
 
 
-Any reuse of the course materials, data or code is encouraged with due acknowledgement. 
+Any reuse of the course materials, data or code is encouraged with due acknowledgement.
 
 ******
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-
