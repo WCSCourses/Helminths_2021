@@ -65,9 +65,9 @@ xx
      - [Manual PDF version](manuals/)
   
 **Module 4 - xx
-     - [Introductory presentation](presentations/)
-     - [Online manual](manuals/module_phylogenetics/module_phylogenetics.md). 
-     - [Manual PDF version](manuals/)
+     - [Introductory presentation](presentations/)  
+     - [Online manual](manuals/module_phylogenetics/module_phylogenetics.md)  
+     - [Manual PDF version](manuals/)  
   
 **Module 5 - xx  
      - [Introductory presentation](presentations/)  
