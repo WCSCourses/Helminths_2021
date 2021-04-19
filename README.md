@@ -1,99 +1,99 @@
  ![](https://coursesandconferences.wellcomeconnectingscience.org/wp-content/themes/wcc_courses_and_conferences/dist/assets/svg/logo.svg) 
    
    
-# Working with Pathogen Genomes (Asia) (Virtual)
-Hands-on training in genomic analysis of bacterial and eukaryotic pathogens
+# Helminth Bioinformatics (Asia) (Virtual)
+Practical hands-on training in helminth genome analysis.
 
 ## Course overview
-Understanding pathogen genomes, how they evolve and which genes are essential for their ability to cause disease, is a key part of the battle to reduce the global disease burden.
+Helminths infections contribute significantly to the burden of neglected tropical diseases (NTDs) in many low- and middle- income countries (LMICs). Despite important efforts to tackle these diseases through mass drug administration programs and other methods of control and containment, NTDs due to helminths such as schistosomiasis and soil-transmitted helminthiases continue to be among the most debilitating and morbidity-causing diseases in LMICs adding significantly to the economic burden in the strained economies. Moreover, decreased susceptibility to the most used chemotherapies is emerging in the field, raising concerns about the rise of drug-resistant helminths.
 
-This five-day computational course aims to give molecular microbiologists working with bacterial and eukaryotic pathogens a working knowledge of genomic analysis. The course will be taught by members of the Parasites & Microbes teams from the Wellcome Sanger Institute in collaboration with regional instructors and speakers, and will take the form of a series of modules covering the fundamental aspects of DNA sequence analysis and exploitation.
+Advances in sequencing technologies have enabled the production of draft and high-quality genome assemblies for the most important disease-causing helminths. In addition, reduced costs of next-generation sequencing (NGS) techniques make sequencing accessible to the wider scientific community of researchers and organisations, providing unprecedented access to genomics. Data manipulation and computational analyses are still the main challenges that limit the realization of maximum benefit and appropriate interpretation of these data.
 
-The course begins with training in the use of genome analysis software (Artemis and ACT), developed at the Sanger Institute for genome exploration and comparative genomics. It then goes on to cover the mapping of Illumina sequence data, SNP calling, phylogenetics, genome assembly, genome annotation and RNA-seq.
+The Helminth Bioinformatics course aims to equip participants with the skills needed to access, analyse and display large-scale genomic data. The course will provide hands-on training in read mapping, transcriptomics and genetic variation analysis, all tailored to address the challenges presented by large helminth genomes. Participants will acquire basic and advanced techniques in bioinformatics while getting familiar with computer command-line languages and public data repositories.
 
-Each module will be introduced with a short talk, followed by hands-on worked examples using data from bacterial and eukaryotic pathogens. A key aspect of this course is the shared interest in pathogens between instructors and participants. This common understanding of the questions and problems presented by our work results in particularly fruitful interactions.
+### Target audience
+The programme is aimed at researchers at various levels including Senior Research Assistants, PhD Students, Postdoctoral Researchers, Laboratory Scientists and Clinical Scientists.
 
-The course is aimed at research scientists or clinicians/healthcare professionals based in institutes in Asia who are actively involved in, or soon to commence, relevant research on bacterial and eukaryotic pathogens. The course is free to attend for non-commercial applicants and limited bursaries are available to cover travel and accommodation expenses. The course will be taught in English.
+This week-long course is free to attend and open to applicants based in Asia involved in helminth-related research. The course will be taught in English.
 
-[Course website](https://coursesandconferences.wellcomeconnectingscience.org/event/working-with-pathogen-genomes-vietnam-2021/)
+### Prerequisites
+
+The practical computational sessions will be taught exclusively through Unix/Linux. Participants should have some familiarity with the Linux operating system. This will allow participants to fully benefit from the course. There are numerous online introductory tutorials to the UNIX/Linux operating system and command line, including:
+
+https://www.futurelearn.com/courses/linux-for-bioinformatics
+http://www.ee.surrey.ac.uk/Teaching/Unix
+http://swcarpentry.github.io/shell-novice/
+
+[Course website](https://coursesandconferences.wellcomeconnectingscience.org/event/helminth-bioinformatics-asia-virtual-20210628/)
 
 ## Instructors
-- [Christine Boinett](https://www.sanger.ac.uk/person/boinett-christine/), Wellcome Sanger Institute, UK
-- [Claire Chewapreecha](https://www.tropicalmedicine.ox.ac.uk/team/claire-chewapreecha), Mahidol-Oxford Tropical Medicine Research Unit, Thailand
-- [Hao Chung The](https://www.linkedin.com/in/hao-chung-the-157457140/?originalSubdomain=vn), OUCRU, Ho Chi Minh City, Vietnam
-- Daryl Domman, University of New Mexico, USA
+- [Anna Protasio](https://www.path.cam.ac.uk/directory/anna-protasio), University of Cambridge, UK
+- [Arporn (Koi) Wangwiwatsin](https://www.researchgate.net/profile/Arporn-koi-Wangwiwatsin), Khon Kaen University, Thailand
+- [Faye Rodgers](https://www.researchgate.net/scientific-contributions/Faye-H-Rodgers-2142579817), Wellcome Sanger Institute, UK
+- [Heerman Kumar](https://www.researchgate.net/profile/Heerman-Kumar-Sandra-Kumar-2), Monash University, Malaysia
+- [Isheng Jason Tsai](https://www.biodiv.tw/pi.php?submitStr=20210203203919&lang=en), Academia Sinica, Taiwan
+- [Kevin Howe](https://www.ebi.ac.uk/about/people/kevin-howe), EBI, UK
+- [Martin Aslett](https://coursesandconferences.wellcomeconnectingscience.org/about-us/the-team/), WGC Advanced Courses, UK
+- [Matt Berriman](https://www.sanger.ac.uk/person/berriman-matt/), Wellcome Sanger Institute, UK
+- [Sarah Geiger](https://www.linkedin.com/in/sarah-geiger-8b8681105/), National University of Singapore (NUS) & Genome Institute of Singapore (GIS)
 - [Steve Doyle](https://www.sanger.ac.uk/person/doyle-stephen/), Wellcome Sanger Institute, UK
-- [Adam Reid](https://www.sanger.ac.uk/person/reid-adam-james/), (Lead Instructor) Wellcome Sanger Institute, UK
-- Pham Thanh Duy, OUCRU, Ho Chi Minh City, Vietnam
+
+
 
 ## Timetable
 ### Overview
-- Friday 7th
-  - Introductions
-- Monday 10th
-  - Module 1 - Artemis
-  - Module 2 - Linux & Scripting
-- Tuesday 11th
-  - Module 3 - Short read mapping
-- Wednesday 12th
-  - Module 4 - Phylogenetics
-  - Module 5 - Genome assembly  
-- Thursday 13th
-  - Module 6 - Transcriptomics
-  - Eukaryotic exercise
-- Friday 14th
-  - Bacterial exercise   
+xx
 
 ### Detailed timetable
-[Download here](./Vietnam_2021_virtual_timetable.xlsx)
+[Download here]()
 
 
 ## Course manual
-**Module 1 - Artemis**  
-     - [Introductory presentation](presentations/) - ***TO DO***  
+**Module 1 - xx
+     - [Introductory presentation](presentations/)
      - [Online manual](manuals/module_artemis/module_artemis.md)  
-     - [Manual PDF version](manuals/) - ***TO DO***  
+     - [Manual PDF version](manuals/)
   
-**Module 2 - Linux & Scripting**  
-     - [Introductory presentation](presentations/) - ***TO DO***  
+**Module 2 - xx 
+     - [Introductory presentation](presentations/) 
      - [Online manual](manuals/module_linux_scripting/module_linux_scripting.md)  
-     - [Manual PDF version](manuals/)  - ***TO DO***  
+     - [Manual PDF version](manuals/)  
   
-**Module 3 - Short Read Mapping**  
-     - [Introductory presentation](presentations/) - ***TO DO***  
+**Module 3 - xx  
+     - [Introductory presentation](presentations/) 
      - [Online manual](manuals/module_shortread_mapping/module_shortread_mapping.md)  
-     - [Manual PDF version](manuals/) - ***TO DO***  
+     - [Manual PDF version](manuals/)
   
-**Module 4 - Phylogenetics**  
-     - [Introductory presentation](presentations/) - ***TO DO***  
+**Module 4 - xx
+     - [Introductory presentation](presentations/)
      - [Online manual](manuals/module_phylogenetics/module_phylogenetics.md). 
-     - [Manual PDF version](manuals/) - ***TO DO***  
+     - [Manual PDF version](manuals/)
   
-**Module 5 - Genome Assembly**  
-     - [Introductory presentation](presentations/) - ***TO DO***  
-     - [Online manual](manuals/module_denovo_assembly/module_denovo_assembly.md)  
-     - [Manual PDF version](manuals/) - ***TO DO***  
+**Module 5 - xx  
+     - [Introductory presentation](presentations/)  
+     - [Online manual](manuals/)  
+     - [Manual PDF version](manuals/)  
   
-**Module 6 - Transcriptomics**  
-     - [Introductory presentation](presentations/WWPG_VietnamVirtual_Talk_Module6_transcriptomics.pdf)  
-     - [Online manual](manuals/module_transcriptomics/module_transcriptomics.md)  
-     - [Manual PDF version](manuals/) - ***TO DO***   
+**Module 6 - xx 
+     - [Introductory presentation](presentations/)  
+     - [Online manual](manuals/)  
+     - [Manual PDF version](manuals/)   
   
-**Task 1 - Sexual development in malaria parasites**  
-     - [Online manual](manuals/exercise_RNAseq/exercise_RNAseq.md)  
-     - [Manual PDF version](manuals/) - ***TO DO***  
+**Task 1 - xx
+     - [Online manual](manuals/)  
+     - [Manual PDF version](manuals/)
   
-**Task 2 - Phylogenomics of Salmonella**  
-     - [Introductory presentation](presentations/) - ***TO DO***  
-     - [Online manual](manuals/exercise_bacterial/Task2_georeferencing.md)  
-     - [Manual PDF version](manuals/) - ***TO DO***  
+**Task 2 - xx
+     - [Introductory presentation](presentations/) 
+     - [Online manual](manuals/)  
+     - [Manual PDF version](manuals/) 
   
 **Appendix**  
-     - [Manual PDF version](manuals/WWPG_VietnamVirtual_Appendix.pdf)  
+     - [Manual PDF version](manuals/)  
 
 
 
-Any reuse of the course materials, data or code is encouraged with due acknowledgement. **WHAT DO WE WANT TO SAY HERE SPECIFICALLY**
+Any reuse of the course materials, data or code is encouraged with due acknowledgement. 
 
 ******
 ## License
