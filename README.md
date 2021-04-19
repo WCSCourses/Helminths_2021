@@ -42,7 +42,20 @@ http://swcarpentry.github.io/shell-novice/
 
 ## Timetable
 ### Overview
-xx
+- Monday
+     - WormBase Parasite 1
+     - Unix
+- Tuesday
+     - WormBase Parasite 2
+     - Project Introduction and Planning
+- Wednesday
+     - R and RStudio
+     - Genome Variation
+- Thursday
+     - Transcriptomics 1
+     - Transcriptomics 2
+- Friday
+     - Project & presentations
 
 ### Detailed timetable
 [Download here]()
