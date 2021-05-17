@@ -1,4 +1,20 @@
-# Module 6: Genetic Diversity
+# Genetic Diversity
+
+
+## Table of Contents
+1. [Introduction and aims](#intro)
+2. [Getting started on the command line - Basic unix](#getting_started)
+3. [Files and directories](#files_directories)
+4. [Looking inside files](#inside_files)
+5. [Searching the content of files using grep](#grep)
+6. [Processing columns with awk](#awk)
+7. [Loops](#loops)
+8. [Bash scripts](#scripts)
+9. [UNIX quick reference guide](#quick_ref)
+
+---
+
+
 
 ## Overview and Aims
 The re-sequencing of a genome typically aims to capture information on Single Nucleotide Polymorphisms (SNPs), INsertions and DELetions (INDELs) 
@@ -39,6 +55,8 @@ Overall, the aims of this module are to familiarize you with tools and concepts 
 - bioinformatically identify and filter single nucleotide polymorphisms in your samples;  
 - visualize sequencing reads and genetic variants in your samples;
 - analyze patterns of genetic diversity in your data, and link these patterns to metadata to uncover biological insights in your species.
+---
+[↥ **Back to top**](#top)
 
 
 ## Short read mapping
@@ -120,7 +138,8 @@ head single_sample.tmp.sam
 ```
 ![](figures/figure6.2.PNG)  
 **Figure 2.** Exploring the SAM file format
-
+---
+[↥ **Back to top**](#top)
 
 
 ## Calling SNPs in our mapped sample
@@ -205,8 +224,10 @@ Lets explore our data.
 4. We can visualise the SNP calls on the mapped reads. Right click on the mapped reads, select "Show" and check the "SNP marks" box. 
   Red lines show show on the mapped reads. What do you think the difference between the red lines that cover all reads at a single position, 
   compared to sporadic red lines that affect on a few reads?
-![image](https://user-images.githubusercontent.com/80035590/118464341-a7e6d680-b6f8-11eb-9de8-ae208eb18118.png)
 
+
+---
+[↥ **Back to top**](#top)
 
 ## Mapping reads from multiple samples
 Now that we have shown you the steps involved in mapping a single sample, we will now show you how to map multiple samples. While you could 
@@ -258,7 +279,8 @@ NOTE: you don’t need to write any of the commands, on this page. This is just 
 ![](figures/figure6.7.PNG)  
 **Figure 7.** Breaking down out "for loop"
 
-
+---
+[↥ **Back to top**](#top)
 
 ## Calling SNPs in multiple samples at the same time 
 Here, we are going to perform multi-sample SNP calling. While we could technically perform a loop like in our mapping example, the mpileup 
@@ -320,6 +342,9 @@ any patterns in the SNPs based on similar names? Scrolling up and down in the SN
 It is impractical to try an do any meaningful analysis by eye in Artemis, so we will move on to using informatic ways to find patterns 
 and genetic relationships among our samples. 
 
+
+---
+[↥ **Back to top**](#top)
 
 ## Analysis of genetic variation using R
 Well done getting this far! By now, you should  have been able to map reads from 176 samples, and call SNP variants in all of them. 
@@ -403,6 +428,10 @@ vcf.gl@ind.names
 vcf.gl@pop
 
 ```
+
+---
+[↥ **Back to top**](#top)
+
 
 ## Principal component analysis of genetic diversity
 ```R
@@ -524,6 +553,8 @@ Compare the two plots, and try to identify similarities and differences
 Q: Looking at the ellipses specifically, can you see any countries that have a different distribution than the others, and describe this difference?
 
 
+---
+[↥ **Back to top**](#top)
 
 
 ## Exploring genetic data using phylogenetic trees
@@ -552,7 +583,8 @@ tree_plot
 ![](figures/figure6.13.PNG)  
 **Figure 13.** Analysis of pairwise distance using a tree
 
-
+---
+[↥ **Back to top**](#top)
 
 ## Integrating genetic and geographic data: maps
 Here, we will make a map of the sampling locations, and plot the allele frequency data on it. This or similar may be used to explore how populations
@@ -668,6 +700,8 @@ If you have time, try explore plotting the allele frequency of other SNPs in PC1
 ![](figures/figure6.18.PNG)  
 **Figure 18.** World map with SNP frequency per sampling location
 
+---
+[↥ **Back to top**](#top)
 
 ## Summary
 In this module, we have shown you how to:
@@ -675,4 +709,12 @@ In this module, we have shown you how to:
 - visualize this data in the genome browser Artemis
 - Perform some basic data exploration and population genetics using R to understand the genetic relatedness within and between samples
 
+
+---
+[↥ **Back to top**](#top)
+
+
+******
+## License
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
