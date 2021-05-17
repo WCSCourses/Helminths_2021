@@ -69,7 +69,7 @@ cd Module_6_Genetic_Variation
 ls -ltr 
 
 ```
-![](figures/figure6.1.PNG)
+![](figures/figure_6.1.PNG)
 Figure 1.  
 
 You should be able to see one directory called “raw_reads” containing all of the sequencing data we will be working with today, a directory 
