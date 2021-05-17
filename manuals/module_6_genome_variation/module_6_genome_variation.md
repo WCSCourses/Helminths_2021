@@ -181,8 +181,8 @@ bcftools view single_sample.tmp.bcf –Oz > single_sample.tmp.vcf.gz
 tabix –p vcf single_sample.tmp.vcf.gz
 
 
-# you can have a look at the vcf using the following
-zcat single_sample.tmp.vcf.gz | less
+# you can have a look at the vcf using the following - "zless" allows you to look inside a zipped file
+zless single_sample.tmp.vcf.gz
 
 ```
 ![](figures/figure6.3.PNG)  
