@@ -87,7 +87,7 @@ http://swcarpentry.github.io/shell-novice/
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)  
 
-**Module 6 - Genome Variation
+**Module 6 - Genome Variation  
      - [Introductory presentation](presentations/)  
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)   
