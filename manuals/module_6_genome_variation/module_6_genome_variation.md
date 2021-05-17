@@ -198,9 +198,9 @@ ls -lrt
 
 ```
 # to begin to explore what this data looks like, we will load Artemis and import the relevant data. In this case there relevant data we will load are:
-- the reference sequence: hcontortus_mtDNA.fasta
-- the mapping data: single_sample.tmp.sorted.bam
-- the variant data: single_sample.tmp.vcf.gz
+# - the reference sequence: hcontortus_mtDNA.fasta
+# - the mapping data: single_sample.tmp.sorted.bam
+# - the variant data: single_sample.tmp.vcf.gz
 
 art &
 ```
@@ -251,27 +251,25 @@ bwa index hcontortus_mtDNA.fasta
 
 
 # using a single loop function, perform the mapping, sam-to-bam conversion, filtering, and indexing, for XXX samples
-# this is one long command. The “#” commented lines are there to remind you what each step is doing in the script, but should not be 
-written in the command. Also note that the ">" at the beginning of some of the lines represent a continuation of the command across multiple 
-lines, and should not be written as part of your command (similar to the "$" at the start of the line). 
+# this is one long command. The “#” commented lines are there to remind you what each step is doing in the script, but should not be written in the command. 
 
 # !!! START !!!
 for i in $( cd ../raw_reads ; ls -1 *_1.fastq.gz | sed -e 's/_1.fastq.gz//g' ); do
+	# map the reads
+	bwa mem hcontortus_mtDNA.fasta ../raw_reads/${i}_1.fastq.gz ../raw_reads/${i}_2.fastq.gz > ${i}.tmp.sam ;
+	
+	# convert the sam to bam format
+	samtools view -q 15 -b -o ${i}.tmp.bam ${i}.tmp.sam ;
 
-# map the reads
-> bwa mem hcontortus_mtDNA.fasta ../raw_reads/${i}_1.fastq.gz ../raw_reads/${i}_2.fastq.gz > ${i}.tmp.sam ;
-
-# convert the sam to bam format
-> samtools view -q 15 -b -o ${i}.tmp.bam ${i}.tmp.sam ;
-
-# sort the mapped reads in the bam file
-> samtools sort ${i}.tmp.bam -o ${i}.sorted.bam ; 
+	# sort the mapped reads in the bam file
+	samtools sort ${i}.tmp.bam -o ${i}.sorted.bam ; 
  
-# index the sorted bam
-> samtools index ${i}.sorted.bam ;
+	# index the sorted bam
+	samtools index ${i}.sorted.bam ;
 
-# lets clean up and remove files we don’t need
-> rm *tmp* ; done
+	# lets clean up and remove files we don’t need
+	rm *tmp* ; 
+done
 
 # !!! END !!!
 ```
