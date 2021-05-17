@@ -69,7 +69,7 @@ http://swcarpentry.github.io/shell-novice/
 
 **Module 2 - Unix Scripting**  
      - [Introductory presentation](presentations/)  
-     - [Online manual](manuals/)  
+     - [Online manual](manuals/module_2_linux_scripting/module_linux_scripting.md)  
      - [Manual PDF version](manuals/)  
 
 **Module 3 - WormBase Parasite 2**  
