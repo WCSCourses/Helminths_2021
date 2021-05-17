@@ -165,14 +165,16 @@ tabix –p vcf single_sample.tmp.vcf.gz
 zcat single_sample.tmp.vcf.gz | less
 
 ```
-
+![](figures/figure6.3.PNG)  
+Figure 3. Exploring the VCF file format
 
 
 ```bash
 # lets see what we have generated with the previous commands
 ls -lrt
 ```
-
+![](figures/figure6.4.PNG)  
+Figure 4.
 
 ```
 # to begin to explore what this data looks like, we will load Artemis and import the relevant data. In this case there relevant data we will load are:
@@ -190,8 +192,11 @@ Artemis has many features for exploring genomes, genome annotations, and genomic
 genome. To explore the full functionality, you would need at least a week-long course, so we will just touch on the basics. However, feel free 
 to explore Artemis in your own time, and do ask questions if you have any.   
 
+![](figures/figure6.5.PNG)  
+Figure 5. Opening and viewing reference sequencing data in Artemis
 
-
+![](figures/figure6.6.PNG)  
+Figure 6. Opening and viewing read and variant data in Artemis
 
 
 Lets explore our data.
