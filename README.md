@@ -44,7 +44,7 @@ http://swcarpentry.github.io/shell-novice/
 ### Overview
 - Monday
      - WormBase Parasite 1
-     - Unix
+     - Unix Scripting
 - Tuesday
      - WormBase Parasite 2
      - Project Introduction and Planning
@@ -67,7 +67,7 @@ http://swcarpentry.github.io/shell-novice/
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)  
 
-**Module 2 - Unix**  
+**Module 2 - Unix Scripting**  
      - [Introductory presentation](presentations/)  
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)  
