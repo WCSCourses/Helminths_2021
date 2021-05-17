@@ -101,7 +101,7 @@ http://swcarpentry.github.io/shell-novice/
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)  
 
-**Module 9 - Project  
+**Module 9 - Project**  
 
 **Appendix**  
      - [Manual PDF version](manuals/)  
