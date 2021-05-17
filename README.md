@@ -62,46 +62,46 @@ http://swcarpentry.github.io/shell-novice/
 
 
 ## Course manual
-**Module 1 - WormBase Parasite 1  
+**Module 1 - WormBase Parasite 1**  
      - [Introductory presentation](presentations/)  
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)  
 
-**Module 2 - Unix  
+**Module 2 - Unix**  
      - [Introductory presentation](presentations/)  
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)  
 
-**Module 3 - WormBase Parasite 2  
+**Module 3 - WormBase Parasite 2**  
      - [Introductory presentation](presentations/)  
      - [Online manual](manuals/)   
      - [Manual PDF version](manuals/)  
 
-**Module 4 - Project Introduction and Planning  
+**Module 4 - Project Introduction and Planning**  
      - [Introductory presentation](presentations/)  
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)  
 
-**Module 5 - R and RStudio  
+**Module 5 - R and RStudio**  
      - [Introductory presentation](presentations/)  
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)  
 
-**Module 6 - Genome Variation  
+**Module 6 - Genome Variation**  
      - [Introductory presentation](presentations/)  
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)   
 
-**Module 6 - Transcriptomics 1  
+**Module 7 - Transcriptomics 1**    
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)  
 
-**Module 7 - Transcriptomics 2  
+**Module 8 - Transcriptomics 2**  
      - [Introductory presentation](presentations/)  
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)  
 
-**Project  
+**Module 9 - Project  
 
 **Appendix**  
      - [Manual PDF version](manuals/)  
