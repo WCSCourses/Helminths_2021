@@ -1,4 +1,4 @@
-# Module 6 Genetic Diversity
+# Module 6: Genetic Diversity
 
 ## Overview and Aims
 The re-sequencing of a genome typically aims to capture information on Single Nucleotide Polymorphisms (SNPs), INsertions and DELetions (INDELs) 
@@ -257,6 +257,10 @@ While we are waiting for our mapping to finish, lets break down what we just did
 
 NOTE: you don’t need to write any of the commands, on this page. This is just to explain what is going on. 
 
+![](figures/figure6.7.PNG)  
+Figure 7. Breaking down out "for loop"
+
+
 
 ## Calling SNPs in multiple samples at the same time 
 Here, we are going to perform multi-sample SNP calling. While we could technically perform a loop like in our mapping example, the mpileup 
@@ -389,6 +393,10 @@ ploidy(vcf.gl) <- 1
 vcf.gl
 
 ```
+
+![](figures/figure6.8.PNG)  
+Figure 8. Viewing your variant data in genlight format in R
+
 
 ```R
 # Have a close look at how the data is store in this object, for example
