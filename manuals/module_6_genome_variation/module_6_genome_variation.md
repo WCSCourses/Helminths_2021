@@ -5,7 +5,7 @@
 1. [Overview and Aims](#intro)
 2. [Short read mapping](#mapping)
 3. [Calling SNPs in our mapped sample](#snps)
-4. [Artemis](#artemis)
+4. [Visualising mapped reads and variants using Artemis](#artemis)
 5. [Mapping reads from multiple samples](#mapping_multi)
 6. [Calling SNPs in multiple samples at the same time](#snps_multi)
 7. [Analysis of genetic variation using R](#r)
@@ -206,7 +206,7 @@ art &
 ```
 
 
-## Artemis <a name="artemis"></a>
+## Visualising mapped reads and variants using Artemis <a name="artemis"></a>
 We will use Artemis to visualize your mapped reads, and identify variant positions from the SNP calling we have performed on our single sample. 
 Artemis has many features for exploring genomes, genome annotations, and genomic data (DNAseq, RNAseq, and more) that can be layered onto the 
 genome. To explore the full functionality, you would need at least a week-long course, so we will just touch on the basics. However, feel free 
