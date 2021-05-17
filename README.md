@@ -62,22 +62,22 @@ http://swcarpentry.github.io/shell-novice/
 
 
 ## Course manual
-**Module 1 - WormBase Parasite 1
-     - [Introductory presentation](presentations/)
+**Module 1 - WormBase Parasite 1  
+     - [Introductory presentation](presentations/)  
      - [Online manual](manuals/)  
-     - [Manual PDF version](manuals/)
+     - [Manual PDF version](manuals/)  
 
-**Module 2 - Unix
-     - [Introductory presentation](presentations/)
+**Module 2 - Unix  
+     - [Introductory presentation](presentations/)  
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)  
 
 **Module 3 - WormBase Parasite 2  
-     - [Introductory presentation](presentations/)
-     - [Online manual](manuals/)  
-     - [Manual PDF version](manuals/)
+     - [Introductory presentation](presentations/)  
+     - [Online manual](manuals/)   
+     - [Manual PDF version](manuals/)  
 
-**Module 4 - Project Introduction and Planning
+**Module 4 - Project Introduction and Planning  
      - [Introductory presentation](presentations/)  
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)  
@@ -92,16 +92,16 @@ http://swcarpentry.github.io/shell-novice/
      - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)   
 
-**Module 6 - Transcriptomics 1
+**Module 6 - Transcriptomics 1  
      - [Online manual](manuals/)  
-     - [Manual PDF version](manuals/)
+     - [Manual PDF version](manuals/)  
 
-**Module 7 - Transcriptomics 2
-     - [Introductory presentation](presentations/)
+**Module 7 - Transcriptomics 2  
+     - [Introductory presentation](presentations/)  
      - [Online manual](manuals/)  
-     - [Manual PDF version](manuals/)
+     - [Manual PDF version](manuals/)  
 
-**Project
+**Project  
 
 **Appendix**  
      - [Manual PDF version](manuals/)  
