@@ -69,7 +69,7 @@ cd Module_6_Genetic_Variation
 ls -ltr 
 
 ```
-![](figures/figure_6.1.PNG)
+![](figures/figure_6.1.PNG)  
 Figure 1.  
 
 You should be able to see one directory called “raw_reads” containing all of the sequencing data we will be working with today, a directory 
@@ -120,6 +120,10 @@ head single_sample.tmp.sam
 
 
 ```
+![](figures/figure6.2.PNG)  
+Figure 2. Exploring the SAM file format
+
+
 
 ## Calling SNPs in our mapped sample
 To identify variants in our mapped reads, we are going to use a tool called “bcftools" and its subcommands "mpileup” and “call”. There 
