@@ -69,6 +69,9 @@ cd Module_6_Genetic_Variation
 ls -ltr 
 
 ```
+![](figures/figure6.1.PNG)
+Figure 1.  
+
 You should be able to see one directory called “raw_reads” containing all of the sequencing data we will be working with today, a directory 
 called "R_analysis" where we will performed our population genetic analyses, and two files, one is your reference sequence that we will map 
 our raw reads to, and the other contains metadata about our samples that we will be using later. It is a good idea to collect all metadata to 
