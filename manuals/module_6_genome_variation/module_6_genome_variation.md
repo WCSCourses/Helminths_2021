@@ -5,22 +5,20 @@ The re-sequencing of a genome typically aims to capture information on Single Nu
 and Copy Number Variants (CNVs) between representatives of the same species, usually in cases where a reference genome already exists (at least 
 for a very closely related species). Whether one is dealing with different bacterial isolates, with different strains of single-celled parasites, 
 or indeed with genomes of different human individuals, the principles are essentially the same. Instead of assembling the newly generated sequence 
-reads de novo to produce a new genome sequence, it is easier and much faster to align or map the new sequence data to the reference genome (please 
+reads *de novo* to produce a new genome sequence, it is easier and much faster to align or map the new sequence data to the reference genome (please 
 note that we will use the terms “aligning” and “mapping” interchangeably). One can then readily identify SNPs, INDELs, and CNVs that distinguish 
 closely related populations or individual organisms and may thus learn about genetic differences that may cause drug resistance or increased virulence 
 in pathogens, or changed susceptibility to disease in humans. One important prerequisite for the mapping of sequence data to work is that the reference
 and the re-sequenced subject have the same genome architecture.
 
 
-In this exercise, you will be analyzing genetic variation in the gastrointestinal helminth Haemonchus contortus. H. contortus is an important 
+In this exercise, you will be analyzing genetic variation in the gastrointestinal helminth *Haemonchus contortus*. *H. contortus* is an important 
 pathogen of wild and domesticated ruminants worldwide, and has a major impact on the health and economic viability of sheep and goat farming in 
-particular. It is also a genetically tractable model used for drug discovery, vaccine development, and anthelmintic resistance research. We have 
-generated a chromosome-scale reference genome assembly as a research tool, which is available to download and explore at WormBase Parasite.
-The sequencing data you will be using in this module is from a larger global diversity study (Salle et al 2019; https://www.biorxiv.org/content/10.1101/450692v2), 
-together with additional unpublished data, all of which was generated at the Wellcome Sanger Institute. Analysis of global diversity allows you to 
-understand aspects of the species biology, such as how different populations are connected (which may be important to understand the spread of a 
-pathogen or ongoing transmission), whether populations are growing or declining (perhaps in response to drug treatment), or the impact of selection 
-on regions or specific genes throughout the genome. Although whole genome sequencing data was generated for these samples, we have extracted only 
+particular. It is also a genetically tractable model used for drug discovery, vaccine development, and anthelmintic resistance research. A chromosome-scale 
+reference genome assembly and manually curated genome annotation are both available to download and explore at WormBase Parasite.
+The sequencing data you will be using in this module is from two recently published studies - [Salle et al 2019 Nature Communications](https://doi.org/10.1038/s41467-019-12695-4)
+and [Doyle et al. 2020 Communications Biology](https://doi.org/10.1038/s42003-020-01377-3) - which describe the global and genome-wide genetic diversity of *H. contortus*, all of which was generated at the Wellcome Sanger Institute. 
+Analysis of global diversity allows you to understand aspects of the species biology, such as how different populations are connected (which may be important to understand the spread of a pathogen or ongoing transmission), whether populations are growing or declining (perhaps in response to drug treatment), or the impact of selection on regions or specific genes throughout the genome. Although whole genome sequencing data was generated for these samples, we have extracted only 
 the mitochondrial DNA-derived reads for you to work with. The main reason for this is that at this scale, the data should be able to be analysed 
 efficiently on your computer without the need for high performance computing infrastructure and/or capacity. 
 
