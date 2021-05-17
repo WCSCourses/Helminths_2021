@@ -2,21 +2,22 @@
 
 
 ## Table of Contents
-1. [Introduction and aims](#intro)
-2. [Getting started on the command line - Basic unix](#getting_started)
-3. [Files and directories](#files_directories)
-4. [Looking inside files](#inside_files)
-5. [Searching the content of files using grep](#grep)
-6. [Processing columns with awk](#awk)
-7. [Loops](#loops)
-8. [Bash scripts](#scripts)
-9. [UNIX quick reference guide](#quick_ref)
+1. [Overview and Aims](#intro)
+2. [Short read mapping](#mapping)
+3. [Calling SNPs in our mapped sample](#snps)
+4. [Artemis](#artemis)
+5. [Mapping reads from multiple samples](#mapping_multi)
+6. [Calling SNPs in multiple samples at the same time](#snps_multi)
+7. [Analysis of genetic variation using R](#r)
+8. [Principal component analysis of genetic diversity](#pca)
+9. [Exploring genetic data using phylogenetic trees](#trees)
+10. [Integrating genetic and geographic data: maps](#maps)
 
 ---
 
 
 
-## Overview and Aims
+## Overview and Aims <a name="intro"></a>
 The re-sequencing of a genome typically aims to capture information on Single Nucleotide Polymorphisms (SNPs), INsertions and DELetions (INDELs) 
 and Copy Number Variants (CNVs) between representatives of the same species, usually in cases where a reference genome already exists (at least 
 for a very closely related species). Whether one is dealing with different bacterial isolates, with different strains of single-celled parasites, 
@@ -59,7 +60,7 @@ Overall, the aims of this module are to familiarize you with tools and concepts 
 [↥ **Back to top**](#top)
 
 
-## Short read mapping
+## Short read mapping <a name="mapping"></a>
 There are multiple short-read alignment programs each with its own strengths, weaknesses, and caveats. Wikipedia has a good list and description of 
 each. Search for “Short-Read Sequence Alignment” if you are interested. We are going to use the Burrows-Wheeler Aligner or BWA. 
 
@@ -138,11 +139,13 @@ head single_sample.tmp.sam
 ```
 ![](figures/figure6.2.PNG)  
 **Figure 2.** Exploring the SAM file format
+
 ---
 [↥ **Back to top**](#top)
 
 
-## Calling SNPs in our mapped sample
+
+## Calling SNPs in our mapped sample <a name="snps"></a>
 To identify variants in our mapped reads, we are going to use a tool called “bcftools" and its subcommands "mpileup” and “call”. There 
 are many variant calling tools available, each with different strengths and sometimes weaknesses. Given we are working with mitochondrial 
 DNA which is haploid, the approach here is quick and straight-forward. 
@@ -203,7 +206,7 @@ art &
 ```
 
 
-## Artemis
+## Artemis <a name="artemis"></a>
 We will use Artemis to visualize your mapped reads, and identify variant positions from the SNP calling we have performed on our single sample. 
 Artemis has many features for exploring genomes, genome annotations, and genomic data (DNAseq, RNAseq, and more) that can be layered onto the 
 genome. To explore the full functionality, you would need at least a week-long course, so we will just touch on the basics. However, feel free 
@@ -229,7 +232,7 @@ Lets explore our data.
 ---
 [↥ **Back to top**](#top)
 
-## Mapping reads from multiple samples
+## Mapping reads from multiple samples <a name="mapping_multi"></a>
 Now that we have shown you the steps involved in mapping a single sample, we will now show you how to map multiple samples. While you could 
 repeat exactly the same commands as before and just change the sample name each time, this would be a lot of manual work, and would take a 
 considerable amount of time to do it. We have enough samples that this is quite impractical. However, the power of bioinformatics and coding 
@@ -282,7 +285,7 @@ NOTE: you don’t need to write any of the commands, on this page. This is just 
 ---
 [↥ **Back to top**](#top)
 
-## Calling SNPs in multiple samples at the same time 
+## Calling SNPs in multiple samples at the same time <a name="snps_multi"></a>
 Here, we are going to perform multi-sample SNP calling. While we could technically perform a loop like in our mapping example, the mpileup 
 command can take a “file of file names” as input, which we will make in the first step. IN this case, we will list (ls) all of the sorted.bam 
 files, and write them to a new file called bam.fofn. 
@@ -346,7 +349,7 @@ and genetic relationships among our samples.
 ---
 [↥ **Back to top**](#top)
 
-## Analysis of genetic variation using R
+## Analysis of genetic variation using R <a name="r"></a>
 Well done getting this far! By now, you should  have been able to map reads from 176 samples, and call SNP variants in all of them. 
 Now we want to explore these data and identify any patterns in the genetic variation that might tell us something about the biology of 
 the parasite. To do so, we are going to use the language R. This is because there are a number of good population genetic tools, as well 
@@ -433,7 +436,7 @@ vcf.gl@pop
 [↥ **Back to top**](#top)
 
 
-## Principal component analysis of genetic diversity
+## Principal component analysis of genetic diversity <a name="pca"></a>
 ```R
 # Perform a PCA analysis, and we’ll have a look at it
 vcf.pca <- glPca(vcf.gl, nf = 10)
@@ -557,7 +560,7 @@ Q: Looking at the ellipses specifically, can you see any countries that have a d
 [↥ **Back to top**](#top)
 
 
-## Exploring genetic data using phylogenetic trees
+## Exploring genetic data using phylogenetic trees <a name="trees"></a>
 PCA is a great way to explore complex datasets, including genomics data, and can help to identify drivers (sometimes even technical biases) that 
 are shaping genetic differences between samples. However, it is a data reduction approach, and sometimes interpreting PCAs can be cryptic. Moreover, 
 it is not a direct measure of genetic differentiation. 
@@ -586,7 +589,7 @@ tree_plot
 ---
 [↥ **Back to top**](#top)
 
-## Integrating genetic and geographic data: maps
+## Integrating genetic and geographic data: maps <a name="maps"></a>
 Here, we will make a map of the sampling locations, and plot the allele frequency data on it. This or similar may be used to explore how populations
 may be connected to each other. We will explore this by plotting SNPs that seem to have the most effectin driving the variance in the PCA plot.
 
