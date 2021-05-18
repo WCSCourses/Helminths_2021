@@ -84,6 +84,7 @@ Lets get started!
 # Lets move to the working directory
 cd Module_6_Genetic_Variation
 
+# it is always worth checking what is in a directory before doing any work. It ensures you are in the right place and the files you want to work on a present. 
 ls -ltr 
 
 ```
