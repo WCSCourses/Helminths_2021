@@ -52,10 +52,11 @@ differ between our samples and the reference.
 
 
 Overall, the aims of this module are to familiarize you with tools and concepts that will allow you to:
-- map high throughput sequencing reads to a genome;
+- map high-throughput sequencing reads to a genome;
 - bioinformatically identify and filter single nucleotide polymorphisms in your samples;  
 - visualize sequencing reads and genetic variants in your samples;
 - analyze patterns of genetic diversity in your data, and link these patterns to metadata to uncover biological insights in your species.
+
 ---
 [↥ **Back to top**](#top)
 
