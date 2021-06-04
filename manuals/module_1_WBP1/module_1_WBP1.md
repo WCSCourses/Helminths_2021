@@ -23,4 +23,8 @@ The aim of this section is to familiarise you with retrieving information about 
 * Open up a web browser, and type this URL into the address bar: https://parasite.wormbase.org/
 
 The page should look something like this:
+
 ![](figures/figure_3.1.png)  
+
+* Paste "T265_10539" into the search bar in the top right of the page and click return. T265_10539 is a gene stable ID.
+
