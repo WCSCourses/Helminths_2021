@@ -89,6 +89,8 @@ Section on interproscan.
 
 ![](figures/figure_3.8.png)
 
-On this page we see a pictorial representation of the protein domains that have been annotated to this polypeptide. For every protein in WormBase ParaSite, we have pre-run InterProScan. 
+On this page we see a pictorial representation of the protein domains that have been annotated to this polypeptide. For every protein in WormBase ParaSite, we have pre-run InterProScan. We can see here that
+
+![](figures/figure_3.9.png)
 
 
