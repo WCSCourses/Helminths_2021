@@ -4,6 +4,10 @@
 1. [Overview and Aims](#intro)
 2. [Genes and genomes](#genes_and_genomes)
 3. [Looking at genes in WormBase ParaSite](#wbps_genes)
+    * [The gene page](#gene_page)
+    * [Functional annotation: protein domains and GO terms](#functional_annotation)
+    * [Orthologues and paralogues](#comparative_genomics)
+    * EXERCISE (#gene_page_exercise)
 4. [Looking at genomes in WormBase ParaSite](#wbps_genomes)
 5. [BioMart](#biomart)
 
@@ -16,7 +20,7 @@ We will start by exploring the basic function of the website (part A); go on to 
 ## Looking at genes in WormBase ParaSite <a name="wbps_genes"></a>
 In this first part of the module we will explore the basic functionality of the WormBase ParaSite website for looking at helminth genes and genomes.
 
-### The Gene Page
+### The Gene Page <a name="gene_page"></a>
 The aim of this section is to familiarise you with retrieving information about a gene of interest from WormBase ParaSite. We will use a walk through example to illustrate how to use the website to find out about the function of an Opisthorcis viverrini gene.
 
 #### Basic Navigation
@@ -81,7 +85,7 @@ All of the sequences can be downloaded in FASTA format - this is a text format t
 
 ![](figures/figure_3.8.png)
 
-#### Functional annotation: protein domains and GO terms
+#### Functional annotation: protein domains and GO terms <a name="functional_annotation"></a>
 
 Section on interproscan.
 
@@ -89,8 +93,88 @@ Section on interproscan.
 
 ![](figures/figure_3.8.png)
 
-On this page we see a pictorial representation of the protein domains that have been annotated to this polypeptide. For every protein in WormBase ParaSite, we have pre-run InterProScan. We can see here that
+On this page we see a pictorial representation of the protein domains that have been annotated to this polypeptide. For every protein in WormBase ParaSite, we have pre-run InterProScan. We can see here that this protein has a match with an Innexin domain in several protein domain databases, and four transmembrane helices.
 
 ![](figures/figure_3.9.png)
+
+The same data is available in tabular format
+
+* Click the “Domains & features” menu option.
+
+![](figures/figure_3.10.png)
+
+Where possible, annotated domains are linked to their entries in the appropriate external database. As you saw in module 1, these often have useful descriptions of what is known about the domain. A good place to start to learn about protein domains is usually the InterPro website: follow the IPR000990 link in the InterPro column to learn more about the biology of protein.
+
+* Click “External References” in the navigation menu.
+
+![](figures/figure_3.11.png)
+
+External references are the identifiers by which the gene (or transcript or protein, in this case) is known in other databases. These usually include RefSeq (the reference sequence database of the NCBI) and UniProt, and sometimes (though not in this case), WormBase ParaSite’s sister database, WormBase.
+
+Another fast way to find out about the function of a gene’s product is to see which Gene Ontology (GO) terms have been associated with it. GO is a project that seeks to describe complex biology in a logical, hierarchical and computer-processable way. It is a controlled vocabulary, whereby proteins are associated with GO terms that describe their function. There are three aspects to GO: Cellular Component, Molecular Function and Biological Process. Cellular Component GO terms describe where a protein is localised (in the membrane, extracellular, in the nucleus etc). Molecular Function GO terms describe the biochemical activity of the protein. Biological Process GO terms describe the pathways and broader processes that the protein contributes to.
+
+* Click the “Gene:inx” tab at the top of the page to return to the main gene page, then select “Cellular component” from the Gene Ontology section of the navigation menu.
+
+![](figures/figure_3.12.png)
+
+WormBase ParaSite imports GO annotations from three sources: terms assigned by UniProt, terms inferred by the protein’s InterPro domains, and terms that have been associated with orthologues of the gene of interest. 
+
+#### Comparative genomics <a name="comparative_genomics"></a>
+
+Another approach to understanding what a gene does is comparative genomics. WormBase ParaSite runs a comparative genomics pipeline, called Compara, that seeks to group all helminth genes, together with comparator genes from a number of model organisms, into families. You can explore the results of the Compara pipeline in a few different ways.
+
+* Select “Gene tree” from the Comparative Genomics section of the navigation menu.
+
+![](figures/figure_3.13.png)
+
+The gene tree shows the inferred evolutionary history of the family that this gene is a member of. At the ends of the branches are genes, with our gene of interest highlighted in red. The points where the branches split are called nodes; nodes represent different evolutionary events, with these being represented in the tree by different colours. Dark blue nodes represent speciation events (where two populations of an existing species diverged into two new species). Red nodes represent duplications, where within the genome of one species the gene was duplicated. Turquoise nodes are ambiguous.
+
+Note that the most closely related genes in the tree are from other Strongyloides species: the animal parasites S. venezuelensis and S. papillosus and the human parasite S. stercoralis. These genes are all orthologues of our gene of interest. Orthologues are genes that evolved from a common ancestral gene by speciation; they may have diverged to a greater or lesser degree in their sequences, but often retain their function in their respective species. Similarly, paralogues are genes that have evolved from a common ancestral gene by duplication (see the information box on the Compara pipeline). They are genes that are found in more than one copy in a species’ genome.
+
+It can be useful to look at alignments of these related proteins to see how well conserved they are. Highly conserved regions are more likely to be essential for the function of the protein.
+
+* Click on the section of the tree labelled “Blood flukes and click “expand this subtree”.
+
+Next to the main tree, in green, we can see a pictorial summary of the multiple alignment of the proteins of these four genes, with green coloured regions representing alignments and non-coloured regions representing gaps. You may be interested in exploring these alignments at a higher resolution.
+
+* Click the node that separates the Opisthorchis from the oriental liver fluke, then click "View in Wasabi" in the pop up box.
+
+A multiple alignment of the four proteins will appear in a new window: we can see that these protein sequences are extremely well conserved. 
+
+![](figures/figure_3.14.png)
+
+Orthologues and paralogues are also available in tabular format, where they can be easily exported.
+
+* Select “Orthologues” in the navigation menu.
+
+![](figures/figure_3.15.png)
+
+In the main table on this page, each row represents an orthologue of *inx*. The table gives details on the nature of the relationship between our *O. viverrini* gene and the gene in the other species, such as whether the gene has one or multiple orthologues in the other species (1-to-1 or 1-to-many), and how similar the two proteins are. Multiple alignments can be viewed by following the links.
+
+#### Compara: further details
+
+Compara is a pipeline, developed by the Ensembl project, which groups related genes into families and defines the evolutionary relationships between them. Below is a summary of the steps of the pipeline:
+1. A library of protein family Hidden Markov Models (HMMs) is used as a starting point. Gene sequences are scored against these models, giving a probability of how likely each sequence is to be a member of the corresponding family. The HMM library used in the Compara pipeline is based on the Panther and TreeFam databases.
+2. Any proteins that were not classified into a family in the HMM search are then compared with each other by all-against-all BLAST.
+3. Any family with more than 400 members is broken down into smaller families (max 400 proteins).
+4. All of the protein sequences in each family are aligned against each other using efficient multiple alignment software.
+5. For each family, a phylogenetic tree is built (using TreeBeST5). Tree building is guided by a species phylogenetic tree.
+6. Orthologues and paralogues are called on the basis of the resulting tree: any two genes separated by speciation events are orthologs, and any two genes in the same species separated by a duplication event are paralogues.
+
+#### Gene page exercise <a name="gene_page_exercise"></a>
+
+The aim of this exercise is to familiarise yourself with the WormBase ParaSite gene page.
+Go to the gene page for the Trichuris muris gene TMUE_2000008757 and retrieve the following information:
+1. What is the summary description of the gene? Do you have any idea what the gene might be doing from this description?
+2. How many transcripts of the gene are annotated?
+3. Which strand is the gene on? What is the name of the 5’ neighbouring gene?
+4. Download the 3’UTR sequence.
+5. What identifier would you use to search for the gene in Uniprot?
+6. Where is this gene’s protein predicted to localise to?
+7. Which Pfam domains is the protein predicted to have? Which of these is responsible for its DNA binding activity?
+8. Download the protein alignment of TMUE_2000008757 and its C elegans orthologue. Is there any published literature on the C elegans orthologue? (Hint: follow the link to the WormBase ParaSite page for the C elegans orthologue and look in the “Literature” tab).
+
+
+
 
 
