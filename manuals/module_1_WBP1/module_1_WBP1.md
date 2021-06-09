@@ -11,6 +11,7 @@
 4. [Looking at genomes in WormBase ParaSite](#wbps_genomes)
     * [EXERCISE](#genomes_exercise)
 6. [BioMart](#biomart)
+    * [EXERCISE](#biomart_exercise)
 
 ## Overview and Aims <a name="intro"></a>
 WormBase ParaSite is a specialist website that presents data on helminth genomics, gathering together nematode and flatworm genomes that have been assembled and annotated by the research community. Many of the analyses that you did in module 1 can be found pre-computed on WormBase ParaSite, making the data easily accessible in one website. In this module, we’ll demonstrate the different ways that you can interact with WormBase ParaSite data and tools.
