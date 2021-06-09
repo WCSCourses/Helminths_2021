@@ -7,9 +7,10 @@
     * [The gene page](#gene_page)
     * [Functional annotation: protein domains and GO terms](#functional_annotation)
     * [Orthologues and paralogues](#comparative_genomics)
-    * EXERCISE (#gene_page_exercise)
+    * [EXERCISE](#gene_page_exercise)
 4. [Looking at genomes in WormBase ParaSite](#wbps_genomes)
-5. [BioMart](#biomart)
+    * [EXERCISE](#genomes_exercise)
+6. [BioMart](#biomart)
 
 ## Overview and Aims <a name="intro"></a>
 WormBase ParaSite is a specialist website that presents data on helminth genomics, gathering together nematode and flatworm genomes that have been assembled and annotated by the research community. Many of the analyses that you did in module 1 can be found pre-computed on WormBase ParaSite, making the data easily accessible in one website. In this module, we’ll demonstrate the different ways that you can interact with WormBase ParaSite data and tools.
@@ -175,6 +176,55 @@ Go to the gene page for the Trichuris muris gene TMUE_2000008757 and retrieve th
 8. Download the protein alignment of TMUE_2000008757 and its C elegans orthologue. Is there any published literature on the C elegans orthologue? (Hint: follow the link to the WormBase ParaSite page for the C elegans orthologue and look in the “Literature” tab).
 
 
+## Looking at genomes in WormBase ParaSite <a name="wbps_genomes"></a>
 
+In this section, we’ll explore how genome assemblies are presented in WormBase ParaSite, and look at some commonly used metrics of assembly quality.
+
+* From the WormBase ParaSite homepage, click either the ”Genome List” tab in the tools bar, or the “Genomes” icon.
+
+![](figures/figure_4.1.png)
+
+This will take you to a list of all of the genomes currently available in WormBase ParaSite, divided phylogenetically into the nematoda and the platyhelminthes. You might notice that some species (like Ancylostoma ceylanicum in the figure below) have two entries: this is because the research community has produced two different assemblies for these genomes, and WormBase ParaSite makes them both available. In this table you can also find a link to the sequence archive where the genome sequence was originally deposited (‘BioProject ID’) and a link to two different genomes browsers, JBrowse and Ensembl. We’ll cover the use of genome browsers to visualise genomes later. The ‘CEGMA’, ‘BUSCO’ and ‘N50’ columns give some statistics about the quality of the genome assembly. We will cover exactly what these values mean below.
+
+![](figures/figure_4.2.png)
+
+* Scroll down the page to find Brugia malayi and click the species name link- this will take you to the B. malayi genome page.
+
+![](figures/figure_4.3.png)
+
+The genome page has useful summary information about the species and the assembly. You can see a summary of the methods used to produce the assembly and the annotation, and links to the publication describing it in more detail (where this is available).
+
+* Look now at the ‘Assembly statistics’ box.
+
+![](figures/figure_4.4.png)
+
+The information in this box tells us about two metrics related to the quality of the assembly: contiguity and completeness. Contiguity describes how many scaffolds a genome is represented by: in a perfectly contiguous reference genome, the number of scaffolds would be equal to the number of chromosomes. Contiguity is described by several values, including the total number of scaffolds in the assembly, the length of the longest scaffold, the N50 length and the N90 length. If all of the scaffolds of the assembly were lined up in order of longest to shortest, the N50 length is the length of the scaffold at the midpoint. Similarly, the N90 length is the length of the scaffold at the 90th percentile. For a given genome, a larger N50 length and N90 length generally indicate a more contiguous assembly.
+
+In the “Assembly statistics” widget, the circumference of the circle represents the whole genome assembly, with scaffolds ordered from longest to shortest. The diameter of the grey colour represents the length of the scaffold represented at each point of the circle. The light grey shading represents the N90 scaffold, whilst the dark grey shading represents the N50 scaffold. The light blue outer ring shows the GC/AT/N percentage of the scaffold.
+Mouse over the widget to explore the number of scaffolds contributing to the genome. You should see that the N50 length (14.2 Mb) is the third longest scaffold, and the N90 length (13.5 Mb) is the fifth longest scaffold.
+
+CEGMA and BUSCO are two (similar) methods of assessing genome completeness. They are based on the principle that some genes are so highly conserved across eukaryotic species that they should be present in any genome assembly, in single copy. Generally speaking, a higher percentage of complete CEGMA genes, or single BUSCO genes, indicates a higher quality assembly. A word of warning though: CEGMA and BUSCO are known to underperform for certain taxonomic groups. Although the genes are selected because they are supposed to be universally conserved, this is not always the case. Platyhelminth genomes tend to have lower CEGMA and BUSCO scores; this is not necessarily because the genomes are lower quality, but because some highly conserved eukaryotic genes are truly absent from this group of organisms.
+
+#### Genome assembly metrics exercise <a name="genomes_exercise"></a>
+
+There are two other Brugia sp. genome assemblies in WormBase ParaSite, which are of much lower quality than Brugia malayi. According to their scaffold statistics and CEGMA/BUSCO scores, which of these two assemblies is more contiguous and complete?
+
+## BioMart <a name="biomart"></a>
+
+BioMart is an extremely powerful tool that allows you to query WormBase ParaSite data in bulk, with no programming knowledge. Consider the information that we gathered on our gene of interest in part A, by clicking around the gene page. Now imagine that rather than having one gene of interest, we actually have a list of 100 genes. That would be a lot of clicking around on gene pages! BioMart allows you to output all of this data for multiple genes in a few clicks.
+
+Retrieving data for a list of known genes isn’t the only thing that BioMart can do. In this section, we’ll go through a series of examples that aim to illustrate the power of this tool. First, a little bit about how to construct queries. Queries are constructed with three facets: filters, values and attributes. Filters specify the type of data that you’re specifying your query on. Values are the actual values of that data type: for example, if your filter were ‘gene IDs’, your values would be a list of actual gene IDs. Attributes are the data types that you want to retrieve. For example, you might want to retrieve the genomic coordinates of your gene IDs. The table below lists some examples of filters and attributes for BioMart queries.
+
+| Filters       | Attributes           | 
+| ------------- |-------------| 
+| A genome      | Gene, transcript or protein IDs | 
+| A genomic region | Sequences      |
+| A list of gene IDs| Identifiers from external databases (eg, Uniprot IDs)      |
+| All genes that have GO term x, or protein domain Y| Protein domains or GO terms associated with a gene ID    |
+| All genes that have GO term x, or protein domain Y| IDs of orthologous genes, % identity   | 
+
+Filters and attributes can be combined to produce more complex queries and customised output; for example: you might want to retrieve the IDs and predicted protein domains of all of the genes from Schistosoma mansoni chromosome 1 that have a predicted signal peptide. We’ll walk through this example to get started.
+
+* From the WormBase ParaSite homepage, select BioMart from the tool bar, or the BioMart icon.
 
 
