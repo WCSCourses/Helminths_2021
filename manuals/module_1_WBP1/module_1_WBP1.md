@@ -227,4 +227,59 @@ Filters and attributes can be combined to produce more complex queries and custo
 
 * From the WormBase ParaSite homepage, select BioMart from the tool bar, or the BioMart icon.
 
+![](figures/figure_5.1.png)
+
+We have to set three query filters: the genome (the S. mansoni genome), genomic location (chromosome 1), and a protein domain (genes whose protein product have a predicted signal peptide).
+
+* Select “Species”, tick the “genome” checkbox and scroll down to select “Schistosoma mansoni (PRJEA36577)”.
+
+![](figures/figure_5.2.png)
+
+* Select “Region”, tick the “Chromosome/scaffold” check box and type “Sm_V7_1” into the text field (you must know the exact name of the chromosome).
+
+![](figures/figure_5.3.png)
+
+* Select “Protein domains”, tick the “Limit to genes...” checkbox and select “with SignalP protein features”
+
+![](figures/figure_5.4.png)
+
+Note that as we have built up the query, the filters have appeared on the left hand side of the page.
+
+* Click “count” to count the number of genes in the database that fulfil these filter criteria.
+
+![](figures/figure_5.5.png)
+
+Next we will select the output attributes. “Genome project” and “Gene stable ID” are already pre-selected as attributes.
+
+* Select “Output attributes”
+
+![](figures/figure_5.6.png)
+
+BioMart lets us generate two types of output: data tables, and sequence (FASTA) files. In this example we’ll be generating a data table. We want to retrieve the gene IDs and associated protein domains of the 215 genes that fulfil our filter criteria.
+
+* Select “Interpro protein domains” and check the tick boxes for “InterPro ID”, “InterPro short description”, “Start position” and “End position”.
+
+![](figures/figure_5.7.png)
+
+* Click “Results” to see a preview your results table. The full results table can be downloaded by selecting the file type you’d like to download and clicking “Go”.
+
+![](figures/figure_5.8.png)
+
+#### BioMart exercise <a name="biomart_exercise"></a>
+
+In the data directory for module 1, you will find two files containing lists of gene IDs: Sratti_genes.txt, and Smansoni_genes.txt. Use the gene IDs in Sratti_genes.txt to retrieve the following data:
+1. Their WormBase gene IDs and UniProtKB/TrEMBL IDs.
+2. The InterPro domains that they have been annotated with (InterPro short description). [Q: why do some of the output rows appear multiple times?]
+3. The gene stable IDs of their Strongyloides stercoralis orthologues. [Q: which gene has more than one S. stercoralis orthologue?].
+4. The names of any GO terms associated with the genes. 
+5. A FASTA file of their peptide sequences.
+Use the gene IDs in Smansoni_genes.txt to answer the following questions:
+6. How many of these genes have orthologues in both S. haematobium and S. japonicum? Generate a table that has the gene stable ID for the homologue in all three species, the homology type (1-1, 1-many, etc), and, for the S. haematobium and S. japonicum orthologues, the % identity of the gene to its S. mansoni orthologue.
+Of these genes, how many also (a) do not have a human or mouse orthologue and (b) have a signal peptide?
+7. Retrieve (a) a FASTA file with the CDS sequence of each transcript encoded by these genes. Make sure that the transcript stable ID is in the header. (b) a FASTA file containing the CDS sequence plus 100 nt downstream of the stop codon of each of those transcripts. In the header, include the transcript stable ID and the name of the scaffold that the transcript is on.
+8. Generate a table containing all of the protein coding genes on Brugia malayi scaffold Bm_007. The table should have their gene stable IDs and start and end coordinates. For genes that have paralogue(s), include the stable ID, coordinates and scaffold of the paralogue(s).
+For these genes, generate a table that maps each gene stable ID to its UniProt ID.
+9. Retrieve a list of Onchocerca volvulus genes that are annotated with the GO term “reproduction” (or any of its child terms). In the output, include the IDs and short descriptions of the InterPro protein domains associated with the genes.
+10. How many worm pseudogenes are annotated in WBPS? Which worm genomes have annotated pseudogenes?
+
 
