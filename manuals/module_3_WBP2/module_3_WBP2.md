@@ -6,6 +6,7 @@
     * [The genome browser](#genome_browser)
     * [Expression data](#expression_data)
     * [VEP](#vep)
+      * [EXERCISE](#vep_exercise)
 2. [Accessing WormBase ParaSite data programmatically](#programmatic_access)
     * [Working with sequence and annotation files](#files)
     * [The REST API](#api)
@@ -120,13 +121,91 @@ In the module 3 data directory you should find a file named somules_isoseq_sorte
 
 The SAM file starts with a header section. All header lines begin with a ‘@’ character.
 
+![](figures/jbrowse_10.png)
+
+Move down through the file (by pressing the space bar) until you come to the alignment section. Here, each line represents a sequencing read (though be aware that the lines are long, so a single line will probably wrap around your terminal window a few times). Some of the key fields are labelled below:
+
+![](figures/jbrowse_11.png)
+
+The full SAM specification is available here: http://samtools.github.io/hts-specs/
+
+If you’ve looked at RNA sequencing data before, you may notice something unusual about the reads in this file: they’re very long! Until recently, next generation sequencing reads were typically ~100bp in length, so transcripts had to be sequenced in short sections at high coverage and reconstructed computationally. This BAM file contains “IsoSeq” data, from the Pacific Biosciences platform, whereby full length transcripts have been sequences in their entirety.
+
+Before we can visualise the file in JBrowse, we need to create an index. An index is another file that often accompanies a BAM file, and acts like a table of contents. Software such as JBrowse can look inside the index file and find where exactly in the corresponding BAM file it needs to look, without having to go through all of the reads (which would be computationally very expensive).
+
+BAM index files should have exactly the same name as their corresponding BAM file, with the addition of a .bai suffix. We can index our BAM file using samtools. Type:
+
+    samtools index somules_isoseq_sorted.bam
+    
+You should now see a file called somules_isoseq_sorted.bam.bai in your working directory. We can now load the file into WormBase ParaSite JBrowse.
+
+![](figures/jbrowse_12.png)
+
+To add the BAM track, select the “Track” menu option in the top left of the screen. Selecting “Open track file or URL” will open a dialogue box giving you an option to view a file that is either on your file system, or accessible via a URL. Select both the BAM file and the index file. JBrowse guesses the file type from the name, but we have an option to correct it if it gets it wrong. We can see that it’s right this time. Click “Open”.
+
+Now we can see the IsoSeq reads aligned to the genome. Notice that IsoSeq data is stranded- this means that the library preparation protocol preserved information on which end of the RNA molecule was 5-prime and which end was 3-prime, so we can infer which strand of DNA it was transcribed from. This information is encoded in the BAM file, and JBrowse colours the reads accordingly: reads aligning to the forward strand are pink, and reads aligning to the reverse strand are purple.
+
+
 ### Expression data <a name="expression_data"></a>
 
 ### VEP <a name="vep"></a>
+
+The final WormBase ParaSite tool that we’ll look at today is the Variant Effect Predictor, or VEP. A common approach to understanding the genetic basis of phenotypic differences is to identify genetic variants that are overrepresented in some populations of individuals. For example, you might sequence two populations of worm: one that is susceptible to a drug and one that is resistant to the drug. You could then identify genomic positions where each of these populations differs from the reference genome. VEP is a tool that allows you to predict what the consequences of these variants are: whether they fall within or near genes, and whether they result in a change to the amino acid sequence of a protein.
+
+The standard file format for storing variation data is VCF (variant call format); this is another tab-delimited text format. In the module 3 data directory, we have provided you with a Hymenolepis microstoma VCF file to demonstrate how to use VEP. Have a look at the file first to see how it’s structured (you'll have to scroll down beyond the headers to see the data lines):
+
+    less h_microstoma.vcf
+    
+![](figures/vep_1.png)
+
+* From the WormBase ParaSite homepage, select “Tools” from the toolbar.
+* From the “Tools” page, select Variant Effect Predictor
+
+![](figures/vep_2.png)
+
+* To submit a VEP job, just select the correct species (Hymenolepis microstoma), upload your VCF file and click “Run”.
+
+![](figures/vep_3.png)
+
+The pie charts give a summary of the consequences of the variants found in the file. Variants with coding consequences are found in the protein-coding sequence of genes, whilst variants with non-coding consequences are in intergenic regions or non-coding regions of genes. These variants could still be functionally important; for example, variants in non-coding regions near genes can have effects on expression levels.
+You can explore the results interactively on the webpage, or download them to file.
+
+#### VEP exercise <a name="vep_exercise"></a>
+
+Download the VEP results from the example above as a “VEP file”. Use this file and the original VCF file to answer the following questions:
+
+1. How many variants were there in the original dataset?
+
+2. What is their distribution across the scaffolds of the H. microstoma genome (hint: count how many times each scaffold appears in the VCF file)?
+
+3. What are the different types of consequence that are found in the file, and how often does each occur?
+
+4. List the genes where a ‘stop gained’ variant is found.
+
+5. You’re interested in one particular gene, HmN_002063100. Does it have any variants in the file, and what are the reported consequences? Now view the VCF file in JBrowse and visualise where the variants are in the gene model.
+
+Hint: to view the VCF in JBrowse you first need to compress and index it. Do:
+
+    bgzip h_microstoma.vcf && tabix -p vcf h_microstoma.vcf.gz
 
 ## Accessing WormBase ParaSite data programmatically <a name="programmatic_access"></a>
 
 ### Working with sequence and annotation files <a name="files"></a>
 
 ### The REST API <a name="api"></a>
+
+The other way to query WormBase ParaSite data is programmatically, via the REST API (Application Programming Interface). An API is just another way to retrieve data from a server, but this time via scripts or commands. You make a request to the server, but rather than returning a webpage, it returns the data in a structured format. We offer data in JSON (JavaScript Object Notation) and XML (Extensible Markup Language), which are both commonly used formats for data exchange. They are structured, so good for writing programs to interpret and manipulate them, but also human readable.
+
+There are a few situations where accessing WormBase ParaSite data via the API might be the better choice over BioMart or the website:
+
+1. For queries that you’re likely to have to run multiple times (for example, with different datasets, or against different genomes)
+
+2. For queries that plug into a larger pipeline, it might be convenient to retrieve the data in an easily computer-processable format
+
+3. Some types of data are not available in BioMart (such as CEGMA and BUSCO scores), and can only be accessed via the website or the API
+
+In an earlier exercise, you used the assembly statistics widget on the genome page to compare Brugia sp. genome assemblies. In this example, we’ll do the same for the Meloidogyne sp. assemblies, using the API.
+
+* From the WormBase ParaSite home page, select “REST API” from the toolbar.
+
 
