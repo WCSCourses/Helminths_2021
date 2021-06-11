@@ -208,4 +208,152 @@ In an earlier exercise, you used the assembly statistics widget on the genome pa
 
 * From the WormBase ParaSite home page, select “REST API” from the toolbar.
 
+![](figures/rest_1.png)
 
+This page details the available REST endpoints: endpoints are URLs that accept API requests, and return data. Read the descriptions of the different resources to see the types of data that you can retrieve from the WormBase ParaSite API.
+
+We want to retrieve the CEGMA and BUSCO scores of all of the Meloidogyne sp. assemblies in WormBase ParaSite. We’ll break the problem down into two steps: first, we’ll use the API to retrieve the names of all the Meloidogyne sp. assemblies that are available, then we’ll use those names to specify which assemblies we want to retrieve the CEGMA and BUSCO scores for.
+
+* Scroll down to the “Information” section and select the taxonomy endpoint
+
+![](figures/rest_2.png)
+
+* Scroll down to look at the example request
+
+![](figures/rest_3.png)
+
+We offer examples on how to use these in several different programming languages - feel free to stick to the language you know best. Here, we’ll demonstrate how to use the command line tool curl. Open a terminal and copy or type the curl command below. We’re interested in Meloidogyne sp., so we have replaced “Brugia” (in the WBPS example) with “Meloidogyne”.
+
+    curl -L 'https://parasite.wormbase.org/rest/info/genomes/taxonomy/Meloidogyne?' -H 'Content-type:application/json'
+
+Note: we’ve also added the L (full name: --location) flag to the curl command, and changed “rest-14” to “rest” in the URL. “rest-14” refers to the 14th release of WormBase ParaSite; by removing the version number the request is automatically redirected to the most recent release. The L flag tells curl to allow this redirection.
+
+You will see a lot of text! This is the data that we requested, in JSON format. To format the response more nicely, we’ll pipe the output into another command line tool, jq. jq allows us to manipulate JSON data on the command line (see the manual for more information on its usage: https://stedolan.github.io/jq/manual/).
+
+    curl -L 'https://parasite.wormbase.org/rest/info/genomes/taxonomy/Meloidogyne?' -H 'Content-type:application/json'  | jq '.'
+
+You should see the data now formatted like this:
+
+```
+[
+{
+"base_count": "235798407",
+"is_reference": null,
+"division": "EnsemblParasite",
+"has_peptide_compara": null,
+"dbname": "meloidogyne_javanica_prjeb8714_core_13_95_1",
+"genebuild": "2018-05-WormBase",
+"assembly_level": "scaffold",
+"serotype": null,
+"has_pan_compara": null,
+"has_variations": "0",
+"name": "Meloidogyne javanica (PRJEB8714)",
+"has_other_alignments": "1",
+"species": "meloidogyne_javanica_prjeb8714",
+"assembly_name": "ASM90000394v1",
+"taxonomy_id": "6303",
+"species_id": "1",
+"assembly_id": "GCA_900003945.1",
+"strain": null,
+"has_genome_alignments": null,
+"species_taxonomy_id": "6303"
+ ...
+},
+```
+
+JSON-formatted data consists of key-value pairs. A series of key-value pairs separated by commas and enclosed in curly brackets is a JSON object. Here, we have a JSON object for each Meloidogyne sp. assembly. The JSON objects are in a list (an array), which is enclosed by square brackets. We only need the species names; we will extract these using jq:
+
+    curl -L 'https://parasite.wormbase.org/rest/info/genomes/taxonomy/Meloidogyne?' -H'Content-type:application/json'  | jq -r '.[] | .species'
+
+You should see:
+
+```
+meloidogyne_javanica_prjeb8714
+meloidogyne_enterolobii_prjna340324
+meloidogyne_graminicola_prjna411966
+meloidogyne_arenaria_prjeb8714
+meloidogyne_incognita_prjna340324
+meloidogyne_arenaria_prjna340324
+meloidogyne_incognita_prjeb8714
+meloidogyne_floridensis_prjeb6016
+meloidogyne_floridensis_prjna340324
+meloidogyne_javanica_prjna340324
+meloidogyne_hapla_prjna29083
+meloidogyne_arenaria_prjna438575
+```
+
+* Put the list of species names in a file in your working directory:
+    curl -L 'https://parasite.wormbase.org/rest/info/genomes/taxonomy/Meloidogyne?' -H 'Content-type:application/json'  | jq -r '.[] | .species' > species.txt
+
+The next endpoint that we need is the quality endpoint. Find it on the WormBase ParaSite API endpoint page and have a look at the example.
+
+![](figures/rest_4.png)
+
+We will need to replace the species name in the URL, and make a separate request for each species. We can write a small loop in bash, reading from our species file, to achieve this:
+
+```
+while read species; do 
+   curl -L "https://parasite.wormbase.org/rest/info/quality/$species?" -H 'Content-type:application/json' 
+done < species.txt
+```
+
+Again, we need to format the JSON nicely to make the output more readable:
+
+```
+while read species; do 
+   curl -L "https://parasite.wormbase.org/rest/info/quality/$species?" -H 'Content-type:application/json' | jq '.' 
+done < species.txt
+```
+
+We’ll now produce a file with just the percentages of complete CEGMA and BUSCO genes for each species:
+
+```
+while read species; do 
+   completeness_score=$(curl -L "https://parasite.wormbase.org/rest/info/quality/$species?" -H 'Content-type:application/json' | jq -r '.cegma.complete,
+.busco.complete' )  
+   echo $species $completeness_score >> assembly_completeness.txt
+done < species.txt
+```
+
+Finally, sort that file by CEGMA score:
+
+```
+sort -nrk2,2 assembly_completeness.txt
+
+meloidogyne_incognita_prjeb8714 95.97 61.8
+meloidogyne_arenaria_prjna438575 95.97 58.4
+meloidogyne_arenaria_prjeb8714 95.97 64.7
+meloidogyne_javanica_prjeb8714 95.56 61.1
+meloidogyne_hapla_prjna29083 94.76 59.9
+meloidogyne_javanica_prjna340324 93.55 57.4
+meloidogyne_arenaria_prjna340324 91.13 55.8
+meloidogyne_incognita_prjna340324 85.89 51.9
+meloidogyne_graminicola_prjna411966 84.68 40.7
+meloidogyne_enterolobii_prjna340324 84.27 49.7
+meloidogyne_floridensis_prjna340324 81.45 49.9
+meloidogyne_floridensis_prjeb6016 62.10 29.7
+```
+We can see that M. incognita, two M. arenaria assemblies and M. javanica all have CEGMA completeness scores of around 96%.
+
+#### API exercises
+Adapt the commands that you used above to retrieve the following information from the WormBase ParaSite API. For questions 2 and 3, you’ll need to use different endpoints.
+
+1. List the Meloidogyne sp. assemblies by size, smallest to largest.
+
+2. Retrieve the protein sequence of the guinea worm transcript DME_0000938001-mRNA-1.
+
+2b. Write a small program, `get_sequence_for_transcript`, that takes any transcript ID as an argument and returns its protein sequence. For example, running
+    ./get_sequence_for_transcript DME_0000938001-mRNA-1
+    
+should print MAKHNAVGIDLGTTYSC...
+
+(Hint: shell scripts put arguments from the command line into special variables, named $1, $2 etc )
+
+3. Retrieve a GFF file of all of the genes located on the AgB01 scaffold of the Ascaris suum PRJNA62057 assembly, between the following coordinates: 5284000 to 5836000.
+
+3b. Write a program, `retrieve_genes_in_region` which takes species, scaffold, start and end coordinates as arguments and can return the above for any given region. For example, calling
+    ./retrieve_genes_in_region ascaris_suum_prjna62057 AgB01 5284000 5836000
+
+should print the same result as question 3.
+
+Feel free to expand or tweak your programs if you have time!
