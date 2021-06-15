@@ -3,6 +3,9 @@
 ## Table of contents
 1. [Overview and Aims](#intro)
 2. [Genes and genomes](#genes_and_genomes)
+    * [Genes: the basics](#basics_genes)
+    * [Genomes: the basics](#basics_genomes)
+    * [Sequence databases](#sequence_databases)
 3. [Looking at genes in WormBase ParaSite](#wbps_genes)
     * [The gene page](#gene_page)
     * [Functional annotation: protein domains and GO terms](#functional_annotation)
@@ -10,14 +13,49 @@
     * [EXERCISE](#gene_page_exercise)
 4. [Looking at genomes in WormBase ParaSite](#wbps_genomes)
     * [EXERCISE](#genomes_exercise)
-6. [BioMart](#biomart)
+5. [BioMart](#biomart)
     * [EXERCISE](#biomart_exercise)
 
 ## Overview and Aims <a name="intro"></a>
-WormBase ParaSite is a specialist website that presents data on helminth genomics, gathering together nematode and flatworm genomes that have been assembled and annotated by the research community. Many of the analyses that you did in module 1 can be found pre-computed on WormBase ParaSite, making the data easily accessible in one website. In this module, we’ll demonstrate the different ways that you can interact with WormBase ParaSite data and tools.
-We will start by exploring the basic function of the website (part A); go on to examine two ways in which the WormBase ParaSite data can be queried for bulk access (part B); and end by exploring two popular tools in WormBase ParaSite: JBrowse and the Variant Effect Predictor (part C)
+In this first module we'll start by reviewing the basics on genes and genomes: what they are, how we represent and talk about them, and how we go from a DNA sequence- a string of letters- to making predictions about gene function. We'll look at this in the context of WormBase ParaSite (which you might also see referred to as WBPS) and other online database resources. 
+
+In short, WormBase ParaSite gathers together nematode and flatworm genomes that have been assembled and annotated by the research community, adds additional analyses and makes these data available to the scientific community. We'll look at the kind of data you can retrieve, initially by exploring the website. In the last part of the module we'll introduce BioMart. This is a data-mining tool that allows you to retrieve WormBase ParaSite data in bulk.
 
 ## Genes and Genomes  <a name="genes_and_genomes"></a>
+
+Throughout this course, we assume that you're familiar with genes and genomes. 
+
+### Genes: the basics  <a name="basics_genes"></a>
+
+A **gene** is a unit of the genome, a DNA sequence, that is transcribed into an RNA molecule, or a transcript. A gene's transcript may go on to be translated into a protein (in that case it is an mRNA), or it may have a role as a non-coding RNA. Examples of the latter include ribosomal RNAs (rRNA), transfer RNAs (tRNA) and microRNAs (miRNA).
+
+In eukaryotes, most protein-coding genes are formed by alternating exons and introns (some genes have a single exon), flanked by untranslated regions (UTRs). The exons constitute the only part of the gene that is translated into a polypeptide. Introns are transcribed but soon after excised and the final mature mRNA is formed by a 5’UTR, joined exons and a 3’UTR. A CAP and poly-A tail are added to the 5’ and 3’ ends respectively. These structures are essential to guarantee the molecular stability and downstream processing of the mRNAs.
+
+![](figures/figure_3.0.5.png)
+
+This figure represents the steps that are needed to transform information encoded in the DNA into a polypeptide and eventually a functional protein. The starting information is encoded in the Genome. A gene encodes, among other things, the transcription start and transcription end. These are the nucleotides from where an RNA copy of the DNA will be generated. This copy is the pre-mRNA which is formed by exons and introns. It also has untranslated regions at the before the first exon (5’ end) and last exon (3’ end) - not shown in this figure. Maturation of the mRNA molecule happens as it is transcribed and involves the slicing (removal) of introns with the concomitant joining of exons, addition of the a CAP at the 5’ end and a polyadenylation tail (many As - AAAAAAA) at the 3’end. A processed mRNA will be the template for the translation of the mRNA message into a protein by the ribosome.
+
+### Genomes: the basics  <a name="basics_genomes"></a>
+
+A **genome** is an organism’s complete set of genetic material. Although every individual's genome is unique, the genomes of individuals of the same species will be very very similar. It is useful to have a representative genome sequence for each species, and this is referred to as a reference genome. 
+
+In the cell, genomes are organised into chromosomes. In practice, current DNA sequencing methods are unable to read the DNA sequence of a whole chromosome without errors. We therefore use the technique of sequencing shorter segments of chromosomes, and do it in such a way that the segments overlap and can be pieced together like a jigsaw puzzle. This process is referred to as genome assembly. For now, we will focus on what genome assemblies look like, and how they are represented in genome databases. 
+
+The diagram below shows the structure of a typical assembly. It has 3 layers: the contigs are stretches of contiguous DNA sequence without gaps. The scaffolds are ordered sets of contigs separated by gaps of estimated length. In order to make scaffolds from contigs, techniques such as optical mapping and Hi-C are used. Finally, the chromosome is an ordered set of scaffolds separated by gaps on unknown length. To make the chromosome sequence from the scaffold, techniques such linkage mapping and FISH are used.
+
+![](figures/figure_3.0.75.png)
+
+Sometimes, there is insufficient (or no) data to reliably place a scaffold into a specific position on a chromosome. In the figure above, this is true of the scaffold on the right. The assembly above therefore comprises 2 toplevel sequences: 1 chromosome, and one unplaced scaffold.
+
+### Sequence databases <a name="sequence_databases"></a>
+
+Over the last few decades, as technology has evolved, we've seen an explosion in the number of genes and, later, genomes that have been sequenced. Sequence databases provide a place where these sequences can be deposited, stored and made available to the world. There are three nucleotide repositories or primary databases for the submission of nucleotide and genome sequences:
+
+* GenBank - https://www.ncbi.nlm.nih.gov/genbank/ hosted by the National Center for Biotechnology Information (or NCBI).
+* The European Nucleotide Archive or ENA - http://www.ebi.ac.uk/ena hosted by the European Molecular Biology Laboratories (EMBL).
+* The DNA Data Bank of Japan or DDBJ - http://www.ddbj.nig.ac.jp/ hosted by the National Centre for Genetics.
+
+Together they form the International Nucleotide Sequence Database Collaboration (http://www.insdc.org/about) and luckily for the users, they all “mirror” each other. This means that irrespective of where a sequence is submitted, the entry will appear in all three databases. Once data are deposited in primary databases, they can be accessed freely by anyone around the world.
 
 ## Looking at genes in WormBase ParaSite <a name="wbps_genes"></a>
 In this first part of the module we will explore the basic functionality of the WormBase ParaSite website for looking at helminth genes and genomes.
