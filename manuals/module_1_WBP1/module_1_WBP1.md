@@ -57,7 +57,8 @@ Over the last few decades, as technology has evolved, we've seen an explosion in
 
 Together they form the International Nucleotide Sequence Database Collaboration (http://www.insdc.org/about) and luckily for the users, they all “mirror” each other. This means that irrespective of where a sequence is submitted, the entry will appear in all three databases. Once data are deposited in primary databases, they can be accessed freely by anyone around the world.
 
-INSDC stores both primary data (i.e. the sequence reads exactly as they come off the machine) and assembled genomes (i.e. where an assembly algorithm has been used to build scaffolds or chromosomes from those reads). Commonly, these data are all stored together under what's known as a **bioproject accession**. An AGP file is often also provided, describing how the contigs fit together as scaffolds, and how the scaffolds fit together as chromosomes. A genome project may also contain an annotation file in GFF format (more on this file format later). This file contains predicted gene structures: based on the genome sequence, certain algorithms can predict which regions encode genes. Examples of software used for gene prediction at the moment include Maker (link) and BRAKER (link). These predictions may or may not be guided by other types of evidence, such as RNA sequencing data. It is important to bear in mind that the majority of genes as they appear in the sequence databases (and also in WormBase ParaSite) are based on predictions: these predictions are driven by evidence, but most genes from helminths genome assemblies are unlikely to have been cloned and sequenced in their entirety. We'll look at an example of checking how well a gene model is supported by RNAseq evidence in the next WormBase ParaSite module.
+INSDC stores both primary data (i.e. the sequence reads exactly as they come off the machine) and assembled genomes (i.e. where an assembly algorithm has been used to build scaffolds or chromosomes from those reads). Commonly, these data are all stored together under what's known as a **bioproject accession**. The format of this accession will vary slightly depending on the database to which the data was originally submitted: it will have a "PRJEB", "PRJNA" or "PRJDB" prefix for ENA, GenBank and DDBJ respectively. An AGP file is often also provided, describing how the contigs fit together as scaffolds, and how the scaffolds fit together as chromosomes. A genome project may also contain an annotation file in GFF format (more on this file format later). This file contains predicted gene structures: based on the genome sequence, certain algorithms can predict which regions encode genes. Examples of software used for gene prediction at the moment include Maker (link) and BRAKER (link). These predictions may or may not be guided by other types of evidence, such as RNA sequencing data. It is important to bear in mind that the majority of genes as they appear in the sequence databases (and also in WormBase ParaSite) are based on predictions: these predictions are driven by evidence, but most genes from helminths genome assemblies are unlikely to have been cloned and sequenced in their entirety. We'll look at an example of checking how well a gene model is supported by RNAseq evidence in the next WormBase ParaSite module.
+
 [↥ **Back to top**](#top)
 
 ## Looking at genes in WormBase ParaSite <a name="wbps_genes"></a>
@@ -73,25 +74,24 @@ The page should look something like this:
 
 ![](figures/figure_3.1.png)  
 
-* Paste "T265_10539" into the search bar in the top right of the page and click return. T265_10539 is a gene stable ID.
+* Paste "T265_10539" into the search bar in the top right of the page and click return. T265_10539 is a gene stable ID. These identifiers are allocated by the scientist or group that sequenced and annotated the genome.
 
 ![](figures/figure_3.2.png)  
 
-You should get one result returned. Let's look at the T265_10539 gene page.
+You should get one result returned. Let's look at the T265_10539 gene page:
+
+* Click T265_10539
 
 Every gene in WormBase ParaSite has a gene page, which presents sequence data and a summary of information from various sources about the gene.
 
 ![](figures/figure_3.3.png)
 
-The gene page has three main sections. In the summary section, together with the description of our gene we can also see the genomic location of the gene (chromosome 1, in this case) and the INSDC Sequence ID. This is an identifier that links to an entry for the scaffold in the International Nucleotide Sequence Database Collaboration resources (the European Nucleotide Archive, GenBank, and the DNA Databank of Japan). Underneath, we can see some information about the gene: it has 1 transcript isoform and a number of orthologues and paralogues. We’ll revisit this later. We can also see that the gene is protein-coding.
+The gene page has three main sections. In the summary section, together with the description of our gene we can also see the genomic location of the gene (chromosome 1, in this case) and the INSDC Sequence ID. This is an identifier that links to an entry for the scaffold in the INSDC.
 
-#### Transcript isoforms
-```
-As covered in module 1, according to the central dogma of molecular biology, eukaryotic genes (DNA) are transcribed to primary transcripts (RNA), which are spliced and capped to form mature transcripts (mRNA) then translated to proteins (polypeptide chains of amino acids). In the 1970s, it was discovered that a single gene can give rise to more than one protein, due to the processes of alternative splicing and alternative translation. When there is evidence for a single gene giving rise to multiple different transcripts in this way, we call the transcripts “isoforms”. The S. ratti example that we have been looking at has 2 transcript isoforms. Here is another example (in C. elegans):
+* Click the link to look at the scaffold's entry in ENA. Can you identify the bioproject accession of the study that this genome assembly belongs to?
 
-Here, the gene produces two alternative transcripts: one that contains four exons, and one that has skipped the third exon, to produce a shorter mature mRNA. Alternative splicing is a tightly regulated process: different transcripts of a gene might be produced in different tissues, or at different stages of a parasite’s life cycle. It is a process that is common to eukaryotes, allowing organisms to introduce diversity to the complement of proteins that they encode.
+Navigate back to the T265_10539 gene page on WormBase ParaSite. Underneath, we can see some information about the gene: it has 1 transcript isoform and a number of orthologues and paralogues. We’ll revisit this later. We can also see that the gene is protein-coding.
 
-```
 On the left, we have a navigation menu, which can be used to explore the information that is available for each gene. We’ll be going through each of these menu options in turn.
 
 The “Genomic context” image underneath shows us a snapshot of the scaffold that our gene is on.
@@ -109,7 +109,7 @@ We can see that:
 
 * Navigate back to the gene page by clicking the "Gene:inx" tab at the top of the page.
 
-As well as gene pages, WormBase ParaSite has a page for each transcript that a gene produces. We have to navigate to the transcript page to see which protein domains have been annotated. 
+As well as gene pages, WormBase ParaSite has a page for each transcript that a gene produces. In this case, only one transcript isoform has been annotated.
 
 * On the gene page, click the transcript ID in the transcipt table to navigate to the transcript page.
 
@@ -124,13 +124,21 @@ Again using the navigation menu on the left hand side of the page, we can retrie
 ![](figures/figure_3.7.png)
 
 The “Exons” tab displays the sequence of individual exons in a table (useful if you’re interested in retrieving, say, only the sequence of exon 2), the “cDNA” tab has the cDNA sequence (the sequence you would get if you reverse transcribed mature mRNA), and the “Protein” tab has the amino acid sequence.
-All of the sequences can be downloaded in FASTA format - this is a text format that is widely used for representing sequences, which was introduced in module 1. It consists of a header line (a “>” character and a description or name of the sequence) followed by the sequence itself on the next line. As well as the sequences displayed in the browser, you can also choose to download, for example, genomic sequence, just UTRs etc.
+All of the sequences can be downloaded in FASTA format - this is a text format that is widely used for representing sequences. It consists of a header line (a “>” character and a description or name of the sequence) followed by the sequence itself on the next line. As well as the sequences displayed in the browser, you can also choose to download, for example, genomic sequence, just UTRs etc.
 
 ![](figures/figure_3.8.png)
 
+Note that this protein sequence is what is known as a conceptual translation: the amino acids have not been sequenced directly, but we can infer the sequence given the predicted structure of the gene (the coordinates of the introns and exons), the underlying DNA sequence and a given codon usage table.
+
 #### Functional annotation: protein domains and GO terms <a name="functional_annotation"></a>
 
-Section on interproscan.
+How we do go from a string of amino acids to predicting what this protein might do in the cell? This is where another type of database comes in: protein family databases. 
+
+For the vast majority of predicted protein sequences, nobody will have done an experiment to test what its function is. However, we can use the principle of **homology** to take proteins that are well-studied in one experimental system and infer that proteins of similar sequence in other organisms are likely to have the same function. In reality, protein sequences are analysed in terms of domains: these are subsequences of a protein that have a defined tertiary structure or sequence motif, conferring a defined function. A protein can consist of several domains. When comparing proteins between organisms, often the region encoding a protein domain is highly conserved whilst the bit that connects different domains together is more divergent.
+
+A well known example of a protein domain database is Pfam (http://pfam.xfam.org/). Pfam uses massive multiple alignments of all of the known proteins with a certain domain to capture a representative model of that domain. Other protein domain databases, that might use slightly different methods to define domains, are:  CATH, CDD, HAMAP, MobiDB Lite, Panther, PIRSF, PRINTS, Prosite, SFLD, SMART, SUPERFAMILY and TIGRfams. Luckily for us, all of these databases are united under the InterPro consortium (https://www.ebi.ac.uk/interpro/).
+
+
 
 * Click the “Protein summary” menu option in the navigation menu.
 
@@ -215,7 +223,7 @@ Go to the gene page for the Trichuris muris gene TMUE_2000008757 and retrieve th
 5. What identifier would you use to search for the gene in Uniprot?
 6. Where is this gene’s protein predicted to localise to?
 7. Which Pfam domains is the protein predicted to have? Which of these is responsible for its DNA binding activity?
-8. Download the protein alignment of TMUE_2000008757 and its C elegans orthologue. Is there any published literature on the C elegans orthologue? (Hint: follow the link to the WormBase ParaSite page for the C elegans orthologue and look in the “Literature” tab).
+8. Download the protein alignment of TMUE_2000008757 and its _C. elegans_ orthologue. Is there any published literature on the _C. elegans_ orthologue? (Hint: follow the link to the WormBase ParaSite page for the _C. elegans_ orthologue and look in the “Literature” tab).
 
 
 ## Looking at genomes in WormBase ParaSite <a name="wbps_genomes"></a>
@@ -226,11 +234,11 @@ In this section, we’ll explore how genome assemblies are presented in WormBase
 
 ![](figures/figure_4.1.png)
 
-This will take you to a list of all of the genomes currently available in WormBase ParaSite, divided phylogenetically into the nematoda and the platyhelminthes. You might notice that some species (like Ancylostoma ceylanicum in the figure below) have two entries: this is because the research community has produced two different assemblies for these genomes, and WormBase ParaSite makes them both available. In this table you can also find a link to the sequence archive where the genome sequence was originally deposited (‘BioProject ID’) and a link to two different genomes browsers, JBrowse and Ensembl. We’ll cover the use of genome browsers to visualise genomes later. The ‘CEGMA’, ‘BUSCO’ and ‘N50’ columns give some statistics about the quality of the genome assembly. We will cover exactly what these values mean below.
+This will take you to a list of all of the genomes currently available in WormBase ParaSite, divided phylogenetically into the nematoda and the platyhelminthes. You might notice that some species (like _Ancylostoma ceylanicum_ in the figure below) have two entries: this is because the research community has produced two different assemblies for these genomes, and WormBase ParaSite makes them both available. In this table you can also find a link to the sequence archive where the genome sequence was originally deposited (‘BioProject ID’) and a link to two different genomes browsers, JBrowse and Ensembl. We’ll cover the use of genome browsers to visualise genomes later. The ‘CEGMA’, ‘BUSCO’ and ‘N50’ columns give some statistics about the quality of the genome assembly. We will cover exactly what these values mean below.
 
 ![](figures/figure_4.2.png)
 
-* Scroll down the page to find Brugia malayi and click the species name link- this will take you to the B. malayi genome page.
+* Scroll down the page to find _Brugia malayi_ and click the species name link- this will take you to the _B. malayi_ genome page.
 
 ![](figures/figure_4.3.png)
 
