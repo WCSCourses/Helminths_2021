@@ -32,6 +32,7 @@ A **gene** is a unit of the genome, a DNA sequence, that is transcribed into an 
 In eukaryotes, most protein-coding genes are formed by alternating exons and introns (some genes have a single exon), flanked by untranslated regions (UTRs). The exons constitute the only part of the gene that is translated into a polypeptide. Introns are transcribed but soon after excised and the final mature mRNA is formed by a 5’UTR, joined exons and a 3’UTR. A CAP and poly-A tail are added to the 5’ and 3’ ends respectively. These structures are essential to guarantee the molecular stability and downstream processing of the mRNAs.
 
 ![](figures/figure_3.0.5.png)
+FIGURE: gene structure
 
 This figure represents the steps that are needed to transform information encoded in the DNA into a polypeptide and eventually a functional protein. The starting information is encoded in the Genome. A gene encodes, among other things, the transcription start and transcription end. These are the nucleotides from where an RNA copy of the DNA will be generated. This copy is the pre-mRNA which is formed by exons and introns. It also has untranslated regions at the before the first exon (5’ end) and last exon (3’ end) - not shown in this figure. Maturation of the mRNA molecule happens as it is transcribed and involves the slicing (removal) of introns with the concomitant joining of exons, addition of the a CAP at the 5’ end and a polyadenylation tail (many As - AAAAAAA) at the 3’end. A processed mRNA will be the template for the translation of the mRNA message into a protein by the ribosome.
 
@@ -44,6 +45,7 @@ In the cell, genomes are organised into chromosomes. In practice, current DNA se
 The diagram below shows the structure of a typical assembly. It has 3 layers: the contigs are stretches of contiguous DNA sequence without gaps. The scaffolds are ordered sets of contigs separated by gaps of estimated length. In order to make scaffolds from contigs, techniques such as optical mapping and Hi-C are used. Finally, the chromosome is an ordered set of scaffolds separated by gaps on unknown length. To make the chromosome sequence from the scaffold, techniques such linkage mapping and FISH are used.
 
 ![](figures/figure_3.0.75.png)
+FIGURE: contigs -> scaffolds -> chromosomes
 
 Sometimes, there is insufficient (or no) data to reliably place a scaffold into a specific position on a chromosome. In the figure above, this is true of the scaffold on the right. The assembly above therefore comprises 2 toplevel sequences: 1 chromosome, and one unplaced scaffold.
 
@@ -130,6 +132,8 @@ All of the sequences can be downloaded in FASTA format - this is a text format t
 
 Note that this protein sequence is what is known as a conceptual translation: the amino acids have not been sequenced directly, but we can infer the sequence given the predicted structure of the gene (the coordinates of the introns and exons), the underlying DNA sequence and a given codon usage table.
 
+[↥ **Back to top**](#top)
+
 #### Functional annotation: protein domains and GO terms <a name="functional_annotation"></a>
 
 How we do go from a string of amino acids to predicting what this protein might do in the cell? This is where another type of database comes in: protein family databases. 
@@ -138,12 +142,25 @@ For the vast majority of predicted protein sequences, nobody will have done an e
 
 A well known example of a protein domain database is Pfam (http://pfam.xfam.org/). Pfam uses massive multiple alignments of all of the known proteins with a certain domain to capture a representative model of that domain. Other protein domain databases, that might use slightly different methods to define domains, are:  CATH, CDD, HAMAP, MobiDB Lite, Panther, PIRSF, PRINTS, Prosite, SFLD, SMART, SUPERFAMILY and TIGRfams. Luckily for us, all of these databases are united under the InterPro consortium (https://www.ebi.ac.uk/interpro/).
 
+InterPro provide a tool, InterProScan that we can use to search protein sequences against all of the member databases to identify any protein domains that the protein might have:
 
+* Copy the T265_10539 protein sequence from WormBase ParaSite onto your clipboard
+* Go to https://www.ebi.ac.uk/interpro/search/sequence/, paste your sequence into the box and click search.
 
+You may need to wait a few minutes for the search to run.
 
-* Click the “Protein summary” menu option in the navigation menu.
+FIGURE: Interproscan results
+![](figures/figure_3.8.5.png)
 
-On this page we see a pictorial representation of the protein domains that have been annotated to this polypeptide. For every protein in WormBase ParaSite, we have pre-run InterProScan. We can see here that this protein has a match with an Innexin domain in several protein domain databases, and four transmembrane helices.
+On the results page, each horizontal coloured line represents a match between our protein sequence and a domain or motif in one of the InterPro member databases. If you mouse over these, you'll notice that several databases have a match to an Innexin domain. InterPro groups the same domain represented in different databases under a single InterPro accession; in our case this is the Innexin family (IPR000990).
+
+* Click through to read more about the Innexin protein family on the Interpro site.
+
+Hopefully you're convinced that InterProScan is an extremely useful tool for predicting gene and protein function. At WormBase ParaSite, we have pre-run InterProScan to annotate protein domains for all of the genes in our database so you don't have to do it yourself every time!
+
+* Back on WormBase ParaSite, click the “Protein summary” menu option in the navigation menu on the T265_10539 transcript page.
+
+On this page we see a pictorial representation of the protein domains that have been annotated to this polypeptide. Hopefully they look familiar from your own analysis. We can see here that this protein has a match with an Innexin domain in several protein domain databases, and four transmembrane helices.
 
 ![](figures/figure_3.9.png)
 
@@ -153,13 +170,11 @@ The same data is available in tabular format
 
 ![](figures/figure_3.10.png)
 
-Where possible, annotated domains are linked to their entries in the appropriate external database. As you saw in module 1, these often have useful descriptions of what is known about the domain. A good place to start to learn about protein domains is usually the InterPro website: follow the IPR000990 link in the InterPro column to learn more about the biology of protein.
+External references are the identifiers by which the gene (or transcript or protein, in this case) is known in other databases. These usually include RefSeq (the reference sequence database of the NCBI) and UniProt, and sometimes (though not in this case), WormBase ParaSite’s sister database, WormBase.
 
 * Click “External References” in the navigation menu.
 
 ![](figures/figure_3.11.png)
-
-External references are the identifiers by which the gene (or transcript or protein, in this case) is known in other databases. These usually include RefSeq (the reference sequence database of the NCBI) and UniProt, and sometimes (though not in this case), WormBase ParaSite’s sister database, WormBase.
 
 Another fast way to find out about the function of a gene’s product is to see which Gene Ontology (GO) terms have been associated with it. GO is a project that seeks to describe complex biology in a logical, hierarchical and computer-processable way. It is a controlled vocabulary, whereby proteins are associated with GO terms that describe their function. There are three aspects to GO: Cellular Component, Molecular Function and Biological Process. Cellular Component GO terms describe where a protein is localised (in the membrane, extracellular, in the nucleus etc). Molecular Function GO terms describe the biochemical activity of the protein. Biological Process GO terms describe the pathways and broader processes that the protein contributes to.
 
@@ -168,6 +183,8 @@ Another fast way to find out about the function of a gene’s product is to see 
 ![](figures/figure_3.12.png)
 
 WormBase ParaSite imports GO annotations from three sources: terms assigned by UniProt, terms inferred by the protein’s InterPro domains, and terms that have been associated with orthologues of the gene of interest. 
+
+[↥ **Back to top**](#top)
 
 #### Comparative genomics <a name="comparative_genomics"></a>
 
@@ -179,11 +196,11 @@ Another approach to understanding what a gene does is comparative genomics. Worm
 
 The gene tree shows the inferred evolutionary history of the family that this gene is a member of. At the ends of the branches are genes, with our gene of interest highlighted in red. The points where the branches split are called nodes; nodes represent different evolutionary events, with these being represented in the tree by different colours. Dark blue nodes represent speciation events (where two populations of an existing species diverged into two new species). Red nodes represent duplications, where within the genome of one species the gene was duplicated. Turquoise nodes are ambiguous.
 
-Note that the most closely related genes in the tree are from other Strongyloides species: the animal parasites S. venezuelensis and S. papillosus and the human parasite S. stercoralis. These genes are all orthologues of our gene of interest. Orthologues are genes that evolved from a common ancestral gene by speciation; they may have diverged to a greater or lesser degree in their sequences, but often retain their function in their respective species. Similarly, paralogues are genes that have evolved from a common ancestral gene by duplication (see the information box on the Compara pipeline). They are genes that are found in more than one copy in a species’ genome.
+Note that the most closely related gene in the tree is from another _Opisthorchis_ species, _O. felineus_. Orthologues are genes that evolved from a common ancestral gene by speciation; they may have diverged to a greater or lesser degree in their sequences, but often retain their function in their respective species. Similarly, paralogues are genes that have evolved from a common ancestral gene by duplication (see the information box on the Compara pipeline). 
 
 It can be useful to look at alignments of these related proteins to see how well conserved they are. Highly conserved regions are more likely to be essential for the function of the protein.
 
-* Click on the section of the tree labelled “Blood flukes and click “expand this subtree”.
+* Click on the section of the tree labelled “Blood flukes" and click “expand this subtree”.
 
 Next to the main tree, in green, we can see a pictorial summary of the multiple alignment of the proteins of these four genes, with green coloured regions representing alignments and non-coloured regions representing gaps. You may be interested in exploring these alignments at a higher resolution.
 
@@ -201,6 +218,8 @@ Orthologues and paralogues are also available in tabular format, where they can 
 
 In the main table on this page, each row represents an orthologue of *inx*. The table gives details on the nature of the relationship between our *O. viverrini* gene and the gene in the other species, such as whether the gene has one or multiple orthologues in the other species (1-to-1 or 1-to-many), and how similar the two proteins are. Multiple alignments can be viewed by following the links.
 
+[↥ **Back to top**](#top)
+
 #### Compara: further details
 
 Compara is a pipeline, developed by the Ensembl project, which groups related genes into families and defines the evolutionary relationships between them. Below is a summary of the steps of the pipeline:
@@ -210,6 +229,8 @@ Compara is a pipeline, developed by the Ensembl project, which groups related ge
 4. All of the protein sequences in each family are aligned against each other using efficient multiple alignment software.
 5. For each family, a phylogenetic tree is built (using TreeBeST5). Tree building is guided by a species phylogenetic tree.
 6. Orthologues and paralogues are called on the basis of the resulting tree: any two genes separated by speciation events are orthologs, and any two genes in the same species separated by a duplication event are paralogues.
+
+[↥ **Back to top**](#top)
 
 #### Gene page exercise <a name="gene_page_exercise"></a>
 
@@ -224,10 +245,11 @@ Go to the gene page for the Trichuris muris gene TMUE_2000008757 and retrieve th
 7. Which Pfam domains is the protein predicted to have? Which of these is responsible for its DNA binding activity?
 8. Download the protein alignment of TMUE_2000008757 and its _C. elegans_ orthologue. Is there any published literature on the _C. elegans_ orthologue? (Hint: follow the link to the WormBase ParaSite page for the _C. elegans_ orthologue and look in the “Literature” tab).
 
+[↥ **Back to top**](#top)
 
 ## Looking at genomes in WormBase ParaSite <a name="wbps_genomes"></a>
 
-In this section, we’ll explore how genome assemblies are presented in WormBase ParaSite, and look at some commonly used metrics of assembly quality.
+In this section, we’ll explore how genome assemblies are presented in WormBase ParaSite, and look at some commonly used metrics of assembly quality. Earlier, we introduced the idea that a genome assembly is constructed from shorter segments of sequence, pieced back together in the right order. In an ideal world the assembly would be constructed back into chromosomes. Many of the genomes in WormBase ParaSite are much more fragmented than this; this means that a chromsome might actually be represented by hundreds or even thousands of smaller stretches of sequence (scaffolds or contigs). Having a more fragmented genome makes idenifying genes much more challenging, as gene models are more likely to be split across scaffolds. 
 
 * From the WormBase ParaSite homepage, click either the ”Genome List” tab in the tools bar, or the “Genomes” icon.
 
@@ -250,6 +272,7 @@ The genome page has useful summary information about the species and the assembl
 The information in this box tells us about two metrics related to the quality of the assembly: contiguity and completeness. Contiguity describes how many scaffolds a genome is represented by: in a perfectly contiguous reference genome, the number of scaffolds would be equal to the number of chromosomes. Contiguity is described by several values, including the total number of scaffolds in the assembly, the length of the longest scaffold, the N50 length and the N90 length. If all of the scaffolds of the assembly were lined up in order of longest to shortest, the N50 length is the length of the scaffold at the midpoint. Similarly, the N90 length is the length of the scaffold at the 90th percentile. For a given genome, a larger N50 length and N90 length generally indicate a more contiguous assembly.
 
 In the “Assembly statistics” widget, the circumference of the circle represents the whole genome assembly, with scaffolds ordered from longest to shortest. The diameter of the grey colour represents the length of the scaffold represented at each point of the circle. The light grey shading represents the N90 scaffold, whilst the dark grey shading represents the N50 scaffold. The light blue outer ring shows the GC/AT/N percentage of the scaffold.
+
 Mouse over the widget to explore the number of scaffolds contributing to the genome. You should see that the N50 length (14.2 Mb) is the third longest scaffold, and the N90 length (13.5 Mb) is the fifth longest scaffold.
 
 CEGMA and BUSCO are two (similar) methods of assessing genome completeness. They are based on the principle that some genes are so highly conserved across eukaryotic species that they should be present in any genome assembly, in single copy. Generally speaking, a higher percentage of complete CEGMA genes, or single BUSCO genes, indicates a higher quality assembly. A word of warning though: CEGMA and BUSCO are known to underperform for certain taxonomic groups. Although the genes are selected because they are supposed to be universally conserved, this is not always the case. Platyhelminth genomes tend to have lower CEGMA and BUSCO scores; this is not necessarily because the genomes are lower quality, but because some highly conserved eukaryotic genes are truly absent from this group of organisms.
