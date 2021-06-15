@@ -140,9 +140,8 @@ A well known example of a protein domain database is Pfam (http://pfam.xfam.org/
 
 
 
-* Click the “Protein summary” menu option in the navigation menu.
 
-![](figures/figure_3.8.png)
+* Click the “Protein summary” menu option in the navigation menu.
 
 On this page we see a pictorial representation of the protein domains that have been annotated to this polypeptide. For every protein in WormBase ParaSite, we have pre-run InterProScan. We can see here that this protein has a match with an Innexin domain in several protein domain databases, and four transmembrane helices.
 
