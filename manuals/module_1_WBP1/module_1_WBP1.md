@@ -281,6 +281,8 @@ CEGMA and BUSCO are two (similar) methods of assessing genome completeness. They
 
 There are two other Brugia sp. genome assemblies in WormBase ParaSite, which are of much lower quality than Brugia malayi. According to their scaffold statistics and CEGMA/BUSCO scores, which of these two assemblies is more contiguous and complete?
 
+[↥ **Back to top**](#top)
+
 ## BioMart <a name="biomart"></a>
 
 BioMart is an extremely powerful tool that allows you to query WormBase ParaSite data in bulk, with no programming knowledge. Consider the information that we gathered on our gene of interest in part A, by clicking around the gene page. Now imagine that rather than having one gene of interest, we actually have a list of 100 genes. That would be a lot of clicking around on gene pages! BioMart allows you to output all of this data for multiple genes in a few clicks.
@@ -337,6 +339,8 @@ BioMart lets us generate two types of output: data tables, and sequence (FASTA) 
 
 ![](figures/figure_5.8.png)
 
+[↥ **Back to top**](#top)
+
 #### BioMart exercise <a name="biomart_exercise"></a>
 
 In the data directory for module 1, you will find two files containing lists of gene IDs: Sratti_genes.txt, and Smansoni_genes.txt. Use the gene IDs in Sratti_genes.txt to retrieve the following data:
@@ -354,4 +358,4 @@ For these genes, generate a table that maps each gene stable ID to its UniProt I
 9. Retrieve a list of Onchocerca volvulus genes that are annotated with the GO term “reproduction” (or any of its child terms). In the output, include the IDs and short descriptions of the InterPro protein domains associated with the genes.
 10. How many worm pseudogenes are annotated in WBPS? Which worm genomes have annotated pseudogenes?
 
-
+[↥ **Back to top**](#top)
