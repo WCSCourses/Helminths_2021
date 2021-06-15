@@ -1,20 +1,73 @@
-# WormBase ParaSite part 2
+# WormBase ParaSite (part 2)
 
 ## Table of contents
-1. [Tools](#tools)
+1. [Overview and Aims](#aims)
+2. [Tools](#tools)
     * [BLAST](#blast)
+      * [EXERCISE](#blast_exercise)
     * [The genome browser](#genome_browser)
     * [Expression data](#expression_data)
     * [VEP](#vep)
       * [EXERCISE](#vep_exercise)
-2. [Accessing WormBase ParaSite data programmatically](#programmatic_access)
+3. [Accessing WormBase ParaSite data programmatically](#programmatic_access)
     * [Working with sequence and annotation files](#files)
     * [The REST API](#api)
 
+## Overview and Aims <a name="aims"></a>
+
+In this module, we return to WormBase ParaSite. We'll start by looking at four commonly-used tool/ data sets: BLAST, JBrowse (a genome browser), expression data, and the variant effect predictor (VEP). In the second section, we'll apply some of the command line skills that you were introduced to in module 2 to explore WormBase ParaSite data programmatically.
 
 ## Tools <a name="tools"></a>
 
+In this section, we'll look at more ways that you can interact with WormBase ParaSite data. 
+
 ### BLAST <a name="blast"></a>
+
+BLAST (Basic Local Alignment Search Tool) is one of the most commonly used tools to search for sequences that are similar to each other. BLAST is a fast searching programme that is able to compare a query sequence with hundreds to millions of sequences quickly. You can use BLAST to search a query sequence against the sequences in WormBase ParaSite.
+
+BLAST uses three steps. First, it 'chops' the query sequence into small 'words' of typically 3-4 amino acids for proteins or 10-12 nucleotides for DNA sequences (Figure A). Second, it uses these short words to look for perfect matches across all the entries in the database (Figure B). Third, when a match is found it then tries to extend the alignment by comparing consecutive letters of the word. For each new pair of letters, it evaluates whether it is a good match (Figure C). If it is a good match then the score is increased and if it is a bad match the score is reduced. The score table for each pair of amino acids or nucleotides is precomputed and incorporated into the BLAST algorithm.
+
+The extension step will continue until the overall score drops below a given value. At this point, the extension step is dropped and the alignment is recorded with its score. The results are then presented as a list of alignments with associated scores. The alignments with the highest scores are most likely to be true matches or homologues of the query sequence. Other result parameters are reported, such as E-value (expectation value) and the percentage identity. The E-value describes the number of hits that could be found by chance given the length of the sequence and the size of the database. The lower the E-value, the greater the chances that the result is not due to chance.
+
+There are different flavours of the BLAST programme depending on whether the query is a nucleotide or a protein sequence and also depending on the nature (nucleotide or protein) of the database we are searching in. If the query is a nucleotide sequence and we are searching for matches in a nucleotide database, the program to use is BLASTn. Similarly, if the query is a protein sequence and we are looking for matches in a protein database, the programme to use is BLASTp.
+
+But what should you do when the query and the database are different? For example, if you want to query a protein sequence to find the best matches in a nucleotide database? In order to make an alignment, query and subject need to be of the same nature. Helpfully, BLAST can translate all the entries in the nucleotide database into protein sequences - each sequence can be translated into the 6 possible frames! You can then use the resulting "translated database" as the subject for the search. This flavour of BLAST is called tBLASTn. In the reverse scenario, when a nucleotide sequence is the query and you want to search a protein database. The query is translated into the 6 possible frames and is then aligned to the query. This is called BLASTx.
+
+[↥ **Back to top**](#top)
+
+### BLAST exercise <a name="blast_exercise"></a>
+
+Use WormBase ParaSite BLAST to find out the identity of this gene, and which species it belongs to. Does it have any close hits in other genomes?
+
+```
+TTTGCAGATGCTTCTCCCTTCAAACTTGACGACGTCAACATTAATGACGTCATCATCAGA
+ATCGTACGACGCTGATAATCCGGGGCTTCCGCCTGAGCCAATCCTGTCGGATTACGTGGA
+AATGTTCACTTTGGTGCTCAATTTTATTGTTGGCGCGCCGTTGAACCTGGCCGCTTATAC
+ACAGCTAAGCGAACGACCTACATCAACGCGGTTAGACCTTCTGAAGCGATCACTCAACTA
+TTCGGATCTTCTCGTTCTATTCATCTACGTACCATCTCGTGCCTGCTGGTTATTGACCTA
+CGATTGGCGGGGTGGAGATGCACTCTGTAAAATTGTCAAGATGTTTCATACGTTCGCGTT
+TCAGAGCTCCTCCAACGTGATCGTGTGCATCGCCGTGGATCGCCTGCTATCCGTCCTCTC
+CCCATCCCATCACAGCCCCAACAAAGCCCTGAAACGGACTAAAATGATGTTAATAGTCGC
+GTGGATAGTAGCGCTAGTAATCTCATGCCCACAACTTTTCATCTGGAAAGCATATCTAGC
+ACTTCCCGAGTATAATTGGAGCCAGTGTCTGCAAATTTGGGAGATTGCACGGATGGAAAA
+ATTCAACAAACCACAGGTAGTGCCAGAGTTTGACGCCGAGTTCTGGTACAGCATACTGCA
+TATTAGTCTCGTTTTTTGGATCCCTTGTATCATTATCATGCTATCCTACATCATAGTCAT
+CTCATGGGTATGGATCAACTCTCGGCCGTCCATCCGTCACACCTCTTCATTTTCCTTCCA
+CACCGGCTGCGATACGGTAGATACAGTACTGACTAGAGCCTCTGAATGGAATCCTTTGAA
+GACATTCTCCCGTCACGTCAACATCAAGGAGCCCGAGAAGCCGATGACGACTCCCAGAAT
+CGTGGTCAGCGACGAGACGGAGGTCCCACTGACGCAGCGACCATCGATTTCTCCGTCGGA
+AGCGTCGGCGGTGATGAGGACCGGTGTGCACACGAGTACCTCGTATAATGCTAATTTGAA
+TCGATCCCGAGCCCTGCGAGTTTCCTTGCTACTAGTCGTCGCGTACATCATCTGCTGGCT
+ACCATATAACCTCATAAGTCTTATCCAATTTCTTGATCGGGACTTTTTTTCGTCATATCT
+TAAACATGTCCACTTCTGCCAACAACTAATCATTTTTAACTCGGTCGTCAATCCATGGCT
+CTACGGTTTCTTCGGTCCCCGCCGCCCGTCTACCACCGGTGCCGGCCGTCACTGATCTCC
+AAACATCAAACATCGAATTCGCCATATCTTTCCAAAATCCCCCCAACGTTCCAGTTTTCA
+AGCCCAACGAATTGCCAATGCCATATCTTTAACAACTTTTATGGTTTCTTGTTTGTTTTT
+TTTTATTTATTTTATTGTAATGTTTGATTCTCGGTGAAAAATTTGTGTAAAATAAATTAT
+TTTTTATGTGAAA
+```
+
+[↥ **Back to top**](#top)
 
 ### The genome browser <a name="genome_browser"></a>
 
@@ -75,7 +128,7 @@ For most species, in addition to the gene model (“Genome Annotation”) track,
 
 2. RNASeq tracks - WormBase ParaSite has a process of finding and aligning RNASeq data in the sequencing archives for our species of interest. These can be useful, for example, for checking that a gene model is well supported by expression data, or seeing in which life stages, or under which conditions, a gene of interest is transcribed.
 
-For species with a lot of publicly available data, such as S. mansoni, the easiest way to explore the samples that are available is by using the facets on the left hand side. When sequencing experiments are submitted to the archives, submitters are asked to provide metadata on the samples (that is, to describe the samples in a detailed and structured way). This data is used to classify the samples in JBrowse.
+For species with a lot of publicly available data, such as _S. mansoni_, the easiest way to explore the samples that are available is by using the facets on the left hand side. When sequencing experiments are submitted to the archives, submitters are asked to provide metadata on the samples (that is, to describe the samples in a detailed and structured way). This data is used to classify the samples in JBrowse.
 
 Let’s say you want to see in which life stages Smp_312440 is expressed.
 
@@ -111,7 +164,6 @@ Going back to the main JBrowse window, a new track has appeared with all instanc
 
 #### Visualising your own data
 
-
 As well as looking at publicly available data, you can use WormBase ParaSite JBrowse to visualise your own data. We’ll demonstrate how to do this using a BAM file that we have provided for you. BAM is a type of sequence file, in this case of RNA sequencing data. BAM files are binary (i.e., compressed and not human readable) versions of SAM files. SAM files are tab-delimited text files; each line in a SAM file represents a sequencing read, and (optionally) a description of how that read is aligned to a reference sequence.
 
 In the module 3 data directory you should find a file named somules_isoseq_sorted.bam. This is a binary file, so trying to read it as it is won’t be very informative. samtools is a useful software package for manipulating SAM and BAM files. We’ll use a samtools command to convert the BAM file to a SAM file so we can have a look at how it’s structured. Move to the module 3 data directory and type the following into your terminal:
@@ -145,8 +197,13 @@ To add the BAM track, select the “Track” menu option in the top left of the 
 
 Now we can see the IsoSeq reads aligned to the genome. Notice that IsoSeq data is stranded- this means that the library preparation protocol preserved information on which end of the RNA molecule was 5-prime and which end was 3-prime, so we can infer which strand of DNA it was transcribed from. This information is encoded in the BAM file, and JBrowse colours the reads accordingly: reads aligning to the forward strand are pink, and reads aligning to the reverse strand are purple.
 
+[↥ **Back to top**](#top)
 
 ### Expression data <a name="expression_data"></a>
+
+Earlier in this section, we looked at a gene in JBrowse and used RNAseq tracks to see in which life stages it was expressed. What if you were interested in transcriptional differences between life stages, but didn't have a specific gene in mind? You might want to retrieve **all** of the _S. mansoni_ genes that are differentially expressed between life cycle stages. WormBase ParaSite has collated RNAseq data from publicly available studies and analysed it against our genomes and annotations.
+
+[↥ **Back to top**](#top)
 
 ### VEP <a name="vep"></a>
 
@@ -170,6 +227,8 @@ The standard file format for storing variation data is VCF (variant call format)
 The pie charts give a summary of the consequences of the variants found in the file. Variants with coding consequences are found in the protein-coding sequence of genes, whilst variants with non-coding consequences are in intergenic regions or non-coding regions of genes. These variants could still be functionally important; for example, variants in non-coding regions near genes can have effects on expression levels.
 You can explore the results interactively on the webpage, or download them to file.
 
+[↥ **Back to top**](#top)
+
 #### VEP exercise <a name="vep_exercise"></a>
 
 Download the VEP results from the example above as a “VEP file”. Use this file and the original VCF file to answer the following questions:
@@ -187,6 +246,8 @@ Download the VEP results from the example above as a “VEP file”. Use this fi
 Hint: to view the VCF in JBrowse you first need to compress and index it. Do:
 
     bgzip h_microstoma.vcf && tabix -p vcf h_microstoma.vcf.gz
+
+[↥ **Back to top**](#top)
 
 ## Accessing WormBase ParaSite data programmatically <a name="programmatic_access"></a>
 
@@ -283,11 +344,12 @@ meloidogyne_arenaria_prjna438575
 ```
 
 * Put the list of species names in a file in your working directory:
+     
     curl -L 'https://parasite.wormbase.org/rest/info/genomes/taxonomy/Meloidogyne?' -H 'Content-type:application/json'  | jq -r '.[] | .species' > species.txt
 
 The next endpoint that we need is the quality endpoint. Find it on the WormBase ParaSite API endpoint page and have a look at the example.
 
-![](figures/rest_4.png)
+![](figures/rest_4.png)e
 
 We will need to replace the species name in the URL, and make a separate request for each species. We can write a small loop in bash, reading from our species file, to achieve this:
 
@@ -336,6 +398,7 @@ meloidogyne_floridensis_prjeb6016 62.10 29.7
 We can see that M. incognita, two M. arenaria assemblies and M. javanica all have CEGMA completeness scores of around 96%.
 
 #### API exercises
+
 Adapt the commands that you used above to retrieve the following information from the WormBase ParaSite API. For questions 2 and 3, you’ll need to use different endpoints.
 
 1. List the Meloidogyne sp. assemblies by size, smallest to largest.
@@ -343,6 +406,7 @@ Adapt the commands that you used above to retrieve the following information fro
 2. Retrieve the protein sequence of the guinea worm transcript DME_0000938001-mRNA-1.
 
 2b. Write a small program, `get_sequence_for_transcript`, that takes any transcript ID as an argument and returns its protein sequence. For example, running
+
     ./get_sequence_for_transcript DME_0000938001-mRNA-1
     
 should print MAKHNAVGIDLGTTYSC...
@@ -352,6 +416,7 @@ should print MAKHNAVGIDLGTTYSC...
 3. Retrieve a GFF file of all of the genes located on the AgB01 scaffold of the Ascaris suum PRJNA62057 assembly, between the following coordinates: 5284000 to 5836000.
 
 3b. Write a program, `retrieve_genes_in_region` which takes species, scaffold, start and end coordinates as arguments and can return the above for any given region. For example, calling
+
     ./retrieve_genes_in_region ascaris_suum_prjna62057 AgB01 5284000 5836000
 
 should print the same result as question 3.
