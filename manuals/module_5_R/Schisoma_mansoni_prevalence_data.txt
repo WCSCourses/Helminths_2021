@@ -1,4 +1,4 @@
-Region	Country	ISO code	ADM1	Latitude	Longitude	Year start	Year end	Age start	Age end	No. indiv surveyed	No. positives	Prevalence
+Region	Country	ISO_code	ADM1	Latitude	Longitude	Year_start	Year_end	Age_start	Age_end	Individuals_surveyed	Number_Positives	Prevalence
 Africa	Ethiopia	ET	SNNPR	7.016667	38.583332	2010	2010	6	22	299	224	0.74916
 Africa	Ethiopia	ET	Amhara	10.55359	39.971619	2010	2011	5	20	300	171	0.57
 Africa	Ethiopia	ET	Amhara	10.40629	37.222359	2010	2011	5	20	320	158	0.49375
