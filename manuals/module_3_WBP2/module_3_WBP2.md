@@ -201,7 +201,34 @@ Now we can see the IsoSeq reads aligned to the genome. Notice that IsoSeq data i
 
 ### Expression data <a name="expression_data"></a>
 
-Earlier in this section, we looked at a gene in JBrowse and used RNAseq tracks to see in which life stages it was expressed. What if you were interested in transcriptional differences between life stages, but didn't have a specific gene in mind? You might want to retrieve **all** of the _S. mansoni_ genes that are differentially expressed between life cycle stages. WormBase ParaSite has collated RNAseq data from publicly available studies and analysed it against our genomes and annotations.
+Earlier in this section, we looked at a gene in JBrowse and used RNAseq tracks to see in which life stages it was expressed. What if you were interested in transcriptional differences between life stages, but didn't have a specific gene in mind? You might want to retrieve **all** of the _S. mansoni_ genes that are differentially expressed between life cycle stages. WormBase ParaSite has collated RNAseq data from publicly available studies and analysed it against our genomes and annotations. This means that if somebody has already done the experiment to compare the conditions that you're interested in, you can look up pre-calculated differentially expressed genes. 
+
+* Navigate back to the _S. mansoni_ genome landing page, and select "Gene expression"
+
+![](figures/expression_1.png)
+
+We can see a summary of the different experiments that have been analysed. We're interested in life cycle stages, so select the first experiment "Schistosoma mansoni transcriptomics at different life stages". 
+
+![](figures/expression_2.png)
+
+For each analysed experiment, we have a summary of the conditions for which data is available. You'll learn much more about how transcriptomic experiments are analysed in module 7, but for those who are interested we have used TopHat2 to align reads to the genome, HTSeq to quantify counts per gene and DESeq2 to compute differential expression per condition.  Several files are available for download. These are:
+
+* **Characteristics and conditions per run** - a file summarising the metadata available for each sample/run in the experiment.
+* **Counts of aligned reads per run (FeatureCounts)** - for each gene, raw counts per sample/run as produced by HTSeq (not normalised for library size).
+* **Gene expression (TPM) per run** - for each gene, counts per sample/run normalised for gene length and library size (TPM = transcripts per million).
+* **Gene expression (TPM) per condition as median across replicates** - As above, but a median value is calculated from all samples/runs of the same condition.
+* **Differential expression** - The number of files here varies. For each experiment, we extract the different facets for which pair-wise comparisons are possible. For this experiment, only one variable is changing between the samples (developmental stage), so we have 3 possible contrasts: 24h schistosomule v 3h schistosomule, 24h schistosomule v cercariae and 3h schistosomule v cercariae. The experiment below is more complicated; we have several facets changing between conditions (drug treatment, development stage, timepoint, strain **and** sex), resulting in many more possible contrasts. We calculate differential expression for any pairwise combination of conditions that have three or more replicates: it's down to you to choose which of those comparisons is biologically meaningful. There are 2 types of file available here:
+    1. Summary files: for each combination of variables for which comparisons have been calculated, this file contains the genes that show a significant difference in at least one comparison.
+    2. Full results files: each of these files contain the full DESeq2 results for a contrast (i.e., fold changes for ALL genes, whether or not they are statistically significant).
+
+[↥ **Back to top**](#top)
+
+### Expression data exercise <a name="expression_exercise"></a>
+
+Download the full results files for the "Schistosoma mansoni transcriptomics at different life stages" experiment. Use some of the commands you learned yesterday to extract the following information from the "3-hour-schistosomule-vs-cercariae.tsv" file:
+
+1. Extract the top 5 most significantly regulated genes (hint: the final column, "padj", gives the adjusted p value. A smaller adjusted p value = more significant).
+2. Of the genes with an adjusted p-value that is less than 0.05, which is (a) most highly upregulated in the 3h schistosomules v the cercariae (b) most strongly upregulated in the cercariae v the 3h schistosomules.
 
 [↥ **Back to top**](#top)
 
