@@ -13,6 +13,7 @@
 3. [Accessing WormBase ParaSite data programmatically](#programmatic_access)
     * [Working with sequence and annotation files](#files)
     * [The REST API](#api)
+      * [EXERCISE](#api_exercise)
 
 ## Overview and Aims <a name="aims"></a>
 
