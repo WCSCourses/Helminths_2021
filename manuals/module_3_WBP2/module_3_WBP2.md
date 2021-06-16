@@ -280,7 +280,104 @@ Hint: to view the VCF in JBrowse you first need to compress and index it. Do:
 
 ## Accessing WormBase ParaSite data programmatically <a name="programmatic_access"></a>
 
+So far we've seen how you can interact with WormBase ParaSite data via a web browser, and how to query data in bulk using BioMart. In this final section we'll look at ways that you can interact with the same data but from the command line- first by downloading and processing files, and second via our REST API.
+
 ### Working with sequence and annotation files <a name="files"></a>
+
+For some analysis tasks you will need to download large data files. For example, if running software to align sequencing reads to the genome you'll need a genome FASTA file (we met this format earlier), and if you want to see which genes your reads overlap we'll need a GFF or GTF file. All of these files are accessible on WormBase ParaSite in two ways:
+
+1. On each genome landing page, in the Downloads section
+2. Via our structured FTP site, which you can access here: ftp://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/current/species/
+
+Note that, increasingly, web browsers do not allow FTP traffic. This means that you might need to use a dedicated FTP client to navigate and download files from the FTP site- we have installed one of these on your virtual machine. The FTP site also has data from all previous WormBase ParaSite releases: this can be useful if you need to retrieve data from a specific release. Let's have a look at the files that are available for download.
+
+![](figures/files_1.png)
+
+Note first of all that all of the files are compressed (gzipped) to save space- you can tell by the ".gz" file extension. The files come in three flavours:
+
+#### FASTA files
+
+FASTA files have a ".fa" extension. We met this format in module 1. They are sequence files, with a header line (denoted by ">") followed by a DNA or amino acid sequence on the next line. We provide three types of annotation FASTA file - proteins, CDS sequences and full length mRNA sequences. We also provide genome FASTA files: these may be soft-masked, hard-masked or not masked at all. Masking is the process of marking up repetitive or low complexity sequences in the genome: "hard-masking" means replacing these bases with Ns, whereas "soft-masking" means making them lower-case. Many bioinformatics software packages are designed to work with hard-masked or soft-masked genomes.
+
+#### Annotation files
+
+Annotation files are files that describe features (such as genes) on the genome. They come in two common formats, GFF (general feature format) and GTF (general transfer format). The full specification is available elsewhere (http://gmod.org/wiki/GFF3), but in short: each line describes a single feature, and related features can be linked together in a parent/child hierarchy. For example, an exon feature's parent might be an mRNA feature, and that mRNA's parent will be a gene feature.
+
+![](figures/files_2.png)
+
+#### Ortholog/paralog files
+
+Finally, we provide TSV (tab-separated variable) files containing calculated ortholog and paralog relationships for all genes in this genome.
+
+```wget``` is a handy utility for retrieving files from an FTP site. The following will pull down the _Necator americanus_ GFF3 file into your working directory:
+
+```
+wget ftp://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/current/species/necator_americanus/PRJNA72135/necator_americanus.PRJNA72135.WBPS15.annotations.gff3.gz
+
+```
+
+Unzip the file and have a look at the contents:
+
+```
+gunzip necator_americanus.PRJNA72135.WBPS15.annotations.gff3.gz 
+less necator_americanus.PRJNA72135.WBPS15.annotations.gff3
+```
+
+Using the commands that you learned yesterday, we can manipulate these files to extract all sorts of information. For example, extract all of the gene features on scaffold "KI657457":
+
+```
+grep -v "#"  necator_americanus.PRJNA72135.WBPS15.annotations.gff3  | awk '$3~/gene/ && $1~/KI657457/ {print}'  | grep -o "Name=[^;]\+" | sed -e 's/Name=//' | wc -l
+```
+
+Count how many genes each scaffold is annotated with:
+
+```
+grep -v "#"  necator_americanus.PRJNA72135.WBPS15.annotations.gff3  | awk '$3~/gene/{print}'  | cut -f 1 | sort | uniq -c
+```
+
+Similarly, using the protein FASTA file:
+
+```
+# download the file
+wget ftp://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/current/species/necator_americanus/PRJNA72135/necator_americanus.PRJNA72135.WBPS15.protein.fa.gz
+
+# unzip 
+gunzip necator_americanus.PRJNA72135.WBPS15.protein.fa.gz
+
+# count the number of proteins
+grep -c "^>" necator_americanus.PRJNA72135.WBPS15.protein.fa 
+
+# extract the sequence of NECAME_00165
+sed -n -e '/NECAME_00165/,/^>/p' necator_americanus.PRJNA72135.WBPS15.protein.fa | sed -e '$d'
+```
+
+And a more complicated ```awk``` to count scaffold lengths in a genome FASTA file:
+
+```
+# download the file
+
+# unzip 
+
+# count the lengths
+```
+
+Exercises
+
+Tweak the above examples to answer these questions from the files that you've just downloaded:
+
+1. Which _N. americanus_ scaffold has the most genes?
+2. Write a loop to extract the sequences of all of these genes:
+```
+
+
+
+```
+
+
+
+
+
+
 
 ### The REST API <a name="api"></a>
 
@@ -294,7 +391,7 @@ There are a few situations where accessing WormBase ParaSite data via the API mi
 
 3. Some types of data are not available in BioMart (such as CEGMA and BUSCO scores), and can only be accessed via the website or the API
 
-In an earlier exercise, you used the assembly statistics widget on the genome page to compare Brugia sp. genome assemblies. In this example, we’ll do the same for the Meloidogyne sp. assemblies, using the API.
+In an earlier exercise, you used the assembly statistics widget on the genome page to compare _Brugia sp._ genome assemblies. In this example, we’ll do the same for the Meloidogyne sp. assemblies, using the API.
 
 * From the WormBase ParaSite home page, select “REST API” from the toolbar.
 
