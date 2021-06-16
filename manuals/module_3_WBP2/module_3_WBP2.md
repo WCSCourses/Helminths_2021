@@ -7,6 +7,7 @@
       * [EXERCISE](#blast_exercise)
     * [The genome browser](#genome_browser)
     * [Expression data](#expression_data)
+      * [EXERCISE](#expression_exercise)
     * [VEP](#vep)
       * [EXERCISE](#vep_exercise)
 3. [Accessing WormBase ParaSite data programmatically](#programmatic_access)
