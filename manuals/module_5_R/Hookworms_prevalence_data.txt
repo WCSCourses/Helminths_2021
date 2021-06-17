@@ -1,0 +1,1001 @@
+Region	Country	ISO_code	ADM1	Latitude	Longitude	Year_start	Year_end	Age_start	Age_end	Individuals_surveyed	Number_Positives	Prevalence
+Africa	Angola	AO	Bengo	-8.58527	13.59035	2010	2010	0	80	7	0	0
+Africa	Angola	AO	Bengo	-8.62627	13.68851	2010	2010	0	80	12	0	0
+Africa	Angola	AO	Bengo	-8.61058	13.5579	2010	2010	0	80	83	2	0.0241
+Africa	Angola	AO	Bengo	-8.62011	14.2284	2010	2010	0	80	84	10	0.11905
+Africa	Angola	AO	Bengo	-8.5303	13.72491	2010	2010	0	80	21	1	0.04762
+Africa	Angola	AO	Bengo	-8.60425	13.62522	2010	2010	0	80	80	0	0
+Africa	Angola	AO	Bengo	-8.62514	13.97782	2010	2010	0	80	53	3	0.0566
+Africa	Angola	AO	Bengo	-8.62479	13.75433	2010	2010	0	80	24	0	0
+Africa	Angola	AO	Bengo	-8.64164	14.01967	2010	2010	0	80	63	5	0.07937
+Africa	Angola	AO	Bengo	-8.5965	13.55244	2010	2010	0	80	93	1	0.01075
+Africa	Angola	AO	Bengo	-8.64139	13.67769	2010	2010	0	80	25	8	0.32
+Africa	Angola	AO	Bengo	-8.53289	13.79967	2010	2010	0	80	37	4	0.10811
+Africa	Angola	AO	Bengo	-8.393	13.733	2010	2010	0	80	55	3	0.05455
+Africa	Angola	AO	Bengo	-8.57368	13.54202	2010	2010	0	80	50	1	0.02
+Africa	Angola	AO	Bengo	-8.64771	14.0442	2010	2010	0	80	61	10	0.16393
+Africa	Angola	AO	Bengo	-8.57115	13.52756	2010	2010	0	80	32	0	0
+Africa	Angola	AO	Bengo	-8.388	13.772	2010	2010	0	80	32	4	0.125
+Africa	Angola	AO	Bengo	-8.5365	13.7213	2010	2010	0	80	8	0	0
+Africa	Angola	AO	Bengo	-8.532	13.692	2010	2010	0	80	53	0	0
+Africa	Angola	AO	Bengo	-8.628011	14.08838	2010	2010	0	80	50	6	0.12
+Africa	Angola	AO	Bengo	-8.535	13.884	2010	2010	0	80	7	1	0.14286
+Africa	Angola	AO	Bengo	-8.49445	13.82177	2010	2010	0	80	14	2	0.14286
+Africa	Angola	AO	Bengo	-8.57188	13.67278	2010	2010	0	80	71	3	0.04225
+Africa	Angola	AO	Bengo	-8.61998	14.22051	2010	2010	0	80	77	2	0.02597
+Africa	Angola	AO	Bengo	-8.58808	13.64072	2010	2010	0	80	83	0	0
+Africa	Angola	AO	Bengo	-8.59152	13.60939	2010	2010	0	80	43	0	0
+Africa	Angola	AO	Bengo	-8.58497	13.59818	2010	2010	0	80	61	1	0.01639
+Africa	Angola	AO	Bengo	-8.64921	14.16037	2010	2010	0	80	49	1	0.02041
+Africa	Angola	AO	Bengo	-8.643	13.793	2010	2010	0	80	3	0	0
+Africa	Angola	AO	Bengo	-8.59955	13.53501	2010	2010	0	80	45	1	0.02222
+Africa	Angola	AO	Bengo	-8.52267	13.68633	2010	2010	0	80	35	0	0
+Africa	Angola	AO	Bengo	-8.58268	13.66638	2010	2010	0	80	87	1	0.01149
+Africa	Angola	AO	Bengo	-8.75398	13.91604	2010	2010	0	80	19	3	0.15789
+Africa	Angola	AO	Bengo	-8.55742	13.69416	2010	2010	0	80	36	1	0.02778
+Africa	Angola	AO	Bengo	-8.72098	13.79316	2010	2010	0	80	31	6	0.19355
+Africa	Angola	AO	Bengo	-8.63459	14.00663	2010	2010	0	80	9	0	0
+Africa	Angola	AO	Bengo	-8.61429	14.20523	2010	2010	0	80	47	0	0
+Africa	Angola	AO	Bengo	-8.439	13.82	2010	2010	0	80	7	0	0
+Africa	Burundi	BI	Bururi	-3.85986	29.481001	2007	2007	10	16	60	17	0.28333
+Africa	Burundi	BI	Cibitoke	-2.84253	29.2787	2007	2007	10	16	60	30	0.5
+Africa	Burundi	BI	Ngozi	-2.83856	29.6702	2007	2007	10	16	60	1	0.01667
+Africa	Burundi	BI	Bubanza	-3.16364	29.3888	2007	2007	10	16	60	31	0.51667
+Africa	Burundi	BI	Bujumbura	-3.41623	29.4095	2007	2007	10	16	60	21	0.35
+Africa	Burundi	BI	Mwaro	-3.53128	29.7467	2007	2007	10	16	60	6	0.1
+Africa	Burundi	BI	Makamba	-4.20334	29.708401	2007	2007	10	16	60	12	0.2
+Africa	Burundi	BI	Muyinga	-2.89833	30.3589	2007	2007	10	16	60	11	0.18333
+Africa	Burundi	BI	Kirundo	-2.53364	30.351601	2007	2007	10	16	60	9	0.15
+Africa	Burundi	BI	Cankuzo	-3.22755	30.603001	2007	2007	10	16	60	7	0.11667
+Africa	Burundi	BI	Cibitoke	-2.77653	29.0767	2007	2007	10	16	60	17	0.28333
+Africa	Burundi	BI	Makamba	-4.17233	30.0172	2007	2007	10	16	60	15	0.25
+Africa	Burundi	BI	Cankuzo	-3.17063	30.7673	2007	2007	10	16	60	17	0.28333
+Africa	Burundi	BI	Ngozi	-2.79925	29.9471	2007	2007	10	16	60	12	0.2
+Africa	Burundi	BI	Karuzi	-3.12156	30.003	2007	2007	10	16	60	4	0.06667
+Africa	Burundi	BI	Makamba	-4.29587	29.570801	2007	2007	10	16	54	8	0.14815
+Africa	Burundi	BI	Rutana	-3.77378	30.043699	2007	2007	10	16	60	4	0.06667
+Africa	Burundi	BI	Kayanza	-3.15793	29.709	2007	2007	10	16	60	11	0.18333
+Africa	Burundi	BI	Ruyigi	-3.6178	30.280899	2007	2007	10	16	60	26	0.43333
+Africa	Burundi	BI	Bururi	-3.74238	29.667601	2007	2007	10	16	60	3	0.05
+Africa	Burundi	BI	Kirundo	-2.55958	30.024401	2007	2007	10	16	60	7	0.11667
+Africa	Burundi	BI	Gitega	-3.45176	29.8818	2007	2007	10	16	60	20	0.33333
+East and Southeast Asia	China	CN	Yunnan	21.81	100.35	2006	2006	4	99	215	191	0.88837
+Africa	Cote D'Ivoire	CI	Lagunes	5.602917	-4.61625	2008	2008	6	15	112	62	0.55357
+Africa	Cote D'Ivoire	CI	Agneby	5.661667	-4.143889	2011	2011	0	5	118	12	0.144
+Africa	Eritrea	ER	Gash Barka	15.1074	37.587399	2002	2002	5	16	40	1	0.025
+Africa	Eritrea	ER	Anseba	15.8688	38.458199	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Debub	15.1004	38.8325	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Anseba	15.5975	38.8148	2002	2002	5	16	40	1	0.025
+Africa	Eritrea	ER	Maekel	15.3289	38.937199	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	NRS	15.8406	39.055	2002	2002	5	16	41	0	0
+Africa	Eritrea	ER	Debub	15.0713	39.048401	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Debub	14.8328	39.4207	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Debub	14.624	38.8298	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	NRS	15.7852	39.336102	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Maekel	15.4253	38.8974	2002	2002	5	16	42	0	0
+Africa	Eritrea	ER	Anseba	15.7777	38.451	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Maekel	15.5465	38.895199	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Gash Barka	15.5433	37.884602	2002	2002	5	16	41	0	0
+Africa	Eritrea	ER	Debub	14.8873	38.809502	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Gash Barka	15.0976	37.394001	2002	2002	5	16	42	0	0
+Africa	Eritrea	ER	NRS	15.2785	39.573898	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Debub	14.6168	38.8064	2002	2002	5	16	40	1	0.025
+Africa	Eritrea	ER	Gash Barka	15.1196	37.5965	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Anseba	15.8296	38.757599	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Anseba	15.6786	38.3451	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Anseba	16.2535	38.360901	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	SRS	14.6857	40.958099	2002	2002	5	16	39	0	0
+Africa	Eritrea	ER	Gash Barka	15.3187	37.59	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	SRS	14.6846	40.9585	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Anseba	15.725	38.3167	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Maekel	15.2105	38.961102	2002	2002	5	16	41	0	0
+Africa	Eritrea	ER	NRS	16.663099	38.4832	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Anseba	15.7866	38.452999	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Gash Barka	15.2844	37.706402	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	NRS	15.067	39.746601	2002	2002	5	16	41	0	0
+Africa	Eritrea	ER	SRS	13.5667	41.5159	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Anseba	16.053801	38.2108	2002	2002	5	16	40	1	0.025
+Africa	Eritrea	ER	Maekel	15.2669	38.895	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Debub	15.2254	39.1563	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Anseba	16.012501	38.227901	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Gash Barka	15.1117	37.602501	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Maekel	15.338	38.9478	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	Maekel	15.333	38.853901	2002	2002	5	16	40	0	0
+Africa	Eritrea	ER	NRS	15.6889	39.4072	2002	2002	5	16	40	0	0
+Africa	Ethiopia	ET	Amhara	12.62	37.456944			10	14	100	6	0.06
+Africa	Ethiopia	ET	Amhara	9.633333	39.433334	2008	2008	6	19	664	3	0.00452
+Africa	Ghana	GH	Ashanti	7.29777	-1.69348	2008	2008	9	18	60	4	0.06667
+Africa	Ghana	GH	Central	5.13012	-1.20266	2008	2008	8	16	60	0	0
+Africa	Ghana	GH	Central	5.52141	-1.32958	2008	2008	8	15	60	0	0
+Africa	Ghana	GH	Central	5.57634	-1.47065	2008	2008	8	17	60	0	0
+Africa	Ghana	GH	Northern	9.08243	-1.82569	2008	2008	10	18	60	5	0.08333
+Africa	Ghana	GH	Ashanti	6.59281	-1.85902	2008	2008	10	15	60	2	0.03333
+Africa	Ghana	GH	Upper East	10.974	-0.48386	2008	2008	11	19	60	6	0.1
+Africa	Ghana	GH	Ashanti	6.58103	-1.11844	2008	2008	9	18	60	5	0.08333
+Africa	Ghana	GH	Northern	8.47081	-2.1748	2008	2008	8	18	60	1	0.01667
+Africa	Ghana	GH	Northern	9.67984	0.17254	2008	2008	7	18	60	1	0.01667
+Africa	Ghana	GH	Northern	8.92265	0.26661	2008	2008	5	19	60	7	0.11667
+Africa	Ghana	GH	Eastern	7.17522	0.194175	2008	2008	11	11	1	0	0
+Africa	Ghana	GH	Ashanti	6.97185	-2.1059	2008	2008	7	18	60	2	0.03333
+Africa	Ghana	GH	Western	6.32644	-3.01553	2008	2008	8	16	59	0	0
+Africa	Ghana	GH	Central	6.20005	-2.15405	2008	2008	6	20	58	0	0
+Africa	Ghana	GH	Eastern	7.00249	0.175915	2008	2008	7	16	60	0	0
+Africa	Ghana	GH	Upper East	11.0007	-0.818165	2008	2008	11	18	59	1	0.01695
+Africa	Ghana	GH	Northern	10.1355	-1.34494	2008	2008	9	19	60	4	0.06667
+Africa	Ghana	GH	Upper West	10.6826	-2.03469	2008	2008	9	27	60	0	0
+Africa	Ghana	GH	Upper West	10.9055	-2.17464	2008	2008	10	19	60	0	0
+Africa	Ghana	GH	Upper West	10.1322	-2.40027	2008	2008	8	15	60	0	0
+Africa	Ghana	GH	Brong Ahafo	7.77859	-0.480775	2008	2008	9	19	60	9	0.15
+Africa	Ghana	GH	Eastern	6.84981	-0.0222	2008	2008	10	18	60	0	0
+Africa	Ghana	GH	Upper East	10.5116	-1.37215	2008	2008	8	22	60	1	0.01667
+Africa	Ghana	GH	Northern	9.9209	-0.30299	2008	2008	4	17	60	1	0.01667
+Africa	Ghana	GH	Western	4.9743	-1.89335	2008	2008	9	17	60	0	0
+Africa	Ghana	GH	Brong Ahafo	8.21325	-0.649185	2008	2008	7	18	60	10	0.16667
+Africa	Ghana	GH	Eastern	5.78349	-0.2328	2008	2008	9	15	60	3	0.05
+Africa	Ghana	GH	Upper West	10.8429	-1.92346	2008	2008	11	18	60	0	0
+Africa	Ghana	GH	Northern	10.2363	0.2371	2008	2008	6	18	60	0	0
+Africa	Ghana	GH	Upper East	10.9756	-1.10636	2008	2008	7	16	60	1	0.01667
+Africa	Ghana	GH	Western	5.00956	-2.41632	2008	2008	8	16	60	0	0
+Africa	Ghana	GH	Upper West	10.6648	-2.78997	2008	2008	10	19	60	0	0
+Africa	Ghana	GH	Northern	9.16577	-1.5091	2008	2008	9	21	60	2	0.03333
+Africa	Ghana	GH	Ashanti	6.87843	-1.36937	2008	2008	10	19	60	1	0.01667
+Africa	Ghana	GH	Northern	8.55702	-0.50885	2008	2008	6	17	60	4	0.06667
+Africa	Ghana	GH	Northern	8.84099	-0.92221	2008	2008	7	24	60	0	0
+Africa	Ghana	GH	Ashanti	6.92548	-1.37612	2008	2008	9	15	60	3	0.05
+Africa	Ghana	GH	Brong Ahafo	7.35144	-2.67901	2008	2008	9	58	60	1	0.01667
+Africa	Ghana	GH	Eastern	6.18122	-0.434685	2008	2008	9	16	60	1	0.01667
+Africa	Ghana	GH	Northern	9.45928	-2.5272	2008	2008	9	20	60	1	0.01667
+Africa	Ghana	GH	Ashanti	7.01086	-1.39751	2008	2008	7	16	60	2	0.03333
+Africa	Ghana	GH	Brong Ahafo	7.33273	-2.33221	2008	2008	10	16	60	0	0
+Africa	Ghana	GH	Northern	8.75369	-1.10587	2008	2008	10	21	60	0	0
+Africa	Ghana	GH	Northern	9.28102	-0.26068	2008	2008	9	19	60	6	0.1
+Africa	Ghana	GH	Northern	9.27192	-0.052765	2008	2008	6	16	60	7	0.11667
+Africa	Ghana	GH	Central	5.54352	-0.529185	2008	2008	10	17	60	0	0
+Africa	Ghana	GH	Brong Ahafo	8.11725	-2.51822	2008	2008	6	17	60	12	0.2
+Africa	Ghana	GH	Brong Ahafo	8.24662	-1.62103	2008	2008	8	17	60	1	0.01667
+Africa	Ghana	GH	Brong Ahafo	8.22451	-0.67467	2008	2008	10	16	60	10	0.16667
+Africa	Ghana	GH	Brong Ahafo	7.57564	-0.624485	2008	2008	5	19	60	1	0.01667
+Africa	Ghana	GH	Upper West	10.4295	-2.63236	2008	2008	11	19	60	0	0
+Africa	Ghana	GH	Brong Ahafo	7.61321	-2.90484	2008	2008	8	27	60	0	0
+Africa	Ghana	GH	Volta	6.09305	1.06744	2008	2008	10	22	60	0	0
+Africa	Ghana	GH	Northern	8.29578	0.181785	2008	2008	7	17	60	6	0.1
+Africa	Ghana	GH	Upper West	10.3594	-2.24292	2008	2008	9	19	60	1	0.01667
+Africa	Ghana	GH	Volta	6.08654	0.39728	2008	2008	11	20	60	0	0
+Africa	Ghana	GH	Northern	8.33409	0.17291	2008	2008	3	18	60	4	0.06667
+Africa	Ghana	GH	Western	5.44307	-2.46429	2008	2008	12	16	60	0	0
+Africa	Ghana	GH	Northern	10.4201	-0.328465	2008	2008	8	19	60	3	0.05
+Africa	Ghana	GH	Northern	9.63955	-2.58733	2008	2008	7	15	60	0	0
+Africa	Ghana	GH	Eastern	6.3551	-0.300385	2008	2008	6	15	60	1	0.01667
+Africa	Ghana	GH	Eastern	6.10565	-0.141645	2008	2008	10	17	60	0	0
+Africa	Ghana	GH	Northern	9.03924	-2.48642	2008	2008	11	18	60	1	0.01667
+Africa	Ghana	GH	Volta	8.03001	0.332635	2008	2008	10	20	59	3	0.05085
+Africa	Ghana	GH	Brong Ahafo	8.05945	-1.54506	2008	2008	6	15	22	6	0.27273
+Africa	Ghana	GH	Volta	6.0073	0.49564	2008	2008	10	18	60	5	0.08333
+Africa	Ghana	GH	Northern	9.34023	-0.793645	2008	2008	6	16	60	0	0
+Africa	Ghana	GH	Western	5.20845	-2.25775	2008	2008	10	15	60	0	0
+Africa	Ghana	GH	Northern	10.3207	-0.84876	2008	2008	10	18	60	5	0.08333
+Africa	Ghana	GH	Brong Ahafo	7.75168	-0.15456	2008	2008	8	18	60	6	0.1
+Africa	Ghana	GH	Northern	9.85581	-0.39827	2008	2008	5	17	60	1	0.01667
+Africa	Ghana	GH	Ashanti	6.08024	-1.85569	2008	2008	11	18	60	2	0.03333
+Africa	Ghana	GH	Brong Ahafo	8.22476	-0.64572	2008	2008	12	24	60	1	0.01667
+Africa	Ghana	GH	Brong Ahafo	6.81105	-2.70858	2008	2008	8	16	60	1	0.01667
+Africa	Ghana	GH	Northern	8.86098	0.05664	2008	2008	11	20	60	10	0.16667
+Africa	Ghana	GH	Western	5.48469	-2.26216	2008	2008	6	19	60	0	0
+Africa	Malawi	MW	Southern	-15.0157	35.07555	2002	2002	9	10	53	0	0
+Africa	Malawi	MW	Southern	-15.7841	35.02375	2002	2002	9	10	47	0	0
+Africa	Malawi	MW	Central	-14.288834	34.158318	2002	2002	9	10	60	0	0
+Africa	Malawi	MW	Central	-13.566283	33.628933	2002	2002	9	10	50	0	0
+Africa	Malawi	MW	Northern	-11.316916	33.630318	2002	2002	9	10	41	2	0.04878
+Africa	Malawi	MW	Southern	-14.8724	35.680199	2002	2002	9	10	49	0	0
+Africa	Malawi	MW	Central	-13.365533	34.114349	2002	2002	9	10	59	0	0
+Africa	Malawi	MW	Northern	-9.611567	33.017384	2002	2002	9	10	33	0	0
+Africa	Malawi	MW	Central	-13.981	33.772999	2002	2002	9	10	41	0	0
+Africa	Malawi	MW	Northern	-10.853283	33.484718	2002	2002	9	10	52	1	0.01923
+Africa	Malawi	MW	Southern	-16.275618	35.180351	2002	2002	9	10	36	0	0
+Africa	Malawi	MW	Northern	-11.938	33.440517	2002	2002	9	10	62	1	0.01613
+Africa	Malawi	MW	Central	-14.91795	34.734402	2002	2002	9	10	59	1	0.01695
+Africa	Malawi	MW	Central	-13.404384	33.063965	2002	2002	9	10	51	2	0.03922
+Africa	Malawi	MW	Southern	-14.263984	35.442917	2002	2002	9	10	51	2	0.03922
+Africa	Malawi	MW	Central	-13.948867	33.776733	2002	2002	9	10	34	0	0
+Africa	Malawi	MW	Southern	-15.860884	35.054516	2002	2002	9	10	59	5	0.08475
+Africa	Malawi	MW	Southern	-13.7586	35.075333	2002	2002	9	10	65	1	0.01538
+Africa	Malawi	MW	Central	-13.081833	33.645649	2002	2002	9	10	49	1	0.02041
+Africa	Malawi	MW	Southern	-15.860884	35.087849	2002	2002	9	10	53	0	0
+Africa	Malawi	MW	Northern	-11.45535	33.993084	2002	2002	9	10	45	0	0
+Africa	Malawi	MW	Southern	-16.0968	35.347282	2002	2002	9	10	60	1	0.01667
+Africa	Malawi	MW	Central	-13.77345	34.519085	2002	2002	9	10	52	0	0
+Africa	Malawi	MW	Southern	-16.541533	34.896118	2002	2002	9	10	50	0	0
+Africa	Malawi	MW	Southern	-17.099434	35.222252	2002	2002	9	10	60	4	0.06667
+Africa	Malawi	MW	Northern	-10.871667	34.024399	2002	2002	9	10	47	3	0.06383
+Africa	Malawi	MW	Southern	-15.53115	35.602501	2002	2002	9	10	60	2	0.03333
+Africa	Malawi	MW	Central	-13.5964	34.294582	2002	2002	9	10	50	0	0
+Africa	Malawi	MW	Northern	-12.242383	33.998116	2002	2002	9	10	60	0	0
+Africa	Malawi	MW	Northern	-10.4369	34.245201	1999	1999	9	16	141	73	0.52
+Africa	Malawi	MW	Northern	-9.81307	33.850849	1999	1999	9	16	111	77	0.69
+Africa	Malawi	MW	Northern	-10.5049	34.204449	1999	1999	9	16	128	78	0.61
+Africa	Malawi	MW	Northern	-9.8589	33.842098	1999	1999	9	16	97	75	0.77
+Africa	Nigeria	NG	Adamawa	9.316667	12.46667	1997	1997	5	18	96	10	0.10417
+Africa	Nigeria	NG	Adamawa	9.3	12.416667	1997	1997	5	18	276	26	0.0942
+Africa	Nigeria	NG	Lagos	6.518189	3.384992	2001	2002	6	16	40	10	0.25
+Africa	Nigeria	NG	Lagos	6.521217	3.386128	2001	2002	6	16	45	1	0.02222
+Central and South Asia	Nepal	NP	Central	27.64	84.57	1999	1999	6	16	132	4	0.0303
+Central and South Asia	Nepal	NP	Central	27.51	84.53	1999	1999	6	16	168	35	0.20833
+East and Southeast Asia	Philippines	PH	Region IV (Southern Tagalog)	14.348358	121.084919	1998	1998	6	12	2284	3	0.00131
+East and Southeast Asia	Philippines	PH	Region VII (Central Visayas)	10.339008	123.879733	2000	2000	5	7	63	9	0.14286
+East and Southeast Asia	Philippines	PH	 	14.4179	120.85	2000	2000	5	7	95	2	0.02105
+East and Southeast Asia	Philippines	PH	Region I (Ilocos region)	16.003377	120.316161	2000	2000	5	7	48	1	0.02083
+East and Southeast Asia	Philippines	PH	National Capital region (NCR)	14.640555	121.014166	2000	2000	5	7	67	2	0.02985
+East and Southeast Asia	Philippines	PH	National Capital region (NCR)	14.698888	121.095	2000	2000	5	7	46	14	0.30435
+East and Southeast Asia	Philippines	PH	Region VII (Central Visayas)	10.291	123.875138	2000	2000	5	7	69	5	0.07246
+East and Southeast Asia	Philippines	PH	National Capital region (NCR)	14.697222	121.088055	2000	2000	5	7	46	0	0
+East and Southeast Asia	Philippines	PH	Region III (Central Luzon)	15.3046	120.932	2000	2000	5	7	60	2	0.03333
+East and Southeast Asia	Philippines	PH	Region I (Ilocos region)	16.018183	120.298969	2000	2000	5	7	40	0	0
+East and Southeast Asia	Philippines	PH	National Capital region (NCR)	14.618963	121.051013	2000	2000	5	7	48	0	0
+East and Southeast Asia	Philippines	PH	Region VII (Central Visayas)	10.3175	123.8775	2000	2000	5	7	58	2	0.03448
+East and Southeast Asia	Philippines	PH	Region XI (Southern Mindanao)	7.073611	125.619166	2000	2000	5	7	64	2	0.03125
+East and Southeast Asia	Philippines	PH	Region III (Central Luzon)	15.242002	120.954825	2000	2000	5	7	66	0	0
+East and Southeast Asia	Philippines	PH	Region XI (Southern Mindanao)	7.109166	125.612222	2000	2000	5	7	55	1	0.01818
+East and Southeast Asia	Philippines	PH	National Capital region (NCR)	14.6275	121.046388	2000	2000	5	7	53	0	0
+East and Southeast Asia	Philippines	PH	Region IV (Southern Tagalog)	14.442222	120.904722	2000	2000	5	7	82	5	0.06098
+East and Southeast Asia	Philippines	PH	Region III (Central Luzon)	15.303333	120.936111	2000	2000	5	7	84	0	0
+East and Southeast Asia	Philippines	PH	Region IV (Southern Tagalog)	14.437022	120.893244	2000	2000	5	7	37	1	0.02703
+East and Southeast Asia	Philippines	PH	Region I (Ilocos region)	16.0332	120.266341	2000	2000	5	7	21	1	0.04762
+East and Southeast Asia	Philippines	PH	Region IV (Southern Tagalog)	14.4181	120.857	2000	2000	5	7	56	5	0.08929
+East and Southeast Asia	Philippines	PH	Region III (Central Luzon)	15.2675	120.949722	2000	2000	5	7	53	0	0
+East and Southeast Asia	Philippines	PH	Region I (Ilocos region)	15.978333	120.313333	2000	2000	5	7	95	2	0.02105
+East and Southeast Asia	Philippines	PH	Region III (Central Luzon)	15.308055	120.946666	2000	2000	5	7	47	0	0
+East and Southeast Asia	Philippines	PH	Region XI (Southern Mindanao)	7.360833	125.707222	2009	2009	5	14	106	7	0.06604
+East and Southeast Asia	Philippines	PH	Region XI (Southern Mindanao)	7.393055	125.717777	2012	2012	6	17	60	0	0
+East and Southeast Asia	Philippines	PH	Region XI (Southern Mindanao)	7.393055	125.717777	2012	2012	6	17	69	1	0.01449
+East and Southeast Asia	Philippines	PH	Region XI (Southern Mindanao)	7.514616	125.587688	2012	2012	6	17	80	4	0.05
+East and Southeast Asia	Philippines	PH	Region XI (Southern Mindanao)	7.415555	125.750555	2012	2012	6	17	78	1	0.01282
+East and Southeast Asia	Philippines	PH	Region VI (Western Visayas)	10.592519	122.576866	2012	2012	8	10	69	0	0
+East and Southeast Asia	Philippines	PH	Region VI (Western Visayas)	10.659022	122.574036	2012	2012	8	10	49	0	0
+East and Southeast Asia	Philippines	PH	Region VI (Western Visayas)	10.739166	123.444722	2012	2012	8	10	46	0	0
+East and Southeast Asia	Philippines	PH	Region VI (Western Visayas)	10.6	122.616666	2012	2012	8	10	61	0	0
+East and Southeast Asia	Philippines	PH	Region VI (Western Visayas)	10.739944	122.541063	2012	2012	8	10	50	0	0
+East and Southeast Asia	Philippines	PH	Region VI (Western Visayas)	10.648711	122.59948	2012	2012	8	10	53	0	0
+East and Southeast Asia	Philippines	PH	Region VI (Western Visayas)	10.783411	122.584155	2012	2012	8	10	50	0	0
+East and Southeast Asia	Philippines	PH	Region VI (Western Visayas)	10.785827	122.628075	2012	2012	8	10	50	0	0
+East and Southeast Asia	Philippines	PH	Region VI (Western Visayas)	10.559722	123.019722	2012	2012	8	10	85	0	0
+East and Southeast Asia	Philippines	PH	Region VI (Western Visayas)	10.739144	122.579869	2012	2012	8	10	50	0	0
+East and Southeast Asia	Philippines	PH	Region VI (Western Visayas)	10.809588	122.598066	2012	2012	8	10	50	0	0
+East and Southeast Asia	Philippines	PH	Region VI (Western Visayas)	10.723711	122.554419	2012	2012	8	10	50	0	0
+East and Southeast Asia	Philippines	PH	Region IV (Southern Tagalog)	14.279969	120.964955	2011	2011	14	16	58	0	0
+East and Southeast Asia	Philippines	PH	Region IX (Western Mindanao)	8.534452	123.366844	2011	2011	14	16	127	4	0.0315
+East and Southeast Asia	Philippines	PH	Region IX (Western Mindanao)	8.536108	123.366458	2011	2011	14	16	44	3	0.06818
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.108211	125.019197	2011	2011	14	16	155	10	0.06452
+East and Southeast Asia	Philippines	PH	Region IX (Western Mindanao)	8.533886	123.366633	2011	2011	14	16	42	3	0.07143
+East and Southeast Asia	Philippines	PH	Cordillera Administrative region (CAR)	16.421944	120.594166	2011	2011	14	16	109	0	0
+East and Southeast Asia	Philippines	PH	Region IX (Western Mindanao)	8.111111	122.766388	2011	2011	14	16	130	4	0.03077
+East and Southeast Asia	Philippines	PH	Region IV (Southern Tagalog)	14.340833	120.950277	2011	2011	14	16	56	0	0
+East and Southeast Asia	Philippines	PH	Cordillera Administrative region (CAR)	16.406944	120.597222	2011	2011	14	16	5	0	0
+East and Southeast Asia	Philippines	PH	Cordillera Administrative region (CAR)	16.429444	120.642697	2011	2011	14	16	22	1	0.04545
+East and Southeast Asia	Philippines	PH	Region XI (Southern Mindanao)	7.063333	125.613888	2011	2011	14	16	36	0	0
+East and Southeast Asia	Philippines	PH	Region XI (Southern Mindanao)	7.093763	125.5	2011	2011	14	16	85	0	0
+East and Southeast Asia	Philippines	PH	Region XI (Southern Mindanao)	7.0625	125.559722	2011	2011	14	16	19	0	0
+East and Southeast Asia	Philippines	PH	Region IV (Southern Tagalog)	14.36995	120.824988	2011	2011	14	16	60	0	0
+East and Southeast Asia	Philippines	PH	Region XI (Southern Mindanao)	7.049444	125.546666	2011	2011	14	16	27	0	0
+East and Southeast Asia	Philippines	PH	Region IX (Western Mindanao)	8.535244	123.366677	2011	2011	14	16	31	0	0
+East and Southeast Asia	Philippines	PH	Region VII (Central Visayas)	10.320555	123.884722	2011	2011	14	16	51	2	0.03922
+East and Southeast Asia	Philippines	PH	Region IV (Southern Tagalog)	14.318055	120.952222	2011	2011	14	16	50	0	0
+East and Southeast Asia	Philippines	PH	Region VII (Central Visayas)	10.300555	123.881666	2011	2011	14	16	250	7	0.028
+East and Southeast Asia	Philippines	PH	Cordillera Administrative region (CAR)	16.405555	120.563055	2011	2011	14	16	16	0	0
+East and Southeast Asia	Philippines	PH	Region IV (Southern Tagalog)	14.397369	120.853125	2011	2011	14	16	70	0	0
+East and Southeast Asia	Philippines	PH	Region VII (Central Visayas)	10.276	123.85	2011	2011	14	16	50	0	0
+East and Southeast Asia	Philippines	PH	Region XI (Southern Mindanao)	7.11	125.486111	2011	2011	14	16	115	0	0
+East and Southeast Asia	Philippines	PH	Region IV (Southern Tagalog)	14.32	120.956388	2011	2011	14	16	48	0	0
+East and Southeast Asia	Philippines	PH	Region IV (Southern Tagalog)	14.321388	120.971111	2011	2011	14	16	25	0	0
+East and Southeast Asia	Philippines	PH	Region XI (Southern Mindanao)	7.072777	125.619166	2011	2011	14	16	71	0	0
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.073088	124.828499	2003	2003	0	84	138	42	0.30435
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.196752	124.578312	2004	2004	0	77	119	26	0.21849
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.988158	124.808726	2003	2003	1	66	45	4	0.08889
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.027368	124.811779	2003	2003	0	82	48	12	0.25
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.00072	124.809085	2003	2003	0	68	61	14	0.22951
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.968811	124.836966	2003	2003	0	73	77	20	0.25974
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.994985	124.77299	2003	2003	0	77	135	20	0.14815
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.120414	124.631826	2004	2004	1	79	103	31	0.30097
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.981834	124.822098	2003	2003	0	76	146	48	0.32877
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.240681	124.498507	2004	2004	0	66	61	8	0.13115
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.331696	125.033742	2004	2004	0	74	113	15	0.13274
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.927419	124.876901	2003	2003	0	73	115	14	0.12174
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.198182	124.516767	2004	2004	0	78	67	24	0.35821
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.280562	125.145801	2004	2004	0	78	128	23	0.17969
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.041371	124.813039	2003	2003	1	85	88	21	0.23864
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.308858	125.016335	2004	2004	0	81	155	27	0.17419
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.99113	124.782229	2003	2003	0	69	168	29	0.17262
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.004235	124.824507	2003	2003	0	68	151	29	0.19205
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.865532	124.831031	2004	2004	0	75	142	24	0.16901
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.93624	124.841621	2003	2003	0	54	50	5	0.1
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.983129	124.845142	2003	2003	0	75	135	49	0.36296
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.980078	124.85545	2003	2003	0	73	93	19	0.2043
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.281182	125.03214	2004	2004	0	76	145	14	0.09655
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.174007	124.571939	2004	2004	1	74	73	14	0.19178
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.096304	124.627307	2004	2004	0	70	148	34	0.22973
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.976682	124.876828	2003	2003	0	79	143	38	0.26573
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.159384	124.567984	2004	2004	0	60	121	34	0.28099
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.120829	124.527243	2003	2003	0	70	143	45	0.31469
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.951486	124.873395	2003	2003	0	84	131	4	0.03053
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.089094	124.638939	2004	2004	0	70	138	31	0.22464
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.058145	124.818929	2003	2003	0	77	128	44	0.34375
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.159571	124.534723	2003	2003	0	70	113	28	0.24779
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.159969	124.560591	2004	2004	0	64	75	24	0.32
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.296383	125.016523	2004	2004	0	67	125	19	0.152
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.147538	124.536345	2003	2003	0	67	98	35	0.35714
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.336037	125.020199	2004	2004	1	70	142	17	0.11972
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.139753	124.554455	2004	2004	0	82	138	19	0.13768
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.145897	124.571066	2004	2004	0	68	98	18	0.18367
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.273625	124.491817	2004	2004	1	83	104	35	0.33654
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.103407	124.618412	2004	2004	0	78	149	22	0.14765
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.073893	124.6104	2004	2004	0	83	151	15	0.09934
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.273545	124.473155	2004	2004	1	71	45	16	0.35556
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.974727	124.802917	2003	2003	0	61	38	8	0.21053
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.002054	124.784312	2003	2003	0	74	143	21	0.14685
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.94858	124.834388	2003	2003	0	69	33	10	0.30303
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.173893	124.527812	2004	2004	0	68	118	28	0.23729
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.256025	124.486524	2004	2004	0	71	133	52	0.39098
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.083409	124.621856	2004	2004	0	66	125	28	0.224
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	11.374259	125.021897	2004	2004	0	73	147	26	0.17687
+East and Southeast Asia	Philippines	PH	Region VIII (Eastern Visayas)	12.112128	124.626659	2004	2004	0	61	141	29	0.20567
+Africa	Senegal	SN	Kaolack	14.266319	-15.441681	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	13.191722	-14.560528	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	12.573722	-15.874583	2013	2013	5	20	52	21	0.40385
+Africa	Senegal	SN	Dakar	14.852444	-17.226569	2013	2013	5	20	10	0	0
+Africa	Senegal	SN	Kolda	13.009472	-15.78275	2013	2013	5	20	50	8	0.16
+Africa	Senegal	SN	Kaolack	13.818333	-15.689361	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	14.819083	-17.090972	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.791278	-17.374194	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kaolack	13.954792	-15.986847	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.745222	-17.389292	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kaolack	13.775611	-15.760222	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Matam	15.926681	-13.522833	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	14.774	-16.898306	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Fatick	14.309486	-16.005083	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.750597	-17.343639	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Fatick	13.602889	-16.426181	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Fatick	13.852431	-16.400167	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	14.957667	-16.820639	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Matam	15.962778	-13.586111	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	13.452042	-14.993778	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Fatick	13.76075	-16.475486	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	13.034236	-15.705208	2013	2013	5	20	54	33	0.61111
+Africa	Senegal	SN	Kolda	12.529278	-15.744611	2013	2013	5	20	52	27	0.51923
+Africa	Senegal	SN	Fatick	14.222694	-16.029944	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.766903	-17.426014	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.777861	-17.323069	2013	2013	5	20	28	0	0
+Africa	Senegal	SN	Kaolack	14.032875	-15.27525	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	14.892444	-17.075681	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.681444	-17.2185	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	14.750708	-17.085097	2013	2013	5	20	50	4	0.08
+Africa	Senegal	SN	Thies	14.367833	-16.893486	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Fatick	14.211083	-16.081333	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Matam	16.047889	-13.729431	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kaolack	14.005458	-15.151472	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	14.899194	-16.868556	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.784444	-17.393583	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.737083	-17.301944	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kaolack	14.081611	-16.099611	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kaolack	14.112264	-15.148556	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	12.963917	-15.859417	2013	2013	5	20	50	2	0.04
+Africa	Senegal	SN	Kaolack	14.087181	-15.289528	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	13.191972	-15.639861	2013	2013	5	20	50	5	0.1
+Africa	Senegal	SN	Thies	14.396222	-16.951486	2013	2013	5	20	50	4	0.08
+Africa	Senegal	SN	Fatick	14.313361	-15.914278	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	12.684861	-15.684861	2013	2013	5	20	56	6	0.10714
+Africa	Senegal	SN	Thies	14.397139	-16.952361	2013	2013	5	20	50	1	0.02
+Africa	Senegal	SN	Dakar	14.768347	-17.376875	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.7485	-17.387653	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	12.826722	-15.979222	2013	2013	5	20	51	6	0.11765
+Africa	Senegal	SN	Dakar	14.784222	-17.273417	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kaolack	14.058583	-15.841514	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	14.984458	-16.233417	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	12.619389	-15.619542	2013	2013	5	20	50	9	0.18
+Africa	Senegal	SN	Dakar	14.764583	-17.362125	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kaolack	13.759069	-15.790667	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kaolack	14.092278	-16.163528	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.782431	-17.391083	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.820069	-17.155056	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	12.850806	-15.468889	2013	2013	5	20	51	6	0.11765
+Africa	Senegal	SN	Thies	14.811875	-16.922597	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Matam	16.113028	-13.606167	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	15.048083	-16.461528	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	13.038486	-14.637972	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	12.567903	-15.8875	2013	2013	5	20	50	26	0.52
+Africa	Senegal	SN	Thies	15.105181	-16.867486	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kaolack	13.749181	-15.768583	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.840528	-17.180861	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.758528	-17.388833	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kaolack	13.919861	-15.927125	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	14.878528	-17.131167	2013	2013	5	20	50	2	0.04
+Africa	Senegal	SN	Dakar	14.840528	-17.180861	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	14.485111	-17.075931	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.771458	-17.334111	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	15.034847	-16.869847	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.744222	-17.172806	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	12.816889	-15.183847	2013	2013	5	20	50	22	0.44
+Africa	Senegal	SN	Thies	14.949444	-16.851139	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	13.436861	-14.949278	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Fatick	13.679028	-16.429792	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	15.051833	-16.684417	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kaolack	13.849194	-15.700431	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.758528	-17.404194	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	12.497417	-15.598319	2013	2013	5	20	51	37	0.72549
+Africa	Senegal	SN	Fatick	13.65525	-16.429792	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	14.723722	-16.852736	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.787736	-17.326264	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	14.816806	-16.924278	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Matam	15.999736	-13.687389	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	14.804347	-16.891958	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	13.063486	-15.639153	2013	2013	5	20	51	6	0.11765
+Africa	Senegal	SN	Dakar	14.775028	-17.383486	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	12.575639	-15.753847	2013	2013	5	20	53	22	0.41509
+Africa	Senegal	SN	Dakar	14.742903	-17.419361	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Fatick	14.259389	-15.873194	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.772972	-17.310056	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	15.201625	-16.512403	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	15.313917	-16.381333	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Kolda	13.265472	-14.605097	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.693681	-17.224431	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.642736	-17.170347	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.780819	-17.320472	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	14.874375	-17.077889	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Dakar	14.758403	-17.385569	2013	2013	5	20	50	1	0.02
+Africa	Senegal	SN	Dakar	14.712194	-17.155347	2013	2013	5	20	50	0	0
+Africa	Senegal	SN	Thies	14.371653	-16.935736	2013	2013	5	20	50	1	0.02
+Africa	Sierra Leone	SL	West	8.28375	-13.079556	2008	2008	8	16	69	20	0.29
+Africa	Sierra Leone	SL	East	8.599194	-11.079639	2008	2008	8	16	64	9	0.141
+Africa	Sierra Leone	SL	North	9.169944	-12.015778	2008	2008	8	16	83	11	0.133
+Africa	Sierra Leone	SL	South	7.433333	-11.868611	2008	2008	8	16	29	22	0.759
+Africa	Sierra Leone	SL	North	8.788417	-11.907722	2008	2008	8	16	37	11	0.297
+Africa	Sierra Leone	SL	North	8.63025	-11.660833	2008	2008	8	16	87	21	0.241
+Africa	Sierra Leone	SL	East	8.004444	-10.673333	2008	2008	8	16	46	15	0.326
+Africa	Sierra Leone	SL	North	8.641778	-11.473583	2008	2008	8	16	75	19	0.253
+Africa	Sierra Leone	SL	North	9.454667	-11.702278	2008	2008	8	16	33	30	0.909
+Africa	Sierra Leone	SL	East	8.000556	-11.286389	2008	2008	8	16	61	33	0.541
+Africa	Sierra Leone	SL	West	8.241972	-13.0635	2008	2008	8	16	38	17	0.447
+Africa	Sierra Leone	SL	South	8.16	-11.597222	2008	2008	8	16	28	20	0.714
+Africa	Sierra Leone	SL	East	8.622861	-10.962167	2008	2008	8	16	60	8	0.133
+Africa	Sierra Leone	SL	North	9.133806	-12.844944	2008	2008	8	16	47	12	0.255
+Africa	Sierra Leone	SL	East	8.702083	-11.012194	2008	2008	8	16	62	5	0.081
+Africa	Sierra Leone	SL	North	9.251778	-12.832083	2008	2008	8	16	49	8	0.163
+Africa	Sierra Leone	SL	North	9.068417	-12.906028	2008	2008	8	16	60	16	0.267
+Africa	Sierra Leone	SL	South	7.435556	-11.571944	2008	2008	8	16	55	33	0.6
+Africa	Sierra Leone	SL	North	8.901333	-12.682667	2008	2008	8	16	57	28	0.491
+Africa	Sierra Leone	SL	North	8.874889	-12.105611	2008	2008	8	16	48	10	0.208
+Africa	Sierra Leone	SL	South	7.903611	-11.544722	2008	2008	8	16	45	5	0.111
+Africa	Sierra Leone	SL	East	7.918056	-10.813333	2008	2008	8	16	57	30	0.526
+Africa	Sierra Leone	SL	South	8.269722	-12.499444	2008	2008	8	16	43	27	0.628
+Africa	Sierra Leone	SL	East	8.619	-10.999306	2008	2008	8	16	58	9	0.155
+Africa	Sierra Leone	SL	North	9.711667	-11.5475	2008	2008	8	16	67	36	0.537
+Africa	Sierra Leone	SL	South	8.168333	-11.946944	2008	2008	8	16	61	26	0.426
+Africa	Sierra Leone	SL	North	8.90775	-12.747694	2008	2008	8	16	58	30	0.517
+Africa	Sierra Leone	SL	East	8.144444	-10.943611	2008	2008	8	16	61	32	0.525
+Africa	Sierra Leone	SL	North	9.533889	-10.956389	2008	2008	8	16	54	35	0.648
+Africa	Sierra Leone	SL	South	8.004167	-12.229722	2008	2008	8	16	55	39	0.709
+Africa	Sierra Leone	SL	North	9.560833	-11.653611	2008	2008	8	16	37	21	0.568
+Africa	Sierra Leone	SL	South	7.553611	-11.553611	2008	2008	8	16	55	14	0.255
+Africa	Sierra Leone	SL	West	8.321444	-13.070056	2008	2008	8	16	50	14	0.28
+Africa	Sierra Leone	SL	South	7.879167	-11.781111	2008	2008	8	16	56	3	0.054
+Africa	Sierra Leone	SL	South	7.609444	-12.142778	2008	2008	8	16	55	39	0.709
+Africa	Sierra Leone	SL	East	7.922778	-10.901111	2008	2008	8	16	35	17	0.486
+Africa	Sierra Leone	SL	West	8.306278	-13.076306	2008	2008	8	16	44	11	0.25
+Africa	Sierra Leone	SL	East	8.030833	-10.929722	2008	2008	8	16	49	25	0.51
+Africa	Sierra Leone	SL	East	8.040833	-11.055	2008	2008	8	16	53	22	0.415
+Africa	Sierra Leone	SL	East	7.7125	-11.388056	2008	2008	8	16	33	22	0.667
+Africa	Sierra Leone	SL	North	8.587667	-11.981972	2008	2008	8	16	70	12	0.171
+Africa	Sierra Leone	SL	South	7.696389	-12.303889	2008	2008	8	16	32	9	0.281
+Africa	Sierra Leone	SL	North	8.44525	-12.874889	2008	2008	8	16	26	10	0.385
+Africa	Sierra Leone	SL	South	7.449167	-12.229167	2008	2008	8	16	51	26	0.51
+Africa	Sierra Leone	SL	North	8.860861	-12.055444	2008	2008	8	16	47	7	0.149
+Africa	Sierra Leone	SL	South	7.839444	-11.657778	2008	2008	8	16	34	5	0.147
+Africa	Sierra Leone	SL	North	9.134278	-12.926972	2008	2008	8	16	67	13	0.194
+Africa	Sierra Leone	SL	South	7.891944	-12.237778	2008	2008	8	16	58	34	0.586
+Africa	Sierra Leone	SL	North	8.70575	-12.677694	2008	2008	8	16	32	14	0.438
+Africa	Sierra Leone	SL	South	7.570556	-11.650556	2008	2008	8	16	59	5	0.085
+Africa	Sierra Leone	SL	North	9.152778	-11.381944	2008	2008	8	16	81	77	0.951
+Africa	Sierra Leone	SL	South	7.658889	-11.995278	2008	2008	8	16	58	36	0.621
+Africa	United Republic of Tanzania	TZ	 	-5.270556	39.737778	2012	2012	6	14	183	110	0.60109
+Africa	United Republic of Tanzania	TZ	 	-5.124722	39.809444	2012	2012	6	14	615	366	0.59512
+Africa	Uganda	UG	Mbarara	-0.65	30.52	1998	1998	5	10	84	20	0.23809
+Africa	Uganda	UG	Luwero	1.05	32.450001	1998	1998	5	10	78	45	0.57692
+Africa	Uganda	UG	Rukungiri	-0.75	29.950001	1998	1998	5	10	93	41	0.44086
+Africa	Uganda	UG	Iganga	0.58	33.669998	1998	1998	5	10	71	22	0.30986
+Africa	Uganda	UG	Luwero	0.833	32.632999	1998	1998	5	10	71	24	0.33803
+Africa	Uganda	UG	Iganga	0.48	33.481998	1998	1998	5	10	76	49	0.64474
+Africa	Uganda	UG	Tororo	0.85	34.150002	1998	1998	5	10	70	51	0.72857
+Africa	Uganda	UG	Kamuli	0.7166	33.166599	1998	1998	5	10	57	34	0.59649
+Africa	Uganda	UG	Mubende	0.588	31.85	1998	1998	5	10	81	60	0.74074
+Africa	Uganda	UG	Rakai	-0.533	31.25	1998	1998	5	10	73	22	0.30137
+Africa	Uganda	UG	Tororo	0.5	34.083	1998	1998	5	10	80	53	0.6625
+Africa	Uganda	UG	Iganga	0.6833	33.3666	1998	1998	5	10	67	29	0.43284
+Africa	Uganda	UG	Mbale	1.233	34.233002	1998	1998	5	10	66	27	0.40909
+Africa	Uganda	UG	Bushenyi	-0.88	30.27	1998	1998	5	10	65	12	0.18462
+Africa	Uganda	UG	Mbale	0.983	34.200001	1998	1998	5	10	80	45	0.5625
+Africa	Uganda	UG	Kumi	1.2332	34.083302	1998	1998	5	10	75	39	0.52
+Africa	Uganda	UG	Mbarara	-0.383	30.566	1998	1998	5	10	84	14	0.16667
+Africa	Uganda	UG	Bushenyi	-0.6	30.030001	1998	1998	5	10	89	53	0.59551
+Africa	Uganda	UG	Kabarole	0.675	30.271999	1998	1998	5	10	79	22	0.27848
+Africa	Uganda	UG	Iganga	0.633	33.599998	1998	1998	5	10	66	41	0.62121
+Africa	Uganda	UG	Iganga	0.0524	33.6059	2004	2004	5	16	30	29	0.96667
+Africa	Uganda	UG	Iganga	0.342	33.6092	2004	2004	5	16	30	27	0.9
+Africa	Uganda	UG	Iganga	0.3561	33.443199	2004	2004	5	16	30	23	0.76667
+Africa	Uganda	UG	Hoima	1.7332	31.307501	2004	2004	5	16	30	9	0.3
+Africa	Uganda	UG	Iganga	0.334	33.6707	2004	2004	5	16	30	26	0.86667
+Africa	Uganda	UG	Iganga	0.4219	33.572102	2004	2004	5	16	30	26	0.86667
+Africa	Uganda	UG	Iganga	0.4016	33.6408	2004	2004	5	16	30	30	1
+Africa	Uganda	UG	Hoima	1.6718	31.251301	2004	2004	5	16	30	3	0.1
+Africa	Uganda	UG	Iganga	0.3212	33.6283	2004	2004	5	16	30	21	0.7
+Africa	Uganda	UG	Iganga	0.4062	33.595798	2004	2004	5	16	30	15	0.5
+Africa	Uganda	UG	Iganga	0.1113	33.599899	2004	2004	5	16	30	21	0.7
+Africa	Uganda	UG	Iganga	0.4202	33.6026	2004	2004	5	16	30	29	0.96667
+Africa	Uganda	UG	Iganga	0.3998	33.565399	2004	2004	5	16	30	29	0.96667
+Africa	Uganda	UG	Iganga	0.4103	33.592701	2004	2004	5	16	30	24	0.8
+Africa	Uganda	UG	Hoima	1.581	31.186501	2004	2004	5	16	30	15	0.5
+Africa	Uganda	UG	Iganga	0.022	33.6366	2004	2004	5	16	30	0	0
+Africa	Uganda	UG	Iganga	0.1373	33.550499	2004	2004	5	16	30	27	0.9
+Africa	Uganda	UG	Iganga	-0.0455	33.618401	2004	2004	5	16	30	24	0.8
+Africa	Uganda	UG	Iganga	0.2616	33.575199	2004	2004	5	16	30	23	0.76667
+Africa	Uganda	UG	Iganga	-0.0106	33.654099	2004	2004	5	16	30	23	0.76667
+Africa	Uganda	UG	Iganga	0.3459	33.629902	2004	2004	5	16	30	27	0.9
+Africa	Uganda	UG	Iganga	0.4032	33.619499	2004	2004	5	16	30	26	0.86667
+Africa	Uganda	UG	Iganga	0.4436	33.4823	2004	2004	5	16	30	17	0.57
+Africa	Uganda	UG	Hoima	1.4939	31.284201	2004	2004	5	16	30	13	0.43333
+Africa	Uganda	UG	Iganga	0.4212	33.555901	2004	2004	5	16	30	23	0.76667
+Africa	Uganda	UG	Iganga	0.1776	33.516701	2004	2004	5	16	30	17	0.57
+Africa	Uganda	UG	Iganga	0.3111	33.665401	2004	2004	5	16	30	24	0.8
+Africa	Uganda	UG	Iganga	0.3881	33.622299	2004	2004	5	16	30	26	0.86667
+Africa	Uganda	UG	Iganga	0.3606	33.620399	2004	2004	5	16	30	24	0.8
+Africa	Uganda	UG	Iganga	0.1236	33.574799	2004	2004	5	16	30	20	0.66667
+Africa	Uganda	UG	Soroti	1.65383	33.370701	2005	2005	5	16	61	25	0.40984
+Africa	Uganda	UG	Kitgum	3.4036	32.608799	1998	2005	7	14	59	19	0.32203
+Africa	Uganda	UG	Moyo	3.7123	31.7836	1998	2005	9	16	58	30	0.51724
+Africa	Uganda	UG	Apac	2.50895	32.464901	1998	2005	8	13	61	28	0.45902
+Africa	Uganda	UG	Iganga	0.5343	33.8741	2002	2002	5	16	59	26	0.44068
+Africa	Uganda	UG	Moyo	3.28573	31.6443	1998	2005	8	16	59	45	0.76271
+Africa	Uganda	UG	Lira	1.55203	32.826801	2002	2002	5	16	65	49	0.754
+Africa	Uganda	UG	Apac	2.47488	32.631699	1998	2005	7	14	62	37	0.59677
+Africa	Uganda	UG	Lira	2.18536	33.2038	2002	2002	5	16	56	16	0.29
+Africa	Uganda	UG	Moroto	2.45252	34.472301	1998	2005	8	18	66	14	0.21212
+Africa	Uganda	UG	Jinja	0.41925	33.2155	1998	2005	8	14	116	52	0.44828
+Africa	Uganda	UG	Arua	3.25155	31.0488	1998	2005	8	15	67	51	0.76119
+Africa	Uganda	UG	Rukungiri	-0.766667	29.950001	2005	2005	5	16	59	14	0.23729
+Africa	Uganda	UG	Moyo	3.43718	31.795099	1998	2005	9	16	62	27	0.43548
+Africa	Uganda	UG	Gulu	2.81513	32.3265	1998	2005	8	14	27	14	0.51852
+Africa	Uganda	UG	Bundibugyo	0.6156	29.9753	1998	2005	8	15	60	54	0.9
+Africa	Uganda	UG	Iganga	0.231917	33.909401	1998	2005	8	16	62	44	0.70968
+Africa	Uganda	UG	Mukono	0.357383	33.026798	1998	2005	7	13	67	22	0.32836
+Africa	Uganda	UG	Moyo	3.44807	31.7444	1998	2005	9	15	59	16	0.27119
+Africa	Uganda	UG	Soroti	1.71783	33.8522	1998	2005	7	14	40	28	0.7
+Africa	Uganda	UG	Mpigi	0.066483	32.520599	1998	2005	7	12	64	31	0.48438
+Africa	Uganda	UG	Arua	3.07422	31.281601	1998	2005	8	15	56	10	0.17857
+Africa	Uganda	UG	Kitgum	3.30387	32.891899	1998	2005	5	13	62	13	0.20968
+Africa	Uganda	UG	Kotido	2.53498	33.6222	1998	2005	8	14	54	33	0.61111
+Africa	Uganda	UG	Iganga	0.341767	33.509201	1998	2005	7	15	124	84	0.67742
+Africa	Uganda	UG	Lira	1.6395	32.877201	2002	2002	5	16	56	38	0.68
+Africa	Uganda	UG	Kotido	3.00937	34.120499	1998	2005	7	16	59	13	0.22034
+Africa	Uganda	UG	Iganga	0.261283	33.514	2002	2002	5	16	142	134	0.94366
+Africa	Uganda	UG	Arua	3.43578	31.2173	1998	2005	10	15	63	40	0.63492
+Africa	Uganda	UG	Kibaale	0.951083	30.5665	1998	2005	7	18	65	27	0.41539
+Africa	Uganda	UG	Kitgum	3.61208	33.039001	1998	2005	5	12	55	3	0.05455
+Africa	Uganda	UG	Rukungiri	-0.411917	29.7747	2005	2005	5	16	61	28	0.45902
+Africa	Uganda	UG	Mukono	0.2805	33.146301	1998	2005	5	15	70	29	0.41429
+Africa	Uganda	UG	Moyo	3.39017	31.9538	1998	2005	8	14	59	13	0.22034
+Africa	Uganda	UG	Mukono	0.683633	32.922199	1998	2005	8	13	53	13	0.24528
+Africa	Uganda	UG	Iganga	0.177817	33.5611	2002	2002	5	16	110	86	0.78182
+Africa	Uganda	UG	Kitgum	2.69015	32.7943	1998	2005	7	13	61	14	0.22951
+Africa	Uganda	UG	Moyo	3.58578	31.584999	1998	2005	9	14	61	36	0.59016
+Africa	Uganda	UG	Kotido	2.7993	33.7248	1998	2005	5	17	64	24	0.375
+Africa	Uganda	UG	Moroto	2.58668	34.742401	1998	2005	9	18	60	1	0.01667
+Africa	Uganda	UG	Mpigi	0.2	32.599998	1998	2005	6	13	71	44	0.61972
+Africa	Uganda	UG	Mpigi	0.12925	32.555199	1998	2005	7	14	69	34	0.49275
+Africa	Uganda	UG	Tororo	0.932867	34.002102	2005	2005	5	16	73	22	0.30137
+Africa	Uganda	UG	Kitgum	2.92515	33.004501	1998	2005	4	14	59	33	0.55932
+Africa	Uganda	UG	Moyo	3.22953	31.783701	1998	2005	9	14	59	37	0.62712
+Africa	Uganda	UG	Kitgum	3.04172	33.3731	1998	2005	7	12	60	28	0.46667
+Africa	Uganda	UG	Kotido	2.67686	33.662399	1998	2005	7	13	63	12	0.19048
+Africa	Uganda	UG	Tororo	0.85	34.150002	2002	2002	5	16	70	51	0.72857
+Africa	Uganda	UG	Arua	3.10328	31.3993	1998	2005	7	18	64	28	0.4375
+Africa	Uganda	UG	Soroti	1.91733	33.9548	1998	2005	7	14	40	26	0.65
+Africa	Uganda	UG	Luwero	1.3335	32.501701	1998	2005	7	13	50	33	0.66
+Africa	Uganda	UG	Kitgum	2.80917	33.113499	1998	2005	8	12	53	46	0.86792
+Africa	Uganda	UG	Arua	3.4181	31.117001	1998	2005	5	18	56	35	0.625
+Africa	Uganda	UG	Bundibugyo	0.670617	30.0121	1998	2005	7	14	68	46	0.67647
+Africa	Uganda	UG	Iganga	0.16655	33.874901	2002	2002	5	16	63	41	0.65079
+Africa	Uganda	UG	Kitgum	3.24012	32.9151	1998	2005	7	14	60	26	0.43333
+Africa	Uganda	UG	Jinja	0.6479	33.283901	1998	2005	7	13	122	78	0.63934
+Africa	Uganda	UG	Soroti	1.75767	34.034302	1998	2005	6	14	42	30	0.71429
+Africa	Uganda	UG	Arua	3.00503	30.9098	2002	2002	5	16	67	22	0.32836
+Africa	Uganda	UG	Jinja	0.488533	33.2202	1998	2005	5	15	118	68	0.57627
+Africa	Uganda	UG	Iganga	0.20765	33.893101	1998	2005	9	13	64	45	0.70313
+Africa	Uganda	UG	Moroto	2.55052	34.620701	1998	2005	7	21	62	0	0
+Africa	Uganda	UG	Iganga	0.350683	33.705502	2002	2002	5	16	57	51	0.89474
+Africa	Uganda	UG	Soroti	2.06353	33.374599	1998	2005	7	14	42	31	0.7381
+Africa	Uganda	UG	Mukono	0.700433	32.901001	1998	2005	6	13	53	26	0.49057
+Africa	Uganda	UG	Arua	3.0271	31.385099	1998	2005	8	15	59	45	0.76271
+Africa	Uganda	UG	Tororo	0.247683	33.993198	2002	2002	5	16	118	90	0.76271
+Africa	Uganda	UG	Rakai	-0.533	31.25	2002	2002	5	16	73	22	0.30137
+Africa	Uganda	UG	Kotido	3.6461	34.077702	1998	2005	6	15	39	0	0
+Africa	Uganda	UG	Kitgum	3.26083	32.924301	1998	2005	7	13	61	32	0.52459
+Africa	Uganda	UG	Jinja	0.594383	33.110001	1998	2005	7	13	116	78	0.67241
+Africa	Uganda	UG	Luwero	1.30412	32.5467	1998	2005	8	13	62	44	0.70968
+Africa	Uganda	UG	Bundibugyo	1.04708	30.536301	1998	2005	8	13	59	24	0.40678
+Africa	Uganda	UG	Moroto	2.38577	34.507401	1998	2005	12	16	59	33	0.55932
+Africa	Uganda	UG	Gulu	2.60457	32.1745	1998	2005	8	13	30	22	0.73333
+Africa	Uganda	UG	 	0.4628	34.095299	1998	2005	8	13	120	56	0.46667
+Africa	Uganda	UG	Mukono	0.890033	32.865299	1998	2005	8	14	64	30	0.46875
+Africa	Uganda	UG	Moroto	2.48088	34.611401	1998	2005	6	13	60	3	0.05
+Africa	Uganda	UG	Mukono	0.2767	32.792801	1998	2005	7	14	64	46	0.71875
+Africa	Uganda	UG	Moyo	3.4872	31.5466	1998	2005	7	17	59	28	0.47458
+Africa	Uganda	UG	Moyo	3.32535	31.8932	1998	2005	9	17	61	38	0.62295
+Africa	Uganda	UG	Lira	2.26566	33.1427	2002	2002	5	16	60	21	0.35
+Africa	Uganda	UG	Moyo	3.21743	31.910101	1998	2005	9	14	62	42	0.67742
+Africa	Uganda	UG	Kotido	2.99978	34.088299	1998	2005	8	16	61	12	0.19672
+Africa	Uganda	UG	Moyo	3.556	31.9252	2002	2002	5	16	60	26	0.43333
+Africa	Uganda	UG	Lira	2.41938	33.072701	2002	2002	5	16	62	20	0.323
+Africa	Uganda	UG	Kotido	3.0085	34.197899	1998	2005	6	16	64	19	0.29688
+Africa	Uganda	UG	Arua	3.2084	31.2782	1998	2005	9	15	60	48	0.8
+Africa	Uganda	UG	Iganga	0.538817	33.904301	1998	2005	7	13	59	39	0.66102
+Africa	Uganda	UG	Bundibugyo	0.676633	30.0688	1998	2005	9	14	59	35	0.59322
+Africa	Uganda	UG	Tororo	0.2869	34.033401	2002	2002	5	16	120	64	0.53333
+Africa	Uganda	UG	Gulu	2.59318	31.9534	1998	2005	9	13	59	26	0.44068
+Africa	Uganda	UG	Tororo	0.264117	33.987801	2002	2002	5	16	122	70	0.57377
+Africa	Uganda	UG	Iganga	0.443417	33.481998	2002	2002	5	16	128	86	0.67188
+Africa	Uganda	UG	Kitgum	2.83623	32.965099	1998	2005	8	15	58	30	0.51724
+Africa	Uganda	UG	Luwero	1.51023	32.4063	1998	2005	7	12	63	47	0.74603
+Africa	Uganda	UG	Arua	3.35943	31.242001	1998	2005	9	18	64	33	0.51563
+Africa	Uganda	UG	Rukungiri	-0.964733	29.923	2005	2005	5	16	58	3	0.05172
+Africa	Uganda	UG	Kisoro	-1.19425	29.6598	2005	2005	5	16	57	20	0.35088
+Africa	Uganda	UG	Moyo	3.47785	31.6117	1998	2005	8	14	74	28	0.37838
+Africa	Uganda	UG	Luwero	1.47005	32.2603	1998	2005	8	14	62	38	0.6129
+Africa	Uganda	UG	Soroti	1.78567	34.124298	1998	2005	7	14	42	25	0.59524
+Africa	Uganda	UG	Soroti	1.63333	33.089001	2005	2005	5	16	62	12	0.19355
+Africa	Uganda	UG	Nebbi	2.47737	31.0868	1998	2005	9	12	65	12	0.18462
+Africa	Uganda	UG	Iganga	0.48	33.481998	2002	2002	5	16	76	49	0.64474
+Africa	Uganda	UG	Iganga	0.355633	33.442402	2002	2002	5	16	116	102	0.87931
+Africa	Uganda	UG	Rukungiri	-0.75	29.950001	2002	2002	5	16	93	41	0.44086
+Africa	Uganda	UG	Apac	1.98498	32.528	1998	2005	7	13	63	22	0.34921
+Africa	Uganda	UG	Mukono	0.15135	32.799801	1998	2005	4	14	52	36	0.69231
+Africa	Uganda	UG	Lira	2.41938	33.072701	2002	2002	5	16	62	20	0.323
+Africa	Uganda	UG	Kibaale	1.02597	30.690201	1998	2005	8	16	60	33	0.55
+Africa	Uganda	UG	Bundibugyo	0.766217	30.0541	1998	2005	8	13	57	42	0.73684
+Africa	Uganda	UG	Luwero	1.50563	32.504398	1998	2005	7	12	58	37	0.63793
+Africa	Uganda	UG	Iganga	0.405683	33.4184	1998	2005	9	14	128	112	0.875
+Africa	Uganda	UG	Gulu	2.611	32.164001	1998	2005	7	13	31	18	0.58064
+Africa	Uganda	UG	Gulu	2.81513	32.3265	1998	2005	9	14	30	12	0.4
+Africa	Uganda	UG	Moyo	3.47593	31.9011	1998	2005	8	15	59	26	0.44068
+Africa	Uganda	UG	Kotido	3.50243	34.139999	1998	2005	5	16	58	1	0.01724
+Africa	Uganda	UG	Moroto	2.52483	34.637199	1998	2005	7	15	59	1	0.01695
+Africa	Uganda	UG	Bundibugyo	0.70895	30.076799	1998	2005	8	13	54	44	0.81481
+Africa	Uganda	UG	Bundibugyo	1.0468	30.263201	1998	2005	7	14	60	6	0.1
+Africa	Uganda	UG	Luwero	1.16262	32.465599	1998	2005	8	15	58	29	0.5
+Africa	Uganda	UG	Iganga	0.323433	33.6278	2002	2002	5	16	118	76	0.64407
+Africa	Uganda	UG	Kitgum	2.89558	33.082699	1998	2005	10	14	59	41	0.69492
+Africa	Uganda	UG	Soroti	2.32558	33.682999	1998	2005	7	14	42	30	0.71429
+Africa	Uganda	UG	Kisoro	-1.25956	29.6824	2005	2005	5	16	58	0	0
+Africa	Uganda	UG	Rukungiri	-0.550533	29.7889	2005	2005	5	16	59	42	0.71186
+Africa	Uganda	UG	Bundibugyo	1.08253	30.292601	1998	2005	7	14	36	6	0.16667
+Africa	Uganda	UG	Tororo	0.98985	34.0951	2005	2005	5	16	57	12	0.21053
+Africa	Uganda	UG	Moyo	3.56058	31.820601	2002	2002	5	16	58	26	0.44828
+Africa	Uganda	UG	Mukono	0.8409	32.957199	1998	2005	8	12	61	32	0.52459
+Africa	Uganda	UG	Nebbi	2.46022	31.3671	1998	2005	9	15	62	26	0.41936
+Africa	Uganda	UG	Moyo	3.431	31.605101	1998	2005	9	18	59	30	0.50847
+Africa	Uganda	UG	Iganga	0.3234	33.712399	2002	2002	5	16	58	48	0.82759
+Africa	Uganda	UG	Rukungiri	-0.832217	30.0175	2005	2005	5	16	58	18	0.31035
+Africa	Uganda	UG	Jinja	0.451267	33.225601	1998	2005	7	16	114	66	0.57895
+Africa	Uganda	UG	Soroti	1.65902	33.5919	2005	2005	5	16	63	30	0.47619
+Africa	Uganda	UG	Mukono	0.779633	32.992199	1998	2005	6	13	54	36	0.66667
+Africa	Uganda	UG	Iganga	0.521867	33.404598	1998	2005	6	12	122	64	0.52459
+Africa	Uganda	UG	Jinja	0.59755	33.076302	1998	2005	7	14	126	92	0.73016
+Africa	Uganda	UG	Soroti	2.07183	33.801498	1998	2005	7	14	41	29	0.70732
+Africa	Uganda	UG	Hoima	1.43615	30.99	1998	2005	8	16	60	32	0.53333
+Africa	Uganda	UG	Apac	1.98438	32.5406	1998	2005	7	12	59	2	0.0339
+Africa	Uganda	UG	Soroti	2.27633	33.772499	1998	2005	7	13	42	16	0.38095
+Africa	Uganda	UG	Kisoro	-1.33757	29.7985	2005	2005	5	16	56	1	0.01786
+Africa	Uganda	UG	Gulu	2.687	32.660301	1998	2005	8	13	59	32	0.54237
+Africa	Uganda	UG	Arua	3.25658	31.2983	1998	2005	9	16	63	36	0.57143
+Africa	Uganda	UG	Kibaale	0.96595	30.6007	1998	2005	11	18	59	30	0.50847
+Africa	Uganda	UG	Arua	3.3063	31.2159	1998	2005	9	13	60	47	0.78333
+Africa	Uganda	UG	Gulu	2.26245	32.123299	1998	2005	7	15	63	43	0.68254
+Africa	Uganda	UG	Gulu	2.6135	32.474899	1998	2005	7	14	62	34	0.54839
+Africa	Uganda	UG	Tororo	0.464917	34.087799	1998	2005	6	15	118	30	0.25424
+Africa	Uganda	UG	Gulu	2.83488	32.1562	1998	2005	8	13	55	15	0.27273
+Africa	Uganda	UG	Tororo	0.695333	34.178902	2005	2005	5	16	63	20	0.31746
+Africa	Uganda	UG	Kitgum	2.85602	33.3428	1998	2005	8	14	61	39	0.63934
+Africa	Uganda	UG	Hoima	1.41	30.959999	2002	2002	5	16	60	15	0.25
+Africa	Uganda	UG	Moroto	2.52388	34.652699	1998	2005	5	17	61	6	0.09836
+Africa	Uganda	UG	Tororo	0.932933	34.002201	2005	2005	5	16	62	37	0.59677
+Africa	Uganda	UG	Luwero	1.53913	32.040001	1998	2005	9	13	60	32	0.53333
+Africa	Uganda	UG	Apac	2.04067	32.594002	1998	2005	8	11	60	44	0.73333
+Africa	Uganda	UG	Bundibugyo	0.8013	30.1108	1998	2005	6	14	45	26	0.57778
+Africa	Uganda	UG	Moyo	3.15787	31.821501	1998	2005	10	14	57	34	0.59649
+Africa	Uganda	UG	Moyo	3.78507	31.810301	1998	2005	8	15	61	31	0.5082
+Africa	Uganda	UG	Kitgum	2.72947	33.051102	1998	2005	8	14	59	39	0.66102
+Africa	Uganda	UG	Luwero	1.3156	32.471901	1998	2005	8	13	60	23	0.38333
+Africa	Uganda	UG	Gulu	2.89045	32.4468	1998	2005	9	13	63	49	0.77778
+Africa	Uganda	UG	Kisoro	-1.34123	29.7756	2005	2005	5	16	56	1	0.01786
+Africa	Uganda	UG	Kisoro	-1.23474	29.7157	2005	2005	5	16	60	2	0.03333
+Africa	Uganda	UG	Tororo	0.245317	33.943401	1998	2005	7	13	122	74	0.60656
+Africa	Uganda	UG	Iganga	0.193717	33.864601	2002	2002	5	16	62	47	0.75806
+Africa	Uganda	UG	Nebbi	2.47508	31.507601	1998	2005	9	16	77	40	0.51948
+Africa	Uganda	UG	Moroto	2.5364	34.6577	1998	2005	8	13	58	1	0.01724
+Africa	Uganda	UG	Mukono	0.80345	33.0187	1998	2005	9	15	63	46	0.73016
+Africa	Uganda	UG	Hoima	1.50728	31.059999	1998	2005	8	14	61	15	0.2459
+Africa	Uganda	UG	Arua	3.6457	31.4792	1998	2005	7	17	66	14	0.21212
+Africa	Uganda	UG	Kitgum	3.2897	32.9189	1998	2005	5	12	57	31	0.54386
+Africa	Uganda	UG	Kitgum	3.37955	32.647301	1998	2005	7	12	60	11	0.18333
+Africa	Uganda	UG	Apac	2.23432	32.386501	1998	2005	8	12	56	23	0.41071
+Africa	Uganda	UG	Jinja	0.559033	33.327099	1998	2005	8	14	128	100	0.78125
+Africa	Uganda	UG	Soroti	1.82327	33.786098	1998	2005	5	14	42	32	0.7619
+Africa	Uganda	UG	Apac	2.44032	32.8377	1998	2005	7	12	61	20	0.32787
+Africa	Uganda	UG	Soroti	1.73383	34.1007	1998	2005	6	12	42	16	0.38095
+Africa	Uganda	UG	Jinja	0.614917	33.3004	1998	2005	7	13	128	98	0.76563
+Africa	Uganda	UG	Apac	2.08342	32.558899	1998	2005	7	14	59	16	0.27119
+Africa	Uganda	UG	Hoima	1.7	31.360001	2002	2002	5	16	60	20	0.33333
+Africa	Uganda	UG	Tororo	0.299867	34.030399	1998	2005	7	14	128	92	0.71875
+Africa	Uganda	UG	Moyo	3.22965	31.549999	2002	2002	5	16	58	40	0.68965
+Africa	Uganda	UG	Moyo	3.6286	31.6553	1998	2005	8	15	57	27	0.47368
+Africa	Uganda	UG	Nebbi	2.56368	31.4384	2003	2003	6	14	101	72	0.71287
+Africa	Uganda	UG	Masindi	1.84232	31.382799	2003	2003	6	14	116	53	0.4569
+Africa	Uganda	UG	Moyo	3.19765	31.5261	2003	2003	6	14	121	75	0.61984
+Africa	Uganda	UG	Hoima	1.58112	31.1866	2003	2003	6	14	120	65	0.54167
+Africa	Uganda	UG	Moyo	3.62798	31.7367	2003	2003	6	14	119	80	0.67227
+Africa	Uganda	UG	Moyo	3.22957	31.549801	2003	2003	6	14	120	80	0.66667
+Africa	Uganda	UG	Masindi	2.01975	31.422701	2003	2003	6	14	117	67	0.57265
+Africa	Uganda	UG	Iganga	0.52625	33.8619	2003	2003	6	14	119	64	0.53782
+Africa	Uganda	UG	Iganga	0.443417	33.481998	2003	2003	6	14	120	62	0.51667
+Africa	Uganda	UG	Iganga	0.323433	33.6278	2003	2003	6	14	121	85	0.70248
+Africa	Uganda	UG	Tororo	0.245483	33.943298	2003	2003	6	14	125	67	0.536
+Africa	Uganda	UG	Moyo	3.2564	31.543301	2003	2003	6	14	120	73	0.60833
+Africa	Uganda	UG	Iganga	0.166417	33.875	2003	2003	6	14	127	88	0.69291
+Africa	Uganda	UG	Masindi	1.7586	31.420799	2003	2003	6	14	120	90	0.75
+Africa	Uganda	UG	Masindi	2.17787	31.3829	2003	2003	6	14	119	73	0.61345
+Africa	Uganda	UG	Hoima	1.58602	31.090599	2003	2003	6	14	71	20	0.28169
+Africa	Uganda	UG	Moyo	3.5706	31.924601	2003	2003	6	14	120	54	0.45
+Africa	Uganda	UG	Iganga	0.35065	33.705502	2003	2003	6	14	118	80	0.67797
+Africa	Uganda	UG	Iganga	0.325767	33.713501	2003	2003	6	14	116	76	0.65517
+Africa	Uganda	UG	Hoima	1.49342	31.284	2003	2003	6	14	128	60	0.46875
+Africa	Uganda	UG	Iganga	0.261283	33.514	2003	2003	6	14	120	95	0.79167
+Africa	Uganda	UG	Hoima	1.67482	31.250999	2003	2003	6	14	120	33	0.275
+Africa	Uganda	UG	Masindi	1.8107	31.3703	2003	2003	6	14	108	63	0.58333
+Africa	Uganda	UG	Nebbi	2.24848	31.317801	2003	2003	6	14	120	17	0.14167
+Africa	Uganda	UG	Arua	3.02178	30.9095	2003	2003	6	14	119	39	0.32773
+Africa	Uganda	UG	Tororo	0.247283	33.993401	2003	2003	6	14	117	81	0.69231
+Africa	Uganda	UG	Tororo	0.238267	33.945301	2003	2003	6	14	120	79	0.65833
+Africa	Uganda	UG	Masindi	2.17778	31.3829	2003	2003	6	14	100	43	0.43
+Africa	Uganda	UG	Iganga	0.193133	33.865002	2003	2003	6	14	117	33	0.28205
+Africa	Uganda	UG	Nebbi	2.49985	31.468201	2003	2003	6	14	120	59	0.49167
+Africa	Uganda	UG	Moyo	3.56128	31.820801	2003	2003	6	14	119	65	0.54622
+Africa	Uganda	UG	Iganga	0.355633	33.442402	2003	2003	6	14	120	95	0.79167
+Africa	Uganda	UG	Tororo	0.264317	33.987801	2003	2003	6	14	148	70	0.47297
+Africa	Uganda	UG	Tororo	0.286867	34.033501	2003	2003	6	14	119	50	0.42017
+Africa	Uganda	UG	Iganga	0.177817	33.5611	2003	2003	6	14	114	71	0.62281
+Africa	Uganda	UG	Hoima	1.7317	31.310699	2003	2003	6	14	116	34	0.2931
+Africa	Uganda	UG	Nebbi	2.52397	31.463301	2003	2003	6	14	120	72	0.6
+Africa	Uganda	UG	Mbale	0.84306	34.299999	2009	2009	5	18	62	19	0.30645
+Africa	Uganda	UG	Iganga	0.70334	33.633499	2009	2009	5	18	59	19	0.32203
+Africa	Uganda	UG	Masaka	0.00917	31.243099	2009	2009	5	18	58	19	0.32759
+Africa	Uganda	UG	Gulu	3.50466	32.078899	2009	2009	5	18	64	0	0
+Africa	Uganda	UG	Kitgum	2.76688	33.3046	2009	2009	5	18	55	1	0.01818
+Africa	Uganda	UG	Iganga	0.65294	33.4119	2009	2009	5	18	60	19	0.31667
+Africa	Uganda	UG	Kitgum	3.30763	32.8727	2009	2009	5	18	60	0	0
+Africa	Uganda	UG	Mubende	0.29734	31.936399	2009	2009	5	18	55	0	0
+Africa	Uganda	UG	Mbale	1.11175	34.200699	2009	2009	5	60	47	14	0.19787
+Africa	Uganda	UG	Kitgum	2.68828	32.792301	2009	2009	5	60	63	0	0
+Africa	Uganda	UG	Kitgum	3.52066	32.864601	2009	2009	5	18	62	0	0
+Africa	Uganda	UG	Gulu	3.2652	32.221199	2009	2009	5	18	61	0	0
+Africa	Uganda	UG	Gulu	3.28016	32.367401	2009	2009	5	18	59	0	0
+Africa	Uganda	UG	Gulu	2.68677	32.785198	2009	2009	5	60	58	6	0.10345
+Africa	Uganda	UG	Iganga	0.59436	33.537998	2009	2009	5	18	59	19	0.32203
+Africa	Uganda	UG	Rakai	-0.58808	31.130501	2009	2009	5	60	5	0	0
+Africa	Uganda	UG	Kumi	1.35407	33.7505	2009	2009	5	18	60	4	0.06667
+Africa	Uganda	UG	Kitgum	3.29288	32.9855	2009	2009	5	18	60	0	0
+Africa	Uganda	UG	Mbale	1.3688	34.306702	2009	2009	5	18	56	10	0.17857
+Africa	Uganda	UG	Kitgum	3.30366	32.8923	2009	2009	5	18	57	0	0
+Africa	Uganda	UG	Mbale	1.28899	34.256302	2009	2009	5	18	57	7	0.12281
+Africa	Uganda	UG	Mubende	0.36585	31.759399	2009	2009	5	18	48	0	0
+Africa	Uganda	UG	Gulu	2.5982	31.847401	2009	2009	5	18	60	0	0
+Africa	Uganda	UG	Masaka	0.02863	31.2463	2009	2009	5	18	50	4	0.08
+Africa	Uganda	UG	Mubende	0.40665	31.9928	2009	2009	5	18	55	0	0
+Africa	Uganda	UG	Kamuli	1.14955	33.5284	2009	2009	5	18	58	11	0.18965
+Africa	Uganda	UG	Gulu	2.5394	31.8482	2009	2009	5	18	58	0	0
+Africa	Uganda	UG	Mbale	0.80528	34.378201	2009	2009	5	18	66	7	0.10606
+Africa	Uganda	UG	Rakai	-0.89491	31.736099	2009	2009	5	18	56	13	0.23214
+Africa	Uganda	UG	Kitgum	3.13995	32.910702	2009	2009	5	18	63	0	0
+Africa	Uganda	UG	Rakai	-0.58808	31.130501	2009	2009	5	60	45	16	0.35556
+Africa	Uganda	UG	Tororo	0.83889	34	2009	2009	5	18	60	18	0.3
+Africa	Uganda	UG	Pallisa	1.13333	33.950001	2009	2009	5	18	61	12	0.19672
+Africa	Uganda	UG	Kitgum	3.26783	33.0448	2009	2009	5	18	65	0	0
+Africa	Uganda	UG	Iganga	0.72515	33.540501	2009	2009	5	18	58	11	0.18965
+Africa	Uganda	UG	Rakai	-0.64697	31.2787	2009	2009	5	18	59	7	0.11864
+Africa	Uganda	UG	Kamuli	0.9161	33.440102	2009	2009	5	18	58	5	0.08621
+Africa	Uganda	UG	Kitgum	2.78172	33.168301	2009	2009	5	18	62	1	0.01613
+Africa	Uganda	UG	Kumi	1.60301	33.914799	2009	2009	5	18	58	0	0
+Africa	Uganda	UG	Iganga	0.79102	33.537998	2009	2009	5	18	56	23	0.41071
+Africa	Uganda	UG	Mubende	0.30213	31.8396	2009	2009	5	60	30	0	0
+Africa	Uganda	UG	Mbale	1.34894	34.282398	2009	2009	5	18	62	26	0.41936
+Africa	Uganda	UG	Mbale	0.93911	34.1339	2009	2009	5	18	64	13	0.20313
+Africa	Uganda	UG	Masaka	0.00144	31.5145	2009	2009	5	18	57	5	0.08772
+Africa	Uganda	UG	Kumi	1.46864	33.723202	2009	2009	5	18	60	2	0.03333
+Africa	Uganda	UG	Kitgum	2.76466	33.3078	2009	2009	5	18	60	1	0.01667
+Africa	Uganda	UG	Mbale	1.45677	34.386902	2009	2009	5	18	60	10	0.16667
+Africa	Uganda	UG	Gulu	3.24144	32.160599	2009	2009	5	18	64	0	0
+Africa	Uganda	UG	Gulu	2.68203	32.729599	2009	2009	5	18	57	0	0
+Africa	Uganda	UG	Kitgum	3.30936	32.896801	2009	2009	5	18	48	2	0.04167
+Africa	Uganda	UG	Mubende	0.31389	31.916401	2009	2009	5	18	55	0	0
+Africa	Uganda	UG	Gulu	2.68216	32.7257	2009	2009	5	60	70	5	0.07143
+Africa	Uganda	UG	Mubende	0.38327	31.968901	2009	2009	5	60	32	0	0
+Africa	Uganda	UG	Rakai	-0.64271	31.1052	2009	2009	5	18	54	5	0.09259
+Africa	Uganda	UG	Kitgum	2.75622	32.777699	2009	2009	5	60	62	2	0.03226
+Africa	Uganda	UG	Masaka	0.0276	31.327801	2009	2009	5	18	58	0	0
+Africa	Uganda	UG	Mubende	0.7851	31.685499	2009	2009	5	18	52	0	0
+Africa	Uganda	UG	Rakai	-0.70953	31.591801	2009	2009	5	18	58	5	0.08621
+Africa	Uganda	UG	Mbale	1.29279	34.254902	2009	2009	5	60	44	11	0.25
+Africa	Uganda	UG	Mubende	0.72902	31.814899	2009	2009	5	18	54	0	0
+Africa	Uganda	UG	Kitgum	3.39606	33.015499	2009	2009	5	18	63	1	0.01587
+Africa	Uganda	UG	Mubende	0.79084	31.7304	2009	2009	5	18	41	0	0
+Africa	Uganda	UG	Rakai	-0.66779	31.3036	2009	2009	5	18	58	7	0.12069
+Africa	Uganda	UG	Gulu	2.87378	32.547401	2009	2009	5	18	60	0	0
+Africa	Uganda	UG	Gulu	3.16201	32.363602	2009	2009	5	18	62	0	0
+Africa	Uganda	UG	Mubende	0.32448	31.9729	2009	2009	5	18	27	0	0
+Africa	Uganda	UG	Gulu	3.47334	32.068901	2009	2009	5	18	51	0	0
+Africa	Uganda	UG	Mbale	1.49697	34.440601	2009	2009	5	18	56	1	0.01786
+Africa	Uganda	UG	Kumi	1.6175	33.771198	2009	2009	5	18	58	0	0
+Africa	Uganda	UG	Gulu	2.51872	31.8402	2009	2009	5	18	59	1	0.01695
+Africa	Uganda	UG	Mubende	0.30923	31.8438	2009	2009	5	18	52	0	0
+Africa	Uganda	UG	Gulu	2.84254	32.2159	2009	2009	5	18	60	0	0
+Africa	Uganda	UG	Mubende	0.55629	31.3808	2009	2009	5	18	60	0	0
+Africa	Uganda	UG	Mbale	1.33046	34.2715	2009	2009	5	18	58	16	0.17586
+Africa	Uganda	UG	Pallisa	1.13333	33.950001	2009	2009	5	18	59	12	0.20339
+Africa	Uganda	UG	Mubende	0.30846	31.9594	2009	2009	5	18	53	0	0
+Africa	Uganda	UG	Mubende	0.36574	31.7586	2009	2009	5	60	36	0	0
+Africa	Uganda	UG	Gulu	2.53085	32.413601	2009	2009	5	18	59	1	0.01695
+Africa	Uganda	UG	Tororo	1.0102	34.034801	2009	2009	5	18	59	8	0.13559
+Africa	Uganda	UG	Mbale	0.85076	34.300499	2009	2009	5	18	62	42	0.67742
+Africa	Uganda	UG	Mbale	0.96244	34.294701	2009	2009	5	18	61	2	0.03279
+Africa	Uganda	UG	Mubende	0.30122	31.8416	2009	2009	5	18	47	0	0
+Africa	Uganda	UG	Masaka	0.10705	31.5305	2009	2009	5	18	56	10	0.17857
+Africa	Uganda	UG	Mbale	0.99109	34.1665	2009	2009	5	18	61	11	0.18033
+Africa	Uganda	UG	Gulu	3.2652	32.221199	2009	2009	5	60	71	5	0.07042
+Africa	Uganda	UG	Kumi	1.37281	33.671001	2009	2009	5	18	59	2	0.0339
+Africa	Uganda	UG	Mbale	1.1146	34.148499	2009	2009	5	18	60	11	0.18333
+Africa	Uganda	UG	Mbale	0.91478	34.1287	2009	2009	5	18	61	2	0.03279
+Africa	Uganda	UG	Gulu	3.31797	32.1082	2009	2009	5	18	64	0	0
+Africa	Uganda	UG	Mubende	0.44041	31.3001	2009	2009	5	18	62	0	0
+Africa	Uganda	UG	Gulu	2.82228	32.3526	2009	2009	5	18	62	3	0.04839
+Africa	Uganda	UG	Kamuli	1.16955	33.501701	2009	2009	5	18	56	26	0.46429
+Africa	Uganda	UG	Kitgum	2.80927	33.113602	2009	2009	5	18	60	0	0
+Africa	Uganda	UG	Mubende	0.35227	31.8067	2009	2009	5	18	51	0	0
+Africa	Uganda	UG	Mbale	1.23336	34.2463	2009	2009	5	18	58	4	0.06897
+Africa	Uganda	UG	Pallisa	0.95	33.900002	2009	2009	5	18	58	10	0.17241
+Africa	Uganda	UG	Pallisa	1.08333	33.916672	2009	2009	5	18	60	8	0.13333
+Africa	Uganda	UG	Mbale	0.85073	34.270302	2009	2009	5	18	64	27	0.42188
+Africa	Uganda	UG	Kitgum	3.58783	32.940399	2009	2009	5	18	55	1	0.01818
+Africa	Uganda	UG	Rakai	-0.67536	31.3298	2009	2009	5	18	61	5	0.08197
+Africa	Uganda	UG	Kamuli	1.19731	33.437599	2009	2009	5	18	59	11	0.18644
+Africa	Uganda	UG	Mubende	0.7195	31.8424	2009	2009	5	18	56	0	0
+Africa	Uganda	UG	Gulu	3.24144	32.160599	2009	2009	5	60	63	7	0.11111
+Africa	Uganda	UG	Tororo	0.7499	34.073002	2009	2009	5	18	61	14	0.22951
+Africa	Uganda	UG	Mbale	0.80378	34.3377	2009	2009	5	18	62	6	0.09677
+Africa	Uganda	UG	Gulu	3.08843	32.1563	2009	2009	5	18	58	0	0
+Africa	Uganda	UG	Mubende	0.32698	31.7917	2009	2009	5	18	53	0	0
+Africa	Uganda	UG	Rakai	-0.91399	31.759899	2009	2009	5	18	53	4	0.07547
+Africa	Uganda	UG	Kamuli	1.10903	33.583302	2009	2009	5	18	58	6	0.10345
+Africa	Uganda	UG	Iganga	0.87743	33.349201	2009	2009	5	18	58	24	0.41379
+Africa	Uganda	UG	Kitgum	2.7914	33.146301	2009	2009	5	18	60	0	0
+Africa	Uganda	UG	Mubende	0.39609	31.754	2009	2009	5	18	50	0	0
+Africa	Uganda	UG	Kamuli	1.16236	33.513599	2009	2009	5	18	57	8	0.14035
+Africa	Uganda	UG	Mbale	1.1456	34.1651	2009	2009	5	18	67	4	0.0597
+Africa	Uganda	UG	Mbale	1.10076	34.317101	2009	2009	5	18	56	5	0.08929
+Africa	Uganda	UG	Kitgum	3.29876	32.873501	2009	2009	5	18	38	0	0
+Africa	Uganda	UG	Masaka	0.04688	31.547001	2009	2009	5	18	59	7	0.11864
+Africa	Uganda	UG	Rakai	-0.70611	31.335199	2009	2009	5	18	36	2	0.05556
+Africa	Uganda	UG	Gulu	2.56629	31.643	2009	2009	5	18	51	0	0
+Africa	Uganda	UG	Kamuli	1.07293	33.460098	2009	2009	5	18	57	4	0.07017
+Africa	Uganda	UG	Mbale	0.89481	34.2402	2009	2009	5	18	62	15	0.24194
+Africa	Uganda	UG	Kitgum	3.0726	32.922901	2009	2009	5	18	60	1	0.01667
+Africa	Uganda	UG	Kitgum	3.36801	32.958199	2009	2009	5	18	61	0	0
+Africa	Uganda	UG	Mubende	0.34549	32.001202	2009	2009	5	18	49	0	0
+Africa	Uganda	UG	Mubende	0.30446	31.945	2009	2009	5	18	50	0	0
+Africa	Uganda	UG	Iganga	0.87762	33.349201	2009	2009	5	18	60	28	0.46667
+Africa	Uganda	UG	Iganga	0.72524	33.3937	2009	2009	5	18	60	29	0.48333
+Africa	Uganda	UG	Mubende	0.35235	31.8071	2009	2009	5	60	25	0	0
+Africa	Uganda	UG	Rakai	-0.58764	31.132	2009	2009	5	18	60	3	0.05
+Africa	Uganda	UG	Gulu	2.68409	32.7775	2009	2009	5	18	65	0	0
+Africa	Uganda	UG	Gulu	2.62901	32.368099	2009	2009	5	18	58	1	0.01724
+Africa	Uganda	UG	Kitgum	3.37964	32.647301	2009	2009	5	18	61	0	0
+Africa	Uganda	UG	Kitgum	3.32427	32.808998	2009	2009	5	18	66	0	0
+Africa	Uganda	UG	Kumi	1.61902	34.015099	2009	2009	5	18	55	0	0
+Africa	Uganda	UG	Mbale	1.11219	34.200802	2009	2009	5	18	59	6	0.1017
+Africa	Uganda	UG	Kitgum	3.13635	32.912601	2009	2009	5	18	53	0	0
+Africa	Uganda	UG	Kamuli	0.94041	33.549599	2009	2009	5	18	59	23	0.38983
+Africa	Uganda	UG	Pallisa	0.96667	33.950001	2009	2009	5	18	60	11	0.18333
+Africa	Uganda	UG	Pallisa	1.05586	34.063801	2009	2009	5	18	59	0	0
+Africa	Uganda	UG	Masaka	0.08379	31.319799	2009	2009	5	18	65	3	0.04615
+Africa	Uganda	UG	Mbale	0.91842	34.2915	2009	2009	5	18	64	18	0.28125
+Africa	Uganda	UG	Kamuli	1.19396	33.411999	2009	2009	5	18	59	12	0.20339
+Africa	Uganda	UG	Mubende	0.28107	31.868799	2009	2009	5	18	55	0	0
+Africa	Uganda	UG	Kitgum	2.77772	32.777699	2009	2009	5	18	59	0	0
+Africa	Uganda	UG	Mbale	1.2572	34.246101	2009	2009	5	18	52	9	0.17308
+Africa	Uganda	UG	Masaka	0.08027	31.5271	2009	2009	5	60	34	19	0.55882
+Africa	Uganda	UG	Kumi	1.29465	33.911701	2009	2009	5	18	59	1	0.01695
+Africa	Uganda	UG	Rakai	-0.7074	31.575001	2009	2009	5	18	57	11	0.19298
+Africa	Uganda	UG	Mbale	1.05705	34.1614	2009	2009	5	18	59	3	0.05085
+Africa	Uganda	UG	Gulu	2.81119	32.239899	2009	2009	5	18	57	0	0
+Africa	Uganda	UG	Kabarole	0.788	30.450001	2008	2008	1	50	709	122	0.17207
+Africa	Uganda	UG	Kampala	0.39985	32.5746	2006	2006	8	14	60	4	0.06667
+Africa	Uganda	UG	Kampala	0.30798	32.5755	2006	2006	10	15	55	0	0
+Africa	Uganda	UG	Kampala	0.34228	32.586498	2006	2006	10	16	57	1	0.01754
+Africa	Uganda	UG	Kampala	0.29815	32.5387	2006	2006	8	14	49	5	0.10204
+Africa	Uganda	UG	Kampala	0.30649	32.564602	2006	2006	9	14	57	0	0
+Africa	Uganda	UG	Kampala	0.31584	32.6357	2006	2006	9	14	59	0	0
+Africa	Uganda	UG	Kampala	0.36165	32.576199	2006	2006	10	14	57	0	0
+Africa	Uganda	UG	Kampala	0.283	32.576099	2006	2006	10	15	58	0	0
+Africa	Uganda	UG	Kampala	0.30978	32.57	2006	2006	10	16	53	0	0
+Africa	Uganda	UG	Kampala	0.32825	32.6231	2006	2006	10	15	58	0	0
+Africa	Uganda	UG	Kampala	0.30787	32.6516	2006	2006	10	14	51	2	0.03922
+Africa	Uganda	UG	Kampala	0.29821	32.583599	2006	2006	10	14	60	4	0.06667
+Africa	Uganda	UG	Kampala	0.30175	32.649502	2006	2006	10	15	56	2	0.03571
+Africa	Uganda	UG	Kampala	0.36008	32.570801	2006	2006	9	14	57	0	0
+Africa	Uganda	UG	Kampala	0.255	32.634899	2006	2006	9	15	60	8	0.13333
+Africa	Uganda	UG	Kampala	0.3359	32.599899	2006	2006	10	14	55	1	0.01818
+Africa	Uganda	UG	Kampala	0.29246	32.537601	2006	2006	10	15	58	4	0.06897
+Africa	Uganda	UG	Kampala	0.30602	32.527302	2006	2006	10	15	59	1	0.01695
+Africa	Uganda	UG	Kampala	0.29191	32.563801	2006	2006	10	14	58	0	0
+Africa	Uganda	UG	Kampala	0.24975	32.621601	2006	2006	10	14	56	0	0
+Africa	Uganda	UG	Kampala	0.36149	32.5695	2006	2006	9	14	52	1	0.01923
+Africa	Uganda	UG	Kampala	0.32266	32.573399	2006	2006	10	14	55	0	0
+Africa	Uganda	UG	Kampala	0.35133	32.555698	2006	2006	8	16	47	3	0.06383
+Africa	Uganda	UG	Kampala	0.25554	32.605099	2006	2006	10	15	59	2	0.0339
+Africa	Uganda	UG	Kampala	0.34367	32.609901	2006	2006	9	15	29	0	0
+Africa	Uganda	UG	Kampala	0.34471	32.554798	2006	2006	9	14	59	3	0.05085
+Africa	Uganda	UG	Kampala	0.35532	32.6292	2006	2006	10	14	57	2	0.03509
+Africa	Uganda	UG	Kampala	0.28088	32.557301	2006	2006	10	13	59	0	0
+Africa	Uganda	UG	Kampala	0.30702	32.602501	2006	2006	10	16	59	3	0.05085
+Africa	Uganda	UG	Iganga	0.031083	33.6446	2008	2008	6	16	18	0	0
+Africa	Uganda	UG	Kalangala	-0.322216	32.2845	2008	2008	6	16	18	0	0
+Africa	Uganda	UG	Iganga	0.111767	33.6021	2008	2008	6	16	17	0	0
+Africa	Uganda	UG	Kalangala	-0.25718	32.066399	2008	2008	6	16	16	0	0
+Africa	Uganda	UG	Iganga	0.318117	33.626999	2008	2008	6	16	17	0	0
+Africa	Uganda	UG	Mukono	0.185583	33.215199	2008	2008	6	16	19	0	0
+Africa	Uganda	UG	Masaka	-0.273267	32.026501	2008	2008	6	16	15	0	0
+Africa	Uganda	UG	Tororo	0.263167	33.984699	2008	2008	6	16	17	0	0
+Africa	Uganda	UG	Kalangala	-0.32025	32.5755	2008	2008	6	16	13	0	0
+Africa	Uganda	UG	Kalangala	-0.4173	32.228298	2008	2008	6	16	18	0	0
+Africa	Uganda	UG	Kalangala	-0.2338	32.5751	2008	2008	6	16	16	0	0
+Africa	Uganda	UG	Kalangala	-0.351583	32.571499	2008	2008	6	16	15	2	0.133
+Africa	Uganda	UG	Mukono	0.2403	33.1371	2008	2008	6	16	17	0	0
+Africa	Uganda	UG	Kalangala	-0.363533	32.294899	2008	2008	6	16	12	0	0
+Africa	Uganda	UG	Mukono	0.270217	33.205898	2008	2008	6	16	16	0	0
+Africa	Uganda	UG	Rakai	-0.91535	31.7673	2008	2008	6	16	18	5	0.278
+Africa	Uganda	UG	Mukono	0.1732	33.183998	2008	2008	6	16	17	0	0
+Africa	Uganda	UG	Iganga	0.05235	33.605801	2008	2008	6	16	17	0	0
+Africa	Uganda	UG	Kalangala	-0.30066	32.141201	2008	2008	6	16	18	0	0
+Africa	Uganda	UG	Tororo	0.253067	33.988899	2008	2008	6	16	18	0	0
+Africa	Uganda	UG	Iganga	0.156183	33.566002	2008	2008	6	16	18	0	0
+Africa	Uganda	UG	Kalangala	-0.32395	32.284199	2008	2008	6	16	14	4	0.286
+Africa	Uganda	UG	Mukono	0.014767	32.7672	2008	2008	6	16	16	0	0
+Africa	Uganda	UG	Kalangala	-0.43865	32.227901	2008	2008	6	16	17	1	0.059
+Africa	Uganda	UG	Kalangala	-0.32284	32.1936	2008	2008	6	16	19	0	0
+Africa	Uganda	UG	Mukono	-0.086383	32.652199	2008	2008	6	16	18	0	0
+Africa	Uganda	UG	Iganga	0.003033	33.6586	2008	2008	6	16	17	0	0
+Africa	Uganda	UG	Kabale	-1.36055	29.9028	2006	2006	1	50	16	0	0
+Africa	Uganda	UG	Kabale	-1.40726	29.9356	2006	2006	1	50	24	0	0
+Africa	Uganda	UG	Kabale	-1.22785	29.8682	2006	2006	1	50	21	3	0.14286
+Africa	Uganda	UG	Kabale	-1.41618	29.9426	2006	2006	1	50	25	0	0
+Africa	Uganda	UG	Kabale	-1.32587	29.9529	2006	2006	1	50	28	0	0
+Africa	Uganda	UG	Kabale	-1.32135	29.8978	2006	2006	1	50	15	4	0.26667
+Africa	Uganda	UG	Kabale	-1.3266	29.9568	2006	2006	1	50	27	0	0
+Africa	Uganda	UG	Kabale	-1.27268	29.919901	2006	2006	1	50	20	1	0.05
+Africa	Uganda	UG	Kabale	-1.27865	29.9352	2006	2006	1	50	25	1	0.04
+Africa	Uganda	UG	Kabale	-1.28993	29.944099	2006	2006	1	50	19	0	0
+Africa	Uganda	UG	Kabale	-1.21873	29.825701	2006	2006	1	50	23	0	0
+Africa	Uganda	UG	Kabale	-1.36035	29.893	2006	2006	1	50	8	0	0
+Africa	Uganda	UG	Kabale	-1.26657	29.930799	2006	2006	1	50	33	2	0.06061
+Africa	Uganda	UG	Kabale	-1.21178	29.8295	2006	2006	1	50	11	1	0.09091
+Africa	Uganda	UG	Kabale	-1.3181	29.8974	2006	2006	1	50	9	4	0.44444
+Africa	Uganda	UG	Iganga	0.31106	33.492401	2009	2009	17	45	125	75	0.6
+Africa	Uganda	UG	Iganga	0.31106	33.492401	2009	2009	0	5	247	55	0.22267
+Africa	South Africa	ZA	Natal	-26.9464	32.3447			5	13	153	136	0.88889
+Africa	South Africa	ZA	Natal	-28.8589	31.897499			5	13	157	94	0.59873
+Africa	South Africa	ZA	Natal	-30.888901	30.314699			5	13	164	70	0.42683
+Africa	South Africa	ZA	Natal	-29.486099	31.2278			5	13	168	98	0.58333
