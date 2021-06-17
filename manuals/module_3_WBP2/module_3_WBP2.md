@@ -508,7 +508,7 @@ meloidogyne_arenaria_prjna438575
 
 * Put the list of species names in a file in your working directory:
      
-    curl -L 'https://parasite.wormbase.org/rest/info/genomes/taxonomy/Meloidogyne?' -H 'Content-type:application/json'  | jq -r '.[] | .name' > species.txt
+```curl -L 'https://parasite.wormbase.org/rest/info/genomes/taxonomy/Meloidogyne?' -H 'Content-type:application/json'  | jq -r '.[] | .name' > species.txt```
 
 The next endpoint that we need is the quality endpoint. Find it on the WormBase ParaSite API endpoint page and have a look at the example.
 
@@ -545,17 +545,17 @@ Finally, sort that file by BUSCO score:
 ```
 sort -n -r -k3,3 assembly_completeness.txt
 
-meloidogyne_incognita_prjeb8714 95.97 61.8
-meloidogyne_arenaria_prjna438575 95.97 58.4
 meloidogyne_arenaria_prjeb8714 95.97 64.7
+meloidogyne_incognita_prjeb8714 95.97 61.8
 meloidogyne_javanica_prjeb8714 95.56 61.1
 meloidogyne_hapla_prjna29083 94.76 59.9
+meloidogyne_arenaria_prjna438575 95.97 58.4
 meloidogyne_javanica_prjna340324 93.55 57.4
 meloidogyne_arenaria_prjna340324 91.13 55.8
 meloidogyne_incognita_prjna340324 85.89 51.9
-meloidogyne_graminicola_prjna411966 84.68 40.7
-meloidogyne_enterolobii_prjna340324 84.27 49.7
 meloidogyne_floridensis_prjna340324 81.45 49.9
+meloidogyne_enterolobii_prjna340324 84.27 49.7
+meloidogyne_graminicola_prjna411966 84.68 40.7
 meloidogyne_floridensis_prjeb6016 62.10 29.7
 ```
 We can see that _M. arenaria_ is the assembly with the highest BUSCO score.
