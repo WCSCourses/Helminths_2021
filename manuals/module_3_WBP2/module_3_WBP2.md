@@ -351,33 +351,50 @@ grep -c "^>" necator_americanus.PRJNA72135.WBPS15.protein.fa
 sed -n -e '/NECAME_00165/,/^>/p' necator_americanus.PRJNA72135.WBPS15.protein.fa | sed -e '$d'
 ```
 
-And a more complicated ```awk``` to count scaffold lengths in a genome FASTA file:
+And a more complicated ```awk``` to extract scaffold lengths in a genome FASTA file:
 
 ```
 # download the file
+wget ftp://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/current/species/necator_americanus/PRJNA72135/necator_americanus.PRJNA72135.WBPS15.protein.fa.gz
 
 # unzip 
+gunzip necator_americanus.PRJNA72135.WBPS15.protein.fa.gz
 
 # count the lengths
+awk '/^>/ { if (seqlen) {
+                          print seqlen
+                         }
+            print
+            seqlen=0
+            next
+           }
+          {
+            seqlen += length($0)
+          } '  necator_americanus.PRJNA72135.WBPS15.genomic.fa
+
 ```
 
-Exercises
+#### Exercises
 
 Tweak the above examples to answer these questions from the files that you've just downloaded:
 
-1. Which _N. americanus_ scaffold has the most genes?
-2. Write a loop to extract the sequences of all of these genes:
-```
-
-
+1. Which _N. americanus_ scaffold has the most genes? Is this the same as the longest scaffold?
+2. Write a loop to extract the sequences of all of these proteins:
 
 ```
-
-
-
-
-
-
+NECAME_00333
+NECAME_00215
+NECAME_00169
+NECAME_00417
+NECAME_00018
+NECAME_00028
+NECAME_00893
+NECAME_00782
+NECAME_00092
+NECAME_00891
+NECAME_00638
+NECAME_00025
+```
 
 ### The REST API <a name="api"></a>
 
@@ -475,7 +492,7 @@ meloidogyne_arenaria_prjna438575
 
 The next endpoint that we need is the quality endpoint. Find it on the WormBase ParaSite API endpoint page and have a look at the example.
 
-![](figures/rest_4.png)e
+![](figures/rest_4.png)
 
 We will need to replace the species name in the URL, and make a separate request for each species. We can write a small loop in bash, reading from our species file, to achieve this:
 
@@ -506,7 +523,7 @@ done < species.txt
 Finally, sort that file by CEGMA score:
 
 ```
-sort -nrk2,2 assembly_completeness.txt
+sort -n -r -k2,2 assembly_completeness.txt
 
 meloidogyne_incognita_prjeb8714 95.97 61.8
 meloidogyne_arenaria_prjna438575 95.97 58.4
