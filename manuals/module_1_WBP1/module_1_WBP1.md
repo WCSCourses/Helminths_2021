@@ -34,7 +34,7 @@ In eukaryotes, most protein-coding genes are formed by alternating exons and int
 ![](figures/figure_3.0.5.png)
 FIGURE: gene structure
 
-This figure represents the steps that are needed to transform information encoded in the DNA into a polypeptide and eventually a functional protein. The starting information is encoded in the Genome. A gene encodes, among other things, the transcription start and transcription end. These are the nucleotides from where an RNA copy of the DNA will be generated. This copy is the pre-mRNA which is formed by exons and introns. It also has untranslated regions at the before the first exon (5’ end) and last exon (3’ end) - not shown in this figure. Maturation of the mRNA molecule happens as it is transcribed and involves the slicing (removal) of introns with the concomitant joining of exons, addition of the a CAP at the 5’ end and a polyadenylation tail (many As - AAAAAAA) at the 3’end. A processed mRNA will be the template for the translation of the mRNA message into a protein by the ribosome.
+This figure represents the steps that are needed to transform information encoded in the DNA into a polypeptide and eventually a functional protein. The starting information is encoded in the genome. A gene encodes, among other things, the transcription start and transcription end. These are the nucleotides from where an RNA copy of the DNA will be generated. This copy is the pre-mRNA which is formed by exons and introns. Maturation of the mRNA molecule happens as it is transcribed and involves the splicing (removal) of introns with the concomitant joining of exons, addition of a CAP at the 5’ end and a polyadenylation tail (many As - AAAAAAA) at the 3’end. A processed mRNA will be the template for the translation of the mRNA message into a protein by the ribosome.
 
 ### Genomes: the basics  <a name="basics_genomes"></a>
 
@@ -51,15 +51,15 @@ Sometimes, there is insufficient (or no) data to reliably place a scaffold into 
 
 ### Sequence databases <a name="sequence_databases"></a>
 
-Over the last few decades, as technology has evolved, we've seen an explosion in the number of genes and, later, genomes that have been sequenced. Sequence databases provide a place where these sequences can be deposited, stored and made available to the world. There are three nucleotide repositories or primary databases for the submission of nucleotide and genome sequences:
+Over the last few decades, as technology has evolved, we've seen an explosion in the number of genes and, later, genomes that have been sequenced. Sequence databases provide a place where these sequences can be deposited, stored and made available to the world. There are three nucleotide repositories (or primary databases) for the submission of nucleotide and genome sequences:
 
 * GenBank - https://www.ncbi.nlm.nih.gov/genbank/ hosted by the National Center for Biotechnology Information (or NCBI).
 * The European Nucleotide Archive or ENA - http://www.ebi.ac.uk/ena hosted by the European Molecular Biology Laboratories (EMBL).
 * The DNA Data Bank of Japan or DDBJ - http://www.ddbj.nig.ac.jp/ hosted by the National Centre for Genetics.
 
-Together they form the International Nucleotide Sequence Database Collaboration (http://www.insdc.org/about) and luckily for the users, they all “mirror” each other. This means that irrespective of where a sequence is submitted, the entry will appear in all three databases. Once data are deposited in primary databases, they can be accessed freely by anyone around the world.
+Together they form the International Nucleotide Sequence Database Collaboration (http://www.insdc.org/about) and luckily for users, they all “mirror” each other. This means that irrespective of where a sequence is submitted, the entry will appear in all three databases. Once data are deposited in primary databases, they can be accessed freely by anyone around the world.
 
-INSDC stores both primary data (i.e. the sequence reads exactly as they come off the machine) and assembled genomes (i.e. where an assembly algorithm has been used to build scaffolds or chromosomes from those reads). Commonly, these data are all stored together under what's known as a **bioproject accession**. The format of this accession will vary slightly depending on the database to which the data was originally submitted: it will have a "PRJEB", "PRJNA" or "PRJDB" prefix for ENA, GenBank and DDBJ respectively. An AGP file is often also provided, describing how the contigs fit together as scaffolds, and how the scaffolds fit together as chromosomes. A genome project may also contain an annotation file in GFF format (more on this file format later). This file contains predicted gene structures: based on the genome sequence, certain algorithms can predict which regions encode genes. Examples of software used for gene prediction at the moment include Maker (link) and BRAKER (link). These predictions may or may not be guided by other types of evidence, such as RNA sequencing data. It is important to bear in mind that the majority of genes as they appear in the sequence databases (and also in WormBase ParaSite) are based on predictions: these predictions are driven by evidence, but most genes from helminths genome assemblies are unlikely to have been cloned and sequenced in their entirety. We'll look at an example of checking how well a gene model is supported by RNAseq evidence in the next WormBase ParaSite module.
+INSDC stores both primary data (i.e. the sequence reads exactly as they come off the machine) and assembled genomes (i.e. where an assembly algorithm has been used to build scaffolds or chromosomes from those reads). Commonly, these data are all stored together under what's known as a **bioproject accession**. The format of this accession will vary slightly depending on the database to which the data was originally submitted: it will have a "PRJEB", "PRJNA" or "PRJDB" prefix for ENA, GenBank and DDBJ respectively. An AGP file is often also provided, describing how the contigs fit together as scaffolds, and how the scaffolds fit together as chromosomes. A genome project may also contain an annotation file in GFF format (more on this file format later). This file contains predicted gene structures: based on the genome sequence, certain algorithms can predict which regions encode genes. Examples of software used for gene prediction at the moment include Maker (link) and BRAKER (link). These predictions may or may not be guided by other types of evidence, such as RNA sequencing data. It is important to bear in mind that the majority of genes as they appear in the sequence databases (and also in WormBase ParaSite) are based on predictions: these predictions are driven by evidence, but most genes from helminth genome assemblies are unlikely to have been cloned and sequenced in their entirety. We'll look at an example of checking how well a gene model is supported by RNAseq evidence in the next WormBase ParaSite module.
 
 [↥ **Back to top**](#top)
 
@@ -88,11 +88,11 @@ Every gene in WormBase ParaSite has a gene page, which presents sequence data an
 
 ![](figures/figure_3.3.png)
 
-The gene page has three main sections. In the summary section, together with the description of our gene we can also see the genomic location of the gene (chromosome 1, in this case) and the INSDC Sequence ID. This is an identifier that links to an entry for the scaffold in the INSDC.
+The gene page has three main sections. In the summary section, together with the description of our gene we can also see the genomic location of the gene ("opera_v5_385", in this case) and the INSDC Sequence ID. This is an identifier that links to an entry for the scaffold in ENA.
 
 * Click the link to look at the scaffold's entry in ENA. Can you identify the bioproject accession of the study that this genome assembly belongs to?
 
-Navigate back to the T265_10539 gene page on WormBase ParaSite. Underneath, we can see some information about the gene: it has 1 transcript isoform and a number of orthologues and paralogues. We’ll revisit this later. We can also see that the gene is protein-coding.
+Navigate back to the T265_10539 gene page on WormBase ParaSite. Underneath, we can see some information about the gene: it has one transcript isoform and a number of orthologues and paralogues. We’ll revisit this later. We can also see that the gene is protein-coding.
 
 On the left, we have a navigation menu, which can be used to explore the information that is available for each gene. We’ll be going through each of these menu options in turn.
 
@@ -138,11 +138,11 @@ Note that this protein sequence is what is known as a conceptual translation: th
 
 How we do go from a string of amino acids to predicting what this protein might do in the cell? This is where another type of database comes in: protein family databases. 
 
-For the vast majority of predicted protein sequences, nobody will have done an experiment to test what its function is. However, we can use the principle of **homology** to take proteins that are well-studied in one experimental system and infer that proteins of similar sequence in other organisms are likely to have the same function. In reality, protein sequences are analysed in terms of domains: these are subsequences of a protein that have a defined tertiary structure or sequence motif, conferring a defined function. A protein can consist of several domains. When comparing proteins between organisms, often the region encoding a protein domain is highly conserved whilst the bit that connects different domains together is more divergent.
+For the vast majority of predicted protein sequences, nobody will have done an experiment to test what its function is. However, we can use the principle of **homology** to take proteins that are well-studied in one experimental system and infer that proteins of similar sequence in other organisms are likely to have similar structure, and therefore similar function. In reality, protein sequences are analysed in terms of domains: these are subsequences of a protein that have a defined tertiary structure or sequence motif, conferring a defined function. A protein can consist of several domains. When comparing proteins between organisms, often the region encoding a protein domain is highly conserved whilst the bit that connects different domains together is more divergent.
 
-A well known example of a protein domain database is Pfam (http://pfam.xfam.org/). Pfam uses massive multiple alignments of all of the known proteins with a certain domain to capture a representative model of that domain. Other protein domain databases, that might use slightly different methods to define domains, are:  CATH, CDD, HAMAP, MobiDB Lite, Panther, PIRSF, PRINTS, Prosite, SFLD, SMART, SUPERFAMILY and TIGRfams. Luckily for us, all of these databases are united under the InterPro consortium (https://www.ebi.ac.uk/interpro/).
+A well known example of a protein domain database is Pfam (http://pfam.xfam.org/). Pfam uses massive multiple alignments of all of the known proteins with a certain domain to capture a representative model (a Hidden Markov Model - LINK to further info on HMMs?) of that domain. Other protein domain databases, that might use slightly different methods to define domains, are:  CATH, CDD, HAMAP, MobiDB Lite, Panther, PIRSF, PRINTS, Prosite, SFLD, SMART, SUPERFAMILY and TIGRfams. Luckily for us, all of these databases are united under the InterPro consortium (https://www.ebi.ac.uk/interpro/).
 
-InterPro provide a tool, InterProScan that we can use to search protein sequences against all of the member databases to identify any protein domains that the protein might have:
+InterPro provide a tool, InterProScan, that we can use to search protein sequences against all of the member databases to identify any protein domains that the protein might have:
 
 * Copy the T265_10539 protein sequence from WormBase ParaSite onto your clipboard
 * Go to https://www.ebi.ac.uk/interpro/search/sequence/, paste your sequence into the box and click search.
@@ -182,21 +182,21 @@ Another fast way to find out about the function of a gene’s product is to see 
 
 ![](figures/figure_3.12.png)
 
-WormBase ParaSite imports GO annotations from three sources: terms assigned by UniProt, terms inferred by the protein’s InterPro domains, and terms that have been associated with orthologues of the gene of interest. 
+WormBase ParaSite imports GO annotations from three sources: terms assigned by UniProt, terms inferred by the protein’s InterPro domains, and terms that have been associated with orthologues of the gene of interest. The GO terms associated with this gene make sense given what we already know about the Innexin protein family: this protein likely forms part of the gap junction, which is a channel connecting the cytoplasm of two cells.
 
 [↥ **Back to top**](#top)
 
 #### Comparative genomics <a name="comparative_genomics"></a>
 
-Another approach to understanding what a gene does is comparative genomics. WormBase ParaSite runs a comparative genomics pipeline, called Compara, that seeks to group all helminth genes, together with comparator genes from a number of model organisms, into families. You can explore the results of the Compara pipeline in a few different ways.
+Another approach to understanding what a gene does is comparative genomics. WormBase ParaSite runs a comparative genomics pipeline, called Compara, that seeks to group all helminth genes, together with comparator genes from a number of model organisms, into families. Click [here](#compara) for more details on how the pipeline works. You can explore the results of Compara in a few different ways.
 
 * Select “Gene tree” from the Comparative Genomics section of the navigation menu.
 
 ![](figures/figure_3.13.png)
 
-The gene tree shows the inferred evolutionary history of the family that this gene is a member of. At the ends of the branches are genes, with our gene of interest highlighted in red. The points where the branches split are called nodes; nodes represent different evolutionary events, with these being represented in the tree by different colours. Dark blue nodes represent speciation events (where two populations of an existing species diverged into two new species). Red nodes represent duplications, where within the genome of one species the gene was duplicated. Turquoise nodes are ambiguous.
+The gene tree shows the inferred evolutionary history of the family that this gene is a member of. At the ends of the branches are genes, with our gene of interest highlighted in red. The points where the branches split are called nodes; nodes represent different evolutionary events, with these being represented in the tree by different colours. Dark blue nodes represent speciation events (where two populations of an existing species diverged into two new species). Red nodes represent duplications, where within the genome of one species a gene underwent a duplication. Turquoise nodes are ambiguous.
 
-Note that the most closely related gene in the tree is from another _Opisthorchis_ species, _O. felineus_. Orthologues are genes that evolved from a common ancestral gene by speciation; they may have diverged to a greater or lesser degree in their sequences, but often retain their function in their respective species. Similarly, paralogues are genes that have evolved from a common ancestral gene by duplication (see the information box on the Compara pipeline). 
+Note that the most closely related gene in the tree is from another _Opisthorchis_ species, _O. felineus_. Orthologues are genes that evolved from a common ancestral gene by speciation; they may have diverged to a greater or lesser degree in their sequences, but often retain their function in their respective species. Similarly, paralogues are genes that have evolved from a common ancestral gene by duplication.
 
 It can be useful to look at alignments of these related proteins to see how well conserved they are. Highly conserved regions are more likely to be essential for the function of the protein.
 
@@ -204,7 +204,7 @@ It can be useful to look at alignments of these related proteins to see how well
 
 Next to the main tree, in green, we can see a pictorial summary of the multiple alignment of the proteins of these four genes, with green coloured regions representing alignments and non-coloured regions representing gaps. You may be interested in exploring these alignments at a higher resolution.
 
-* Click the node that separates the Opisthorchis from the oriental liver fluke, then click "View in Wasabi" in the pop up box.
+* Click the node that separates the _Opisthorchis sp._ from the oriental liver fluke, then click "View in Wasabi" in the pop up box.
 
 A multiple alignment of the four proteins will appear in a new window: we can see that these protein sequences are extremely well conserved. 
 
@@ -220,7 +220,7 @@ In the main table on this page, each row represents an orthologue of *inx*. The 
 
 [↥ **Back to top**](#top)
 
-#### Compara: further details
+#### Compara: further details <a name="compara"></a>
 
 Compara is a pipeline, developed by the Ensembl project, which groups related genes into families and defines the evolutionary relationships between them. Below is a summary of the steps of the pipeline:
 1. A library of protein family Hidden Markov Models (HMMs) is used as a starting point. Gene sequences are scored against these models, giving a probability of how likely each sequence is to be a member of the corresponding family. The HMM library used in the Compara pipeline is based on the Panther and TreeFam databases.
@@ -235,7 +235,7 @@ Compara is a pipeline, developed by the Ensembl project, which groups related ge
 #### Gene page exercise <a name="gene_page_exercise"></a>
 
 The aim of this exercise is to familiarise yourself with the WormBase ParaSite gene page.
-Go to the gene page for the Trichuris muris gene TMUE_2000008757 and retrieve the following information:
+Go to the gene page for the _Trichuris muris_ gene TMUE_2000008757 and retrieve the following information:
 1. What is the summary description of the gene? Do you have any idea what the gene might be doing from this description?
 2. How many transcripts of the gene are annotated?
 3. Which strand is the gene on? What is the name of the 5’ neighbouring gene?
@@ -255,7 +255,7 @@ In this section, we’ll explore how genome assemblies are presented in WormBase
 
 ![](figures/figure_4.1.png)
 
-This will take you to a list of all of the genomes currently available in WormBase ParaSite, divided phylogenetically into the nematoda and the platyhelminthes. You might notice that some species (like _Ancylostoma ceylanicum_ in the figure below) have two entries: this is because the research community has produced two different assemblies for these genomes, and WormBase ParaSite makes them both available. In this table you can also find a link to the sequence archive where the genome sequence was originally deposited (‘BioProject ID’) and a link to two different genomes browsers, JBrowse and Ensembl. We’ll cover the use of genome browsers to visualise genomes later. The ‘CEGMA’, ‘BUSCO’ and ‘N50’ columns give some statistics about the quality of the genome assembly. We will cover exactly what these values mean below.
+This will take you to a list of all of the genomes currently available in WormBase ParaSite, divided phylogenetically into the nematoda and the platyhelminthes. You might notice that some species (like _Ancylostoma ceylanicum_ in the figure below) have two entries: this is because the research community has produced two different reference assemblies for these genomes, and WormBase ParaSite makes them both available. In this table you can also find a link to the sequence archive where the genome sequence was originally deposited (‘BioProject ID’) and a link to two different genomes browsers, JBrowse and Ensembl. We’ll cover the use of genome browsers to visualise genomes later. The ‘CEGMA’, ‘BUSCO’ and ‘N50’ columns give some statistics about the quality of the genome assembly. We will cover exactly what these values mean below.
 
 ![](figures/figure_4.2.png)
 
@@ -269,7 +269,7 @@ The genome page has useful summary information about the species and the assembl
 
 ![](figures/figure_4.4.png)
 
-The information in this box tells us about two metrics related to the quality of the assembly: contiguity and completeness. Contiguity describes how many scaffolds a genome is represented by: in a perfectly contiguous reference genome, the number of scaffolds would be equal to the number of chromosomes. Contiguity is described by several values, including the total number of scaffolds in the assembly, the length of the longest scaffold, the N50 length and the N90 length. If all of the scaffolds of the assembly were lined up in order of longest to shortest, the N50 length is the length of the scaffold at the midpoint. Similarly, the N90 length is the length of the scaffold at the 90th percentile. For a given genome, a larger N50 length and N90 length generally indicate a more contiguous assembly.
+The information in this box tells us about two metrics related to the quality of the assembly: contiguity and completeness. **Contiguity** describes how many scaffolds a genome is represented by: in a perfectly contiguous reference genome, the number of scaffolds would be equal to the number of chromosomes. Contiguity is described by several values, including the total number of scaffolds in the assembly, the length of the longest scaffold, the N50 length and the N90 length. If all of the scaffolds of the assembly were lined up in order of longest to shortest, the N50 length is the length of the scaffold at the midpoint. Similarly, the N90 length is the length of the scaffold at the 90th percentile. For a given genome, a larger N50 length and N90 length generally indicate a more contiguous assembly.
 
 In the “Assembly statistics” widget, the circumference of the circle represents the whole genome assembly, with scaffolds ordered from longest to shortest. The diameter of the grey colour represents the length of the scaffold represented at each point of the circle. The light grey shading represents the N90 scaffold, whilst the dark grey shading represents the N50 scaffold. The light blue outer ring shows the GC/AT/N percentage of the scaffold.
 
@@ -285,11 +285,11 @@ There are two other Brugia sp. genome assemblies in WormBase ParaSite, which are
 
 ## BioMart <a name="biomart"></a>
 
-BioMart is an extremely powerful tool that allows you to query WormBase ParaSite data in bulk, with no programming knowledge. Consider the information that we gathered on our gene of interest in part A, by clicking around the gene page. Now imagine that rather than having one gene of interest, we actually have a list of 100 genes. That would be a lot of clicking around on gene pages! BioMart allows you to output all of this data for multiple genes in a few clicks.
+BioMart is an extremely powerful tool that allows you to query WormBase ParaSite data in bulk, with no programming knowledge. Consider the information that we gathered on our _O. viverrini_ gene of interest, by clicking around the gene page. Now imagine that rather than having one gene of interest, we actually have a list of 100 genes. That would be a lot of clicking around on gene pages! BioMart allows you to output all of this data for multiple genes in a few clicks.
 
-Retrieving data for a list of known genes isn’t the only thing that BioMart can do. In this section, we’ll go through a series of examples that aim to illustrate the power of this tool. First, a little bit about how to construct queries. Queries are constructed with three facets: filters, values and attributes. Filters specify the type of data that you’re specifying your query on. Values are the actual values of that data type: for example, if your filter were ‘gene IDs’, your values would be a list of actual gene IDs. Attributes are the data types that you want to retrieve. For example, you might want to retrieve the genomic coordinates of your gene IDs. The table below lists some examples of filters and attributes for BioMart queries.
+Retrieving data for a list of known genes isn’t the only thing that BioMart can do. In this section, we’ll go through a series of examples and exercises that aim to illustrate the power of this tool. First, a little bit about how to construct queries. Queries are constructed with three facets: filters, values and attributes. Filters specify the type of data that you’re specifying your query on. Values are the actual values of that data type: for example, if your filter were ‘gene IDs’, your values would be a list of actual gene IDs. Attributes are the data types that you want to retrieve. For example, you might want to retrieve the genomic coordinates of your gene IDs. The table below lists some examples of filters and attributes for BioMart queries.
 
-| Filters       | Attributes           | 
+| Examples  of Filters       | Examples of Attributes           | 
 | ------------- |-------------| 
 | A genome      | Gene, transcript or protein IDs | 
 | A genomic region | Sequences      |
@@ -297,13 +297,13 @@ Retrieving data for a list of known genes isn’t the only thing that BioMart ca
 | All genes that have GO term x, or protein domain Y| Protein domains or GO terms associated with a gene ID    |
 | All genes that have GO term x, or protein domain Y| IDs of orthologous genes, % identity   | 
 
-Filters and attributes can be combined to produce more complex queries and customised output; for example: you might want to retrieve the IDs and predicted protein domains of all of the genes from Schistosoma mansoni chromosome 1 that have a predicted signal peptide. We’ll walk through this example to get started.
+Filters and attributes can be combined to produce more complex queries and customised output; for example: you might want to retrieve the IDs and predicted protein domains of all of the genes from _Schistosoma mansoni_ chromosome 1 that have a predicted signal peptide. We’ll walk through this example to get started.
 
 * From the WormBase ParaSite homepage, select BioMart from the tool bar, or the BioMart icon.
 
 ![](figures/figure_5.1.png)
 
-We have to set three query filters: the genome (the S. mansoni genome), genomic location (chromosome 1), and a protein domain (genes whose protein product have a predicted signal peptide).
+We have to set three query filters: the genome (the _S. mansoni_ genome), genomic location (chromosome 1), and a protein domain (genes whose protein product have a predicted signal peptide).
 
 * Select “Species”, tick the “genome” checkbox and scroll down to select “Schistosoma mansoni (PRJEA36577)”.
 
@@ -335,7 +335,7 @@ BioMart lets us generate two types of output: data tables, and sequence (FASTA) 
 
 ![](figures/figure_5.7.png)
 
-* Click “Results” to see a preview your results table. The full results table can be downloaded by selecting the file type you’d like to download and clicking “Go”.
+* Click “Results” to see a preview of your results table. The full results table can be downloaded by selecting the file type you’d like to download and clicking “Go”.
 
 ![](figures/figure_5.8.png)
 
@@ -346,16 +346,17 @@ BioMart lets us generate two types of output: data tables, and sequence (FASTA) 
 In the data directory for module 1, you will find two files containing lists of gene IDs: Sratti_genes.txt, and Smansoni_genes.txt. Use the gene IDs in Sratti_genes.txt to retrieve the following data:
 1. Their WormBase gene IDs and UniProtKB/TrEMBL IDs.
 2. The InterPro domains that they have been annotated with (InterPro short description). [Q: why do some of the output rows appear multiple times?]
-3. The gene stable IDs of their Strongyloides stercoralis orthologues. [Q: which gene has more than one S. stercoralis orthologue?].
+3. The gene stable IDs of their _Strongyloides stercoralis_ orthologues. [Q: which gene has more than one _S. stercoralis_ orthologue?].
 4. The names of any GO terms associated with the genes. 
 5. A FASTA file of their peptide sequences.
+
 Use the gene IDs in Smansoni_genes.txt to answer the following questions:
-6. How many of these genes have orthologues in both S. haematobium and S. japonicum? Generate a table that has the gene stable ID for the homologue in all three species, the homology type (1-1, 1-many, etc), and, for the S. haematobium and S. japonicum orthologues, the % identity of the gene to its S. mansoni orthologue.
+6. How many of these genes have orthologues in both _S. haematobium_ and _S. japonicum_? Generate a table that has the gene stable ID for the homologue in all three species, the homology type (1-1, 1-many, etc), and, for the _S. haematobium_ and _S. japonicum_ orthologues, the % identity of the gene to its _S. mansoni_ orthologue.
 Of these genes, how many also (a) do not have a human or mouse orthologue and (b) have a signal peptide?
 7. Retrieve (a) a FASTA file with the CDS sequence of each transcript encoded by these genes. Make sure that the transcript stable ID is in the header. (b) a FASTA file containing the CDS sequence plus 100 nt downstream of the stop codon of each of those transcripts. In the header, include the transcript stable ID and the name of the scaffold that the transcript is on.
-8. Generate a table containing all of the protein coding genes on Brugia malayi scaffold Bm_007. The table should have their gene stable IDs and start and end coordinates. For genes that have paralogue(s), include the stable ID, coordinates and scaffold of the paralogue(s).
+8. Generate a table containing all of the protein coding genes on _Brugia malayi_ scaffold Bm_007. The table should have their gene stable IDs and start and end coordinates. For genes that have paralogue(s), include the stable ID, coordinates and scaffold of the paralogue(s).
 For these genes, generate a table that maps each gene stable ID to its UniProt ID.
-9. Retrieve a list of Onchocerca volvulus genes that are annotated with the GO term “reproduction” (or any of its child terms). In the output, include the IDs and short descriptions of the InterPro protein domains associated with the genes.
+9. Retrieve a list of _Onchocerca volvulus_ genes that are annotated with the GO term “reproduction” (or any of its child terms). In the output, include the IDs and short descriptions of the InterPro protein domains associated with the genes.
 10. How many worm pseudogenes are annotated in WBPS? Which worm genomes have annotated pseudogenes?
 
 [↥ **Back to top**](#top)
