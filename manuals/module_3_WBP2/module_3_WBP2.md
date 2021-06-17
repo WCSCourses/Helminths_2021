@@ -12,6 +12,7 @@
       * [EXERCISE](#vep_exercise)
 3. [Accessing WormBase ParaSite data programmatically](#programmatic_access)
     * [Working with sequence and annotation files](#files)
+      * [EXERCISE](#files_exercise)
     * [The REST API](#api)
       * [EXERCISE](#api_exercise)
 
@@ -374,7 +375,7 @@ awk '/^>/ { if (seqlen) {
 
 ```
 
-#### Exercises
+### Exercises  <a name="files_exercise"></a>
 
 Tweak the above examples to answer these questions from the files that you've just downloaded:
 
