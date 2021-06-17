@@ -18,7 +18,7 @@
 
 ## Overview and Aims <a name="aims"></a>
 
-In this module, we return to WormBase ParaSite. We'll start by looking at four commonly-used tool/ data sets: BLAST, JBrowse (a genome browser), expression data, and the variant effect predictor (VEP). In the second section, we'll apply some of the command line skills that you were introduced to in module 2 to explore WormBase ParaSite data programmatically.
+In this module, we return to WormBase ParaSite. We'll start by looking at four commonly-used tools: BLAST, JBrowse (a genome browser), the expression browser, and the variant effect predictor (VEP). In the second section, we'll apply some of the command line skills that you were introduced to in module 2 to explore WormBase ParaSite data programmatically.
 
 ## Tools <a name="tools"></a>
 
@@ -28,7 +28,9 @@ In this section, we'll look at more ways that you can interact with WormBase Par
 
 BLAST (Basic Local Alignment Search Tool) is one of the most commonly used tools to search for sequences that are similar to each other. BLAST is a fast searching programme that is able to compare a query sequence with hundreds to millions of sequences quickly. You can use BLAST to search a query sequence against the sequences in WormBase ParaSite.
 
-BLAST uses three steps. First, it 'chops' the query sequence into small 'words' of typically 3-4 amino acids for proteins or 10-12 nucleotides for DNA sequences (Figure A). Second, it uses these short words to look for perfect matches across all the entries in the database (Figure B). Third, when a match is found it then tries to extend the alignment by comparing consecutive letters of the word. For each new pair of letters, it evaluates whether it is a good match (Figure C). If it is a good match then the score is increased and if it is a bad match the score is reduced. The score table for each pair of amino acids or nucleotides is precomputed and incorporated into the BLAST algorithm.
+BLAST uses three steps. First, it 'chops' the query sequence into small 'words' of typically 3-4 amino acids for proteins or 10-12 nucleotides for DNA sequences. Second, it uses these short words to look for perfect matches across all the entries in the database. Third, when a match is found it then tries to extend the alignment by comparing consecutive letters of the word. For each new pair of letters, it evaluates whether it is a good match. If it is a good match then the score is increased and if it is a bad match the score is reduced. The score table for each pair of amino acids or nucleotides is precomputed and incorporated into the BLAST algorithm.
+
+FIGURE: how BLAST works
 
 The extension step will continue until the overall score drops below a given value. At this point, the extension step is dropped and the alignment is recorded with its score. The results are then presented as a list of alignments with associated scores. The alignments with the highest scores are most likely to be true matches or homologues of the query sequence. Other result parameters are reported, such as E-value (expectation value) and the percentage identity. The E-value describes the number of hits that could be found by chance given the length of the sequence and the size of the database. The lower the E-value, the greater the chances that the result is not due to chance.
 
@@ -74,7 +76,7 @@ TTTTTATGTGAAA
 
 ### The genome browser <a name="genome_browser"></a>
 
-A genome browser is a tool that allows you to visualise a genome assembly and its features, together with experimental data aligned to the genome. Genome browsers are useful in many respects. For example, they are used for visualising gene models in their genomic context, and also to assess the correctness of the model. They are also used for visualising functional genomics data, such as the results of ChIP-Seq and RNA-Seq experiments.
+A genome browser is a tool that allows you to visualise a genome assembly and its features, together with experimental data aligned to the genome. Genome browsers have many use cases: you may want to visualising a gene model in its genomic context, or to assess the correctness of the model. They are also used for visualising functional genomics data, such as the results of ChIP-Seq and RNA-Seq experiments.
 
 There are several commonly used genome browsers in bioinformatics, each with different features. Examples include:
 
@@ -88,7 +90,7 @@ There are several commonly used genome browsers in bioinformatics, each with dif
 
 In this example we’ll introduce the basic functionality of JBrowse, and demonstrate how to use the various tracks.
 
-* Navigate to the S. mansoni genome page and select the “Genome Browser (JBrowse)” icon.
+* Navigate to the _S. mansoni_ genome page and select the “Genome Browser (JBrowse)” icon.
 
 ![](figures/jbrowse_1.png)
 
@@ -135,12 +137,12 @@ For species with a lot of publicly available data, such as _S. mansoni_, the eas
 
 Let’s say you want to see in which life stages Smp_312440 is expressed.
 
-* Click the “” facet and select ..
-* Select a few of the available libraries and click “back to browser”.
+* Click the “developmental stage” facet 
+* Select a few of the available libraries (in the example below we've selected 3h schistosomules and miracidia) and click “back to browser”.
 
 ![](figures/jbrowse_6.png)
 
-Each track represents a different sequencing library, and shows the number of reads that have been aligned at each position. By mousing over the histogram, you can see the exact number of aligned reads at each base. We can see that a lot of the tracks show biological replicates of the same condition (single sex infections or mixed sex infections). We can use combination tracks to combine replicate tracks “on the fly”, so we use up less space on the screen.
+Each track represents a different sequencing library, and shows the number of reads that have been aligned at each position. By mousing over the histogram, you can see the exact number of aligned reads at each base. We can see that a lot of the tracks show biological replicates of the same condition. We can use combination tracks to combine replicate tracks “on the fly”, so we use up less space on the screen.
 
 * In the main menu at the top of the page, select “Track” and “Add combination track”.
 
@@ -148,7 +150,7 @@ A new empty track should appear. You can then drag and drop existing tracks in t
 
 ![](figures/jbrowse_7.png)
 
-As well as seeing that Smp_312440 is expressed in these conditions, we can use the coverage histograms to assess the quality of the gene model. Most parasitic worm genomes are annotated with automated pipelines. Whilst annotation algorithms can often be very accurate, they are not infallible. Most of the gene models that you look at in WormBase ParaSite will not have been checked by a human curator, so it is important not to take them as “truth” unless you verify that they agree with any evidence that is available.
+As well as seeing that Smp_312440 is expressed in these conditions, we can use the coverage histograms to assess the quality of the gene model. Most parasitic worm genomes are annotated with automated pipelines. Whilst annotation algorithms can often be very accurate, they are not infallible. Most of the gene models that you look at in WormBase ParaSite will not have been checked by a human curator, so it is wise not to take them as “truth" unless you verify that they agree with any evidence that is available.
 
 ![](figures/jbrowse_8.png)
 
@@ -159,7 +161,7 @@ In this case we can see that each of the exons in the gene model have got good R
 It might be useful to have a quick, visual way of showing where certain motifs (short, defined DNA sequences) are found in the reference sequence. JBrowse offers a quick and flexible way to do this. We’ll demonstrate this by generating a track for the TATA box sequence (a sequence found in the promoter region of many eukaryotic genes). The consensus TATA sequence is TATA[A/T]A[A/T] (where [A/T] indicates that either A or T could be present at that position).
 
 * In JBrowse, select “Track” from the main menu bar, followed by “Add sequence search track”.
-* Type the motif that we’re searching for in the dialogue box, in this format: TATA[AT]A[AT], and tick “Treat as regular expression”. This means that the [AT] section of the motif will be interpreted as a regular expression (ie, the base in this position can be either A or T). We will limit our search to the forward strand, because that’s the strand that our gene of interest is on. Click “Search”.
+* Type the motif that we’re searching for in the dialogue box, in this format: TATA[AT]A[AT], and tick “Treat as regular expression”. This means that the [AT] section of the motif will be interpreted as a regular expression (ie, the base in this position can be either A or T). Click “Search”.
 
 ![](figures/jbrowse_9.png)
 
@@ -204,24 +206,26 @@ Now we can see the IsoSeq reads aligned to the genome. Notice that IsoSeq data i
 
 ### Expression data <a name="expression_data"></a>
 
-Earlier in this section, we looked at a gene in JBrowse and used RNAseq tracks to see in which life stages it was expressed. What if you were interested in transcriptional differences between life stages, but didn't have a specific gene in mind? You might want to retrieve **all** of the _S. mansoni_ genes that are differentially expressed between life cycle stages. WormBase ParaSite has collated RNAseq data from publicly available studies and analysed it against our genomes and annotations. This means that if somebody has already done the experiment to compare the conditions that you're interested in, you can look up pre-calculated differentially expressed genes. 
+Earlier in this section, we looked at a gene in JBrowse and used RNAseq tracks to see in which life stages it was expressed. What if you were interested in transcriptional differences between life stages, but didn't have a specific gene in mind? You might want to retrieve **all** of the _S. mansoni_ genes that are differentially expressed between 2 life cycle stages. WormBase ParaSite has collated RNAseq data from publicly available studies and analysed it against our genomes and annotations. This means that if somebody has already done the experiment to compare the conditions that you're interested in, you can look up pre-calculated differentially expressed genes. 
 
 * Navigate back to the _S. mansoni_ genome landing page, and select "Gene expression"
 
 ![](figures/expression_1.png)
+FIGURE
 
 We can see a summary of the different experiments that have been analysed. We're interested in life cycle stages, so select the first experiment "Schistosoma mansoni transcriptomics at different life stages". 
 
 ![](figures/expression_2.png)
+FIGURE
 
 For each analysed experiment, we have a summary of the conditions for which data is available. You'll learn much more about how transcriptomic experiments are analysed in module 7, but for those who are interested we have used TopHat2 to align reads to the genome, HTSeq to quantify counts per gene and DESeq2 to compute differential expression per condition.  Several files are available for download. These are:
 
 * **Characteristics and conditions per run** - a file summarising the metadata available for each sample/run in the experiment.
 * **Counts of aligned reads per run (FeatureCounts)** - for each gene, raw counts per sample/run as produced by HTSeq (not normalised for library size).
 * **Gene expression (TPM) per run** - for each gene, counts per sample/run normalised for gene length and library size (TPM = transcripts per million).
-* **Gene expression (TPM) per condition as median across replicates** - As above, but a median value is calculated from all samples/runs of the same condition.
-* **Differential expression** - The number of files here varies. For each experiment, we extract the different facets for which pair-wise comparisons are possible. For this experiment, only one variable is changing between the samples (developmental stage), so we have 3 possible contrasts: 24h schistosomule v 3h schistosomule, 24h schistosomule v cercariae and 3h schistosomule v cercariae. The experiment below is more complicated; we have several facets changing between conditions (drug treatment, development stage, timepoint, strain **and** sex), resulting in many more possible contrasts. We calculate differential expression for any pairwise combination of conditions that have three or more replicates: it's down to you to choose which of those comparisons is biologically meaningful. There are 2 types of file available here:
-    1. Summary files: for each combination of variables for which comparisons have been calculated, this file contains the genes that show a significant difference in at least one comparison.
+* **Gene expression (TPM) per condition as median across replicates** - As above, but a median value is calculated for each gene from all samples/runs of the same condition.
+* **Differential expression** - The number of files here varies. For each experiment, we extract the different conditions for which pair-wise comparisons are possible. For this experiment, only one variable is changing between the samples (developmental stage), so we have 3 possible contrasts: 24h schistosomule v 3h schistosomule, 24h schistosomule v cercariae and 3h schistosomule v cercariae. The experiment below is more complicated; we have several facets changing between conditions (drug treatment, development stage, timepoint, strain **and** sex), resulting in many more possible contrasts. We calculate differential expression for any pairwise combination of conditions that have three or more replicates: it's down to you to choose which of those comparisons is biologically meaningful. There are 2 types of file available here:
+    1. Summary files: for each combination of variables for which comparisons have been calculated, this file contains the genes that show a significant difference in at least one comparison. NOTE TO SELF THERE IS A BUG IN THIS FILE
     2. Full results files: each of these files contain the full DESeq2 results for a contrast (i.e., fold changes for ALL genes, whether or not they are statistically significant).
 
 [↥ **Back to top**](#top)
@@ -231,7 +235,7 @@ For each analysed experiment, we have a summary of the conditions for which data
 Download the full results files for the "Schistosoma mansoni transcriptomics at different life stages" experiment. Use some of the commands you learned yesterday to extract the following information from the "3-hour-schistosomule-vs-cercariae.tsv" file:
 
 1. Extract the top 5 most significantly regulated genes (hint: the final column, "padj", gives the adjusted p value. A smaller adjusted p value = more significant).
-2. Of the genes with an adjusted p-value that is less than 0.05, which is (a) most highly upregulated in the 3h schistosomules v the cercariae (b) most strongly upregulated in the cercariae v the 3h schistosomules.
+2. Of the genes with an adjusted p-value that is less than 0.05, which is (a) most highly upregulated in the 3h schistosomules v the cercariae (b) most strongly upregulated in the cercariae v the 3h schistosomules?
 
 [↥ **Back to top**](#top)
 
@@ -265,7 +269,7 @@ Download the VEP results from the example above as a “VEP file”. Use this fi
 
 1. How many variants were there in the original dataset?
 
-2. What is their distribution across the scaffolds of the H. microstoma genome (hint: count how many times each scaffold appears in the VCF file)?
+2. What is their distribution across the scaffolds of the _H. microstoma_ genome (hint: count how many times each scaffold appears in the VCF file)?
 
 3. What are the different types of consequence that are found in the file, and how often does each occur?
 
@@ -281,11 +285,11 @@ Hint: to view the VCF in JBrowse you first need to compress and index it. Do:
 
 ## Accessing WormBase ParaSite data programmatically <a name="programmatic_access"></a>
 
-So far we've seen how you can interact with WormBase ParaSite data via a web browser, and how to query data in bulk using BioMart. In this final section we'll look at ways that you can interact with the same data but from the command line- first by downloading and processing files, and second via our REST API.
+So far we've seen how you can interact with WormBase ParaSite data via a web browser, and how to query data in bulk using BioMart. In this final section we'll look at ways that you can interact with the same data but from the command line- first by downloading and processing files, and second via our REST API. We'll use some of the tools that you were introduced to in module 2 to do this.
 
 ### Working with sequence and annotation files <a name="files"></a>
 
-For some analysis tasks you will need to download large data files. For example, if running software to align sequencing reads to the genome you'll need a genome FASTA file (we met this format earlier), and if you want to see which genes your reads overlap we'll need a GFF or GTF file. All of these files are accessible on WormBase ParaSite in two ways:
+For some analysis tasks you will need to download large data files. For example, if running software to align sequencing reads to the genome you'll need a genome FASTA file (we met this format earlier). If you want to see which genes your reads overlap, we'll need a GFF or GTF file. Sometimes, extracting data from a file is just the quickest way to get the information you need. Such files are accessible on WormBase ParaSite in two ways:
 
 1. On each genome landing page, in the Downloads section
 2. Via our structured FTP site, which you can access here: ftp://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/current/species/
@@ -293,22 +297,26 @@ For some analysis tasks you will need to download large data files. For example,
 Note that, increasingly, web browsers do not allow FTP traffic. This means that you might need to use a dedicated FTP client to navigate and download files from the FTP site- we have installed one of these on your virtual machine. The FTP site also has data from all previous WormBase ParaSite releases: this can be useful if you need to retrieve data from a specific release. Let's have a look at the files that are available for download.
 
 ![](figures/files_1.png)
+FIGURE
 
 Note first of all that all of the files are compressed (gzipped) to save space- you can tell by the ".gz" file extension. The files come in three flavours:
 
 #### FASTA files
 
-FASTA files have a ".fa" extension. We met this format in module 1. They are sequence files, with a header line (denoted by ">") followed by a DNA or amino acid sequence on the next line. We provide three types of annotation FASTA file - proteins, CDS sequences and full length mRNA sequences. We also provide genome FASTA files: these may be soft-masked, hard-masked or not masked at all. Masking is the process of marking up repetitive or low complexity sequences in the genome: "hard-masking" means replacing these bases with Ns, whereas "soft-masking" means making them lower-case. Many bioinformatics software packages are designed to work with hard-masked or soft-masked genomes.
+FASTA files have a ".fa" extension. We met this format in module 1. They are sequence files, with a header line (denoted by ">") followed by a nucleotide or amino acid sequence on the next line. We provide three types of annotation FASTA file - proteins, CDS sequences and full length mRNA sequences. We also provide genome FASTA files: these may be soft-masked, hard-masked or not masked at all. Masking is the process of marking up repetitive or low complexity sequences in the genome: "hard-masking" means replacing these bases with Ns, whereas "soft-masking" means making them lower-case. Many bioinformatics software packages are designed to work with hard-masked or soft-masked genomes.
 
 #### Annotation files
 
-Annotation files are files that describe features (such as genes) on the genome. They come in two common formats, GFF (general feature format) and GTF (general transfer format). The full specification is available elsewhere (http://gmod.org/wiki/GFF3), but in short: each line describes a single feature, and related features can be linked together in a parent/child hierarchy. For example, an exon feature's parent might be an mRNA feature, and that mRNA's parent will be a gene feature.
+Annotation files are files that describe features (such as genes) on the genome. They come in two common formats, GFF (general feature format) and GTF (general transfer format), with the extenions ".gff3" and ".gtf" respectively. The full specification is available elsewhere (http://gmod.org/wiki/GFF3), but in short: each line describes a single feature, and related features can be linked together in a parent/child hierarchy. For example, an exon feature's parent might be an mRNA feature, and that mRNA's parent will be a gene feature:
 
 ![](figures/files_2.png)
+FIGURE
 
 #### Ortholog/paralog files
 
 Finally, we provide TSV (tab-separated variable) files containing calculated ortholog and paralog relationships for all genes in this genome.
+
+#### Walk through examples
 
 ```wget``` is a handy utility for retrieving files from an FTP site. The following will pull down the _Necator americanus_ GFF3 file into your working directory:
 
@@ -324,10 +332,12 @@ gunzip necator_americanus.PRJNA72135.WBPS15.annotations.gff3.gz
 less necator_americanus.PRJNA72135.WBPS15.annotations.gff3
 ```
 
-Using the commands that you learned yesterday, we can manipulate these files to extract all sorts of information. For example, extract all of the gene features on scaffold "KI657457":
+Using the commands that you learned yesterday, we can manipulate these files to extract all sorts of information. In your groups, break down the following commands to understand what each section is doing:
+
+To extract the names all of the gene features on scaffold "KI657457":
 
 ```
-grep -v "#"  necator_americanus.PRJNA72135.WBPS15.annotations.gff3  | awk '$3~/gene/ && $1~/KI657457/ {print}'  | grep -o "Name=[^;]\+" | sed -e 's/Name=//' | wc -l
+grep -v "#"  necator_americanus.PRJNA72135.WBPS15.annotations.gff3  | awk '$3~/gene/ && $1~/KI657457/ {print}'  | grep -o "Name=[^;]\+" | sed -e 's/Name=//' 
 ```
 
 Count how many genes each scaffold is annotated with:
@@ -349,7 +359,7 @@ gunzip necator_americanus.PRJNA72135.WBPS15.protein.fa.gz
 grep -c "^>" necator_americanus.PRJNA72135.WBPS15.protein.fa 
 
 # extract the sequence of NECAME_00165
-sed -n -e '/NECAME_00165/,/^>/p' necator_americanus.PRJNA72135.WBPS15.protein.fa | sed -e '$d'
+sed -n -e "/NECAME_00165/,/^>/p" necator_americanus.PRJNA72135.WBPS15.protein.fa | sed -e '$d'
 ```
 
 And a more complicated ```awk``` to extract scaffold lengths in a genome FASTA file:
@@ -362,16 +372,17 @@ wget ftp://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/current/specie
 gunzip necator_americanus.PRJNA72135.WBPS15.protein.fa.gz
 
 # count the lengths
-awk '/^>/ { if (seqlen) {
-                          print seqlen
-                         }
+awk '/^>/ { 
+           if (seqlen) {
+                        print seqlen
+                        }
             print
-            seqlen=0
+            seqlen = 0
             next
            }
           {
             seqlen += length($0)
-          } '  necator_americanus.PRJNA72135.WBPS15.genomic.fa
+           }'  necator_americanus.PRJNA72135.WBPS15.genomic.fa
 
 ```
 
@@ -399,7 +410,7 @@ NECAME_00025
 
 ### The REST API <a name="api"></a>
 
-The other way to query WormBase ParaSite data is programmatically, via the REST API (Application Programming Interface). An API is just another way to retrieve data from a server, but this time via scripts or commands. You make a request to the server, but rather than returning a webpage, it returns the data in a structured format. We offer data in JSON (JavaScript Object Notation) and XML (Extensible Markup Language), which are both commonly used formats for data exchange. They are structured, so good for writing programs to interpret and manipulate them, but also human readable.
+The other way to query WormBase ParaSite data is via the REST API (Application Programming Interface). An API is just another way to retrieve data from a server, but this time via scripts or commands. You make a request to the server, but rather than returning a webpage, it returns the data in a structured format. We offer data in JSON (JavaScript Object Notation) and XML (Extensible Markup Language), which are both commonly used formats for data exchange. They are structured, so good for writing programs to interpret and manipulate them, but also human readable.
 
 There are a few situations where accessing WormBase ParaSite data via the API might be the better choice over BioMart or the website:
 
@@ -409,7 +420,7 @@ There are a few situations where accessing WormBase ParaSite data via the API mi
 
 3. Some types of data are not available in BioMart (such as CEGMA and BUSCO scores), and can only be accessed via the website or the API
 
-In an earlier exercise, you used the assembly statistics widget on the genome page to compare _Brugia sp._ genome assemblies. In this example, we’ll do the same for the Meloidogyne sp. assemblies, using the API.
+In an earlier exercise, you used the assembly statistics widget on the genome page to compare _Brugia sp._ genome assemblies. In this example, we’ll do the same for the _Meloidogyne sp._ assemblies, using the API.
 
 * From the WormBase ParaSite home page, select “REST API” from the toolbar.
 
@@ -417,7 +428,7 @@ In an earlier exercise, you used the assembly statistics widget on the genome pa
 
 This page details the available REST endpoints: endpoints are URLs that accept API requests, and return data. Read the descriptions of the different resources to see the types of data that you can retrieve from the WormBase ParaSite API.
 
-We want to retrieve the CEGMA and BUSCO scores of all of the Meloidogyne sp. assemblies in WormBase ParaSite. We’ll break the problem down into two steps: first, we’ll use the API to retrieve the names of all the Meloidogyne sp. assemblies that are available, then we’ll use those names to specify which assemblies we want to retrieve the CEGMA and BUSCO scores for.
+We want to retrieve the CEGMA and BUSCO scores of all of the _Meloidogyne sp._ assemblies in WormBase ParaSite. We’ll break the problem down into two steps: first, we’ll use the API to retrieve the names of all the _Meloidogyne sp._ assemblies that are available, then we’ll use those names to specify which assemblies we want to retrieve the CEGMA and BUSCO scores for.
 
 * Scroll down to the “Information” section and select the taxonomy endpoint
 
@@ -431,9 +442,9 @@ We offer examples on how to use these in several different programming languages
 
     curl -L 'https://parasite.wormbase.org/rest/info/genomes/taxonomy/Meloidogyne?' -H 'Content-type:application/json'
 
-Note: we’ve also added the L (full name: --location) flag to the curl command, and changed “rest-14” to “rest” in the URL. “rest-14” refers to the 14th release of WormBase ParaSite; by removing the version number the request is automatically redirected to the most recent release. The L flag tells curl to allow this redirection.
+Note: we’ve also added the L (full name: --location) flag to the curl command, and changed “rest-15” to “rest” in the URL. “rest-15” refers to the 15th release of WormBase ParaSite; by removing the version number the request is automatically redirected to the most recent release. The L flag tells curl to allow this redirection.
 
-You will see a lot of text! This is the data that we requested, in JSON format. To format the response more nicely, we’ll pipe the output into another command line tool, jq. jq allows us to manipulate JSON data on the command line (see the manual for more information on its usage: https://stedolan.github.io/jq/manual/).
+You will see a lot of text! This is the data that we requested, in JSON format. To format the response more nicely, we’ll pipe the output into another command line tool, ```jq```. ```jq``` allows us to manipulate JSON data on the command line (see the manual for more information on its usage: https://stedolan.github.io/jq/manual/).
 
     curl -L 'https://parasite.wormbase.org/rest/info/genomes/taxonomy/Meloidogyne?' -H 'Content-type:application/json'  | jq '.'
 
@@ -441,34 +452,42 @@ You should see the data now formatted like this:
 
 ```
 [
-{
-"base_count": "235798407",
-"is_reference": null,
-"division": "EnsemblParasite",
-"has_peptide_compara": null,
-"dbname": "meloidogyne_javanica_prjeb8714_core_13_95_1",
-"genebuild": "2018-05-WormBase",
-"assembly_level": "scaffold",
-"serotype": null,
-"has_pan_compara": null,
-"has_variations": "0",
-"name": "Meloidogyne javanica (PRJEB8714)",
-"has_other_alignments": "1",
-"species": "meloidogyne_javanica_prjeb8714",
-"assembly_name": "ASM90000394v1",
-"taxonomy_id": "6303",
-"species_id": "1",
-"assembly_id": "GCA_900003945.1",
-"strain": null,
-"has_genome_alignments": null,
-"species_taxonomy_id": "6303"
- ...
-},
+  {
+    "base_count": "258067405",
+    "is_reference": "0",
+    "division": "EnsemblParasite",
+    "has_peptide_compara": "0",
+    "assembly_accession": "GCA_900003985.1",
+    "assembly_level": "scaffold",
+    "genebuild": "2018-05-WormBase",
+    "organism_id": "86",
+    "serotype": null,
+    "has_pan_compara": "0",
+    "assembly_ucsc": null,
+    "has_variations": "0",
+    "name": "meloidogyne_arenaria_prjeb8714",
+    "has_other_alignments": "1",
+    "assembly_name": "ASM90000398v1",
+    "has_synteny": "0",
+    "display_name": "Meloidogyne arenaria (PRJEB8714)",
+    "url_name": "Meloidogyne_arenaria_prjeb8714",
+    "taxonomy_id": "6304",
+    "scientific_name": "Meloidogyne arenaria",
+    "assembly_id": "86",
+    "strain": null,
+    "assembly_default": "ASM90000398v1",
+    "has_genome_alignments": "0",
+    "species_taxonomy_id": "6304",
+    "data_release_id": "1"
+  },
+
 ```
 
-JSON-formatted data consists of key-value pairs. A series of key-value pairs separated by commas and enclosed in curly brackets is a JSON object. Here, we have a JSON object for each Meloidogyne sp. assembly. The JSON objects are in a list (an array), which is enclosed by square brackets. We only need the species names; we will extract these using jq:
+JSON-formatted data consists of key-value pairs. A series of key-value pairs separated by commas and enclosed in curly brackets is a JSON object. Here, we have a JSON object for each _Meloidogyne sp._ assembly. The JSON objects are in a list (an array), which is enclosed by square brackets. We only need the species names; we can extract these using jq:
 
-    curl -L 'https://parasite.wormbase.org/rest/info/genomes/taxonomy/Meloidogyne?' -H'Content-type:application/json'  | jq -r '.[] | .species'
+    curl -L 'https://parasite.wormbase.org/rest/info/genomes/taxonomy/Meloidogyne?' -H'Content-type:application/json'  | jq -r '.[] | .name'
+
+Here, '.[]' returns each element of the array (each assembly) one at a time, and '.name' extracts the value of the 'name' key for each of these elements.
 
 You should see:
 
@@ -489,7 +508,7 @@ meloidogyne_arenaria_prjna438575
 
 * Put the list of species names in a file in your working directory:
      
-    curl -L 'https://parasite.wormbase.org/rest/info/genomes/taxonomy/Meloidogyne?' -H 'Content-type:application/json'  | jq -r '.[] | .species' > species.txt
+    curl -L 'https://parasite.wormbase.org/rest/info/genomes/taxonomy/Meloidogyne?' -H 'Content-type:application/json'  | jq -r '.[] | .name' > species.txt
 
 The next endpoint that we need is the quality endpoint. Find it on the WormBase ParaSite API endpoint page and have a look at the example.
 
@@ -521,10 +540,10 @@ while read species; do
 done < species.txt
 ```
 
-Finally, sort that file by CEGMA score:
+Finally, sort that file by BUSCO score:
 
 ```
-sort -n -r -k2,2 assembly_completeness.txt
+sort -n -r -k3,3 assembly_completeness.txt
 
 meloidogyne_incognita_prjeb8714 95.97 61.8
 meloidogyne_arenaria_prjna438575 95.97 58.4
@@ -539,19 +558,19 @@ meloidogyne_enterolobii_prjna340324 84.27 49.7
 meloidogyne_floridensis_prjna340324 81.45 49.9
 meloidogyne_floridensis_prjeb6016 62.10 29.7
 ```
-We can see that M. incognita, two M. arenaria assemblies and M. javanica all have CEGMA completeness scores of around 96%.
+We can see that _M. arenaria_ is the assembly with the highest BUSCO score.
 
 #### API exercises
 
 Adapt the commands that you used above to retrieve the following information from the WormBase ParaSite API. For questions 2 and 3, you’ll need to use different endpoints.
 
-1. List the Meloidogyne sp. assemblies by size, smallest to largest.
+1. List the _Meloidogyne sp._ assemblies by size, smallest to largest.
 
 2. Retrieve the protein sequence of the guinea worm transcript DME_0000938001-mRNA-1.
 
-2b. Write a small program, `get_sequence_for_transcript`, that takes any transcript ID as an argument and returns its protein sequence. For example, running
+2b. Write a small program, `get_sequence_for_transcript.sh`, that takes any transcript ID as an argument and returns its protein sequence. For example, running
 
-    ./get_sequence_for_transcript DME_0000938001-mRNA-1
+    ./get_sequence_for_transcript.sh DME_0000938001-mRNA-1
     
 should print MAKHNAVGIDLGTTYSC...
 
@@ -559,9 +578,9 @@ should print MAKHNAVGIDLGTTYSC...
 
 3. Retrieve a GFF file of all of the genes located on the AgB01 scaffold of the Ascaris suum PRJNA62057 assembly, between the following coordinates: 5284000 to 5836000.
 
-3b. Write a program, `retrieve_genes_in_region` which takes species, scaffold, start and end coordinates as arguments and can return the above for any given region. For example, calling
+3b. Write a program, `retrieve_genes_in_region.sh` which takes species, scaffold, start and end coordinates as arguments and can return the above for any given region. For example, calling
 
-    ./retrieve_genes_in_region ascaris_suum_prjna62057 AgB01 5284000 5836000
+    ./retrieve_genes_in_region.sh ascaris_suum_prjna62057 AgB01 5284000 5836000
 
 should print the same result as question 3.
 
