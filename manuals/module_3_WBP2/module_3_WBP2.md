@@ -30,7 +30,7 @@ BLAST (Basic Local Alignment Search Tool) is one of the most commonly used tools
 
 BLAST uses three steps. First, it 'chops' the query sequence into small 'words' of typically 3-4 amino acids for proteins or 10-12 nucleotides for DNA sequences. Second, it uses these short words to look for perfect matches across all the entries in the database. Third, when a match is found it then tries to extend the alignment by comparing consecutive letters of the word. For each new pair of letters, it evaluates whether it is a good match. If it is a good match then the score is increased and if it is a bad match the score is reduced. The score table for each pair of amino acids or nucleotides is precomputed and incorporated into the BLAST algorithm.
 
-FIGURE: how BLAST works
+![](figures/BLAST_1.png)
 
 The extension step will continue until the overall score drops below a given value. At this point, the extension step is dropped and the alignment is recorded with its score. The results are then presented as a list of alignments with associated scores. The alignments with the highest scores are most likely to be true matches or homologues of the query sequence. Other result parameters are reported, such as E-value (expectation value) and the percentage identity. The E-value describes the number of hits that could be found by chance given the length of the sequence and the size of the database. The lower the E-value, the greater the chances that the result is not due to chance.
 
@@ -211,12 +211,10 @@ Earlier in this section, we looked at a gene in JBrowse and used RNAseq tracks t
 * Navigate back to the _S. mansoni_ genome landing page, and select "Gene expression"
 
 ![](figures/expression_1.png)
-FIGURE
 
 We can see a summary of the different experiments that have been analysed. We're interested in life cycle stages, so select the first experiment "Schistosoma mansoni transcriptomics at different life stages". 
 
 ![](figures/expression_2.png)
-FIGURE
 
 For each analysed experiment, we have a summary of the conditions for which data is available. You'll learn much more about how transcriptomic experiments are analysed in module 7, but for those who are interested we have used TopHat2 to align reads to the genome, HTSeq to quantify counts per gene and DESeq2 to compute differential expression per condition.  Several files are available for download. These are:
 
@@ -297,7 +295,6 @@ For some analysis tasks you will need to download large data files. For example,
 Note that, increasingly, web browsers do not allow FTP traffic. This means that you might need to use a dedicated FTP client to navigate and download files from the FTP site- we have installed one of these on your virtual machine. The FTP site also has data from all previous WormBase ParaSite releases: this can be useful if you need to retrieve data from a specific release. Let's have a look at the files that are available for download.
 
 ![](figures/files_1.png)
-FIGURE
 
 Note first of all that all of the files are compressed (gzipped) to save space- you can tell by the ".gz" file extension. The files come in three flavours:
 
@@ -309,8 +306,14 @@ FASTA files have a ".fa" extension. We met this format in module 1. They are seq
 
 Annotation files are files that describe features (such as genes) on the genome. They come in two common formats, GFF (general feature format) and GTF (general transfer format), with the extenions ".gff3" and ".gtf" respectively. The full specification is available elsewhere (http://gmod.org/wiki/GFF3), but in short: each line describes a single feature, and related features can be linked together in a parent/child hierarchy. For example, an exon feature's parent might be an mRNA feature, and that mRNA's parent will be a gene feature:
 
-![](figures/files_2.png)
-FIGURE
+```
+KI657455        WormBase_imported       gene    25      387     .       -       .       ID=gene:NECAME_00001;Name=NECAME_00001;biotype=protein_coding
+KI657455        WormBase_imported       mRNA    25      387     .       -       .       ID=transcript:NECAME_00001;Parent=gene:NECAME_00001;Name=NECAME_00001
+KI657455        WormBase_imported       exon    362     387     .       -       .       ID=exon:NECAME_00001.1;Parent=transcript:NECAME_00001
+KI657455        WormBase_imported       exon    25      277     .       -       .       ID=exon:NECAME_00001.2;Parent=transcript:NECAME_00001
+KI657455        WormBase_imported       CDS     362     387     .       -       0       ID=cds:NECAME_00001;Parent=transcript:NECAME_00001
+KI657455        WormBase_imported       CDS     25      277     .       -       1       ID=cds:NECAME_00001;Parent=transcript:NECAME_00001
+```
 
 #### Ortholog/paralog files
 
@@ -373,17 +376,16 @@ gunzip necator_americanus.PRJNA72135.WBPS15.protein.fa.gz
 
 # count the lengths
 awk '/^>/ { 
-           if (seqlen) {
-                        print seqlen
-                        }
-            print
-            seqlen = 0
-            next
-           }
-          {
-            seqlen += length($0)
-           }'  necator_americanus.PRJNA72135.WBPS15.genomic.fa
-
+  if (seqlen) {
+    print seqlen
+  }
+  print
+  seqlen = 0
+  next
+  }
+  {
+    seqlen += length($0)
+  }'  necator_americanus.PRJNA72135.WBPS15.genomic.fa
 ```
 
 ### Exercises  <a name="files_exercise"></a>
