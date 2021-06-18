@@ -52,8 +52,7 @@ http://swcarpentry.github.io/shell-novice/
      - R and RStudio
      - Genome Variation
 - Thursday
-     - Transcriptomics 1
-     - Transcriptomics 2
+     - Transcriptomics
 - Friday
      - Project & presentations
 
@@ -64,7 +63,7 @@ http://swcarpentry.github.io/shell-novice/
 ## Course manual
 **Module 1 - WormBase Parasite 1**  
      - [Introductory presentation](presentations/)  
-     - [Online manual](manuals/)  
+     - [Online manual](manuals/module_1_WBP1/module_1_WBP1.md)  
      - [Manual PDF version](manuals/)  
 
 **Module 2 - Unix Scripting**  
@@ -74,12 +73,12 @@ http://swcarpentry.github.io/shell-novice/
 
 **Module 3 - WormBase Parasite 2**  
      - [Introductory presentation](presentations/)  
-     - [Online manual](manuals/)   
+     - [Online manual](manuals/module_3_WBP2/module_3_WBP2.md)   
      - [Manual PDF version](manuals/)  
 
 **Module 4 - Project Introduction and Planning**  
      - [Introductory presentation](presentations/)  
-     - [Online manual](manuals/)  
+     - [Online manual](manuals/module_4_project_intro/module_4_project_introduction.md  
      - [Manual PDF version](manuals/)  
 
 **Module 5 - R and RStudio**  
@@ -92,13 +91,8 @@ http://swcarpentry.github.io/shell-novice/
      - [Online manual](manuals/module_6_genome_variation/module_6_genome_variation.md)  
      - [Manual PDF version](manuals/)   
 
-**Module 7 - Transcriptomics 1**    
-     - [Online manual](manuals/)  
-     - [Manual PDF version](manuals/)  
-
-**Module 8 - Transcriptomics 2**  
-     - [Introductory presentation](presentations/)  
-     - [Online manual](manuals/)  
+**Module 7&8 - Transcriptomics**    
+     - [Online manual](manuals/module_7_transcriptomics/module_7_transcriptomics.md)  
      - [Manual PDF version](manuals/)  
 
 **Module 9 - Project**  
