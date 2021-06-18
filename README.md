@@ -93,7 +93,7 @@ http://swcarpentry.github.io/shell-novice/
      - [Manual PDF version](manuals/)   
 
 **Module 7 - Transcriptomics 1**    
-     - [Online manual](manuals/)  
+     - [Online manual](manuals/module_7_transcriptomics/module_7_transcriptomics.md)  
      - [Manual PDF version](manuals/)  
 
 **Module 8 - Transcriptomics 2**  
