@@ -30,7 +30,7 @@ BLAST (Basic Local Alignment Search Tool) is one of the most commonly used tools
 
 BLAST uses three steps. First, it 'chops' the query sequence into small 'words' of typically 3-4 amino acids for proteins or 10-12 nucleotides for DNA sequences. Second, it uses these short words to look for perfect matches across all the entries in the database. Third, when a match is found it then tries to extend the alignment by comparing consecutive letters of the word. For each new pair of letters, it evaluates whether it is a good match. If it is a good match then the score is increased and if it is a bad match the score is reduced. The score table for each pair of amino acids or nucleotides is precomputed and incorporated into the BLAST algorithm.
 
-FIGURE: how BLAST works
+![](figures/BLAST_1.png)
 
 The extension step will continue until the overall score drops below a given value. At this point, the extension step is dropped and the alignment is recorded with its score. The results are then presented as a list of alignments with associated scores. The alignments with the highest scores are most likely to be true matches or homologues of the query sequence. Other result parameters are reported, such as E-value (expectation value) and the percentage identity. The E-value describes the number of hits that could be found by chance given the length of the sequence and the size of the database. The lower the E-value, the greater the chances that the result is not due to chance.
 
