@@ -64,7 +64,7 @@ http://swcarpentry.github.io/shell-novice/
 ## Course manual
 **Module 1 - WormBase Parasite 1**  
      - [Introductory presentation](presentations/)  
-     - [Online manual](manuals/)  
+     - [Online manual](manuals/module_1_WBP1/module_1_WBP1.md)  
      - [Manual PDF version](manuals/)  
 
 **Module 2 - Unix Scripting**  
