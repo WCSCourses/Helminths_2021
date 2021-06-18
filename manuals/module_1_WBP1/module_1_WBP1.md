@@ -147,7 +147,6 @@ InterPro provide a tool, InterProScan, that we can use to search protein sequenc
 
 You may need to wait a few minutes for the search to run.
 
-FIGURE: Interproscan results
 ![](figures/figure_3.8.5.png)
 
 On the results page, each horizontal coloured line represents a match between our protein sequence and a domain or motif in one of the InterPro member databases. If you mouse over these, you'll notice that several databases have a match to an Innexin domain. InterPro groups the same domain represented in different databases under a single InterPro accession; in our case this is the Innexin family (IPR000990).
