@@ -78,7 +78,7 @@ http://swcarpentry.github.io/shell-novice/
 
 **Module 4 - Project Introduction and Planning**  
      - [Introductory presentation](presentations/)  
-     - [Online manual](manuals/)  
+     - [Online manual](manuals/module_4_project_intro/module_4_project_introduction.md  
      - [Manual PDF version](manuals/)  
 
 **Module 5 - R and RStudio**  
