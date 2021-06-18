@@ -1,0 +1,1128 @@
+---
+title: 'R with R studio: An introduction '
+author: "Jason Tsai and Steve Doyle"
+date: "18th June 2021"
+output:
+ prettydoc::html_pretty:
+  theme: leonids
+  highlight: github
+
+#output: 
+#  rmdformats::html_clean:
+#     thumbnails: false
+#     toc: true
+#     toc_depth: 5
+#     toc_float:
+#      collapsed: false
+#      smooth_scroll: false
+     
+
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#install.packages("rmdformats")
+#install.packages("rmarkdown")
+#install.packages("prettydoc")
+#devtools::install_github("hadley/emo")
+
+#install.packages("knitr")
+#install.packages("tidyverse")
+#install.packages("nycflights13")
+#library("nycflights13")
+#library("emo")
+
+
+```
+
+## Overview and aims
+
+The goal for this module is to help you to learn the basics of using R so you can go away and start to tackle your own data. R is a programming language that was first launched back in 2000. There are many reasons to use R:
+
+* it is easy to use and has excellent graphic capabilities
+* it has lots of new statistical methods to be used in a straightforward manner
+* it's **open source** and **free**. 
+* because of ⬆️, it is supported by a large user network. 
+* because of ⬆️⬆️, it has lots and lots of new analysis packages being released all of the time
+* it is also old, but because of ⬆️⬆️⬆️, you can use the more intuitive new functions which does things much faster.
+* it can be run on Windows, Linux and Mac
+
+Within the research discipline, what most people think of data analysis is that they think of the following below - turning data, perhaps curated in a spreadsheet like excel, to some shiny figures that are presentable. 
+
+<center>
+![**Figure 1** - Data to figure.](figures/screenshot01.png)
+
+</center>
+
+<br>
+<br>
+
+There is now the exciting research discipline of Data Science that allows you to "turn raw data into understanding, insight and knowledge". Before we start, we need to cite the materials that we have been inspired by and reformatted to make use of helminth related data in this course:
+
+* **R for Data Science** written by Hadley Wickham and Garrett Grolemund (will now be referred as R4DS. https://r4ds.had.co.nz/ )
+* **A ModernDive into R and the Tidyverse** written by Chester Ismay and Albert Y. Kim (will be referred as ModernDive; https://moderndive.com/index.html )
+
+These books have been designed for absolute beginners to learn all the basics of R. They are free online and we encourage you to read further in your own time. 
+
+The goal of data analysis is to explore, gain insights, and interpret your data. A analysis cycle usually looks something like this:
+
+<br>
+
+<center> 
+![**Figure 2** - Concept of a Program from ([R4DS]) ](https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png)
+
+</center>
+
+<br>
+<br>
+
+
+
+
+## Part 1: Introduction to R
+
+In this module, we are introducing you to the programming language R via RStudio. So what is the difference between the two? You should think of RStudio as a car's shiny dashboard and R as the engine. "More precisely, R is a programming language that runs computations, while RStudio is an integrated development environment (IDE) that provides an interface by adding many convenient features and tools. So just as the way of having access to a speedometer, rearview mirrors, and a navigation system makes driving much easier, using RStudio’s interface makes using R much easier as well." ([ModernDive]) . 
+
+R can certainly be run independently from RStudio - you can type "R" on the command line (providing it is installed - it is installed on your VM) - and the R command line prompt will appear. Sometimes in may in fact be necessary to run from the commandline, especially if you have a large computational task that requires sending jobs to a high preformance computing cluster. However, for the most part, you will find RStudio will be sufficient for what you need. If you want to download RStudio later on your own personal computer, R will automatically be installed with it in the background.
+
+Let's get started by opening Rstudio on your VM by double-clicking on the RStudio icon on the VM desktop.
+
+After RStudio opens, you should see something similar like **Figure 3**
+
+<br>
+
+<center> 
+![**Figure 3** - RStudio interface to R.](figures/screenshot11.png)
+
+</center>
+
+<br>
+<br>
+
+
+### R as a calculator
+
+To code in R, you can start by clicking on the Console panel. It is typically the bottom left panel. Type something, and press **Enter/Return**
+
+
+```{r eval=FALSE}
+
+# Some housekeeping - if you see text after the hash '#' symbol throguhout the code, it is a comment 
+# or instruction and not actual code (just like this!). It means that you do not have to type it in 
+# to the command line. Making comments in your code is actually really important - it allows you to 
+# remember what you have done, describe a result or process, and makes it much easier for someone 
+# else to read, understand, and reuse your code. It is a great habit to get in to!
+
+
+# R in its basic form is a fancy calculator. Lets try this out. Once you have typed the equation, 
+# press enter to complete the expression
+
+# First, a simple one. We are going to do 2 plus 3.
+2 + 3
+
+# We can do multiplications
+2 * 3
+
+# and division
+2 / 3
+
+# By simply pressing return/enter, you get a complete expression
+1
+
+
+# An incomplete expression will result in continuation prompt, indicated by the "+" symbol.
+3+
+  1111+
+  1000
+
+```
+
+Simple 😎 , isn't it?
+
+<br>
+<br>
+
+
+### Assignment operator
+
+The calculations alone will be meaningless if we don't store them for later use. We can save the output of our command using the assignment operator **<-** to create a new **variable**.
+
+```{r eval=FALSE}
+
+# "<-" is the assignment operator. Let's assign the number 5 to the variable "x".
+x <- 5
+
+# Next, assign 10 to y.
+y <- 10
+
+# To check if the assignments are successful, you can always simply type x or y and press return.
+x
+y
+
+# We can perform calculations on data stored in a variable.
+x + y
+x * y
+
+# Like all programming languages, R is case sensitive. For example, the lower-case variable "x" 
+# is not the same as the upper-case variable "X".
+X <- 20
+
+# Test this by comparing the two variables
+x
+X
+
+# We can overwrite variables by simply reassigning it. Previously, we assigned 5 to x. However....
+x <- 10
+x
+
+# In the same way that we can perform calculations using data stored in variables, we can also 
+# assign the output of that calculation to a new variable.
+z <- x + y + X
+z
+
+# Try a few things for yourself:
+# 1. Calculate the number of minutes in a single day by first assigning and then multiplying an 
+#   "hour" variable and a "minutes" variable
+# 2. Congratulations, you have won £100, but have to split it with your classmates. How much money 
+#   will you each get?  
+
+
+```
+
+<br>
+<br>
+
+
+### R data structure
+
+In order to start appreciating the power of R, the data needs to be organised or "tidied" in such a way so that calculations can be performed on them. There are many data types and structures in R. For simplicity we will introduce only two data structures: **vector** and **data frame**, and two data types: **numeric** (numbers) and **character** (text based).
+
+A vector is the simplest data structure in R. It essentially contains a series of values of the same type. Data frames are a collection of vectors in columns. Think of it like Excel spreadsheets, where each row represents a sample, and each variable measured in a column. To iterate:
+
+Rows represent samples
+E.g., sample A in Row 1, sample B in Row 2, and so on....
+
+And all the values of the same variable must go in the same column. We can have multiple columns with multiple, different data types, for example, age, sex, RPKM, numbers, whatever. 
+
+We note here that there are newer and more intuitive ways of manipulation of data frame-type data, and we will use `tibble` from the `dplyr` package later in the module.
+
+<center> 
+![**Figure 4** - Two data struture used in this module](figures/screenshot02.png)
+
+</center> 
+
+<br>
+<br>
+
+```{r eval=FALSE}
+
+# Lets explore what a vector looks like. Assign a vector of 1 to 10 to the variable x.
+x <- c(1,2,3,4,5,6,7,8,9,10)
+
+#> The "c" outside of the brackets means to "combine" or "concatenate" the values within 
+# the brackets
+
+
+# Now that we have a vector, we can do calculations on all the values within a vector at 
+# the same time! Try the following:
+x * 2
+
+# and
+x / 10 + 1
+
+# you can even perform calculations on data stored in multiple vectors.
+y <- c(1,2,3,4,5,6,7,8,9,10)
+
+x * y
+
+# using vectors becomes a very efficient way of storing and manipulating large data. 
+```
+
+<br>
+<br>
+
+
+### Functions
+
+Note in the previous code block, we actually introduced the **function** `c`. A function provides a simplfied way to perform a more complex operation on data. We can write our own functions (which is perhaps beyond the scope of this tutorial), however, R conveniently contains many built-in functions that are waiting to be discovered! A function is applied using **round brackets** , and can take **arguments** and **options**.
+
+`function (arg1, arg2, arg3… , option1=,option2=...)`
+
+
+
+```{r eval=FALSE}
+
+# Previously, we defined a vector of numbers from 1 to 10 using the following command 
+x <- c(1,2,3,4,5,6,7,8,9,10)
+
+# However, we can use the function "seq" to achieve the same outcome, much more efficiently. 
+x <- seq(1,10)
+
+# As you can see, using a function can save time and help with reproducibility. You are more 
+# likely to make a mistake typing all of the numbers in the first command. Similarly, you 
+# wouldn't want to type out all numbers if you have 1000s or more. Moreover, if you are doing 
+# repetitive tasks, defining a function can save a lot of time and typing.
+
+# Try adding the option "by = 2" in the seq function. What does it do?
+x <- seq(1,10, by = 2)
+x
+
+# A useful hint to better understand an in-built functon: add "?" in front of the function and 
+# press enter to view what options a particular function has available.
+?seq
+
+# try out all of these functions to see what they produce!
+length(x)
+mean(x)
+mean(y)
+median(x)
+max(x)
+
+
+```
+
+
+<br>
+<br>
+
+We will end this first section with a `plot` function, based on what you have been taught today.
+
+```{r eval=FALSE}
+
+# Lets set two vectors of 25 numbers, in two different ways. 
+x <- c(1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3)
+
+# note, we can do the same using the "rep" function:
+x <- rep(1:3, each=10)
+
+# for our second vector, lets generate some random numbers sampled from a normal 
+# distribution using the "rnorm" function
+y <- rnorm(30)
+
+
+# Lets generate a simple plot using "baseR" graph functions to visualise the relationship 
+# between x and y. 
+# Note that each set of numbers will be paired according to their order in the vector
+plot(x, y)
+
+# Lets add some colour using the "col" option 
+plot(x, y, col="red")
+
+# We can also colour using our data. In our current data, the x variable is categorical, so this 
+# might be good to set as a colour to distingush each group.
+plot(x, y, col=x)
+
+# We can also change the size and shape of the points using the cex and pch options, respectively
+plot(x, y, col=x, pch=20, cex=2)
+
+# Try changing the "pch" value from between 1 and 20 and see what you come up with!
+
+
+# many functions have additional parameters. Let's try a boxplot. 
+boxplot(y ~ x)
+
+#> note we have used a "~" rather than a ",". This indicates we want to show "y" data for 
+# each "x" category as one might expect in a box plot. 
+#> What happens if you use a "," instead? And why?
+
+
+# I like hotpink
+boxplot(y ~ x, col = c("hotpink", "yellow", "red") )
+
+boxplot(y ~ x, col = c("hotpink", "yellow", "red"), main="My first plot"  )
+
+
+# can use the ? sign to find out more about function
+?boxplot
+
+
+# Try a few things for yourself:
+# 1. Above, we used the "rnorm" to generate some random numbers samples from a normal distribution. 
+#   Let's visualise that this in fact a normal distribution. Can you set a new variable containing 
+#   1000 randomly sampled numbers, and visualise this using the "hist" function?
+
+
+
+```
+
+<br>
+<br>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+## Part 2: Data Wrangling
+
+<br>
+<br>
+
+A large part of any analysis is **data wrangling**, which is a term used in data science describing the process of getting your raw data into a format that can be used in R for further analysis and visualisation. Raw data is often very messy, will likely require some sort of manipulation to get it into a suitable format, and may represent a significant amount of the overall analysis time! In the old days, we typically copied and pasted from different excel spreadsheets. The problem with this approach is that if new data arrives, the whole manual process has to be repeated again, which is time consuming and may lead to human caused errors. In general, to enable reproducibility we want to minimise the amount of manual manipulation and instead, use commands that allow us to automate these processes.  
+
+In this section of the module, you will see that a lot of actions can be performed using existing in-built **functions** in R. 
+
+<center>
+![**Figure 5** - Data Wragling [R4DS] ](https://d33wubrfki0l68.cloudfront.net/e3f9e555d0035731c04642ceb58a03fb84b98a7d/4f070/diagrams/data-science-wrangle.png){width=50%, height=50%}
+
+</center>
+
+
+
+### Packages
+
+R consists of a **core** set of in-built functions which can be supplemented with **additional** packages. Packages are collections of R functions, data, and compiled code, with a well-defined format that ensures easy installation and a basic standard set of documentation, enabling portability and reliability.
+
+Here, we will use the `tidyverse` package, which is highly recommended for manipulating data structures. 
+
+
+```{r package, message=FALSE, warning=FALSE}
+
+# Normally, you would have to install a package the first time you want to use it. There is 
+# a function for this, called "install.packages()", for example:
+# install.packages("tidyverse")
+# We have already installed tidyverse on the VM for you, so you do not need to do this (hence, 
+# it is commented with a #). 
+
+# Once a package has been installed, to access it, you will need to use the "library()" function 
+# to load the package each time you start R and want to use it:
+library(tidyverse)
+
+
+```
+
+<br>
+<br>
+
+### Data import
+
+In this exercise, we will be using helminth prevalence data downloaded from the Global Atlas of Helminth Infection (GAHI; http://www.thiswormyworld.org ). There will be three files which are available to download from the Github page. 
+
+* `Ascaris_prevalence_data.txt`
+* `Hookworms prevalence_data.txt`
+* `Schisoma_mansoni_prevalence_data.txt`
+
+They are text files where each column of data is separated by **tab**, i.e., a **tab delimiter**. This allows R to know how data is separated in each column. Note that there are different types of delimiters, and that these often cause problems with getting data in R in the first place if not correctly set or formatted correctly in the data. Worth paying attention to this in your own data, and for ease, try sticking to one type.
+
+Let's get started. First we are going to download and read the `Ascaris_prevalence.txt` file into R from GitHub using the `read_delim` function in R. We need to tell R that is it tab delimited. Once it's read successfully, the file will be a `tibble` format, which allows a lot of nice functions to act on it.
+
+
+
+<br>
+<br>
+
+```{r read_delim, message=FALSE,}
+ascaris_data_url <- 'https://github.com/WGCAdvancedCourses/Helminths_2021/raw/main/manuals/module_5_R/Ascaris_prevalence_data.txt'
+ascaris_data <- read_delim(file = ascaris_data_url, delim ="\t")
+
+# Success! You should have read some messages! 
+# Now ascaris is a tibble
+ascaris_data
+
+# What columns does the table have?
+colnames(ascaris_data)
+
+
+
+```
+
+
+
+
+```{r eval=FALSE}
+# A quick tip is you can select one column using the $ symbol
+# The result will be a vector containing all the values from the selected column
+# In the example below we are selecting the Country column from ascaris_data
+ascaris_data$Country
+```
+
+
+
+<br>
+<br>
+
+### Data tranformation
+
+In this section, you are going to learn five key `dplyr` functions that allow you to solve the vast majority of your data manipulation challenges:
+
+* Pick observations by their values (`filter()`).
+* Reorder the rows (`arrange()`).
+* Pick variables by their names (`select()`).
+* Create new variables with functions of existing variables (`mutate()`).
+* Collapse many values down to a single summary (`summarise()`).
+
+These can all be used in conjunction with a sixth function - `group_by()` - which changes the scope of each function from operating on the entire dataset to operating on it group-by-group. Overall, these functions provide the verbs for a language of data manipulation. ([R4DS])
+
+
+<br>
+<br>
+
+
+#### Filtering
+
+`filter()` allows you to subset observations based on their values. The first argument is the name of the data frame. The second and subsequent arguments are the expressions that filter the tibble.  
+
+<center>
+![**Figure 6** - A schematic diagram of `filter()`](figures/screenshot03.png){ width=50% }
+
+</center>
+
+<br>
+<br>
+
+
+```{r}
+
+# Let's filter our data based on the region "Africa". Here, we use the logical operator "==" to 
+# find all words equal to "Africa" in the "Region" column
+filter(ascaris_data, Region == "Africa")
+
+# Note that there are different logical orerators that can be used to filter your data in many 
+# different ways. Also note the previous command only displays the output, which is normal when 
+# you are trying to explore different functions and options.
+
+# In order to save the output, you need to redirect the output into a new tibble.
+ascaris.africa <- filter(ascaris_data, Region == "Africa")
+
+ascaris.africa 
+
+# We can also select for multiple conditions within our data by using "%in%". In this case, we 
+# want to select samples from Ghana AND Malawi. Note we are using the "c" function as we have 
+# done previously. 
+ascaris.GhanaAndMalawi <- filter(ascaris_data,Country %in% c("Ghana", "Malawi"))
+ascaris.GhanaAndMalawi
+
+
+# Sometimes, we want to exclude certain data. Add a "!" in front of your argument means we want 
+# all the rows with the Country EXCEPT Angola. 
+ascaris.NotAngola <- filter(ascaris_data,! Country == "Angola")
+ascaris.NotAngola 
+
+# Similarly, instead of the "!" in front of Country, we could have also used "!=" which indicates 
+# "does not equal". 
+ascaris.NotAngola <- filter(ascaris_data, Country != "Angola")
+ascaris.NotAngola
+
+
+# Try some things for yourself. 
+# 1. Can you create a tibble that contains all the rows except those from Senegal and Philippines?
+# 2. Can you create a tibble with all sites with a prevalence greater than 0.5?
+
+
+```
+
+<br>
+<br>
+
+#### Select
+
+It’s not uncommon to get datasets with hundreds or even thousands of variables. In this case, the first challenge is often narrowing in on the variables you’re actually interested in. `select()` allows you to rapidly zoom in on a useful subset using operations based on the names of the variables.
+
+<center>
+![**Figure 7** - A schematic diagram of `select()`](figures/screenshot06.png){ width=50% }
+
+</center>
+
+
+<br>
+<br>
+
+
+
+```{r}
+# Lets subset the data to extract Country and Prevalence
+select(ascaris_data, Country, Prevalence)
+
+```
+
+
+<br>
+<br>
+
+
+
+#### Mutate
+
+Besides selecting sets of existing columns, it’s often useful to add new columns that are functions of existing columns. That’s the job of `mutate()`.
+
+mutate() always adds new columns at the end of your dataset, so we’ll start by creating a narrower dataset so we can see the new variables. Remember that when you’re in RStudio, the easiest way to see all the columns is View().
+
+<center>
+![**Figure 8** - A schematic diagram of `mutate()`](figures/screenshot04.png){ width=50% }
+
+
+</center>
+
+
+```{r}
+
+# The prevalence is determined by dividing the number of positive infection cases by the total 
+# number of individuals tested. 
+
+ascaris_data_check <- mutate(ascaris_data, Prevalence_2 = Number_Positives /  Individuals_surveyed)
+ascaris_data_check
+
+# Tip: While you could overwrite the original dataset with the new table, it is good practice 
+#   to keep raw imported data (table) and save the processed data into new variable / tibbles.
+
+# There are a lot of columns so it's difficult to visualise them
+# Let's select only the two columns Prevalence and Prevalence_2 to check if the calculations 
+# are consistent.
+select(ascaris_data_check, Prevalence, Prevalence_2)
+
+# Try this for yourself
+# 1. Can you make a new column called "study_time", and in it, determine the number of years 
+#   that sampling took place? Hint: you could could calculate the difference between Year_end 
+#   and Year_start.
+ 
+
+```
+
+<br>
+<br>
+
+#### Arrange
+
+
+`arrange()` works similarly to `filter()` except that instead of selecting rows, it changes their order. It takes a data frame and a set of column names (or more complicated expressions) to order by. If you provide more than one column name, each additional column will be used to break ties in the values of preceding columns:
+
+
+<center>
+![**Figure 9** - A schematic diagram of `arrange()`](figures/screenshot05.png){ width=50% }
+
+</center>
+
+
+
+
+```{r}
+# First, lets arrange the data by parasite prevalence in ascending order
+arrange(ascaris_data, Prevalence)
+
+# Use desc() to re-order by a column in descending order:
+arrange(ascaris_data, desc(Prevalence))
+
+# We can also sort on two columns. The order in which they sorted is based on the order in which 
+# they are plced in the command.
+arrange(ascaris_data, Country, Prevalence)
+
+
+```
+
+<br>
+<br>
+
+
+#### Group_by and Summarise
+
+The last key verb is summarise(). It collapses a data frame to a single row.
+
+Together, `group_by()` and `summarise()` will allow you to produce **grouped summaries**, one of the more useful features of dplyr and one you will likely use a lot. 
+
+
+<center>
+![**Figure 10** - A schematic diagram of `group_by()`](figures/screenshot07.png){ width=30% }
+
+</center>
+
+
+
+
+```{r message=FALSE, warning=FALSE, results=FALSE}
+
+# let's group the studies by Country, and save it into another tibble by_country
+by_country <- group_by(ascaris_data, Country)
+
+# examine the dataset to see what's the difference
+
+by_country
+
+
+```
+
+<br>
+<br>
+
+
+<center>
+![**Figure 11** - Closer inspection of `by_country`](figures/screenshot12.png)
+
+</center>
+
+
+<br>
+<br>
+
+`summarise()` collapses a data frame to a single row and do calculations depending on the given function. It will be very useful if you pair the function with `group_by()`. Then, when you use the dplyr verbs on a grouped data frame they’ll be automatically applied “by group”. For example, if we applied exactly the same code to a data frame grouped by country, we get the average Prevalence by country
+
+```{r}
+# average prevalence of all studies in the dataset
+# you get a number but this may not be as informative
+summarise(ascaris_data, average.Prevalence = mean(Prevalence) )
+
+```
+
+This one number is the mean of Prevalence across entire studies, which may not be very informative if we were looking at regional differences. Hence we do the following:
+
+
+
+<center>
+![**Figure 12** - A schematic diagram of `group_by()` and `summarise()`](figures/screenshot08.png){ width=50% }
+
+
+</center>
+
+```{r}
+
+# now we want to get the mean prevalence of each study for each country 
+summarise(by_country, average.Prevalence = mean(Prevalence) )
+
+
+```
+
+Grouped summaries, generated using `group_by()` and `summarise()`, provide a really useful tool for exploring data when working with dplyr. But before we go any further with this, we need to introduce a powerful new idea: the **pipe**.
+
+<br>
+<br>
+
+#### Pipe
+
+Imagine that we want to explore the relationship between the distance and average delay for each location. Using what you know about dplyr, you might write code like this.
+
+```{r}
+# Let's first group the data by country
+by_country <- group_by(ascaris_data, Country)
+
+# now we want to get the mean prevalence per country
+by_country_summary <- summarise(by_country, average.Prevalence = mean(Prevalence), Num.sites = n() )
+
+# note: here we introduce another function n() which tallies the number of rows in a group. 
+# Lets take a look:
+
+by_country_summary
+
+# Let's imagine there are a lot of countries (even though there are only 15 of them),
+# and we want to sort by prevalence in order to pick up the country with the highest Prevalence
+# Let's arrange the tibble by prevalence.
+by_country_summary_sortHighest <- arrange(by_country_summary, desc(average.Prevalence) )
+
+# take a look
+by_country_summary_sortHighest
+
+# We noticed that some countries only have very few sites, maybe they are not representative enough 
+# and we would like to remove them. We could remove these using a filter:
+by_country_summary_sortHighest_removeSomeCountry <- filter(by_country_summary_sortHighest, Num.sites > 1 )
+
+# take a look
+by_country_summary_sortHighest_removeSomeCountry
+
+```
+
+
+Notice that we have used four steps to prepare the tibble `by_country_summary_sortHighest_removeSomeCountry`:
+
+1. Group by `Country` to produce a tibble `by_country`
+2. Summarise to compute  average prevalence `average.Prevalence`, and number of sites `Num.sites` to produce a tibble `by_country_summary`
+3. Arrange the tibble so that the highest average Prevalence is displayed top. `by_country_summary_sortHighest` tibble is produced
+4. Filter countries where only one site was investigated to produce a final tibble `by_country_summary_sortHighest_removeSomeCountry`
+
+This code is a little frustrating to write because we have to give each intermediate data frame a name and data stored in a variable, even though we don’t care about them. Naming things can be annoying and time consuming, so this slows down our analysis.
+
+There’s another way to tackle the same problem with the **pipe**, `%>%`. The same code above can be rewritten as follows:
+
+```{r}
+
+# now you don't need to specify a new name to the tibble because it's "piped" to the next 
+# command. Importantly, only one tibble is saved.
+
+aveage.prevalence.by.country <- 
+  group_by(ascaris_data, Country) %>%
+  summarise(average.Prevalence = mean(Prevalence), Num.sites = n() ) %>%
+  arrange( desc(average.Prevalence) ) %>%
+  filter( Num.sites > 1 )
+
+# let's have a look if it's the same as the tedious by_country_summary_sortHighest_removeSomeCountry tibble
+aveage.prevalence.by.country
+
+```
+
+<br>
+
+This focuses on the transformations, not what’s being transformed, which makes the code easier to read. You can read it as a series of imperative statements, one per line of code: `group_by()`, then `summarise()`, then `arrange()`, then `filter()`. As suggested by this reading, a good way to pronounce %>% when reading code is “then”.
+
+Note also in the code that we have used an tab indent on the second and subsequent lines to show that this is a single block of code. 
+
+The point of the pipe is to help you write code in a way that is easier to read and understand. Let's try one more example.
+
+```{r}
+
+# we want to examine the variations of prevalences in each site since we are exploring 
+# the data, we are only interested in a subset of columns
+# -> this means select and we want to see the site with the highest prevalences
+# -> this means arrange from highest to lowest prevalence
+
+ascaris_data %>%
+  select(Country, Prevalence) %>%
+  arrange(desc(Prevalence))
+
+# From the output it seems some sites in Phillippines are quite high?
+
+```
+
+
+Working with the pipe is one of the key criteria for belonging to the tidyverse.
+
+<br>
+<br>
+<br>
+
+
+#### Combine table
+
+It’s rare that a data analysis involves only a single table of data. Typically you have many tables of data, and you must combine them to answer the questions that you’re interested in. Collectively, multiple tables of data are called **relational data** because it is the relations, not just the individual datasets, that are important.
+
+Relations are always defined between a pair of tables. All other relations are built up from this simple idea: the relations of three or more tables are always a property of the relations between each pair. Sometimes both elements of a pair can be the same table! This is needed if, for example, you have a table of people, and each person has a reference to their parents.
+
+To work with relational data you need verbs that work with pairs of tables. There are three families of verbs designed to work with relational data: **filtering joins**, **mutating joins** and **set operations**. Here we are going to demonstrate the `bind_rows()` function, which is part of set operations as shown in **Figure 13** below.
+
+<center>
+![**Figure 13** - Functions useful to combine cases/rows`](figures/screenshot14.png){width=70%}
+
+</center>
+
+
+<br>
+
+```{r message=FALSE, warning=FALSE, results=FALSE}
+
+# first load the schisto data followed by the hookworm data. 
+
+schisto_data_url <- 'https://github.com/WGCAdvancedCourses/Helminths_2021/raw/main/manuals/module_5_R/Schistosoma_mansoni_prevalence_data.txt'
+schisto_data <- read_delim(file = schisto_data_url, delim ="\t")
+
+hookworm_data_url <- 'https://github.com/WGCAdvancedCourses/Helminths_2021/raw/main/manuals/module_5_R/Hookworms_prevalence_data.txt'
+hookworm_data <- read_delim(file = hookworm_data_url, delim ="\t")
+
+# the argument .id takes a string which each row from individual tibbles 
+#will be assigned a name into a new "disease" column.
+# In this example, the ascaris tibble will be assigned "ascaris" in the "disease" 
+# column in the new combined.tb tibble
+combined.tb <- bind_rows("ascaris" = ascaris_data,"schisto" = schisto_data, .id = "disease")
+combined.tb
+
+# you can merge multiple files with the same column format
+combined.tb2 <- bind_rows("ascaris" = ascaris_data,"schisto" = schisto_data, "hookroom" = hookworm_data, .id = "disease")
+combined.tb2
+
+
+```
+
+
+
+
+<br>
+
+
+
+## Part 3: Visusalisation using ggplot2
+
+
+### Data visualisation `ggplot2`
+
+
+> “The simple graph has brought more information to the data analyst’s mind than any other device.” 
+— John Tukey
+
+We will go and visualise the data using `ggplot2` that we've been wrangling in the previous sections. `ggplot2` is part of the `tidyverse` package which you've already loaded this morning.
+
+"R has several systems for making graphs, but ggplot2 is one of the most elegant and most versatile. ggplot2 implements the **grammar of graphics**, a coherent system for describing and building graphs. With ggplot2, you can do more faster by learning one system and applying it in many places." [R4DS]
+
+With ggplot2, you begin a plot with the function `ggplot()`. `ggplot()` creates a coordinate system that you can add layers to. The first argument of `ggplot()` is the dataset to use in the graph. So `ggplot(data = ascaris)` creates an empty graph, but it’s not very interesting so we are not going to show it here.
+
+You complete your graph by adding one or more layers to `ggplot()`. The function `geom_point()` adds a layer of points to your plot, which creates a scatterplot. ggplot2 comes with many geom functions that each add a different type of layer to a plot. We will show a few more examples later.
+
+Let's look at the `ascaris` tibble in more details, using ggplot to explore. Among the variables we have the number of individuals surveyed (`Individuals_surveyed`) and the number of positive infection cases (`Number_Positives`). 
+
+Each geom function in ggplot2 takes a mapping argument. This defines how variables in your dataset are mapped to visual properties. The mapping argument is always paired with `aes()` - the aesthetics - and the x and y arguments of `aes()` specify which variables to map to the x and y axes. ggplot2 looks for the mapped variables in the data argument, in this case, `ascaris`.
+
+To begin to explore the `ascaris` data, run this code to put `Individuals_surveyed` on the x-axis and `Number_Positives` on the y-axis:
+
+```{r}
+
+ggplot(ascaris_data) +
+  geom_point( aes(x = Individuals_surveyed, y = Number_Positives))
+              
+```
+
+The plot shows a positive relationship between `Individuals_surveyed` and `Number_Positives`. In other words, more individuals surveyed also means more cases. Does this confirm or refute our hypothesis about number of individuals and positives?
+
+
+Let’s turn this code into a reusable template for making graphs with ggplot2. To make a graph, replace the bracketed sections in the code below with a dataset, a geom function, or a collection of mappings.
+
+<br>
+
+<center>
+![**Figure 14** - A generic usage of ggplot2 from [R4DS]`](figures/screenshot13.png){ width=50% }
+
+</center>
+
+<br>
+<br>
+
+#### Aesthetic mappings
+
+You can add a third variable, like `country`, to a two dimensional scatterplot by mapping it to an **aesthetic**. An aesthetic is a visual property of the objects in your plot. Aesthetics include things like the size, the shape, or the color of your points. You can display a point (like the one below) in different ways by changing the values of its aesthetic properties. 
+
+You can convey information about your data by mapping the aesthetics in your plot to the variables in your dataset. For example, you can map the colors of your points to each variable to reveal the country of each site.
+
+
+```{r}
+
+# We note here the different spelling of color and colour are equally okay
+ggplot(ascaris_data) +
+  geom_point( aes(x = Individuals_surveyed, y = Number_Positives, colour=Country))
+
+```
+
+<br>
+<br>
+
+
+#### Facets
+
+One way to add additional variables is with aesthetics. Another way, particularly useful for categorical variables, is to split your plot into **facets**, which are subplots that each display one subset of the data.
+
+To facet your plot by a single variable, use `facet_wrap()`. The first argument of `facet_wrap()` should be a formula, which you create with ~ followed by a variable name (here “formula” is the name of a data structure in R, not a synonym for “equation”). The variable that you pass to `facet_wrap()` should be discrete.
+
+```{r}
+
+ggplot(ascaris_data) +
+  geom_point( aes(x = Individuals_surveyed, y = Number_Positives, colour=Country)) +
+  facet_wrap(~ Country, nrow = 4)
+
+# Note that the axes of each facet are set to be the same - they are "fixed". This can be 
+# really useful to compare between facets. However, this is not always so useful... 
+
+# In this case, having fixed axes is difficult to interpret the data as the number of 
+# individuals sampled can differ vastly by countries. We can improve this by adding another 
+# option to make the axes scales "free" or independent per facet plot. Try the following:
+
+ggplot(ascaris_data) +
+  geom_point( aes(x = Individuals_surveyed, y = Number_Positives, colour=Country)) +
+  facet_wrap(~ Country, nrow = 4, scales="free")
+
+
+```
+
+<br>
+<br>
+
+
+
+#### Boxplot
+
+From the quick scatterplot it seems that there are variations in patterns of parasite prevalence in different countries. Another useful plot would be a boxplot which can be called by the `geom_boxplot()` function. Here we list out the commands that improve the plot bit by bit to generate a polished figure.
+
+
+```{r}
+
+# Let's make a default boxplot and separated by Country
+ggplot(ascaris_data) +
+  geom_boxplot(aes(x = Country, y = Prevalence))
+
+
+# Colour or "Fill" the boxes with a colour representing each "Region" of the world the 
+# samples come from.
+# Note: you could alternatively the fill the box with colours based by Country, but such 
+# information is redundant (other than being pretty) because you already have them in x-axis
+
+ggplot(ascaris_data) +
+  geom_boxplot(aes(x = Country, y = Prevalence, fill = Region))
+
+
+# Reorder the country based on Prevalence
+ggplot(ascaris_data) +
+  geom_boxplot(aes(x = reorder(Country, Prevalence), y = Prevalence, fill = Region))
+
+# We are usually interested in which country has the highest prevalence, so let's reorder the 
+# boxes based on descending order of prevalence
+ggplot(ascaris_data) +
+  geom_boxplot(aes(x = reorder(Country, -Prevalence), y = Prevalence, fill = Region))
+
+# The previous plot shows the country text at x-axis has overlapped. Let's tilt and adjust accordingly
+ggplot(ascaris_data) +
+  geom_boxplot(aes(x = reorder(Country, -Prevalence), y = Prevalence, fill = Region)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+# Can you polish the figure further with the following commands?
+# 1. try writing a different x label
+?xlab
+#or alternatively
+?labs
+
+# 2. try have a different colour pallette of boxplot
+?scale_fill_brewer
+
+
+```
+
+<br>
+<br>
+
+## More data wragling + ggplot
+
+Using what we've just learnt, now let's go through a case study where we do some data wrangling and produce a final plot.
+
+
+```{r message=FALSE, warning=FALSE}
+
+# Let's show you another shortcut (bioinformaticians love a short cut) - using a pipe, 
+# we can direct data from our dataset/tibble directly to ggplot
+
+ascaris_data %>%
+ggplot() +
+  geom_boxplot(aes(x = reorder(Country, -Prevalence), y = Prevalence, fill = Region)) +
+  theme(axis.text.x = element_text(angle = 45, hjust=1))
+
+
+# Similarly, we can perform our "data wrangling" and directly pipe that to ggplot, thus producing 
+# a cleaner code bock.
+# From the 'by_country_summary_sortHighest' tibble, we know there are ten countries with just 
+# more than one site, 
+by_country_More_than_one_site <- by_country_summary_sortHighest %>%
+  filter(Num.sites > 1) %>%
+  select(Country)
+
+# maybe we'll just include these countries for now?
+ascaris_data %>%
+  filter(Country %in% by_country_More_than_one_site$Country ) %>%
+  ggplot() +
+  geom_boxplot(aes(x = reorder(Country,-Prevalence), y = Prevalence, fill = Region)) +
+  theme(axis.text.x = element_text(angle = 45, hjust=1))
+
+
+
+
+
+```
+
+
+
+
+```{r  message=FALSE, warning=FALSE, results=FALSE, eval=FALSE}
+# Another shortcut and "cleaner" code is we do the wrangling within the code chunk,
+# So the two code chunks above can be rewritten as follows and give the same result
+ascaris_data %>%
+  filter(Country %in% select( filter(by_country_summary_sortHighest, Num.sites > 1) , Country)$Country ) %>%
+  ggplot() +
+  geom_boxplot(aes(x = reorder(Country,-Prevalence), y = Prevalence, fill = Region)) +
+  theme(axis.text.x = element_text(angle = 45, hjust=1))
+
+```
+
+<br>
+<br>
+<br>
+
+
+
+
+```{r message=FALSE, warning=FALSE}
+
+
+# We can now reuse the code previously with the combined table
+# ascaris + schisto
+
+combined.tb2 %>% 
+  ggplot() +
+  geom_boxplot(aes(x = reorder(Country,-Prevalence), y = Prevalence, fill=disease)) +
+  theme(axis.text.x = element_text(angle = 45, hjust=1))
+
+
+# ascaris + schisto + hookworms
+
+combined.tb2 %>%
+  ggplot() +
+  geom_boxplot(aes(x = reorder(Country,-Prevalence), y = Prevalence, fill=disease)) +
+  theme(axis.text.x = element_text(angle = 45, hjust=1))
+
+# this figure is a bit messy. Can we improve that later?
+
+# Ok. now we are interested in the prevalence of diseases by country so we may want to 
+# group by disease, then by country
+
+prevalence.by.disease.and.country <- combined.tb2 %>% 
+	group_by(disease, Country) %>% 
+	summarise( sites = n(),
+		total.ind = sum(Individuals_surveyed),
+		total.positives = sum(Number_Positives),
+		average.Prevalence = mean(Prevalence) )
+
+prevalence.by.disease.and.country
+
+
+# in fact, we may be only interested in countries with data from all three diseases, so we 
+# need to find out whcih countries they are
+
+country.with.data.of.all.diseases <- prevalence.by.disease.and.country %>% 
+	 group_by(Country) %>%
+	summarise( num.diseases = n() ) %>%
+	filter (num.diseases == 3)
+
+country.with.data.of.all.diseases
+
+# Repeat the previous graph, but only include the countries from the last command
+combined.tb2 %>%
+  filter ( Country %in% country.with.data.of.all.diseases$Country) %>%
+  ggplot() +
+  geom_boxplot(aes(x = reorder(Country,-Prevalence), y = Prevalence, fill=disease)) +
+  theme(axis.text.x = element_text(angle = 45, hjust=1))
+
+
+```
+
+
+
+
+
+<br>
+<br>
+<br>
+
+
+## Summary
+
+In this module, we have shown you:
+
+* Basics of R
+* importing / exporing data
+* manipulating / tidying data
+* visualising data
+
+But there's so much more. In addition to the [R4DS] and [ModernDive] that were mentioned above, there are extensive resources online that will enable you to tackle more challenging data. Here we list a few more below that we find useful and hope you can go home and start using R more extensively in your daily research tasks.
+
+* **RStudio Education** A website containing resources tailored to different R expertise (https://education.rstudio.com/ )
+* **datacamp - Introduction to R** (https://www.datacamp.com/courses/free-introduction-to-r)
+* **GGplot Cheatsheet** (https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf)
+
+
+
+<br>
+<br>
+
+
+
+
+
+[R4DS]: https://r4ds.had.co.nz/introduction.html "R for Data Science"
+[ModernDive]: https://moderndive.com/index.html "A ModernDive into R and the Tidyverse"
+
+
+
+
