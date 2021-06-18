@@ -348,13 +348,17 @@ In the data directory for module 1, you will find two files containing lists of 
 4. The names of any GO terms associated with the genes. 
 5. A FASTA file of their peptide sequences.
 
-Use the gene IDs in Smansoni_genes.txt to answer the following questions:
-6. How many of these genes have orthologues in both _S. haematobium_ and _S. japonicum_? Generate a table that has the gene stable ID for the homologue in all three species, the homology type (1-1, 1-many, etc), and, for the _S. haematobium_ and _S. japonicum_ orthologues, the % identity of the gene to its _S. mansoni_ orthologue.
-Of these genes, how many also (a) do not have a human or mouse orthologue and (b) have a signal peptide?
-7. Retrieve (a) a FASTA file with the CDS sequence of each transcript encoded by these genes. Make sure that the transcript stable ID is in the header. (b) a FASTA file containing the CDS sequence plus 100 nt downstream of the stop codon of each of those transcripts. In the header, include the transcript stable ID and the name of the scaffold that the transcript is on.
-8. Generate a table containing all of the protein coding genes on _Brugia malayi_ scaffold Bm_007. The table should have their gene stable IDs and start and end coordinates. For genes that have paralogue(s), include the stable ID, coordinates and scaffold of the paralogue(s).
-For these genes, generate a table that maps each gene stable ID to its UniProt ID.
-9. Retrieve a list of _Onchocerca volvulus_ genes that are annotated with the GO term “reproduction” (or any of its child terms). In the output, include the IDs and short descriptions of the InterPro protein domains associated with the genes.
-10. How many worm pseudogenes are annotated in WBPS? Which worm genomes have annotated pseudogenes?
+Use the gene IDs in Smansoni_genes.txt to answer the following questions:  
+6. How many of these genes have orthologues in both _S. haematobium_ and _S. japonicum_? 
+- Generate a table that has the gene stable ID for the homologue in all three species, the homology type (1-1, 1-many, etc), and, for the _S. haematobium_ and _S. japonicum_ orthologues, the % identity of the gene to its _S. mansoni_ orthologue.
+- Of these genes, how many also (a) do not have a human or mouse orthologue and (b) have a signal peptide?  
+7. Retrieve (a) a FASTA file with the CDS sequence of each transcript encoded by these genes. Make sure that the transcript stable ID is in the header. (b) a FASTA file containing the CDS sequence plus 100 nt downstream of the stop codon of each of those transcripts. In the header, include the transcript stable ID and the name of the scaffold that the transcript is on.  
+8. Generate a table containing all of the protein coding genes on _Brugia malayi_ scaffold Bm_007. 
+- The table should have their gene stable IDs and start and end coordinates. 
+- For genes that have paralogue(s), include the stable ID, coordinates and scaffold of the paralogue(s).
+- For these genes, generate a table that maps each gene stable ID to its UniProt ID.
+9. Retrieve a list of _Onchocerca volvulus_ genes that are annotated with the GO term “reproduction” (or any of its child terms). 
+- In the output, include the IDs and short descriptions of the InterPro protein domains associated with the genes.  
+11. How many worm pseudogenes are annotated in WBPS? Which worm genomes have annotated pseudogenes?
 
 [↥ **Back to top**](#top)
