@@ -52,8 +52,7 @@ http://swcarpentry.github.io/shell-novice/
      - R and RStudio
      - Genome Variation
 - Thursday
-     - Transcriptomics 1
-     - Transcriptomics 2
+     - Transcriptomics
 - Friday
      - Project & presentations
 
@@ -92,13 +91,8 @@ http://swcarpentry.github.io/shell-novice/
      - [Online manual](manuals/module_6_genome_variation/module_6_genome_variation.md)  
      - [Manual PDF version](manuals/)   
 
-**Module 7 - Transcriptomics 1**    
+**Module 7&8 - Transcriptomics**    
      - [Online manual](manuals/module_7_transcriptomics/module_7_transcriptomics.md)  
-     - [Manual PDF version](manuals/)  
-
-**Module 8 - Transcriptomics 2**  
-     - [Introductory presentation](presentations/)  
-     - [Online manual](manuals/)  
      - [Manual PDF version](manuals/)  
 
 **Module 9 - Project**  
