@@ -211,12 +211,10 @@ Earlier in this section, we looked at a gene in JBrowse and used RNAseq tracks t
 * Navigate back to the _S. mansoni_ genome landing page, and select "Gene expression"
 
 ![](figures/expression_1.png)
-FIGURE
 
 We can see a summary of the different experiments that have been analysed. We're interested in life cycle stages, so select the first experiment "Schistosoma mansoni transcriptomics at different life stages". 
 
 ![](figures/expression_2.png)
-FIGURE
 
 For each analysed experiment, we have a summary of the conditions for which data is available. You'll learn much more about how transcriptomic experiments are analysed in module 7, but for those who are interested we have used TopHat2 to align reads to the genome, HTSeq to quantify counts per gene and DESeq2 to compute differential expression per condition.  Several files are available for download. These are:
 
@@ -297,7 +295,6 @@ For some analysis tasks you will need to download large data files. For example,
 Note that, increasingly, web browsers do not allow FTP traffic. This means that you might need to use a dedicated FTP client to navigate and download files from the FTP site- we have installed one of these on your virtual machine. The FTP site also has data from all previous WormBase ParaSite releases: this can be useful if you need to retrieve data from a specific release. Let's have a look at the files that are available for download.
 
 ![](figures/files_1.png)
-FIGURE
 
 Note first of all that all of the files are compressed (gzipped) to save space- you can tell by the ".gz" file extension. The files come in three flavours:
 
@@ -379,17 +376,16 @@ gunzip necator_americanus.PRJNA72135.WBPS15.protein.fa.gz
 
 # count the lengths
 awk '/^>/ { 
-           if (seqlen) {
-                        print seqlen
-                        }
-            print
-            seqlen = 0
-            next
-           }
-          {
-            seqlen += length($0)
-           }'  necator_americanus.PRJNA72135.WBPS15.genomic.fa
-
+  if (seqlen) {
+    print seqlen
+  }
+  print
+  seqlen = 0
+  next
+  }
+  {
+    seqlen += length($0)
+  }'  necator_americanus.PRJNA72135.WBPS15.genomic.fa
 ```
 
 ### Exercises  <a name="files_exercise"></a>
