@@ -74,7 +74,7 @@ http://swcarpentry.github.io/shell-novice/
 
 **Module 3 - WormBase Parasite 2**  
      - [Introductory presentation](presentations/)  
-     - [Online manual](manuals/)   
+     - [Online manual](manuals/module_3_WBP2/module_3_WBP2.md)   
      - [Manual PDF version](manuals/)  
 
 **Module 4 - Project Introduction and Planning**  
