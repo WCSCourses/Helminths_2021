@@ -84,7 +84,7 @@ http://swcarpentry.github.io/shell-novice/
 
 **Module 5 - R and RStudio**  
      - [Introductory presentation](presentations/)  
-     - [Online manual](manuals/module_5_R/tutorial1.html)  
+     - [Online manual](manuals/module_5_R/module_5_R_and_Rstudio.v2.html)  
      - [Manual PDF version](manuals/)  
 
 **Module 6 - Genome Variation**  
