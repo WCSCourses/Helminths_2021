@@ -351,7 +351,8 @@ awk '/^>/ {
   }
   {
     seqlen += length($0)
-  }'  necator_americanus.PRJNA72135.WBPS15.genomic.fa
+  }
+  END {print seqlen}'  necator_americanus.PRJNA72135.WBPS15.genomic.fa
 ```
 
 ### Exercises  <a name="files_exercise"></a>
