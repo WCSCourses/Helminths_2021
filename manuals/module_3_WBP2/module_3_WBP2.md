@@ -335,10 +335,10 @@ And a more complicated ```awk``` to extract scaffold lengths in a genome FASTA f
 
 ```
 # download the file
-wget ftp://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/current/species/necator_americanus/PRJNA72135/necator_americanus.PRJNA72135.WBPS15.protein.fa.gz
+wget ftp://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/current/species/necator_americanus/PRJNA72135/necator_americanus.PRJNA72135.WBPS15.genomic.fa.gz
 
 # unzip 
-gunzip necator_americanus.PRJNA72135.WBPS15.protein.fa.gz
+gunzip necator_americanus.PRJNA72135.WBPS15.genomic.fa.gz
 
 # count the lengths
 awk '/^>/ { 
@@ -348,11 +348,11 @@ awk '/^>/ {
   print
   seqlen = 0
   next
-  }
-  {
-    seqlen += length($0)
-  }
-  END {print seqlen}'  necator_americanus.PRJNA72135.WBPS15.genomic.fa
+}
+{
+  seqlen += length($0)
+}
+END {print seqlen}'  necator_americanus.PRJNA72135.WBPS15.genomic.fa
 ```
 
 ### Exercises  <a name="files_exercise"></a>
