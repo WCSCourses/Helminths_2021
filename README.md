@@ -91,11 +91,11 @@ http://swcarpentry.github.io/shell-novice/
      - [Online manual](manuals/module_6_genome_variation/module_6_genome_variation.md)  
      - [Manual PDF version](manuals/)   
 
-**Module 7&8 - Transcriptomics**    
+**Module 7 - Transcriptomics**    
      - [Online manual](manuals/module_7_transcriptomics/module_7_transcriptomics.md)  
      - [Manual PDF version](manuals/)  
 
-**Module 9 - Project**  
+**Module 8 - Project**  
 
 **Appendix**  
      - [Manual PDF version](manuals/)  
