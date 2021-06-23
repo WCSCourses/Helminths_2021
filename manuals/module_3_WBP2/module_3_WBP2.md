@@ -253,7 +253,7 @@ So far we've seen how you can interact with WormBase ParaSite data via a web bro
 
 ### Working with sequence and annotation files <a name="files"></a>
 
-For some analysis tasks you will need to download large data files. For example, if running software to align sequencing reads to the genome you'll need a genome FASTA file (we met this format earlier). If you want to see which genes your reads overlap, we'll need a GFF or GTF file. Sometimes, extracting data from a file is just the quickest way to get the information you need. Such files are accessible on WormBase ParaSite in two ways:
+For some analysis tasks you will need to download large data files. For example, if running software to align sequencing reads to the genome you'll need a genome FASTA file (we met this format earlier). If you want to see which genes your reads overlap, we'll need a [GFF](https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md) or [GTF](https://mblab.wustl.edu/GTF22.html) file. Sometimes, extracting data from a file is just the quickest way to get the information you need. Such files are accessible on WormBase ParaSite in two ways:
 
 1. On each genome landing page, in the Downloads section
 2. Via our structured FTP site, which you can access here: ftp://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/current/species/
@@ -266,11 +266,11 @@ Note first of all that all of the files are compressed (gzipped) to save space- 
 
 #### FASTA files
 
-FASTA files have a ".fa" extension. We met this format in module 1. They are sequence files, with a header line (denoted by ">") followed by a nucleotide or amino acid sequence on the next line. We provide three types of annotation FASTA file - proteins, CDS sequences and full length mRNA sequences. We also provide genome FASTA files: these may be soft-masked, hard-masked or not masked at all. Masking is the process of marking up repetitive or low complexity sequences in the genome: "hard-masking" means replacing these bases with Ns, whereas "soft-masking" means making them lower-case. Many bioinformatics software packages are designed to work with hard-masked or soft-masked genomes.
+FASTA files have a ".fa" extension. We met this format in module 1. They are sequence files, with a header line (denoted by ">") followed by a nucleotide or amino acid sequence on the next line. We provide three types of annotation FASTA file - proteins, CDS sequences and full length mRNA sequences. We also provide genome FASTA files: these may be soft-masked, hard-masked or not masked at all. Masking is the process of marking up repetitive or low complexity sequences in the genome: "hard-masking" means replacing these bases with Ns, whereas "soft-masking" means making them lower-case. Many bioinformatics software packages are designed to work with soft-masked genomes.
 
 #### Annotation files
 
-Annotation files are files that describe features (such as genes) on the genome. They come in two common formats, GFF (general feature format) and GTF (general transfer format), with the extenions ".gff3" and ".gtf" respectively. The full specification is available elsewhere (http://gmod.org/wiki/GFF3), but in short: each line describes a single feature, and related features can be linked together in a parent/child hierarchy. For example, an exon feature's parent might be an mRNA feature, and that mRNA's parent will be a gene feature:
+Annotation files have information about genomic features, such as genes. They come in two common formats, GFF (general feature format) and GTF (general transfer format), with the extenions ".gff3" and ".gtf" respectively. The full specification is available elsewhere (http://gmod.org/wiki/GFF3), but in short: each line describes a single feature, and related features can be linked together in a parent/child hierarchy. For example, an exon feature's parent might be an mRNA feature, and that mRNA's parent will be a gene feature:
 
 ```
 KI657455        WormBase_imported       gene    25      387     .       -       .       ID=gene:NECAME_00001;Name=NECAME_00001;biotype=protein_coding
@@ -283,7 +283,7 @@ KI657455        WormBase_imported       CDS     25      277     .       -       
 
 #### Ortholog/paralog files
 
-Finally, we provide TSV (tab-separated variable) files containing calculated ortholog and paralog relationships for all genes in this genome.
+Finally, we provide a TSV (tab-separated variable) file for each genome containing calculated ortholog and paralog relationships for all genes in the genome.
 
 #### Walk through examples
 
@@ -301,7 +301,7 @@ gunzip necator_americanus.PRJNA72135.WBPS15.annotations.gff3.gz
 less necator_americanus.PRJNA72135.WBPS15.annotations.gff3
 ```
 
-Using the commands that you learned yesterday, we can manipulate these files to extract all sorts of information. In your groups, break down the following commands to understand what each section is doing:
+Using the commands that you learned yesterday, we can manipulate these files to extract all sorts of information. Break down the following commands to understand what each section is doing:
 
 To extract the names all of the gene features on scaffold "KI657457":
 
