@@ -206,27 +206,39 @@ The file that contains annotated information of a genome is known as GFF (Genera
 
 ![](figures/figure7.x.PNG)
 **Figure X.** Example of a GFF file
-[[NEXT]]
+
 ```bash
 # Use HTSeq-count to calculate the number of reads mapped to each gene
 # htseq-count <various options> <sorted BAM file> <GTF or GFF file with gene annotation>
 # See https://htseq.readthedocs.io/en/release_0.11.1/count.html or do htseq-count --help to see meaning of these options. --help can also be useful if you encounter an error message.
-htseq-count -a 30 -t exon -i gene_id -s yes -m union Mans_F_Som_1_SRR3223443_sub_sorted.bam ../GenomeData/schistosoma_mansoni.PRJEA36577.WBPS13.canonical_geneset.gtf > Mans_F_Som_1_SRR3223443_sub_htseqcount.txt
-htseq-count -a 30 -t exon -i gene_id -s yes -m union Mans_F_Ad_1_ERR506076_sub_sorted.bam ../GenomeData/schistosoma_mansoni.PRJEA36577.WBPS13.canonical_geneset.gtf > Mans_F_Ad_1_ERR506076_sub_htseqcount.txt
+
+# For Sm_PE_sorted.bam file
+htseq-count -a 30 -t CDS -i gene_id -s yes -m union Sm_PE_sorted.bam ../References_v5/Sm_v5_canonical_geneset.gtf > Sm_PE_htseqcount.txt
 # The > means 'take the screen output to this file'
 
+# Now try it yourself for the Sm_SE_sorted.bam file
+_______________________________________________________________________________________________________________
+
 # Explore one of the HTSeq-count output files
-less Mans_F_Ad_1_ERR506076_sub_htseqcount.txt
-# Use up-down arrows to move long the files, or press spacebar or D to move down a page, press B to move up a page
+less Sm_PE_htseqcount.txt
+# Use up-down arrows to move long the files, or press the spacebar or D to move down a page, press B to move up a page
 
 # Output from HTSeq-count contain STDOUT (standard out; telling progress and key steps while the tool is running) and STDERR (standard error; error or warning messages) followed by the number of reads that mapped to each gene. We only need the read count information for downstream analyses. 
 # Create a directory called “final_counts” to keep count files
 mkdir final_counts
 
-# Filter HTSeq-count output files into a new file, keeping just the lines with gene IDs and their read counts 
-# grep lines that start with Smp from <a file>, then sort the grep output and only show any repetitive lines once, write this sorted output to <a new file>
-grep ‘^Smp’ Mans_F_Som_1_SRR3223443_sub_htseqcount.txt | sort -u > final_counts/Mans_F_Som_1_SRR3223443_sub_htseqcount.final
-grep ‘^Smp’ Mans_F_Ad_1_ERR506076_sub_htseqcount.txt | sort -u > final_counts/Mans_F_Ad_1_ERR506076_sub_htseqcount.final
+# Filter HTSeq-count output files into a new file, keeping just the lines with gene IDs (Smp) and their read counts 
+grep "^Smp" Sm_PE_htseqcount.txt
+
+# That output way too much stuff on the screen, try `head` command to output just the first 10 lines
+grep "^Smp" Sm_PE_htseqcount.txt | head 
+
+# What we want here is to grep lines that start with Smp from <a file>, then sort the grep output and only show any repetitive lines once, write this sorted output to <a new file>
+grep "^Smp" Sm_PE_htseqcount.txt | sort -u > final_counts/Sm_PE_htseqcount.final
+
+# Now try it yourself for the Sm_SE_sorted.bam file
+_______________________________________________________________________________________________________________
+
 ```
 We should now have files containing the number of reads mapped to each gene within each demo samples. Next step, we will import read count data into R and run differential expression analysis. 
 
