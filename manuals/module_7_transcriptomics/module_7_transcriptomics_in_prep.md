@@ -269,7 +269,16 @@ As an example, to install `topGO`, which is an R package on Bioconductor, we jus
 # Set up work directory
 # Change <path/to/data> to match correct directory path
 # setwd command set working directory for the current R session. After running this line, if we import or export files without defining a specific directory, they will be saved in the current working directory
-setwd("/<path/to/data>/R_analysis/")
+# the path to your data is considered a "string" or "character" in R, so we need to put it inside a quotation mark
+setwd("/<path/to/data>/Module_7_Transcriptomics/")
+
+# To keep our filing system tidy, let's create a new directory to keep outputs from R analysis
+dir.create("R_analysis")
+
+# You can check on your Terminal or in File that a new directory called "R_analysis" has been created.
+
+# Enter the directory R_analysis that you just created
+setwd("./R_analysis")
 
 # Load required packages into R environment 
 # R comes with standard packages (i.e. set of tools). We use library command to load tools that we need for RNA-seq data analysis
@@ -289,28 +298,24 @@ In addition to `DESeq2`, there are a variety of programs for detecting different
 ### Import data
 ```R
 # Tell the location of the read count files
-# Create a datadir object to keep the path to the directory final_counts
-datadir <- "/<path/to/data>/Input_for_R/final_counts/" 
+# Create a datadir object to keep the path to the directory v5counts in your module 7 files
+datadir <- "/<path/to/data>/v5counts/" 
 
 # list files in this directory, output as an R vector
 list.files(datadir)		
+sampleFiles <- list.files(datadir)		
 
 # Create sample names
-name <- list.files(datadir)  
-name  
-# Can you see any patterns that appears in all file names? 
-
 # split the name at “.counts” and keep the resulting output in the same vector (overwrite itself)
-name <- unlist(strsplit(name, split = ".counts", perl = TRUE))	
+name <- unlist(strsplit(sampleFiles, split = "_v5.counts", perl = TRUE))
+name
 
 # Create metadata information - match with sample names
-condition <- c(rep("F_Ad",3), rep("F_Som",2), rep("M_Ad",3), rep("M_Som",2))
-malefemale <- c(rep("F",5), rep("M",5))
-stage <- c(rep("Ad",3), rep("Som",2), rep("Ad",3), rep("Som",2))
-replicate <- as.character(c(1,2,3,1,2,1,2,3,1,2))
+condition <- c(rep("D06",7), rep("D13",3), rep("D17",3), rep("D21",3), rep("D28",3), rep("D35",3))
+replicate <- as.character(c(1,2,3,4,5,6,7, rep(c(1,2,3),5)))
 
 # Put together into a metadata table called sampleTable
-sampleTable <- data.frame(sample_name = name, file_name = sampleFiles, condition = condition, malefemale = malefemale, stage = stage, replicate = replicate, fullname = name)
+sampleTable <- data.frame(sample_name = name, file_name = sampleFiles, condition = condition, replicate = replicate)
 sampleTable
 ```
 
@@ -356,10 +361,6 @@ You should get something similar to this.
 # Save the plot to PDF file using dev.copy() function
 dev.copy(pdf, "PCA.pdf")
 dev.off() 
-
-# We can also save to a specific directory 
-dev.copy(pdf, “/<path/to/a/directory>/PCA.pdf”)
-dev.off()
 ```
 
 ---
@@ -381,34 +382,43 @@ These arguments could be
 **For a jpg file**, dimensions are defined in pixels. If you want A4 at 300 dpi, the parameters would be height = 3510, width 2490, res = 300
 **For pdf and ps files**, dimensions are in inches. For A4, it is height = 8.3, width = 11.7
 ```R
-# To output R graphics into other file types
+# To output R graphics into other file types, first we run one of the following commands to create a file of that type
+# then run a command that create a plot, this will be plotted onto the file we just created
+# then we do dev.off() to close the file so that it can be viewed
 pdf(file = “filename.pdf”, ...)
 jpeg(filename = “filename.jpg”, ...)
 png(filename = “filename.png”, ...)
 postscript(file = “filename.ps”, ...)
 
 # For example
-jpeg(filename = “rld_top20.jpg”, width = 800, height = 600)
-pheatmap(rld_res_top20_genes)
+jpeg(filename = “top20.jpg”, width = 800, height = 600)
+pheatmap(top20_genes)
 dev.off()
 ```
 Remember to dev.off() or the file cannot be opened
 
 ---
 
-The PCA plot can also be created differently; perhaps we want adult and schistosomule stages to be represented with different shapes. We can use ggplot for this. 
+The PCA plot can also be created differently; perhaps we want the data points to be of different sizes or we want to represent different stages of the worms using "shape" instead of "colour". We can use ggplot for this. 
 ```R
 # Produce a PCA plot and keep plot attributes and parameters to a new object called PCA
 PCA <- plotPCA(rld, intgroup = c("condition"), returnData = TRUE)
 percentVar <- round(100 * (attr(PCA, "percentVar")))
 
 # Use the information to produced a more customisable PCA
-ggplot(PCA, aes(PC1, PC2, color=malefemale, shape=stage)) +
-geom_point(size=3) +
-scale_shape_manual(values=c("Ad" = 16, "Som" = 17)) +
+# making data points and text larger
+ggplot(PCA, aes(PC1, PC2, color=condition)) +
+geom_point(size=5) +
 xlab(paste0("PC1: ",percentVar[1]," % variance")) +
 ylab(paste0("PC2: ", percentVar[2], "% variance")) +
-theme(text = element_text(size = 10))
+theme(text = element_text(size = 15))
+
+# represent different groups with shape instead of colour
+ggplot(PCA, aes(PC1, PC2, shape=condition)) +
+geom_point(size=5) +
+xlab(paste0("PC1: ",percentVar[1]," % variance")) +
+ylab(paste0("PC2: ", percentVar[2], "% variance")) +
+theme(text = element_text(size = 15))
 ```
 
 ![](figures/Figure7.X.PNG)
@@ -416,13 +426,15 @@ theme(text = element_text(size = 10))
 
 ---
 ### Mini exercise
-Try saving this plot into a file format of your choice
+- Try saving this plot into a file format of your choice
+
+- How could you specify the colour or shape that go with each group? (e.g. how would you tell R so that D06 group is shown in red, D13 group is shown in orange). Try using Google to help you find the answer
 
 ---
 
 ### Distance matrix
 In some cases, clustering of samples on PCA plots may not show whether there is a clear distinction groups. We can also use different types of clustering such as sample heatmap. To create sample heatmap, we measure overall profiles and relationship between samples using a distance matrix. We will create a distance matrix (using dist() function) from normalised and log-transformed reads, and then visualise it on a heatmap. 
-
+[[NEXT]]
 ```R
 # Create a distance matrix between each sample
 # If you open the rld object, you will  see that it has a few attributes. We use function assay() to extract just the number matrix, which is a required input for the t() (transpose) and dist() functions.
