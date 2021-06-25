@@ -17,7 +17,6 @@ The programme is aimed at researchers at various levels including Senior Researc
 This week-long course is free to attend and open to applicants based in Asia involved in helminth-related research. The course will be taught in English.
 
 ### Prerequisites
-
 The practical computational sessions will be taught exclusively through Unix/Linux. Participants should have some familiarity with the Linux operating system. This will allow participants to fully benefit from the course. There are numerous online introductory tutorials to the UNIX/Linux operating system and command line, including:
 
 https://www.futurelearn.com/courses/linux-for-bioinformatics
@@ -25,6 +24,9 @@ http://www.ee.surrey.ac.uk/Teaching/Unix
 http://swcarpentry.github.io/shell-novice/
 
 [Course website](https://coursesandconferences.wellcomeconnectingscience.org/event/helminth-bioinformatics-asia-virtual-20210628/)
+
+### Introductory meterials
+You may find a short online course on **Introduction to Genomics** beneficial for a quick recap and preparation. The course was designed specifically for the participants of Helminth Bioinformatics course, but is open for all. The course is on [KKUMedX online-learning platform](https://kkumedx.md.kku.ac.th/). The instruction on how to register is available [here](https://github.com/WGCAdvancedCourses/Helminths_2021/blob/main/Introductory%20materials/How%20to%20register%20for%20Intro%20to%20Genomics%20course%20on%20KKUMedX.pdf).  
 
 ## Instructors
 - [Anna Protasio](https://www.path.cam.ac.uk/directory/anna-protasio), University of Cambridge, UK
