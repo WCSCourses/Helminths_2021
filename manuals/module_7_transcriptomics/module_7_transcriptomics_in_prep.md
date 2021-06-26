@@ -681,47 +681,46 @@ GO enrichment analysis tools on online servers allow researchers to run their an
 Running topGO take a couple of steps (see topGO documentation here https://bioconductor.org/packages/release/bioc/html/topGO.html). We can simplify it using the script provided in run_topGO.R. With this wrapper script, covering all those steps, we can run topGO with one command line. It also adds to the standard topGO output an extra column which list IDs of genes that are responsible for each enriched GO term. 
 ```R
 # Load the R wrapper script for running topGO
-source("/<path/to/data>/Input_for_R/run_topGO.R")
+source("/<path to data>/Module_7_Transcriptomics/run_topGO.R")
 
-# Collect ID of genes that were up-regulated in adult female worms (pass cut-off of padj < 0.01 and log2FC > 1)
-adultFM_upinfemale <- rownames(res_adult_FM)[which(res_adult_FM$padj < 0.01 & res_adult_FM$log2FoldChange > 1)]
+# Collect ID of genes that were up-regulated in D13 (pass cut-off of padj < 0.01 and log2FC > 1)
+D13D06_upinD13 <- rownames(res_D13D06)[which(res_D13D06$padj < 0.01 & res_D13D06$log2FoldChange > 1)]
 
 # Check how many genes there are
-length(adultFM_upinfemale) 
+length(D13D06_upinD13) 
 
 # Run topGO
 # The input required for running topGO are: 
 # - reference GO annotation (GO terms associated with each gene)
 # - list of genes to test for GO enrichment
 # - threshold for calling “significant” enrichment
-topGO_adultFM_upinfemale <- run_topGO_R(ref = "/<path/to/data>/Input_for_R/GO_annotation_gene.tsv", genelist = adultFM_upinfemale, thres = 0.05)
+topGO_D13D06_upinD13  <- run_topGO_R(ref = "/<path to data>/Module_7_Transcriptomics/References_v5/Sm_v5_GOref_topGO.txt", genelist = D13D06_upinD13, thres = 0.05)
 
 # Check topGO result. Column 1 to 7 are standard topGO output; column 8 give a list of input genes with that GO term. We won’t look at that at the moment. 
-topGO_adultFM_upinfemale[,1:7]
+topGO_D13D06_upinD13[,1:7]
 ```
 
 ![](figures/figure7.X.PNG)  
 **Figure X.** Example of topGO result
 
 ```R
-# Run topGO using genes that were up-regulated in male schistosomules, compared to female schistosomules
+# Run topGO using genes that were up-regulated in day-6 worms, compared to day-13 worms
 # Collect gene ID to use for running topGO
-somFM_upinmale <- rownames(res_som_FM)[_______________________________________________________________________________]
+D13D06_upinD06 <- rownames(res_D13D06)[_______________________________________________________________________________]
 
-length(somFM_upinmale) # _________ genes
+length(D13D06_upinD06) # _________ genes
 
 # Run topGO
-topGO_somFM_upinmale <- run_topGO_R(ref = "/<path/to/data>/Input_for_R/GO_annotation_gene.tsv", genelist = ____________________________, thres = 0.05)
+topGO_D13D06_upinD06 <- run_topGO_R(ref = "/<path to data>/Module_7_Transcriptomics/References_v5/Sm_v5_GOref_topGO.txt", genelist = ____________________________, thres = 0.05)
 
 # Check topGO result
-topGO_somFM_upinmale[,1:7]
+topGO_D13D06_upinD06[,1:7]
 ```
 
 ---
 ### Exercise 7.4
-1) What do we notice about differences in male and female adult worms according to the GO enrichment? 
+1) What do we notice about differences in day-6 and day-13 worms according to the GO enrichment? 
 2) What genes are responsible for the enrichment of the top GO term? Try using WormbaseParasites and other databases to gain more information about those genes and GO term.
-3) How do the differentially expressed genes and GO enrichment of adult F vs M compare to F vs M schistosomules?
 ---
 
 ### Other ways to inspect your RNA-seq data
