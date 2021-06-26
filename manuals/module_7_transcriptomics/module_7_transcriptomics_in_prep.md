@@ -39,10 +39,6 @@ Over the past decade or two microarray technology has been extensively applied t
 One of the most common uses of transcriptomic data is possibly for differential gene expression study, which will be covered in this course. However, the extensive and high-throughput nature of the transcriptomic data means there are other potential usages. For example, it can be used to profile total RNA (e.g. miRNA and mRNA) in exosomes and other secretory products; help identify different splice isoforms; provide evidence for gene annotation and improve quality of reference genomes.  
 Meta-transcriptome (combining and re-analysing pool of transcriptomics data from multiple experiments), and comparative gene expression between species could be seen as an extension of differential gene expression. Furthermore, genetic variation particularly SNP calling could use information from transcriptomics data which would carry SNPs from transcribed genes.  
 
-### Common workflow in gene expression study
-![](figures/figure_7.0.png)  
-**Figure 0.** Example workflow in gene expression study
-
 ### Designing a transcriptome experiment: things to consider
 #### Replicates and power
 In order to accurately ascertain which genes are differentially expressed and by how much it is necessary to use replicated data. As with all biological experiments doing it once is simply not enough. There is no simple way to decide how many replicates to do, it is usually a compromise of statistical power and cost. By determining how much variability there is in the sample preparation and sequencing reactions we can better assess how highly genes are really expressed and more accurately determine any differences. The key to this is performing biological rather than technical replicates.
@@ -79,7 +75,7 @@ Although transcriptomes have so much potential, interpretation of its results st
 Samples are often processed in batch, or if you have many samples or require large amount of output data, they may need to be sequenced on multiple lanes. For this, think about a way to group samples to minimise “batch effect”. See diagram below: 
 
 
-![](figures/figure_7.1.png)  
+![](figures/AvoidingBatchEffect.png)  
 **Figure 1.** Avoiding batch effect
 
 #### Strand-specificity
@@ -103,7 +99,7 @@ Mapping is a relatively simple step, and below are information that may become h
 #### Spliced mapping
 Eukaryotic mRNAs are processed; after transcription introns are spliced out. Therefore some reads (those crossing exon boundaries) should be split when mapped to the reference genome sequence in which intron sequences are still present. TopHat and HISAT2 are one of few mappers which can split reads while mapping them, making it very suitable for mapping RNA-seq. Splice-aware mapper first identify reads that map within a single exon and then identify splice junction on unmapped reads and map them across exon boundaries. Beware that TopHat cannot recognize donor and acceptor splice-sites so it will split reads only based on optimizing the mapping, and you will occasionally see a couple of bases of the read having ended up on the wrong side of the intron.
 
-![](figures/figure_7.2.png)  
+![](figures/splicedMapping.png)  
 **Figure 2.** How spliced mapping works (From https://galaxyproject.github.io/training-material/topics/transcriptomics/tutorials/ref-based/tutorial.html)
 
 #### Non-unique/repeat regions
@@ -130,10 +126,10 @@ Mapping step generally need a huge computing power and often done on computer cl
 
 First, we will use HISAT2 (PMID: 25751142) to map RNA-seq data (in FASTQ format) to genome data (in FASTA format). HISAT2 is a mapper tool and is an upgraded software from the developer of TopHat. It is suitable for RNA-seq data as it also takes into account the splicing of exon-intron which is a characteristic of eukaryotic mRNA. 
 
-![](figures/figure_7.3.png)  
+![](figures/fastq.png)  
 **Figure 3.** FASTQ file
 
-![](figures/figure_7.4.png)  
+![](figures/fasta.png)  
 **Figure 4.** FASTA file
 
 __Note:__ For RNA-seq we can often get away without trimming reads before the mapping step. This is because contaminated reads or reads with low-quality would also have low mapping score and will be excluded during the read counting step. However, if the number of mapped reads or mapping results seem off, you may want to look at QC of the raw read data to figure out where things might have gone wrong. 
@@ -198,7 +194,7 @@ Now we have output from the mapping as BAM file. This explains where on the geno
 ### Annotation files
 The file that contains annotated information of a genome is known as GFF (General Feature Format) or GTF (General Transfer Format) file. These are annotation files, with each line containing one feature and its related information. The information is displayed in tab-separated fields. Both file types contain similar information but formatting are slightly different. Some software can take either type as input. For software that asks for a specific type, they can be converted using a tool such as gffread.
 
-![](figures/figure7.x.PNG)
+![](figures/gff.png)
 **Figure X.** Example of a GFF file
 
 ```bash
@@ -249,7 +245,7 @@ First, open RStudio and create a new R Script file. This will produce a blank fi
 
 While using RStudio, you can get help by typing running command `?functioname` (function manual will appear on the Help section), or `??functioname`  (a list of functions with similar name to your query will appear on the Help section - very useful when you are not quite sure how the function is called). You can also find help online. If you Google your (bioinformatics and R) questions/struggles, it is amazing how someone had already asked that question and some answers had been provided. You might often find links to a forum on https://www.biostars.org/ or https://stackoverflow.com/. 
 
-![](figures/figure7.X.PNG)
+![](figures/RStudio.png)
 **Figure X.** RStudio user interface
 
 ### Prepare your R workspace
@@ -348,7 +344,7 @@ plotPCA(rld, intgroup = c("condition"))
 ```
 
 You should get something similar to this. 
-![](figures/Figure7.X.PNG)
+![](figures/pca.png)
 **Figure X.** PCA plot
 
 ```R
@@ -415,7 +411,7 @@ ylab(paste0("PC2: ", percentVar[2], "% variance")) +
 theme(text = element_text(size = 15))
 ```
 
-![](figures/Figure7.X.PNG)
+![](figures/ggplotpca.png)
 **Figure X.** PCA plot produced by ggplot2
 
 ---
@@ -450,7 +446,7 @@ pheatmap(sampleDistMatrix, clustering_distance_rows = sampleDist, clustering_dis
 ```
 
 This should output a plot similar to one below
-![](figures/Figure7.X.PNG)
+![](figures/sampleheatmap.png)
 **Figure X.** Sample heatmap
 
 ```R
@@ -484,7 +480,7 @@ The result table contains several columns, of which the most relevant are:
 - Column 2: log2FoldChange, in this table below, of D35 / D06
 - Column 6: padj, adjusted p-value, p-value corrected for multiple testing
 
-![](figures/Figure7.X.PNG)
+![](figures/deseqres.png)
 **Figure X.** Example of DESeq2 result table
 
 ### Log2 fold change
@@ -545,7 +541,7 @@ plotMA(res_D13D06, ylim = c(-13,8), main = "log2 fold changes day-13 VS day-6 S.
 abline(h = c(-1,1))
 ```
 
-![](figures/Figure7.X.PNG)
+![](figures/maPlot.png)
 **Figure X.** MA plot
 
 **Volcano plot**
@@ -569,7 +565,7 @@ ylab(expression(paste('-', log[10],' adjusted p-value'))) +
 ggtitle("D13 VS D06")
 ```
 
-![](figures/Figure7.X.PNG)
+![](figures/volcano.png)
 **Figure X.** Volcano plot
 
 **Individual plot for a gene**
@@ -586,7 +582,7 @@ scale_y_continuous(trans = "log10") +
 ggtitle("Smp_022450.2") 
 ```
 
-![](figures/Figure7.X.PNG)
+![](figures/genePlot.png)
 **Figure X.** Gene plot
 
 **Gene heatmap**
@@ -613,7 +609,7 @@ rld_res_D13D06_top20_genes <- assay(rld)[which(rownames(assay(rld)) %in% res_D13
 pheatmap(rld_res_D13D06_top20_genes)
 ```
 
-![](figures/Figure7.X.PNG)
+![](figures/geneheatmap1.png)
 **Figure X.** Heatmap - default setting
 
 The default plot look quite messy. The rows are annotated with gene IDs, and their writing overlap due to limited space. The column annotations are also long and contain excess information. 
@@ -639,7 +635,7 @@ main = "Top 20 DE genes: day-13 / day-6")
 
 ```
 
-![](figures/Figure7.X.PNG)
+![](figures/geneheatmap2.png)
 **Figure X.** Heatmap - customised
 
 ---
@@ -694,7 +690,7 @@ topGO_D13D06_upinD13  <- run_topGO_R(ref = "/<path to data>/Module_7_Transcripto
 topGO_D13D06_upinD13[,1:7]
 ```
 
-![](figures/figure7.X.PNG)  
+![](figures/topGOres.png)  
 **Figure X.** Example of topGO result
 
 ```R
