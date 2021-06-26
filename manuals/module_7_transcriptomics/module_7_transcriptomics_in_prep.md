@@ -1,7 +1,6 @@
 **To do**
-- add figures
 - edit exercises 
-- overall polish
+- overall polish - figure sizes?
 
 # Transcriptomics
 
