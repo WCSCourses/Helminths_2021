@@ -434,10 +434,10 @@ theme(text = element_text(size = 15))
 
 ### Distance matrix
 In some cases, clustering of samples on PCA plots may not show whether there is a clear distinction groups. We can also use different types of clustering such as sample heatmap. To create sample heatmap, we measure overall profiles and relationship between samples using a distance matrix. We will create a distance matrix (using dist() function) from normalised and log-transformed reads, and then visualise it on a heatmap. 
-[[NEXT]]
+
 ```R
 # Create a distance matrix between each sample
-# If you open the rld object, you will  see that it has a few attributes. We use function assay() to extract just the number matrix, which is a required input for the t() (transpose) and dist() functions.
+# The rld object has a few attributes. We use function assay() to extract just the number matrix, which is a required input for the t() (transpose) and dist() functions.
 sampleDist <- dist(t(assay(rld)))
 sampleDistMatrix <- as.matrix(sampleDist)
 
@@ -447,7 +447,7 @@ colnames(sampleDistMatrix) <- NULL
 
 # Set heatmap colour scheme
 # colorRampPalette took the input (vector of colour codes), and interpolate that into a number of shades (in this case, we says 255)
-# This means pick 9 colours from Blues palette. 
+# The following code means pick 9 colours from Blues palette. 
 # brewer.pal is part of the RColorBrewer package that we load at the start of RStudio. 
 colors <- colorRampPalette(rev(brewer.pal(9,"Blues")))(255)
 
@@ -465,7 +465,7 @@ dev.copy(pdf, "sampleheatmap.pdf", width = 6, height = 4)
 dev.off()
 
 # Alternatively, we can create heatmap using an R internal heatmap function
-heatmap(sampleDistMatrix, clustering_distance_rows = sampleDist, clustering_distance_cols = sampleDist)
+heatmap(sampleDistMatrix, Rowv = sampleDist, Colv = sampleDist, cexRow = 0.7, labCol = FALSE)
 ```
 ---
 [↥ **Back to top**](#top)
@@ -487,7 +487,7 @@ head(res)
 The result table contains several columns, of which the most relevant are:
 - Rowname, indicating gene id
 - Column 1: baseMean, average expression level across all samples normalised by sequencing depth
-- Column 2: log2FoldChange, in this table below, of M_Som / F_Ad
+- Column 2: log2FoldChange, in this table below, of D35 / D06
 - Column 6: padj, adjusted p-value, p-value corrected for multiple testing
 
 ![](figures/Figure7.X.PNG)
@@ -507,29 +507,28 @@ Using the same results() command, with additional arguments, we can explore pair
 
 ```R
 # Create a result table for adult female vs adult male
-# Using contrast(), we can specify groups of samples to be compared. Notice the order by which the condition names are mentioned for the contrast; this example means M_Ad is denominator in the log2 fold change calculation.
+# Using contrast(), we can specify groups of samples to be compared. Notice the order by which the condition names are mentioned for the contrast; this example means D06 is denominator in the log2 fold change calculation.
 # Use test = “Wald” for pair-wise comparison
 # alpha = 0.01 specify the adjusted p-value cut off to use when summary() function count the number of differentially expressed genes
-res_adult_FM <- results(dds, contrast = c("condition", "F_Ad", "M_Ad"), test = "Wald", alpha = 0.01) 
+res_D13D06 <- results(dds, contrast = c("condition", "D13", "D06"), test = "Wald", alpha = 0.01) 
 
-summary(res_adult_FM, alpha = 0.01)
+summary(res_D13D06, alpha = 0.01)
 
 # Explore top-20 differentially expressed genes based on adjusted p-value
-res_adult_FM[order(res_adult_FM$padj),][1:20,]
+res_D13D06[order(res_D13D06$padj),][1:20,]
 
-# To look at genes that were up-regulated in adult female worms? 
-# Which function returns positions where the condition is TRUE.
-# log2FC will be positive. We could use cut-off of log2FC > 1 & padj < 0.01
-res_adult_FM[which(res_adult_FM$log2FoldChange > 1 & res_adult_FM$padj < 0.01),]
+# To look at genes that were up-regulated in D13 worms
+# The which function returns positions where the condition is TRUE?
+# Because we are looking at genes with higher expression in D13 group, which is the numerator, log2FC will be positive. We could use cut-off of log2FC > 1 & padj < 0.01
+res_D13D06[which(res_D13D06$log2FoldChange > 1 & res_D13D06$padj < 0.01),]
 ```
 
 ---
 ### Exercise 7.2
-1) Look at the result of differential gene expression analysis between adult male and female worms. 
-- How many genes are up-regulated in adult female compared to male?
-- How many genes are up-regulated in adult male? 
-- Try using WormbaseParasite to explore some of the top differentially expressed genes ranked by log2FC.
-2) Create a res_som_FM object that contain gene expression comparison between male and female schistosomules. 
+Look at the result of differential gene expression analysis between adult male and female worms. 
+1) How many genes are up-regulated in day-13 worms compared to day-6 worms?
+2) How many genes are up-regulated in day-6 worms? 
+3) Try using WormbaseParasite to explore some of the top differentially expressed genes ranked by log2FC.
 ---
 [↥ **Back to top**](#top)
 
@@ -540,34 +539,40 @@ We have looked at the results of pairwise comparison so far in form of large tab
 **MA plot**
 ```R
 # We can use plotMA() function which come with DESeq2 package
-plotMA(res_adult_FM, main = "log2 fold changes adult female VS adult male", ylim = c(-10,10), cex = 0.75, ylab = expression(paste(log[2],' fold change')))
+plotMA(res_D13D06)
+
+# The upward- and downward-pointing triangles indicate that there are data points beyond the axis limits of this plot. We can adjust the plotting commands to put those points in the plot. 
+plotMA(res_D13D06, ylim = c(-13,8))
+
+# Also, we make the plot easier to read and more complete by adding titles and axis labels, and set a new size for each data point. 
+plotMA(res_D13D06, ylim = c(-13,8), main = "log2 fold changes day-13 VS day-6 S. mansoni", ylab = expression(paste(log[2],' fold change')), cex = 0.75)
+
+# We might want to draw lines on the plot to mark the -1 and 1 cut-off for log2FC
 abline(h = c(-1,1))
 ```
 
 ![](figures/Figure7.X.PNG)
 **Figure X.** MA plot
 
-[[TO DO]] - some more explanation on MA plot + why it's called MA plot
-
 **Volcano plot**
 ```R
-# We will use result table from pair-wise comparison between adult female vs adult male
-res_adult_FM
+# We will use result table from pair-wise comparison between D13 vs D06
+res_D13D06
 
 # Make input readable for ggplot
-res_adult_FM_df <- as.data.frame(res_adult_FM)
+res_D13D06_df <- as.data.frame(res_D13D06)
 
 # Define threshold to mark genes with different colours
 # We take absolute value of log2FC to cover both up- and down-regulated genes
-res_adult_FM_df$threshold = as.factor(abs(res_adult_FM_df$log2FoldChange) > 1 & res_adult_FM_df$padj < 0.01)
+res_D13D06_df$threshold = as.factor(abs(res_D13D06_df$log2FoldChange) > 1 & res_D13D06_df$padj < 0.01)
 
 # Create a volcano plot
-ggplot(data=res_adult_FM_df, aes(x=log2FoldChange, y=-log10(padj), colour=threshold)) +
+ggplot(data=res_D13D06_df, aes(x=log2FoldChange, y=-log10(padj), colour=threshold)) +
 geom_point(alpha=0.75, size=3) +
 theme(legend.position="none", text = element_text(size = 15)) +
 xlab(expression(paste(log[2],' fold change'))) +
 ylab(expression(paste('-', log[10],' adjusted p-value'))) +
-ggtitle("adult female VS adult male")
+ggtitle("D13 VS D06")
 ```
 
 ![](figures/Figure7.X.PNG)
@@ -576,14 +581,15 @@ ggtitle("adult female VS adult male")
 **Individual plot for a gene**
 ```R
 # Use plotCounts which come with DESeq2 package
-plotCounts(dds, "Smp_331450", intgroup = c("condition")) 
+# Let's pick that gene from the top-20 lowest adjusted p-val list 
+plotCounts(dds, "Smp_022450.2", intgroup = c("condition")) 
 
 # Or use ggplot
-data <- plotCounts(dds, "Smp_331450", intgroup = c("condition"), returnData = TRUE)
+data <- plotCounts(dds, "Smp_022450.2", intgroup = c("condition"), returnData = TRUE)
 ggplot(data = data, aes(x = condition, y = count)) +
 geom_point(position = position_jitter(width = 0.2, h = 0)) +
 scale_y_continuous(trans = "log10") +
-ggtitle("Smp_331450") 
+ggtitle("Smp_022450.2") 
 ```
 
 ![](figures/Figure7.X.PNG)
@@ -596,21 +602,21 @@ We may want to look at expression profiles of multiple genes at the same time. H
 # Select genes with the top-20 lowest adjusted p-value
 # Rank genes by their adjusted p-value (padj) 
 # order function returns the position indices of a vector (in this case res$padj) in sorted order, then we use these indices to call data from res dataframe
-res_adult_FM[order(res_adult_FM$padj),]
+res_D13D06[order(res_D13D06$padj),]
 
 # Take the top 20 genes from the ranked list
-res_top20 <- res_adult_FM[order(res_adult_FM$padj),][1:20,] 
+res_D13D06_top20 <- res_D13D06[order(res_D13D06$padj),][1:20,] 
 
 # Take the gene IDs of the top 20 DE genes
-res_top20_genes <- rownames(res_top20)
+res_D13D06_top20_genes <- rownames(res_D13D06_top20)
 
 # Extract the rlog-transformed counts of the top 20 DE genes. 
 # By using rlog-transformed counts,extreme values (either low or high) are shrunken and overall differences become clearer, which make the data suitable for visualisation and clustering (producing a heatmap involves clustering of rows and column).
 # Which function returns positions where the condition (is TRUE, in this case, the condition is rownames(assay(rld)) %in% res_top20_genes), (translation: rownames of the rld objects match the list of top-20 genes) 
-rld_res_top20_genes <- assay(rld)[which(rownames(assay(rld)) %in% res_top20_genes),]
+rld_res_D13D06_top20_genes <- assay(rld)[which(rownames(assay(rld)) %in% res_D13D06_top20_genes),]
 
 # Create a heatmap using pheatmap
-pheatmap(rld_res_top20_genes)
+pheatmap(rld_res_D13D06_top20_genes)
 ```
 
 ![](figures/Figure7.X.PNG)
@@ -621,21 +627,21 @@ The default plot look quite messy. The rows are annotated with gene IDs, and the
 **Customised heatmap**
 ```R
 # Define how columns will be labelled
-columnann <- c("F_Ad_1", "F_Ad_2", "F_Ad_3", "F_Som_1", "F_Som_2", "M_Ad_1", "M_Ad_2", "M_Ad_3", "M_Som_1", "M_Som_2")
-  
+colann <- c(rep("day-6",7), rep("day-13",3), rep("day-17",3), rep("day-21",3), rep("day-28",3), rep("day-35",3))  
+
 # Create a heatmap
 # To see other palette options, run this command display.brewer.all(n=NULL, type="all")
 # To see information such as the number of colours, colourblind compatibility, run  brewer.pal.info()
-pheatmap(rld_res_top20_genes,
+pheatmap(rld_res_D13D06_top20_genes,
 color = colorRampPalette(rev(brewer.pal(9, "RdYlBu")))(100),
 border_color = NA,
 show_rownames = TRUE,
 show_colnames = TRUE,
-labels_col = columnann,
+labels_col = colann,
 cluster_cols = TRUE,
 cellwidth = 15,
 fontsize = 10,
-main = "Top 20 DE genes: adult F / adult M")
+main = "Top 20 DE genes: day-13 / day-6")
 
 ```
 
