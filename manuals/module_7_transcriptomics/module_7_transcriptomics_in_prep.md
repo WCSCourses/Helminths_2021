@@ -1,13 +1,7 @@
 **To do**
-- edit command lines
 - add figures
-- edit exercises
+- edit exercises 
 - overall polish
-*Add*
-- up-level R
-  - tidyverse
-  - dplyr
-  - R Markdown
 
 # Transcriptomics
 
