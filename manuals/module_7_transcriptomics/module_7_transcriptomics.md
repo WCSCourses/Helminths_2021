@@ -1,8 +1,3 @@
-**To do**
-- edit exercises 
-- figure number
-- overall polish 
-
 # Transcriptomics
 
 ## Table of Contents
