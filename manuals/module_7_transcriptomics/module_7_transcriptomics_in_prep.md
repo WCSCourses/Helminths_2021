@@ -1,6 +1,7 @@
 **To do**
 - edit exercises 
-- overall polish - figure sizes?
+- figure number
+- overall polish 
 
 # Transcriptomics
 
@@ -18,7 +19,7 @@
 ---
 
 ## Overview and Aims <a name="intro"></a>
-In this module, we will cover key concepts in RNA-seq transcriptome experimental design and data analysis. We will start from raw data and work toward analysis of differentially expressed genes and functional analysis of gene lists. The example we will use come from Schistosoma mansoni which we have a good reference genome for (and downloadable from Wormbase Parasite). For module exercise, we will use data of male and female S. mansoni in adult stage and in larval stage (schistosomula, or somules). We could ask if and how male and female worms are transcriptionally different in each life cycle stage. We could also ask how gene expression changes as each sex develop from schistosomula into adult. We will use RNA-seq data available from public repository for this.
+In this module, we will cover key concepts in RNA-seq transcriptome experimental design and data analysis. We will start from raw data and work toward analysis of differentially expressed genes and functional analysis of gene lists. The example we will use come from Schistosoma mansoni which we have a good reference genome for (and downloadable from Wormbase Parasite). We will use data of S. mansoni from experimentally-infected mice that were collected at different time post-infection. These are worms from the lung stage (day 6 after the infection), the liver stage (day 13, 17, 21 after infection), and the adult stage (day 28 when they look like adults, and day 35 when the egg-laying has started and liver pathology can be noticable). We could ask if and how the worms at different stages are transcriptionally different and how those differences are related, or surprising, given the nature of the worms.
 
 At the end of this module, and the follow-up project module, you will have hands-on experience in
 - mapping RNA-seq data to reference genome
