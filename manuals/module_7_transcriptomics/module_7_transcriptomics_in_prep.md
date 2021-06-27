@@ -204,7 +204,7 @@ Now we have output from the mapping as BAM file. This explains where on the geno
 The file that contains annotated information of a genome is known as GFF (General Feature Format) or GTF (General Transfer Format) file. These are annotation files, with each line containing one feature and its related information. The information is displayed in tab-separated fields. Both file types contain similar information but formatting are slightly different (more details: http://m.ensembl.org/info/website/upload/gff.html). Some software can take either type as input. For software that asks for a specific type, they can be converted using a tool such as gffread.
 
 ![](figures/gff.png)
-**Figure X.** Example of a GFF file
+**Figure 5.** Example of a GFF file
 
 Use HTSeq-count to calculate the number of reads mapped to each gene
 See https://htseq.readthedocs.io/en/release_0.11.1/count.html or do `htseq-count --help` to see meaning of these options. The manual and `--help` option can also be useful if you encounter an error message.
@@ -263,7 +263,7 @@ While using RStudio, you can get help by typing command
 You can also find help online. If you Google your bioinformatics and R questions/struggles, it is amazing how someone had already asked that question and some answers had been provided. You might often find links to a forum on https://www.biostars.org/ or https://stackoverflow.com/. 
 
 ![](figures/RStudio.png)
-**Figure X.** RStudio user interface
+**Figure 6.** RStudio user interface
 
 ### Prepare your R workspace
 The packages that we will load have previously been installed on the computer, and now we need to pull them, using `library()` command, into our current R environment. 
@@ -371,7 +371,7 @@ plotPCA(rld, intgroup = c("condition"))
 
 You should get something similar to this. 
 ![](figures/pca.png)
-**Figure X.** PCA plot
+**Figure 7.** PCA plot
 
 Save the plot to PDF file using `dev.copy()` function. `dev` mean device, and this refers to the plotting space in your RStudio, as well as a new "device" that is opened as a new file on your computer. Once the plotting to a new "device" is done, we must do `dev.off()` to close the device so that the plot can be viewed. 
 
@@ -441,7 +441,7 @@ theme(text = element_text(size = 15))
 ```
 
 ![](figures/ggplotpca.png)
-**Figure X.** PCA plot produced by ggplot2
+**Figure 8.** PCA plot produced by ggplot2
 
 ---
 ### Mini exercise
@@ -476,7 +476,7 @@ pheatmap(sampleDistMatrix, clustering_distance_rows = sampleDist, clustering_dis
 
 This should output a plot similar to one below
 ![](figures/sampleheatmap.png)
-**Figure X.** Sample heatmap
+**Figure 9.** Sample heatmap
 
 ```R
 # Save the plot to a PDF file
@@ -511,7 +511,7 @@ The result table contains several columns, of which the most relevant are:
 - Column 6: padj, adjusted p-value, p-value corrected for multiple testing
 
 ![](figures/deseqres.png)
-**Figure X.** Example of DESeq2 result table
+**Figure 10.** Example of DESeq2 result table
 
 ### Log2 fold change
 Fold change is calculated from a ratio of normalised read counts between two conditions of interest. However, level of gene expression changes are often shown as log2 fold change. Using log2 value become particularly helpful for visualising the gene expression changes. Furthermore, it eventually become intuitive that log2FC of 1 means expression level double in a given condition, and a negative log2FC means the gene is down-regulated in a given condition. 
@@ -574,7 +574,7 @@ abline(h = c(-1,1))
 ```
 
 ![](figures/maPlot.png)
-**Figure X.** MA plot
+**Figure 11.** MA plot
 
 **Volcano plot**
 
@@ -599,7 +599,7 @@ ggtitle("D13 VS D06")
 ```
 
 ![](figures/volcano.png)
-**Figure X.** Volcano plot
+**Figure 12.** Volcano plot
 
 **Individual plot for a gene**
 
@@ -618,7 +618,7 @@ ggtitle("Smp_022450.2")
 ```
 
 ![](figures/genePlot.png)
-**Figure X.** Gene plot
+**Figure 13.** Gene plot
 
 **Gene heatmap**
 We may want to look at expression profiles of multiple genes at the same time. Heatmaps can be useful for this purpose; it essentially help turn a table of numbers into a mode visual form and it is versatile. The table could be normalised counts of top differentially expressed genes in a given comparison, or it could be genes known to be involved in a specific pathway, or it can be log2FC values instead of read counts. Previously, we use heatmap to visualise matrix of distances between each samples. 
@@ -645,7 +645,7 @@ pheatmap(rld_res_D13D06_top20_genes)
 ```
 
 ![](figures/geneheatmap1.png)
-**Figure X.** Heatmap - default setting
+**Figure 14.** Heatmap - default setting
 
 The default plot look quite messy. The rows are annotated with gene IDs, and their writing overlap due to limited space. The column annotations are also long and contain excess information. 
 
@@ -671,7 +671,7 @@ main = "Top 20 DE genes: day-13 / day-6")
 ```
 
 ![](figures/geneheatmap2.png)
-**Figure X.** Heatmap - customised
+**Figure 15.** Heatmap - customised
 
 ---
 ### Exercise 7.3
@@ -727,7 +727,7 @@ topGO_D13D06_upinD13[,1:7]
 ```
 
 ![](figures/topGOres.png)  
-**Figure X.** Example of topGO result
+**Figure 16.** Example of topGO result
 
 ---
 ### Exercise 7.4
