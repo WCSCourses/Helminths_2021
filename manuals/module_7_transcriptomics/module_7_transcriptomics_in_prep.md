@@ -491,18 +491,19 @@ heatmap(sampleDistMatrix, Rowv = sampleDist, Colv = sampleDist, cexRow = 0.7, la
 
 
 ## Identifying differentially expressed genes <a name="de"></a>
-Now that we have explore overall relationship between samples based on their transcriptome profiles, we can go deeper into the data and explores genes expression that are different between samples - i.e. between experimental/biological conditions. 
+Now that we have explored overall relationship between samples based on their transcriptome profiles, we can go deeper into the data and explores genes expression that are different between samples - i.e. between experimental/biological conditions. 
 
 In its simplest view, differential expression analysis test for differences between 2 or more groups when we have one or more factors that could contribute to the observed differences. However, in transcriptomic data, we often have a much lower number of replicates, data are not normally distributed, and we are testing differences in many genes at the same time. Methods and tools for analysing differential gene expression; therefore, have some specific terminology and concepts as we shall see next!
 
 ### Genes differentially expressed between conditions
-Using the DESeq object we created earlier (dds), we can look at the differentially expressed genes using  results() function. By default, DESeq2 perform pair-wise comparison of the first and the last variable in the experimental design variables and provide a result table.
+Using the DESeq `dds` object we created earlier, we can look at the differentially expressed genes using `results()` function. By default, DESeq2 perform pair-wise comparison of the first and the last variable in the experimental design variables and provide a result table.
 
 ```R
 # Access result of differential expression analysis
 res <- results(dds)
 head(res)
 ```
+
 The result table contains several columns, of which the most relevant are:
 - Rowname, indicating gene id
 - Column 1: baseMean, average expression level across all samples normalised by sequencing depth
@@ -516,18 +517,18 @@ The result table contains several columns, of which the most relevant are:
 Fold change is calculated from a ratio of normalised read counts between two conditions of interest. However, level of gene expression changes are often shown as log2 fold change. Using log2 value become particularly helpful for visualising the gene expression changes. Furthermore, it eventually become intuitive that log2FC of 1 means expression level double in a given condition, and a negative log2FC means the gene is down-regulated in a given condition. 
 
 ### P-values, q-values and multiple-testing problem
-When asking whether a gene is differentially expressed we use statistical tests to assign a p-value. We might be familiar with using p-value as a statistically significant cut-off (such as at p-value = 0.05) when you study one gene. Essentially, p-value of 0.05 means there is a 5% chance that the difference observed is due to chance (false-positive). Now, when we talk about transcriptome , we can be looking at 10,000 genes at once and the chance of false-positive hits, collectively, then become 0.05 * 10,000 = 500 hits! That is too much to obtain reliable results, and this is known as a multiple-testing problem - the more you carry out a test, the more likely you would end up with some positive results just by chance. To overcome this, we will, instead, use q-value, also known as adjusted p-value, which can be calculated from the p-value and taking the number of tests into account. Thankfully, we often don’t need to do the calculation ourselves, as data analysis tools often provide the adjusted p-value. Therefore it is an adjusted p-value of less than 0.05 (or other cut-off) that we should be looking for when asking whether a gene is differentially expressed.
+We might be familiar with using p-value as a statistically significant cut-off (such as at p-value = 0.05) when you study one gene. Essentially, p-value of 0.05 means there is a 5% chance that the difference observed is due to chance (false-positive). Now, when we talk about transcriptome , we can be looking at 10,000 genes at once and the chance of false-positive hits, collectively, then become 0.05 * 10,000 = 500 hits! That is too much to obtain reliable results, and this is known as a multiple-testing problem - the more you carry out a test, the more likely you would end up with some positive results just by chance. To overcome this, we will, instead, use q-value, also known as adjusted p-value, which can be calculated from the p-value, its distribution, and taking the number of tests into account. Thankfully, we often don’t need to do the calculation ourselves, as data analysis tools often provide the adjusted p-value. Therefore it is an adjusted p-value of less than 0.05 (or other cut-off) that we should be looking for when asking whether a gene is differentially expressed.
 
 ### Cut-off for calling a gene differentially expressed
-In this manual, we choose 1 and -1 log2 fold change as a cut-off. This essentially means the gene expression increase 2 times or decrease 2 times in a given comparison (e.g. log2 fold change of 1 mean expression of gene A in female/expression of gene A in male = 2). If you want to reduce the number of DE genes, or think the statistical power of your study isn’t high (e.g. having a low number of replicates), you may consider increasing the cut-off for calling genes differentially expressed (e.g. change to 3). Similarly, if you expect the nature of changes to be small, or for example, if you treat cells in batch/large chunk but expected that the treatment will only affect part of the cells (diluting the effect size) then you might want to consider reducing the cut-off (e.g. to 0.5).
+In this manual, we choose 1 and -1 log2 fold change (log2FC) as a cut-off. This means the gene expression that increase 2 times or decrease 2 times in a given comparison (e.g. log2 fold change of 1 mean expression of gene A in group1/expression of gene A in group2 = 2). If you want to reduce the number of DE genes, or think the statistical power of your study isn’t high (e.g. having a low number of replicates or a low number of reads), you may consider increasing the cut-off for calling genes differentially expressed (e.g. change to 3). Similarly, if you expect the nature of changes to be small, or for example, if you treat cells in batch/large chunk but expected that the treatment will only affect part of the cells (diluting the effect size) then you might want to consider reducing the cut-off of te log2 fold change (e.g. to 0.5).
 
 ## Compare gene expression between 2 conditions 
-Using the same results() command, with additional arguments, we can explore pair-wise comparison between any two given groups of samples. For example, we may be interested in differences between male and female adult worms. We can use the commands below. 
+Using the same `results()` command, with additional arguments, we can explore pair-wise comparison between any two given groups of samples. For example, we may be interested in differences between day-13 and day-6 worms. We can use the commands below. 
+
+Using `contrast()`, we can specify groups of samples to be compared. _Notice the order by which the condition names are mentioned for the `contrast`_; this example means `D06` is denominator in the log2 fold change calculation.
 
 ```R
 # Create a result table for adult female vs adult male
-# Using contrast(), we can specify groups of samples to be compared. Notice the order by which the condition names are mentioned for the contrast; this example means D06 is denominator in the log2 fold change calculation.
-# Use test = “Wald” for pair-wise comparison
 # alpha = 0.01 specify the adjusted p-value cut off to use when summary() function count the number of differentially expressed genes
 res_D13D06 <- results(dds, contrast = c("condition", "D13", "D06"), test = "Wald", alpha = 0.01) 
 
@@ -536,26 +537,28 @@ summary(res_D13D06, alpha = 0.01)
 # Explore top-20 differentially expressed genes based on adjusted p-value
 res_D13D06[order(res_D13D06$padj),][1:20,]
 
-# To look at genes that were up-regulated in D13 worms
+# To look at genes that were up-regulated in day-13 worms
 # The which function returns positions where the condition is TRUE?
-# Because we are looking at genes with higher expression in D13 group, which is the numerator, log2FC will be positive. We could use cut-off of log2FC > 1 & padj < 0.01
+# Because we are looking at genes with higher expression in day-13 group, which is the numerator, log2FC will be positive. We could use cut-off of log2FC > 1 & padj < 0.01
 res_D13D06[which(res_D13D06$log2FoldChange > 1 & res_D13D06$padj < 0.01),]
 ```
 
 ---
 ### Exercise 7.2
-Look at the result of differential gene expression analysis between adult male and female worms. 
+Look at the result of differential gene expression analysis between day-13 and day-6 worms. 
 1) How many genes are up-regulated in day-13 worms compared to day-6 worms?
 2) How many genes are up-regulated in day-6 worms? 
 3) Try using WormbaseParasite to explore some of the top differentially expressed genes ranked by log2FC.
 ---
+
 [↥ **Back to top**](#top)
 
 
 ## Exploring gene expression using gene plots and heatmaps <a name="plots"></a>
-We have looked at the results of pairwise comparison so far in form of large tables with multiple columns and thousands of rows, representing all genes in S. mansoni. This information can be visualised using MA plots (log2FC and mean expression level) and volcano plots (log2FC and adjusted p-value). We can also plot expression of a particular gene across all samples. 
+We have looked at the results of pairwise comparison so far in form of large tables with multiple columns and thousands of rows, representing all genes in _S. mansoni_. This information can be visualised using **MA plots** (log2FC and mean expression level) and **volcano plots** (log2FC and adjusted p-value). We can also plot expression of a particular gene across all samples. 
 
 **MA plot**
+
 ```R
 # We can use plotMA() function which come with DESeq2 package
 plotMA(res_D13D06)
@@ -574,6 +577,7 @@ abline(h = c(-1,1))
 **Figure X.** MA plot
 
 **Volcano plot**
+
 ```R
 # We will use result table from pair-wise comparison between D13 vs D06
 res_D13D06
@@ -598,9 +602,11 @@ ggtitle("D13 VS D06")
 **Figure X.** Volcano plot
 
 **Individual plot for a gene**
+
 ```R
+# Smp_022450.2 is a gene from the top-20 lowest adjusted p-val list 
+
 # Use plotCounts which come with DESeq2 package
-# Let's pick that gene from the top-20 lowest adjusted p-val list 
 plotCounts(dds, "Smp_022450.2", intgroup = c("condition")) 
 
 # Or use ggplot
@@ -620,7 +626,7 @@ We may want to look at expression profiles of multiple genes at the same time. H
 ```R
 # Select genes with the top-20 lowest adjusted p-value
 # Rank genes by their adjusted p-value (padj) 
-# order function returns the position indices of a vector (in this case res$padj) in sorted order, then we use these indices to call data from res dataframe
+# order() function returns the position indices of a vector (in this case res$padj) in sorted order, then we use these indices to call data from res dataframe
 res_D13D06[order(res_D13D06$padj),]
 
 # Take the top 20 genes from the ranked list
@@ -631,7 +637,7 @@ res_D13D06_top20_genes <- rownames(res_D13D06_top20)
 
 # Extract the rlog-transformed counts of the top 20 DE genes. 
 # By using rlog-transformed counts,extreme values (either low or high) are shrunken and overall differences become clearer, which make the data suitable for visualisation and clustering (producing a heatmap involves clustering of rows and column).
-# Which function returns positions where the condition (is TRUE, in this case, the condition is rownames(assay(rld)) %in% res_top20_genes), (translation: rownames of the rld objects match the list of top-20 genes) 
+# which() function returns positions where the condition (is TRUE, in this case, the condition is rownames(assay(rld)) %in% res_top20_genes), (translation: rownames of the rld objects match the list of top-20 genes) 
 rld_res_D13D06_top20_genes <- assay(rld)[which(rownames(assay(rld)) %in% res_D13D06_top20_genes),]
 
 # Create a heatmap using pheatmap
@@ -644,6 +650,7 @@ pheatmap(rld_res_D13D06_top20_genes)
 The default plot look quite messy. The rows are annotated with gene IDs, and their writing overlap due to limited space. The column annotations are also long and contain excess information. 
 
 **Customised heatmap**
+
 ```R
 # Define how columns will be labelled
 colann <- c(rep("day-6",7), rep("day-13",3), rep("day-17",3), rep("day-21",3), rep("day-28",3), rep("day-35",3))  
@@ -661,7 +668,6 @@ cluster_cols = TRUE,
 cellwidth = 15,
 fontsize = 10,
 main = "Top 20 DE genes: day-13 / day-6")
-
 ```
 
 ![](figures/geneheatmap2.png)
@@ -669,8 +675,8 @@ main = "Top 20 DE genes: day-13 / day-6")
 
 ---
 ### Exercise 7.3
-1) Compare volcano plot or MA plot of M vs F adult and M vs F schistosomules. What do you notice about the range of log2FC and adjusted p-values? It might be more informative to show plots from both comparison on the same axis ranges. Try using ylim() and xlim() argument to set the range of x and y axes. 
-2) Select a gene from top differentially expressed genes between M vs F adult and produce a gene plot. Find out a product name of that gene and add to the title of the gene plot.
+1) Compare volcano plot or MA plot of D13vsD06 and D17vsD13 worms. What do you notice about the range of log2FC and adjusted p-values? It might be more informative to show plots from both comparison on the same axis ranges. Try using `ylim()` and `xlim()` argument to set the range of x and y axes. 
+2) Select a gene from top differentially expressed genes between D13vsD06 and produce a gene plot. Find out a product name of that gene and add to the title of the gene plot.
 ---
 [↥ **Back to top**](#top)
 
@@ -698,6 +704,7 @@ GO enrichment analysis tools on online servers allow researchers to run their an
 
 ### GO terms enrichment using topGO
 Running topGO take a couple of steps (see topGO documentation here https://bioconductor.org/packages/release/bioc/html/topGO.html). We can simplify it using the script provided in run_topGO.R. With this wrapper script, covering all those steps, we can run topGO with one command line. It also adds to the standard topGO output an extra column which list IDs of genes that are responsible for each enriched GO term. 
+
 ```R
 # Load the R wrapper script for running topGO
 source("/<path to data>/Module_7_Transcriptomics/run_topGO.R")
@@ -722,24 +729,11 @@ topGO_D13D06_upinD13[,1:7]
 ![](figures/topGOres.png)  
 **Figure X.** Example of topGO result
 
-```R
-# Run topGO using genes that were up-regulated in day-6 worms, compared to day-13 worms
-# Collect gene ID to use for running topGO
-D13D06_upinD06 <- rownames(res_D13D06)[_______________________________________________________________________________]
-
-length(D13D06_upinD06) # _________ genes
-
-# Run topGO
-topGO_D13D06_upinD06 <- run_topGO_R(ref = "/<path to data>/Module_7_Transcriptomics/References_v5/Sm_v5_GOref_topGO.txt", genelist = ____________________________, thres = 0.05)
-
-# Check topGO result
-topGO_D13D06_upinD06[,1:7]
-```
-
 ---
 ### Exercise 7.4
-1) What do we notice about differences in day-6 and day-13 worms according to the GO enrichment? 
-2) What genes are responsible for the enrichment of the top GO term? Try using WormbaseParasites and other databases to gain more information about those genes and GO term.
+1) Run topGO using genes that were up-regulated in day-6 worms, compared to day-13 worms ()
+2) What do we notice about differences in day-6 and day-13 worms according to the GO enrichment? 
+3) What genes are responsible for the enrichment of the top GO term? Try using WormbaseParasites and other databases to gain more information about those genes and GO term.
 ---
 
 ### Other ways to inspect your RNA-seq data
