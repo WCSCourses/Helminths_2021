@@ -19,7 +19,7 @@
 ---
 
 ## Overview and Aims <a name="intro"></a>
-In this module, we will cover key concepts in RNA-seq transcriptome experimental design and data analysis. We will start from raw data and work toward analysis of differentially expressed genes and functional analysis of gene lists. The example we will use come from Schistosoma mansoni which we have a good reference genome for (and downloadable from Wormbase Parasite). We will use data of S. mansoni from experimentally-infected mice that were collected at different time post-infection. These are worms from the lung stage (day 6 after the infection), the liver stage (day 13, 17, 21 after infection), and the adult stage (day 28 when they look like adults, and day 35 when the egg-laying has started and liver pathology can be noticable). We could ask if and how the worms at different stages are transcriptionally different and how those differences are related, or surprising, given the nature of the worms.
+In this module, we will cover key concepts in RNA-seq transcriptome experimental design and data analysis. We will start from raw data and work toward analysis of differentially expressed genes and functional analysis of gene lists. The example we will use come from Schistosoma mansoni which we have a good reference genome for (and downloadable from Wormbase Parasite). We will use data of S. mansoni from experimentally-infected mice that were collected at different time post-infection. We could ask if and how the worms at different stages are transcriptionally different and how those differences are related, or surprising, given the nature of the worms.
 
 At the end of this module, and the follow-up project module, you will have hands-on experience in
 - mapping RNA-seq data to reference genome
@@ -32,12 +32,11 @@ At the end of this module, and the follow-up project module, you will have hands
 [↥ **Back to top**](#top)
 
 ## Introduction to transcriptome and experiment design <a name="basic"></a>
-Understanding the genome is not simply about understanding which genes are there. Understanding when each gene is used helps us to find out how organisms develop and which genes are used in response to particular external stimuli. The first layer in understanding how the genome is used is the transcriptome. This is also the most accessible because like the genome the transcriptome is made of nucleic acids and can be sequenced using the same technology. Arguably the proteome is of greater relevance to understanding cellular biology however it is chemically heterogeneous making it much more difficult to assay.
+Understanding when each gene is used helps us to investigate how organisms develop and which genes are used in response to particular external stimuli. The first layer in understanding how the genome is used is the transcriptome. This is also the most accessible because like the genome the transcriptome is made of nucleic acids and can be sequenced using the same technology. Arguably the proteome and metabolome is of greater relevance to understanding cellular biology however it is chemically heterogeneous making it much more difficult to assay.
 
-Over the past decade or two microarray technology has been extensively applied to addressing the question of which genes are expressed when. Despite its success this technology is limited in that it requires prior knowledge of the gene sequences for an organism and has a limited dynamic range in detecting the level of expression, e.g. how many copies of a transcript are made. RNA sequencing technology, using for instance Illumina HiSeq machines, can sequence essentially all the genes which are transcribed and the results have a more linear relationship to the real number of transcripts generated in the cell.
+Over the past decade or two microarray technology has been extensively applied to addressing the question of which genes are expressed when. Despite its success this technology is limited in that it requires prior knowledge of the gene sequences for an organism and has a limited dynamic range in detecting the level of expression, e.g. how many copies of a transcript are made. RNA sequencing technology, using for instance Sequencing-by-Synthesis method, can sequence essentially all the genes which are transcribed including the unknown RNAs.
 
-One of the most common uses of transcriptomic data is possibly for differential gene expression study, which will be covered in this course. However, the extensive and high-throughput nature of the transcriptomic data means there are other potential usages. For example, it can be used to profile total RNA (e.g. miRNA and mRNA) in exosomes and other secretory products; help identify different splice isoforms; provide evidence for gene annotation and improve quality of reference genomes.  
-Meta-transcriptome (combining and re-analysing pool of transcriptomics data from multiple experiments), and comparative gene expression between species could be seen as an extension of differential gene expression. Furthermore, genetic variation particularly SNP calling could use information from transcriptomics data which would carry SNPs from transcribed genes.  
+One of the most common uses of transcriptomic data is possibly for differential gene expression study, which will be covered in this course. However, the extensive and high-throughput nature of the transcriptomic data means there are other potential usages. For example, it can be used to profile total RNA (e.g. miRNA and mRNA) in exosomes and other secretory products; help identify different splice isoforms; provide evidence for gene annotation and improve quality of reference genomes. Meta-transcriptome (combining and re-analysing pool of transcriptomics data from multiple experiments), and comparative gene expression between species could be seen as an extension of differential gene expression. Furthermore, genetic variation particularly SNP calling could use information from transcriptomics data which would carry SNPs from transcribed genes.  
 
 ### Designing a transcriptome experiment: things to consider
 #### Replicates and power
@@ -61,7 +60,7 @@ _How many replicates to do?_
 More discussion on replicates: http://chagall.med.cornell.edu/RNASEQcourse/Intro2RNAseq.pdf 
 
 #### Numbers of reads
-The table below shows general recommendation according to Genohub, but real usage can vary depending on your needs. You may recall from the Genetic Diversity module that reduced number of reads, in some cases, can still provide information about genetic variations. (For more details, refer to: https://genohub.com/next-generation-sequencing-guide/#depth2)
+The table below shows general recommendation according to Genohub, but real usage can vary depending on your needs. You may recall from the Genetic Diversity module that reduced number of reads, in some cases, can still provide information about genetic variations. If the differences between groups are big, then you may still see the differences even when your have a low number of reads. If the differences are small, however, those small differences may get lost amongst the noises and sample-to-sample variations, such that you will need a higher number of reads to see the biological signals. (For more details, refer to: https://genohub.com/next-generation-sequencing-guide/#depth2)
 
 |Sample type|Reads recommended for differential expression (millions)|Reads recommended for rare transcript or de novo assembly (millions)|
 |------|------|------|
@@ -97,32 +96,32 @@ After the experiment has been conducted, RNA extracted, and proceeded to sequenc
 Mapping is a relatively simple step, and below are information that may become helpful when choosing tools and parameters during your read mapping.
 
 #### Spliced mapping
-Eukaryotic mRNAs are processed; after transcription introns are spliced out. Therefore some reads (those crossing exon boundaries) should be split when mapped to the reference genome sequence in which intron sequences are still present. TopHat and HISAT2 are one of few mappers which can split reads while mapping them, making it very suitable for mapping RNA-seq. Splice-aware mapper first identify reads that map within a single exon and then identify splice junction on unmapped reads and map them across exon boundaries. Beware that TopHat cannot recognize donor and acceptor splice-sites so it will split reads only based on optimizing the mapping, and you will occasionally see a couple of bases of the read having ended up on the wrong side of the intron.
+Eukaryotic mRNAs are processed after transcription; introns are spliced out. Therefore some reads (those crossing exon boundaries) should be split when mapped to the reference genome sequence in which intron sequences are still present. TopHat and HISAT2 are one of few mappers which can split reads while mapping them, making it very suitable for mapping RNA-seq of a eukaryote. Splice-aware mapper first identify reads that map within a single exon and then identify splice junction on unmapped reads and map them across exon boundaries.
 
 ![](figures/splicedMapping.png)  
 **Figure 2.** How spliced mapping works (From https://galaxyproject.github.io/training-material/topics/transcriptomics/tutorials/ref-based/tutorial.html)
 
-#### Non-unique/repeat regions
-A sequence read may map equally well to multiple locations in the reference genome. Different mapping algorithms have different strategies for this problem, so be sure to check the options in the mapper. Some difficult genome such as that of Plasmodium falciparum has a low GC content (19% GC), which means that reads are more likely to map to multiple locations in the genome by chance.
+#### Non-unique/repeated mapping regions
+A sequence read may map equally well to multiple locations in the reference genome. Different mapping algorithms have different strategies for this problem, so be sure to check the options in the mapper. Some difficult genome such as that of _Plasmodium falciparum_ has a low GC content (19% GC), which means that reads are more likely to map to multiple locations in the genome by chance. Reads from genes with tandem repeat domains may also encounter this situation. 
 
 #### Insert size
-When mapping paired reads, the mapper (e.g. TopHat and HISAT2) takes the expected insert size into account. If the fragments are expected to on average be 200bp, and the reads are 50bp, then the insert between the paired reads should be ~100bp. If the paired reads are significantly further apart than expected, we can suspect that the reads have not mapped properly and discard them. Removing poorly mapping reads can produce a more reliable mapping.
+When mapping paired reads, the mapper takes the expected insert size into account. If the insert sizes are expected to on average be 200bp (base pair), and the reads are 50bp, then the insert between the paired reads should be ~100bp. If the paired reads are significantly further apart than expected, the tool can suspect that the reads have not mapped properly and discard them. Removing poorly mapping reads can produce a more reliable mapping.
 
 #### Choosing mapper tools.
-Mapping to a genome is more appropriate where you are less confident about the genome annotation and/or you don’t have variant transcripts because your organism rarely makes them or they are simply not annotated. Tophat2 (PMID: 23618408), HISAT2 (PMID: 25751142), STAR (PMID: 23104886) and GSNAP (PMID: 20147302) are all splice-aware RNA-seq read mappers appropriate for this task. 
+Mapping to a genome is more appropriate where you are less confident about the genome annotation and/or you don’t have variant transcripts because your organism rarely makes them or they are simply not annotated. Tophat2 (PMID: 23618408), HISAT2 (PMID: 25751142), STAR (PMID: 23104886) and GSNAP (PMID: 20147302) are all splice-aware RNA-seq read mappers appropriate for eukaryote RNA-seq data. 
 
-Alternative short read mappers which do not split reads include SOAP (PMID: 23587118), SSAHA (PMID: 11591649), BWA (PMID: 19451168) and Bowtie2 (PMID: 22388286), SMALT (Ponstingl, unpublished/https://www.sanger.ac.uk/science/tools/smalt-0). All of these may be appropriate for bacterial RNA-seq. 
+Alternative short read mappers which do not split reads include SOAP (PMID: 23587118), SSAHA (PMID: 11591649), BWA (PMID: 19451168) and Bowtie2 (PMID: 22388286), SMALT (Ponstingl, unpublished/https://www.sanger.ac.uk/science/tools/smalt-0). All of these may be appropriate for prokaryote (e.g. bacterial) RNA-seq data. 
 
-If you have a good quality genome and genome annotation such as for model organisms e.g. human, model organisms, and well-curated pathogen genomes e.g. Plasmodium, S. mansoni, we can map RNA-seq reads against transcriptome instead of to the genome. This method of mapping can save lots of time and computing power and can still provide transcript abundance. This is even more relevant if you have variant transcript isoforms per gene as you need a tool which will do its best to determine which transcript isoform is really expressed. Examples of tools for mapping to transcriptome are Kallisto (PMID: 27043002) and eXpress (PMID: 23160280). However, it comes with some limitations as it relies on gene model being accurate which can only come about from a good quality reference genome. In addition, when mapping to the genome, we can cross check the quality of mapping and the gene model using genome viewer (such as Artemis, Apollo, IGV) and this is not applicable for transcriptome mapping.
+If you have a good quality genome and genome annotation such as for human, model organisms (e.g. mouse, zebra fish, _C. elegans_), and well-curated pathogen genomes e.g. _Plasmodium_, _S. mansoni_, we can map RNA-seq reads against transcriptome instead of to the genome. This method of mapping can save lots of time and computing power. Examples of tools for mapping to transcriptome are Kallisto (PMID: 27043002) and eXpress (PMID: 23160280). However, it comes with some limitations, as it relies on gene model being accurate which can only come about from a good quality reference genome. In addition, when mapping to the genome, we can cross check the quality of mapping and the gene model using genome viewer (such as Artemis, Apollo, IGV) and this is not applicable for transcriptome mapping.
 
-New tools for mapping sequence reads are continually being developed. This reflects improvements in mapping technology, but it is also due to changes in the sequence data to be mapped. The sequencing machines we are using now (e.g. Illumina HiSeq, 454 GS FLX etc) will perhaps not be the ones we are using in a few years time, and the data the new machines produce may require different set of tools but some key concepts will remain relevant.
+New tools for mapping sequence reads are continually being developed. This reflects improvements in mapping technology, but it is also due to changes in the sequence data to be mapped. The sequencing machines we are using now will perhaps not be the ones we are using in a few years time, and the data the new machines produce may require different set of tools but some key concepts will remain relevant.
 
 ### Hands on: RNA-seq read mapping
 #### Experiment description
-We have four conditions: adult female, adult male, schistosomule female, and schistosomule male. Both group of adult worms have three biological replicates (Adt), both groups of schistosomules have two biological replicate  (Som). Therefore we have ten RNA samples, each has been sequenced on an Illumina HiSeq sequencing machine. The adult worms were sequenced as paired-end, whereas the schistosomules were sequenced as single-end. This will make the mapping commands differ slightly. 
+We will use data of S. mansoni from experimentally-infected mice that were collected at different time post-infection. These are worms from the lung stage (day 6 after the infection), the liver stage (day 13, 17, 21 after infection), and the adult stage (day 28 when they look like adults, and day 35 when the egg-laying has started and liver pathology can be noticable). Most groups have three biological replicates, except for the lung stage (day-6) where there are 7 biological replicates. Therefore we have 22 RNA samples, each has been sequenced on an Illumina HiSeq sequencing machine. All were sequenced as paired-end. 
 
 #### Mapping
-Mapping step generally need a huge computing power and often done on computer cluster or on Cloud. It can take a couple of hours per sample; therefore, for this demonstration, we provide files with reduced number of reads to reduce the processing time but you will still see how the run look like. We then provide output from the mapping that use full dataset and we can use this for the differential expression analysis this afternoon. 
+Mapping step generally need a huge computing power and often done on computer cluster or on Cloud. It can take a couple of hours per sample; therefore, for this demonstration, we provide files with reduced number of reads to reduce the processing time but you will still see how the run look like. We then provide output from the mapping that use full dataset and we can use this for the differential expression analysis later this afternoon. 
 
 First, we will use HISAT2 (PMID: 25751142) to map RNA-seq data (in FASTQ format) to genome data (in FASTA format). HISAT2 is a mapper tool and is an upgraded software from the developer of TopHat. It is suitable for RNA-seq data as it also takes into account the splicing of exon-intron which is a characteristic of eukaryotic mRNA. 
 
@@ -132,21 +131,25 @@ First, we will use HISAT2 (PMID: 25751142) to map RNA-seq data (in FASTQ format)
 ![](figures/fasta.png)  
 **Figure 4.** FASTA file
 
-__Note:__ For RNA-seq we can often get away without trimming reads before the mapping step. This is because contaminated reads or reads with low-quality would also have low mapping score and will be excluded during the read counting step. However, if the number of mapped reads or mapping results seem off, you may want to look at QC of the raw read data to figure out where things might have gone wrong. 
+**Note:** For RNA-seq we can often get away without trimming reads before the mapping step. This is because contaminated reads or reads with low-quality would also have low mapping score and will be excluded during the read counting step. However, if the number of mapped reads or mapping results seem off, you may want to look at QC of the raw read data to figure out where things might have gone wrong. 
 
-Use te following command on your Terminal window
+Use the following command on your Terminal window.
+Information inside pointy brackets `<>` need to be changed to fit your computer setting
+
 **Remember to use TAB for auto-completion**
+
 ```bash 
 # Go to the location of the reference genome
-# Information inside pointy brackets <> need to be changed to fit your situation
 cd /<path/to/data>/Module_7_Transcriptomics/References_v5/
+
+# Unzip the reference genome file
+gunzip Sm_v5_genome.fa.gz
 
 # Index reference genome so that it can be read by HISAT2
 # The template for indexing command is hisat2-build <reference genome in .fa> <prefix for the index file>
-gunzip Sm_v5_genome.fa.gz
 hisat2-build Sm_v5_genome.fa Sm_v5_genome.hisat2idx
 
-# Wait for the indexing step... This will take about 5-10 minutes
+# ...Wait for the indexing step... This will take about 5-10 minutes...
 
 # Exit the 'References' directory and create a new directory to keep the mapping output
 cd ../
@@ -155,21 +158,26 @@ mkdir Mapping
 # Enter your new directory
 cd Mapping
 ```
+
 Now we will map RNA-seq data to the reference genome using HISAT2. 
+As mentioned before, the RNA-seq data for our experiment have been mapped for you separately, this part is only for practicing purpose.
+Try `hisat2 --help` to find out what the additional arguments mean.
 ```bash
 # For RNA-seq that come from single-end sequencing
 hisat2 --max-intronlen 40000 -x ../References_v5/Sm_v5_genome.hisat2idx -q ../RNAseq_data/Sm_SE.fastq -S Sm_SE.sam
 
 # For RNA-seq that come from paired-end sequencing
 # How does the command differ from the one above  for single-end data? 
-# Try hisat2 --help to find out what the additional arguments mean.
 hisat2 --max-intronlen 40000 -x ../References_v5/Sm_v5_genome.hisat2idx -1 ../RNAseq_data/Sm_PE_1.fastq -2 ../RNAseq_data/Sm_PE_2.fastq -S Sm_PE.sam
 ```
-What do you think about the **alignment rate** of this mapping? 
+
+The **alignment rate** will be shown on the screen. What do you think about the alignment rate of this mapping? 
 In which scenerio might you get a low alignment rate? 
 
+The mapping output a SAM file which contain information of the mapping location and scores. 
+We will convert SAM file to BAM file, a binary sibling which take less space on a disk and allow faster processing time for the next step (sorting).
 ```bash
-# Convert SAM file to BAM file, a binary sibling which contain less space on a disk and allow faster processing time for the next step (sorting)
+# Convert SAM to BAM using samtools
 samtools view -bS -o Sm_SE.bam Sm_SE.sam
 samtools view -bS -o Sm_PE.bam Sm_PE.sam
 
@@ -182,7 +190,7 @@ samtools sort -n -O BAM -o Sm_PE_sorted.bam Sm_PE.bam
 ```
 ---
 ### Exercise 7.1
-Now that SAM files have been converted to BAM, they are no longer useful and they take up a lot of space. Use Unix commands to:
+Now that SAM files have been converted to BAM, the SAM are no longer useful and they take up a lot of space. Use Unix commands to:
 1) List all SAM files in the current directory
 2) Remove all SAM files *Make sure you do not accidentally delete BAM files; they are needed for the next step!*
 ---
