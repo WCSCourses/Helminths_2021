@@ -344,19 +344,68 @@ BioMart lets us generate two types of output: data tables, and sequence (FASTA) 
 
 #### BioMart exercise <a name="biomart_exercise"></a>
 
-In the data directory for module 1, you will find two files containing lists of gene IDs: Sratti_genes.txt, and Smansoni_genes.txt. Use the gene IDs in Sratti_genes.txt to retrieve the following data:
+Using the following _S. ratti_  gene names to answer questions 1-5:
+
+```
+SRAE_1000001600
+SRAE_1000001700
+SRAE_1000001800
+SRAE_1000001900
+SRAE_1000002000
+SRAE_1000002100
+SRAE_1000002200
+SRAE_1000002300
+SRAE_1000002400
+SRAE_1000002500
+```
+
 1. Their WormBase gene IDs and UniProtKB/TrEMBL IDs.
 2. The InterPro domains that they have been annotated with (InterPro short description). [Q: why do some of the output rows appear multiple times?]
 3. The gene stable IDs of their _Strongyloides stercoralis_ orthologues. [Q: which gene has more than one _S. stercoralis_ orthologue?].
 4. The names of any GO terms associated with the genes. 
 5. A FASTA file of their peptide sequences.
 
-Use the gene IDs in Smansoni_genes.txt to answer the following questions:
-1. How many of these genes have orthologues in _S. haematobium_? Generate a table that has the gene stable ID for the homologue in both species, the homology type (1-1, 1-many, etc), and the % identity between the two orthologues. Of these genes, how many also do not have a human orthologue?
-2. Retrieve (a) a FASTA file with the CDS sequence of each transcript encoded by these genes. Make sure that the transcript stable ID is in the header; and (b) a FASTA file containing the CDS sequence plus 100 nt downstream of the stop codon of each of those transcripts. In the header, include the transcript stable ID and the name of the scaffold that the transcript is on.
-3. Generate a table containing all of the protein coding genes on _Brugia malayi_ scaffold Bm_007. The table should have their gene stable IDs and start and end coordinates. For genes that have paralogue(s), include the stable ID, coordinates and scaffold of the paralogue(s).
+Use the following _S. mansoni_ gene stable IDs to answer questions 6 and 7:
+
+```
+Smp_000090 
+Smp_000120 
+Smp_000180 
+Smp_000210 
+Smp_000220 
+Smp_000250 
+Smp_000330 
+Smp_000380 
+Smp_000400 
+Smp_000520 
+Smp_000030 
+Smp_000040
+Smp_000050 
+Smp_000070 
+Smp_000080 
+Smp_000130 
+Smp_000140 
+Smp_000150 
+Smp_000160 
+Smp_000170 
+Smp_000320 
+Smp_001085 
+Smp_002080 
+Smp_002180 
+Smp_002550 
+Smp_000020 
+Smp_000075 
+Smp_000100 
+Smp_000110 
+Smp_000370
+```
+
+6. How many of these genes have orthologues in _S. haematobium_? Generate a table that has the gene stable ID for the homologue in both species, the homology type (1-1, 1-many, etc), and the % identity between the two orthologues. Of these genes, how many also do not have a human orthologue?
+7. Retrieve (a) a FASTA file with the CDS sequence of each transcript encoded by these genes. Make sure that the transcript stable ID is in the header; and (b) a FASTA file containing the CDS sequence plus 100 nt downstream of the stop codon of each of those transcripts. In the header, include the transcript stable ID and the name of the scaffold that the transcript is on.
+
+8. Generate a table containing all of the protein coding genes on _Brugia malayi_ scaffold Bm_007. The table should have their gene stable IDs and start and end coordinates. For genes that have paralogue(s), include the stable ID, coordinates and scaffold of the paralogue(s).
 Export a list of the paralogues, and perform a new query to generate a table that maps each paralogue stable ID to its UniProt/TrEMBL ID.
-4. Retrieve a list of _Onchocerca volvulus_ genes that are annotated with the GO term “reproduction” (or any of its child terms). In the output, include the IDs and short descriptions of the InterPro protein domains associated with the genes.
-5. How many worm pseudogenes are annotated in WBPS? Which worm genomes have annotated pseudogenes?
+9. Retrieve a list of _Onchocerca volvulus_ genes that are annotated with the GO term “reproduction” (or any of its child terms). In the output, include the IDs and short descriptions of the InterPro protein domains associated with the genes.
+10. How many worm pseudogenes are annotated in WBPS? Which worm genomes have annotated pseudogenes?
 
 [↥ **Back to top**](#top)
