@@ -198,75 +198,85 @@ Now that SAM files have been converted to BAM, the SAM are no longer useful and 
 
 
 ## Counting the number of reads mapped to each gene <a name="readcount"></a> 
-Now we have output from the mapping as BAM file. This explains where on the genome do each of the sequencing reads mapped to. Next we can combine this information with a file that says which location on the genome is what genes. HTSeq (PMID: 25260700) is a popular tool for this purpose. Alternatively, cufflinks (PMID: 22383036) will count reads and determine differentially expressed genes.
+Now we have output from the mapping as BAM file. This explains where on the genome do each of the sequencing reads mapped to. Next we can combine this information with a file that says which location on the genome is what genes, a GFF or GTF file. HTSeq (PMID: 25260700) is a popular tool for this purpose.
+
 ### Annotation files
-The file that contains annotated information of a genome is known as GFF (General Feature Format) or GTF (General Transfer Format) file. These are annotation files, with each line containing one feature and its related information. The information is displayed in tab-separated fields. Both file types contain similar information but formatting are slightly different. Some software can take either type as input. For software that asks for a specific type, they can be converted using a tool such as gffread.
+The file that contains annotated information of a genome is known as GFF (General Feature Format) or GTF (General Transfer Format) file. These are annotation files, with each line containing one feature and its related information. The information is displayed in tab-separated fields. Both file types contain similar information but formatting are slightly different (more details: http://m.ensembl.org/info/website/upload/gff.html). Some software can take either type as input. For software that asks for a specific type, they can be converted using a tool such as gffread.
 
 ![](figures/gff.png)
 **Figure X.** Example of a GFF file
 
+Use HTSeq-count to calculate the number of reads mapped to each gene
+See https://htseq.readthedocs.io/en/release_0.11.1/count.html or do `htseq-count --help` to see meaning of these options. The manual and `--help` option can also be useful if you encounter an error message.
+
 ```bash
-# Use HTSeq-count to calculate the number of reads mapped to each gene
 # htseq-count <various options> <sorted BAM file> <GTF or GFF file with gene annotation>
-# See https://htseq.readthedocs.io/en/release_0.11.1/count.html or do htseq-count --help to see meaning of these options. --help can also be useful if you encounter an error message.
 
 # For Sm_PE_sorted.bam file
-htseq-count -a 30 -t CDS -i gene_id -s yes -m union Sm_PE_sorted.bam ../References_v5/Sm_v5_canonical_geneset.gtf > Sm_PE_htseqcount.txt
 # The > means 'take the screen output to this file'
+htseq-count -a 30 -t CDS -i gene_id -s yes -m union Sm_PE_sorted.bam ../References_v5/Sm_v5_canonical_geneset.gtf > Sm_PE_htseqcount.txt
 
 # Now try it yourself for the Sm_SE_sorted.bam file
-_______________________________________________________________________________________________________________
+?????
 
 # Explore one of the HTSeq-count output files
-less Sm_PE_htseqcount.txt
 # Use up-down arrows to move long the files, or press the spacebar or D to move down a page, press B to move up a page
+less Sm_PE_htseqcount.txt
+```
 
-# Output from HTSeq-count contain STDOUT (standard out; telling progress and key steps while the tool is running) and STDERR (standard error; error or warning messages) followed by the number of reads that mapped to each gene. We only need the read count information for downstream analyses. 
+Output from HTSeq-count contain `STDOUT` (standard out; telling progress and key steps while the tool is running) and `STDERR` (standard error; error or warning messages) followed by the number of reads that mapped to each gene. We only need the read count information for downstream analyses. 
+
+```bash
 # Create a directory called “final_counts” to keep count files
 mkdir final_counts
 
-# Filter HTSeq-count output files into a new file, keeping just the lines with gene IDs (Smp) and their read counts 
+# Filter HTSeq-count output files into a new file, keeping just the lines with gene IDs (Smp for S. mansoni) and their read counts 
 grep "^Smp" Sm_PE_htseqcount.txt
 
 # That output way too much stuff on the screen, try `head` command to output just the first 10 lines
 grep "^Smp" Sm_PE_htseqcount.txt | head 
 
-# What we want here is to grep lines that start with Smp from <a file>, then sort the grep output and only show any repetitive lines once, write this sorted output to <a new file>
-grep "^Smp" Sm_PE_htseqcount.txt | sort -u > final_counts/Sm_PE_htseqcount.final
+# What we want here is to grep lines that start with Smp from a file, then sort the grep output, write this sorted output to a new file
+grep "^Smp" Sm_PE_htseqcount.txt | sort > final_counts/Sm_PE_htseqcount.final
 
 # Now try it yourself for the Sm_SE_sorted.bam file
-_______________________________________________________________________________________________________________
-
+?????
 ```
+
 We should now have files containing the number of reads mapped to each gene within each demo samples. Next step, we will import read count data into R and run differential expression analysis. 
 
-We mapped and performed read counting for two samples so far, the rest of the samples have been done for you and are in a directory called  `v5counts`.
+We mapped and performed read counting for two example samples so far, the real samples have been done for you and are in a directory called  `v5counts`.
 
 ---
 [↥ **Back to top**](#top)
 
 
-## Import data into RStudio <a name="Rprep"></a>
-We will move from Unix commands into R. We could run R on the Terminal, similarly to what we did for the Genetic Diversity module. Alternatively, we could run R on RStudio which provide graphical user interface and keep scripts and output neatly in one windows. 
+## Setting up RStudio <a name="Rprep"></a>
+We will move from Unix commands into R. We could run R on the Terminal, but more conveniently, we could run R on RStudio which provide graphical user interface and keep scripts and output neatly in one windows. 
 
-First, open RStudio and create a new R Script file. This will produce a blank file in the window on the top left. Save it to a meaningful name. While doing the analysis, we recommend typing, or copying, commands in this handbook into the R script area and then choose the line and run from there (using “Run” button next to the script area, or `Ctrl+Enter` shortcut key). This way we will have all the commands neatly stored in the script area which will make it easier to trace back, re-do, or edit if necessary. 
+First, open RStudio and create a new R Script file (or RMarkdown file if you prefer). This will produce a blank file in the window on the top left. Save it to a meaningful name. While doing the analysis, we recommend typing, or copying, commands in this handbook into the R script area and then choose the line and run from there (using “Run” button next to the script area, or `Ctrl+Enter` shortcut key). This way we will have all the commands neatly stored in the script area which will make it easier to trace back, re-do, or edit if necessary. 
 
-While using RStudio, you can get help by typing running command `?functioname` (function manual will appear on the Help section), or `??functioname`  (a list of functions with similar name to your query will appear on the Help section - very useful when you are not quite sure how the function is called). You can also find help online. If you Google your (bioinformatics and R) questions/struggles, it is amazing how someone had already asked that question and some answers had been provided. You might often find links to a forum on https://www.biostars.org/ or https://stackoverflow.com/. 
+While using RStudio, you can get help by typing command 
+- `?functioname` (function manual will appear on the Help section), 
+- or `??functioname`  (a list of functions with similar name to your query will appear on the Help section - very useful when you are not quite sure how the function is called). 
+
+You can also find help online. If you Google your bioinformatics and R questions/struggles, it is amazing how someone had already asked that question and some answers had been provided. You might often find links to a forum on https://www.biostars.org/ or https://stackoverflow.com/. 
 
 ![](figures/RStudio.png)
 **Figure X.** RStudio user interface
 
 ### Prepare your R workspace
-The packages that we will load have previously been installed on the computer, and now we need to pull them, using library() command, into our current R environment. 
+The packages that we will load have previously been installed on the computer, and now we need to pull them, using `library()` command, into our current R environment. 
 
-**Note:** If you want to run this analysis on a different computer, you may need to first install the packages, but this task is often straightforward. R packages that we use are mainly from Bioconductor repository, or from CRAN (The Comprehensive R Archive Network). 
+**Note:** If you want to run this analysis on a different computer, you may need to first install the packages, but this task is often straightforward. R packages that we use are mainly from **Bioconductor** repository, or from **CRAN (The Comprehensive R Archive Network)**. 
 
-As an example, to install `topGO`, which is an R package on Bioconductor, we just need to follow 2 lines of commands from this page https://www.bioconductor.org/packages/release/bioc/html/topGO.html. To install a package from CRAN, such as `ggplot2`, we use command `install.packages("ggplot2")`.
+As an example, to install `topGO`, which is an R package on Bioconductor, we just need to follow few lines of commands from this page https://www.bioconductor.org/packages/release/bioc/html/topGO.html. To install a package from CRAN, such as `ggplot2`, we use command `install.packages("ggplot2")`.
+
+Let's get your R workspace set up
 
 ```R
 # Set up work directory
-# Change <path/to/data> to match correct directory path
-# setwd command set working directory for the current R session. After running this line, if we import or export files without defining a specific directory, they will be saved in the current working directory
+# setwd command set working directory for the current R session. After running this line, if we import or export files without defining a specific directory, R will assume the current working directory as your destination.
 # the path to your data is considered a "string" or "character" in R, so we need to put it inside a quotation mark
 setwd("/<path/to/data>/Module_7_Transcriptomics/")
 
@@ -279,7 +289,7 @@ dir.create("R_analysis")
 setwd("./R_analysis")
 
 # Load required packages into R environment 
-# R comes with standard packages (i.e. set of tools). We use library command to load tools that we need for RNA-seq data analysis
+# R comes with standard packages (i.e. set of tools). We use library command to load additional tools that we need for RNA-seq data analysis
 library(DESeq2)   		# for doing expression analysis
 library(topGO)    		# for running GO term enrichment
 library(ggplot2)  		# for (visually pleasing) plots
@@ -293,18 +303,20 @@ This is an R package for performing differential expression analysis (PMID: 2551
 ### Alternative softwares
 In addition to `DESeq2`, there are a variety of programs for detecting differentially expressed genes from tables of RNA-seq read counts. Some of these tools work in R, while some require Unix interface. Examples of these tools include EdgeR (PMID: 19910308), BaySeq (PMID: 20698981), Cuffdiff (PMID: 23222703), Sleuth PMID: 28581496 (an accompanying tool for read count data from Kallisto).
 
-### Import data
+## Import read count data into R
+We will tell R where the read count data are kept, and then create a table with metadata of our samples. The format of the metadata table will change with the tools that you use. What is demonstrated here is for DESeq2.
+
 ```R
 # Tell the location of the read count files
 # Create a datadir object to keep the path to the directory v5counts in your module 7 files
 datadir <- "/<path/to/data>/v5counts/" 
 
 # list files in this directory, output as an R vector
-list.files(datadir)		
-sampleFiles <- list.files(datadir)		
+list.files(datadir)   # this should list 22 files
+sampleFiles <- list.files(datadir)    # this save that 22 file names into a new R object		
 
 # Create sample names
-# split the name at “.counts” and keep the resulting output in the same vector (overwrite itself)
+# split the name at “_v5.counts” and keep the resulting output in a new vector
 name <- unlist(strsplit(sampleFiles, split = "_v5.counts", perl = TRUE))
 name
 
@@ -318,6 +330,7 @@ sampleTable
 ```
 
 Next, we will use the metadata to create an object in R that DESeq2 can use
+
 ```R
 # Create DESeq2 object from read count files and sample metadata information 
 # design =~ condition indicates which variable(s) in sampleTable represent experimental design. In this case, it is the condition column.
@@ -330,10 +343,12 @@ dds <- DESeq(ddsHTSeq)
 ```
 
 ### Normalization
-Numbers of read counts from the HTseq-count output is not ready-to-use for gene expression comparison and need to be normalised first. This is because the number of reads mapped to a gene can be affected by many factors, including the actual gene expression level (which is often most relevant to our research question), gene length, total sequencing output of that sample, the expression of all other genes within that sample. Normalisation take these into account. There are many methods for read count normalisation and common RNA-seq analysis tools often come with their own method which rely on certain assumptions about your data. For example, DESeq2 assumes that most of the genes in the dataset are not differentially expressed. As a result, it may give erroneous results if used to compare gene expression between very different life stages.
+Numbers of read counts from the HTseq-count output is not ready-to-use for gene expression comparison and need to be normalised first. This is because the number of reads mapped to a gene can be affected by many factors, including the actual gene expression level (which is often most relevant to our research question), gene length, total sequencing output of that sample, the expression of all other genes within that sample. Normalisation take these into account. For more details of normalization method used by DESeq2, see tool manual [here](http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html). 
+
+For exploratory analysis (such as principal component analysis), the results can be strongly influenced by genes with very low or very high read counts. We can avoid this issue by apply logarithm to the normalised counts. `rlog` (or regularized-log) is a  transformation method supplied with DESeq2.
+
 ```R
 # Transform normalised read counts into log value 
-# For exploratory analysis (such as principal component analysis), the results can be strongly influenced by genes with  very low or very high read counts. We can avoid this issue by apply logarithm to the normalised counts. rlog (or regularized-log) is a  transformation method supplied with DESeq2.
 rld <- rlogTransformation(dds, blind = FALSE)
 ```
 ---
@@ -341,13 +356,16 @@ rld <- rlogTransformation(dds, blind = FALSE)
 
 
 ## Visualising overview of transcriptomic data in R <a name="pca"></a>
+We will use exploratory analyses and plots to see te overview of our dataset before digging into gene-level details.
+
 ### Principal Components Analysis (PCA)
-The Principal Components Analysis plot shows the relationship between the samples in two dimensions. Hopefully, technical and biological replicates would show similar expression patterns (i.e. they are grouped together tightly on the PCA plot); whereas, samples from different experimental conditions, or distinctive time points, would form separate groups. In this case, the adult male and adult female samples are well separated from one another (except one replicate each). On the other hand, schistosomule samples are separated from adult samples, but separation between male and female at this larval stage are not as distinct. In all cases, the replicates are more similar to each other than they are to samples from the different condition. In some cases we identify outliers, e.g. samples which do not agree with other replicates and these can be excluded. If we don’t have many replicates, it is hard to detect outliers and our power to detect differentially expressed genes is reduced.
+The Principal Components Analysis plot shows the relationship between the samples in two dimensions. Hopefully, technical and biological replicates would show similar expression patterns (i.e. they are grouped together tightly on the PCA plot); whereas, samples from different experimental conditions, or distinctive time points, would form separate groups. In this case, day-6 worms, liver stage worms, and adult worms are separated from one another. The replicates are more similar to each other than they are to samples from the different condition. In some cases we can identify outliers, e.g. samples which do not agree with other replicates and these can be excluded. If we don’t have many replicates, it is hard to detect outliers and our power to detect differentially expressed genes is reduced.
+
+`plotPCA` is a function in DESeq2 package. R also have internal PCA function, but the usage is more complicated
+`intgroup` indicate how we want to present each data point on the plot. In this case, we label data points based on their groups under the column `condition` of the `sampleTable`
 
 ```R
 # Create PCA plot 
-# plotPCA is a function in DESeq2 package. R also have internal PCA function, but the usage is more complicated
-# intgroup indicate how we want to present each data point on the plot. In this case, we label data points based on their groups under the column condition of the sampleTable
 plotPCA(rld, intgroup = c("condition"))
 ```
 
@@ -355,15 +373,16 @@ You should get something similar to this.
 ![](figures/pca.png)
 **Figure X.** PCA plot
 
+Save the plot to PDF file using `dev.copy()` function. `dev` mean device, and this refers to the plotting space in your RStudio, as well as a new "device" that is opened as a new file on your computer. Once the plotting to a new "device" is done, we must do `dev.off()` to close the device so that the plot can be viewed. 
+
 ```R
-# Save the plot to PDF file using dev.copy() function
 dev.copy(pdf, "PCA.pdf")
 dev.off() 
 ```
 
 ---
 **Box 1: Saving graphic produced in RStudio**
-**Save as PDF
+**Save as PDF**
 ```R
 # Name the file as you like it, but try to keep it meaningful.
 # Other options we can define when exporting a plot
@@ -371,18 +390,19 @@ dev.off()
 dev.copy(pdf, "__________", width = 11, height = 7) 
 dev.off()
 ```
-**Save in other file format
+**Save in other file format**
 The `...` in the commands below represents arguments that specify characteristics of output files. 
 These arguments could be 
 `height =`
 `width =`
 `res = (resolution)`
-**For a jpg file**, dimensions are defined in pixels. If you want A4 at 300 dpi, the parameters would be height = 3510, width 2490, res = 300
-**For pdf and ps files**, dimensions are in inches. For A4, it is height = 8.3, width = 11.7
+_For a jpg file_, dimensions are defined in pixels. If you want A4 at 300 dpi, the parameters would be height = 3510, width 2490, res = 300
+_For pdf and ps files_ dimensions are in inches. For A4, it is height = 8.3, width = 11.7
+
+To output R graphics into other file types, first we run one of the following commands to create a file of that type.
+Then run a command that create a plot, this will be plotted onto the file we just created
+Then we do dev.off() to close the file so that it can be viewed
 ```R
-# To output R graphics into other file types, first we run one of the following commands to create a file of that type
-# then run a command that create a plot, this will be plotted onto the file we just created
-# then we do dev.off() to close the file so that it can be viewed
 pdf(file = “filename.pdf”, ...)
 jpeg(filename = “filename.jpg”, ...)
 png(filename = “filename.png”, ...)
@@ -398,6 +418,7 @@ Remember to dev.off() or the file cannot be opened
 ---
 
 The PCA plot can also be created differently; perhaps we want the data points to be of different sizes or we want to represent different stages of the worms using "shape" instead of "colour". We can use ggplot for this. 
+
 ```R
 # Produce a PCA plot and keep plot attributes and parameters to a new object called PCA
 PCA <- plotPCA(rld, intgroup = c("condition"), returnData = TRUE)
@@ -425,17 +446,17 @@ theme(text = element_text(size = 15))
 ---
 ### Mini exercise
 - Try saving this plot into a file format of your choice
-
 - How could you specify the colour or shape that go with each group? (e.g. how would you tell R so that D06 group is shown in red, D13 group is shown in orange). Try using Google to help you find the answer
 
 ---
 
 ### Distance matrix
-In some cases, clustering of samples on PCA plots may not show whether there is a clear distinction groups. We can also use different types of clustering such as sample heatmap. To create sample heatmap, we measure overall profiles and relationship between samples using a distance matrix. We will create a distance matrix (using dist() function) from normalised and log-transformed reads, and then visualise it on a heatmap. 
+In some cases, clustering of samples on PCA plots may not show whether there is a clear distinction groups. We can also use different types of clustering such as sample heatmap. To create sample heatmap, we measure overall profiles and relationship between samples using a distance matrix. We will create a distance matrix (using `dist()` function) from normalised and log-transformed reads (the `rld` object created earlier using `rlogTransformation` command), and then visualise it on a heatmap. 
+
+The `rld` object has a few attributes. We use function `assay()` to extract just the number matrix, which is a required input for the `t()` (transpose) and `dist()` functions.
 
 ```R
 # Create a distance matrix between each sample
-# The rld object has a few attributes. We use function assay() to extract just the number matrix, which is a required input for the t() (transpose) and dist() functions.
 sampleDist <- dist(t(assay(rld)))
 sampleDistMatrix <- as.matrix(sampleDist)
 
