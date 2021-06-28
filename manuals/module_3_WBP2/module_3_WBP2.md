@@ -40,7 +40,7 @@ But what should you do when the query and the database are different? For exampl
 
 ### BLAST exercise <a name="blast_exercise"></a>
 
-Use WormBase ParaSite BLAST to find out the identity of this gene, and which species it belongs to. Does it have any close hits in other genomes?
+Use WormBase ParaSite BLAST to find out the identity of this sequence, and which species it belongs to. Does it have any close hits in other genomes? Try BLASTing against both cDNA and a genomic DNA databases. What kind of sequence is this?
 
 ```
 TTTGCAGATGCTTCTCCCTTCAAACTTGACGACGTCAACATTAATGACGTCATCATCAGA
@@ -207,9 +207,15 @@ Now we can see the IsoSeq reads aligned to the genome. Notice that IsoSeq data i
 
 The final WormBase ParaSite tool that we will look at today is the Variant Effect Predictor, or VEP. A common approach to understanding the genetic basis of phenotypic differences is to identify genetic variants that are overrepresented in some populations of individuals. For example, you might sequence two populations of worm: one that is susceptible to a drug and one that is resistant to the drug. You could then identify genomic positions where each of these populations differs from the reference genome. VEP is a tool that allows you to predict what the consequences of these variants are: whether they fall within or near genes, and whether they result in a change to the amino acid sequence of a protein.
 
-The standard file format for storing variation data is the [Variant Call Format (VCF)](https://samtools.github.io/hts-specs/VCFv4.2.pdf); this is another tab-delimited text format. In the module 3 data directory, we have provided you with a Hymenolepis microstoma VCF file to demonstrate how to use VEP. Have a look at the file first to see how it is structured (you'll have to scroll down beyond the headers to see the data lines):
+The standard file format for storing variation data is the [Variant Call Format (VCF)](https://samtools.github.io/hts-specs/VCFv4.2.pdf); this is another tab-delimited text format. In the module 3 data directory, we have provided you with a Hymenolepis microstoma VCF file to demonstrate how to use VEP. Unzip and then have a look at the file to see how it is structured (you'll have to scroll down beyond the headers to see the data lines):
 
-    less h_microstoma.vcf
+````
+# unzip
+gunzip h_microstoma.vcf.gz
+
+# look at the contents
+less h_microstoma.vcf
+````
     
 ![](figures/vep_1.png)
 
