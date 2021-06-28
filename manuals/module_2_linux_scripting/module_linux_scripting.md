@@ -28,7 +28,7 @@ is the preferred operating system for large-scale scientific computing. It runs
 on all kinds of machines, from mobile phones (Android), desktop PCs... to supercomputers.
 
 
-### Why Linux
+### Why Linu
 Increasingly, the output of biological research exists as *in silico* data, usually
 in the form of large text files. Unix is particularly suitable for working with
 such files and has several powerful and flexible commands that can be used to
@@ -124,7 +124,7 @@ and provide examples of how they can be used in bioinformatics analyses.
 ```bash
 # your first command – move to the working directory to get started!
 
-cd /home/manager/Module_2_Linux_Scripting
+cd /home/manager/Module_2_Linux_scripting
 
 ```
 
