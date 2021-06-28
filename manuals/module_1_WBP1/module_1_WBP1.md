@@ -344,7 +344,7 @@ BioMart lets us generate two types of output: data tables, and sequence (FASTA) 
 
 #### BioMart exercise <a name="biomart_exercise"></a>
 
-Using the following _S. ratti_  gene names to answer questions 1-5:
+Using the following _S. ratti_  gene **names** (note: names, not stable IDs) to answer questions 1-5:
 
 ```
 SRAE_1000001600
