@@ -59,7 +59,7 @@ You may find a short online course on **Introduction to Genomics** beneficial fo
      - Project & presentations
 
 ### Detailed timetable
-[Download here]()
+[Download here](Helminth Bioinformatics_timetable_2021.pdf)
 
 
 ## Course manual
