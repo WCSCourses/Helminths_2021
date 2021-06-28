@@ -45,6 +45,8 @@ Here we have RNA-seq of _B. malayi_ from larval stages to various ages of male a
 -	At which point do gene expression in male and female worms become very different?
 -	Challenge question: If you want to do dual-RNA-seq analysis, what are the steps in the workflow that need to be done differently (e.g. different tools, different genome resources, etc)? 
 
+---
+
 <img src="https://www.cdc.gov/dpdx/schistosomiasis/modules/Schistomes_LifeCycle_lg.jpg" width="700">
 
 **Figure 8.1:** Schistosoma spp. life cycle
