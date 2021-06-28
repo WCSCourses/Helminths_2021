@@ -4,7 +4,11 @@ In just a few days, you will have reached the final module of the course, where 
 
 Instead of telling you exactly what to work on, we have provided 4 datasets for 4 different projects(!!). Each group (your Zoom breakout room) will discuss which project they collectively want to work on. We will do this project selection on the second day so that we are aware of the task required at the end of the course, and to have more time for absorbing and planning whatever are needed to complete the task.
 
-In each project, on Friday, we recommend that you work individually on your laptop (so that you get your own practice), and share with the group when you hit an issue, or when you find something interesting. In the end, the group will work together to produce one group presentation. Each group will then have 8-10 minutes to present their analysis and their answers to the project questions. It could be helpful to have a group workspace on a shared document (such as Google Doc, Google Jamboard) where your group can share resources and ideas during the course, or even draw a workflow. Google Slide is useful for co-creating group slide for presentation.
+In each project, on Friday, we recommend that you work individually on your laptop (so that you get your own practice), and share with the group when you hit an issue, or when you find something interesting. 
+
+In the end, the group will work together to produce one group presentation. Each group will then have 8-10 minutes to present their analysis and their answers to the project questions. 
+
+It could be helpful to have a group workspace on a shared document (such as Google Doc, Google Jamboard) where your group can share resources and ideas during the course, or even draw a workflow. Google Slide is useful for co-creating group slide for presentation.
 
 ## Here are the 4 projects and their questions:
 
