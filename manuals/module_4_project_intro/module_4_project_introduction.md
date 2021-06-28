@@ -47,7 +47,7 @@ Here we have RNA-seq of _B. malayi_ from larval stages to various ages of male a
 
 
 ![](https://www.cdc.gov/dpdx/schistosomiasis/modules/Schistomes_LifeCycle_lg.jpg | width=200)
-
+<img src="https://www.cdc.gov/dpdx/schistosomiasis/modules/Schistomes_LifeCycle_lg.jpg" width="200">
 **Figure 8.1:** Schistosoma spp. life cycle
  
 ![](https://www.cdc.gov/parasites/images/lymphaticfilariasis/B_malayi_LifeCycle.gif | width=200)
