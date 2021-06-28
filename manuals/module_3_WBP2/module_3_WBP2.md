@@ -359,7 +359,7 @@ END {print seqlen}'  necator_americanus.PRJNA72135.WBPS15.genomic.fa
 
 Tweak the above examples to answer these questions from the files that you've just downloaded:
 
-1. Which _N. americanus_ scaffold has the most genes? Is this the same as the longest scaffold?
+1. Which _N. americanus_ scaffold has the most genes? 
 2. Write a loop to extract the sequences of all of these proteins:
 
 ```
