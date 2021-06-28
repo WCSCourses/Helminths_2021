@@ -8,7 +8,7 @@ In each project, on Friday, we recommend that you work individually on your lapt
 
 In the end, the group will work together to produce one group presentation. Each group will then have 8-10 minutes to present their analysis and their answers to the project questions. 
 
-It could be helpful to have a group workspace on a shared document (such as Google Doc, Google Jamboard) where your group can share resources and ideas during the course, or even draw a workflow. Google Slide is useful for co-creating group slide for presentation.
+It could be helpful to have a group workspace on a shared document (such as Google Doc, Google Jamboard) where your group can share resources and ideas during the course, or even draw a workflow. Google Slide can be useful for co-creating group slides for the presentation.
 
 ## Here are the 4 projects and their questions:
 
