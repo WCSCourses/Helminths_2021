@@ -28,7 +28,7 @@ is the preferred operating system for large-scale scientific computing. It runs
 on all kinds of machines, from mobile phones (Android), desktop PCs... to supercomputers.
 
 
-### Why Linu
+### Why Linux
 Increasingly, the output of biological research exists as *in silico* data, usually
 in the form of large text files. Unix is particularly suitable for working with
 such files and has several powerful and flexible commands that can be used to
