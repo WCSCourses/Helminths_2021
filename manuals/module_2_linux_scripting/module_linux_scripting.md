@@ -748,7 +748,7 @@ $ sed 's/^chr/chromosome/' gene_expression.bed
 
 ```bash
 # For example:
-$ sed '/^chr/chromosome/' gene_expression.bed > gene_expression_new.bed
+$ sed 's/^chr/chromosome/' gene_expression.bed > gene_expression_new.bed
 
 ```
 
