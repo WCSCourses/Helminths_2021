@@ -13,7 +13,7 @@ It could be helpful to have a group workspace on a shared document (such as Goog
 ## Here are the 4 projects and their questions:
 
 ### 1)	_S. mansoni_ in vivo timecourse
-This dataset come from the same RNA-seq data as your transcriptomic module (Module 7). These are different stages of _S. mansoni_ from infected mice, from early day-6 worms through to adult worms from ([Wangwiwatsin et al. (2020)](https://journals.plos.org/plosntds/article/authors?id=10.1371/journal.pntd.0007743)). However, this same dataset have been mapped to a different version of the reference genome. The data you analysed on Module 7 were mapped to an older version. For this exercise, we can find out if our interesting results from the previous genome version still remain when we use a newer version. In addition, have a go at different pairwise comparisons that were not explored in Module 7, run GO term enrichment on the list of differentially expressed genes, and explore any genes that look particularly interesting.
+This dataset come from the same RNA-seq data as your transcriptomic module (Module 7). These are different stages of _S. mansoni_ from infected mice, from early day-6 worms through to adult worms from [Wangwiwatsin et al. (2020)](https://journals.plos.org/plosntds/article/authors?id=10.1371/journal.pntd.0007743). However, this same dataset have been mapped to a different version of the reference genome. The data you analysed on Module 7 were mapped to an older version. For this exercise, we can find out if our interesting results from the previous genome version still remain when we use a newer version. In addition, have a go at different pairwise comparisons that were not explored in Module 7, run GO term enrichment on the list of differentially expressed genes, and explore any genes that look particularly interesting.
 
 **Key questions**
 -	What happened as the parasites developed to the next stage?
@@ -45,10 +45,10 @@ Here we have RNA-seq of _B. malayi_ from larval stages to various ages of male a
 -	At which point do gene expression in male and female worms become very different?
 -	Challenge question: If you want to do dual-RNA-seq analysis, what are the steps in the workflow that need to be done differently (e.g. different tools, different genome resources, etc)? 
 
-[](https://www.cdc.gov/dpdx/schistosomiasis/modules/Schistomes_LifeCycle_lg.jpg)
+![](https://www.cdc.gov/dpdx/schistosomiasis/modules/Schistomes_LifeCycle_lg.jpg)
 **Figure 8.1:** Schistosoma spp. life cycle
  
-[](https://www.cdc.gov/parasites/images/lymphaticfilariasis/B_malayi_LifeCycle.gif)
+![](https://www.cdc.gov/parasites/images/lymphaticfilariasis/B_malayi_LifeCycle.gif)
 **Figure 8.2:** Brugia malayi life cycle
 
 PS.  The questions, especially the **Challenge questions**, may not have exactly "the correct answer" but they are to allow discussion within groups, and with instructors. Plus, perhaps chances to reflex and discuss their current/future genomics projects
