@@ -950,7 +950,7 @@ $ for filename in loop_files/*; do wc ${filename}; done
 ```bash
 # Next we will use a while read a file line-by-line, and only print lines for chromosome 1 and on the sense strand
 $ while read -r chr start end name strand; do \
-		if [[ $chr == "1" && $strand == "1" ]]; then \
+		if [[ $chr == "01" && $strand == "1" ]]; then \
 		echo $chr $start $end $name $strand; \
 		fi; \
 		done < loop_files/file.1
