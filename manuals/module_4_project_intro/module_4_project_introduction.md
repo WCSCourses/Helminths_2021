@@ -1,6 +1,6 @@
 # Project Introduction and Planning
 
-In just a few days, you will have reached the final module of the course, where you will apply what you have learn in this course on a new problem. 
+In just a few days, you will have reached the final module of the course, where you will apply what you learn in this course on a new problem. 
 
 Instead of telling you exactly what to work on, we have provided 4 datasets for 4 different projects. Each group (your Zoom breakout room) will discuss which project they collectively want to work on. We will do this project selection on the second day so that we are aware of the task required at the end of the course, and to have more time for absorbing and planning whatever are needed to complete the task.
 
