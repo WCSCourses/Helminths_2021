@@ -12,8 +12,8 @@ It could be helpful to have a group workspace on a shared document (such as Goog
 
 ## Here are the 4 projects and their questions:
 
-### 1)	S. mansoni in vivo timecourse
-This dataset come from the same RNA-seq data as your transcriptomic module (Module 7). These are different stages of _S. mansoni_ from infected mice, from early day-6 worms through to adult worms from ([Wangwiwatsin et al 2020](https://journals.plos.org/plosntds/article/authors?id=10.1371/journal.pntd.0007743)). However, this same dataset have been mapped to a different version of the reference genome. The data you analysed on Module 7 were mapped to an older version. For this exercise, we can find out if our interesting results from the previous genome version still remain when we use a newer version. In addition, have a go at different pairwise comparisons that were not explored in Module 7, run GO term enrichment on the list of differentially expressed genes, and explore any genes that look particularly interesting.
+### 1)	_S. mansoni_ in vivo timecourse
+This dataset come from the same RNA-seq data as your transcriptomic module (Module 7). These are different stages of _S. mansoni_ from infected mice, from early day-6 worms through to adult worms from ([Wangwiwatsin et al. (2020)](https://journals.plos.org/plosntds/article/authors?id=10.1371/journal.pntd.0007743)). However, this same dataset have been mapped to a different version of the reference genome. The data you analysed on Module 7 were mapped to an older version. For this exercise, we can find out if our interesting results from the previous genome version still remain when we use a newer version. In addition, have a go at different pairwise comparisons that were not explored in Module 7, run GO term enrichment on the list of differentially expressed genes, and explore any genes that look particularly interesting.
 
 **Key questions**
 -	What happened as the parasites developed to the next stage?
@@ -29,7 +29,7 @@ Both the reference genome and the worms used for RNA-seq data of [this paper](ht
 -	Challenge question: Discuss any points of concern if you are using a reference genome that are from a very different time and place from your specimens. 
 
 ### 3)	Changes in gene expression of male and female from juvenile to adult worms
-Here we have another set of _S. mansoni_ RNA-seq data for schistosomules (juvenile worms) from [Picard et al 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5038963/) and adult male and female from [Lu et al 2016](https://www.nature.com/articles/srep31150). The dataset have been mapped to the current version of _S. mansoni_ genome. We can perform various pairwise comparisons to look at how female and male worms change during their development, or how they behave differently at different stages. 
+Here we have another set of _S. mansoni_ RNA-seq data for schistosomules (juvenile worms) from [Picard et al. (2016)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5038963/) and adult male and female from [Lu et al. (2016)](https://www.nature.com/articles/srep31150). The dataset have been mapped to the current version of _S. mansoni_ genome. We can perform various pairwise comparisons to look at how female and male worms change during their development, or how they behave differently at different stages. 
 
 **Key questions**
 -	What are the key differences between female and male adult worms?
@@ -38,7 +38,7 @@ Here we have another set of _S. mansoni_ RNA-seq data for schistosomules (juveni
 -	Challenge question 2: These RNA-seq data came from different studies, is it ok to analyse them together? 
 
 ### 4) _Brugia malayi_ male and female of different stages 
-Here we have RNA-seq of _B. malayi_ from larval stages to various ages of male and female from [Grote et al 2017](https://journals.plos.org/plosntds/article?id=10.1371/journal.pntd.0005357). In their paper, Grote et al. investigated the relationship between _B.malayi_ and their symbiont bacteria _Wolbachia_, but they did not explain much about the gene expression changes of the worms in the different life cycle stages of the parasite. There are various pair-wise comparisons we could do here. Also, if you are intested in dual-RNA-seq, we also provide the FASTQ files that will have sequencing reads from the _Wolbachia_. You could use these FASTQ files to do the mapping to a relevant _Wolbachia_ genome.
+Here we have RNA-seq of _B. malayi_ from larval stages to various ages of male and female from [Grote et al. (2017)](https://journals.plos.org/plosntds/article?id=10.1371/journal.pntd.0005357). In their paper, Grote et al. investigated the relationship between _B.malayi_ and their symbiont bacteria _Wolbachia_, but they did not explain much about the gene expression changes of the worms in the different life cycle stages of the parasite. There are various pair-wise comparisons we could do here. Also, if you are intested in dual-RNA-seq, we also provide the FASTQ files that will have sequencing reads from the _Wolbachia_. You could use these FASTQ files to do the mapping to a relevant _Wolbachia_ genome.
 
 **Key questions**
 -	What happened to male and female worms as they develop into adults?
@@ -50,4 +50,6 @@ Here we have RNA-seq of _B. malayi_ from larval stages to various ages of male a
  
 [](https://www.cdc.gov/parasites/images/lymphaticfilariasis/B_malayi_LifeCycle.gif)
 **Figure 8.2:** Brugia malayi life cycle
+
+PS.  The questions, especially the **Challenge questions**, may not have exactly "the correct answer" but they are to allow discussion within groups, and with instructors. Plus, perhaps chances to reflex and discuss their current/future genomics projects
 
