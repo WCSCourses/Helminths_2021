@@ -537,7 +537,7 @@ We can see that _M. arenaria_ is the assembly with the highest BUSCO score.
 
 #### API exercises
 
-Adapt the commands that you used above to retrieve the following information from the WormBase ParaSite API. For questions 2 and 3, you’ll need to use different endpoints.
+Adapt the commands that you used above to retrieve the following information from the WormBase ParaSite API. Note that you’ll need to use different endpoints: browse the site to see which ones to use.
 
 1. List the _Meloidogyne sp._ assemblies by size, smallest to largest.
 
