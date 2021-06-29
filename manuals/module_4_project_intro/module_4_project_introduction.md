@@ -33,7 +33,7 @@ Here we have another set of _S. mansoni_ RNA-seq data for schistosomules (juveni
 
 **Key questions**
 -	What are the key differences between female and male adult worms?
--	What are the key differences between female and male adult schistosomules?
+-	What are the key differences between female and male schistosomules?
 -	Challenge question 1: Are there any changes that unique to either male or female?
 -	Challenge question 2: These RNA-seq data came from different studies, is it ok to analyse them together? 
 
