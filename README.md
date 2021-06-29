@@ -100,7 +100,7 @@ You may find a short online course on **Introduction to Genomics** beneficial fo
 **Module 8 - Project**  
 
 **Appendix**  
-     - [Manual PDF version](manuals/)  
+     - [Creating a shared folder between your computer and VM](https://github.com/WGCAdvancedCourses/Helminths_2021/blob/main/manuals/creating_a_shared_folder_in_VM.md)  
 
 
 
