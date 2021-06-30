@@ -383,7 +383,7 @@ library(session)
 # There are many more packages required for this module to work, which are described in the appendix. Rather than getting you to type them 
 all out, we will open an R environment that has them already loaded:
 
-restore.session(file = 		"wtac_helminths.workbook.Rdata")
+restore.session(file =	"wtac_helminths.workbook.Rdata")
 
 # We can save this environment for later by using the following:
 
@@ -397,25 +397,30 @@ save.session(file = "wtac_helminths.workbook.Rdata")
 ```R
 # Lets specify your input files that we will load into R
 #-- the vcf contain the SNP data your generated with bcftools
+
 vcf_file  <-  "all_samples.filtered.recode.vcf"
 
 
 #-- metadata that describes information about the samples, such as country of origin, and GPS coordinates
+
 metadata_file <- "sample_metadata.txt"
 
 
 # Read the actual data into R
+
 vcf <- read.vcfR(vcf_file, verbose = FALSE)
 metadata <- read.table(metadata_file, header = TRUE)
 
 
 # Convert your data into a “data frame” that the analysis  packages we will use can interpret easily. We will use a “genlight” format, which is good for storing variant call data. We will add the country IDs for each sample to the dataset, and because we are working on haploid mitochondrial DNA, we will set the ploidy to 1
+
 vcf.gl <- vcfR2genlight(vcf)
 pop(vcf.gl) <- metadata$country
 ploidy(vcf.gl) <- 1
 
 
 # Lets have a look at how the data is formatted
+
 vcf.gl
 
 ```
@@ -439,7 +444,9 @@ vcf.gl@pop
 ## Principal component analysis of genetic diversity <a name="pca"></a>
 ```R
 # Perform a PCA analysis, and we’ll have a look at it
+
 vcf.pca <- glPca(vcf.gl, nf = 10)
+
 vcf.pca
 ```
 ![](figures/figure6.9.PNG)  
@@ -448,14 +455,16 @@ vcf.pca
 ```R
 # We will extract the scores for each PC in preparation for making some figures, and add the country information to allow us to explore the data 
 a little better
+
 vcf.pca.scores <- as.data.frame(vcf.pca$scores)
+
 vcf.pca.scores$country <- metadata$country 
 
 
 # We will also determine the variance each PC contributes the data, which will help us understand potential drivers of patterns in our dataset. 
 Lets plot the eigenvectors to try an understand this a bit more.
 
-barplot(100*vcf.pca$eig/sum(vcf.pca$eig), col=“green”)
+barplot(100 * vcf.pca$eig / sum(vcf.pca$eig), col="green")
 title(ylab = "Percent of variance explained") 
 title(xlab = "Eigenvalues")
 
@@ -465,7 +474,9 @@ title(xlab = "Eigenvalues")
 
 ```R
 # Lets extract the variance associated with the top 4 PCs, so we can use them in our plots.
+
 eig.total <- sum(vcf.pca$eig)
+
 PC1.variance <- formatC(head(vcf.pca$eig)[1]/eig.total * 100)
 PC2.variance <- formatC(head(vcf.pca$eig)[2]/eig.total * 100)
 PC3.variance <- formatC(head(vcf.pca$eig)[3]/eig.total * 100)
@@ -473,6 +484,7 @@ PC4.variance <- formatC(head(vcf.pca$eig)[4]/eig.total * 100)
 
 
 # Lets check that this has worked
+
 PC1.variance 
 [1] "36.96”
 # This suggests that PC1 describes 36.96% of the variance in the data, which is consistent with our previous plot.
@@ -481,19 +493,22 @@ PC1.variance
 # OK, time to visualize our data and make some plots! 
 # Lets build a plot of your data using ggplot, and explore how to incorporate additional information into the plot to make it more 
 informative. Ggplot works by adding layers of information (hence the “+”) to build the plot.
+
 plot12 <- ggplot(vcf.pca.scores, aes(PC1, PC2)) + geom_point()
 plot12
 
 
 # We’ll add some axis labels, and incorporate the variance information to describe the relative importance of the spread of the data
-plot12 <- plot12 + labs(x = paste0("PC1 variance = 	",PC1.variance,"%"),y = paste0("PC2 variance = ", 	PC2.variance, "%"))
+
+plot12 <- plot12 + labs(x = paste0("PC1 variance = ",PC1.variance,"%"), y = paste0("PC2 variance = ", PC2.variance, "%"))
 plot12
 
 
 # We need some labels to describe the country of origin. We will also set some colours 
+
 cols <- colorRampPalette(brewer.pal(8, "Set1"))(17)
 
-plot12 <- plot12 + geom_point(aes(col = country)) + 	scale_colour_manual(values=cols) 
+plot12 <- plot12 + geom_point(aes(col = country)) + scale_colour_manual(values=cols) 
 plot12
 
 
@@ -508,10 +523,11 @@ Now we are starting to get somewhere. Lets have a look and see what the data is 
 
 ```R
 # Lets quickly look at PC3/PC4, and compare to the first plot.
+
 plot34 <- ggplot(vcf.pca.scores, aes(PC3, PC4)) + 
 	geom_point(aes(col = country)) + 
-	labs(x = paste0("PC3 variance = ",PC3.variance,"%"), y = paste0("PC4 variance = ", PC4.variance, "%")) + 
-	scale_colour_manual(values=cols) 
+	labs(x = paste0("PC3 variance = ", PC3.variance,"%"), y = paste0("PC4 variance = ", PC4.variance, "%")) + 
+	scale_colour_manual(values = cols) 
 
 plot12 + plot34
 
@@ -535,11 +551,11 @@ means <- vcf.pca.scores %>% group_by(country) %>% summarize(meanPC1 = mean(PC1),
 # Lets make a slightly different plot that our first comparison of PC1 and PC2, 
 
 plot12.2 <- ggplot(vcf.pca.scores, aes(PC1, PC2, col = 	country)) + 
-  labs(x = paste0("PC1 variance = ",PC1.variance,"%"), y = paste0("PC2 variance = ", PC2.variance, "%")) + 
-  scale_colour_manual(values=cols) +
+  	labs(x = paste0("PC1 variance = ", PC1.variance, "%"), y = paste0("PC2 variance = ", PC2.variance, "%")) + 
+  	scale_colour_manual(values = cols) +
 	stat_ellipse(level = 0.95, size = 1) +
 	geom_label_repel(data = means,
-	aes(means$meanPC1, means$meanPC2, col=means$country, 	label = means$country))
+	aes(means$meanPC1, means$meanPC2, col = means$country, label = means$country))
 
 plot12 + plot12.2
 
@@ -570,13 +586,13 @@ tree. This is the next step in our analysis, and we will compare these results t
 
 ```R
 # Generated pairwise distances between samples that we will plot in a tree format
-> tree_data <- aboot(vcf.gl, tree = "upgma", distance = 	bitwise.dist, sample = 100, showtree = F, 
-	cutoff = 50) 
+
+tree_data <- aboot(vcf.gl, tree = "upgma", distance = bitwise.dist, sample = 100, showtree = F, cutoff = 50) 
 
 #--- make and plot the tree 
 tree_plot <- ggtree(tree_data) + 
 	geom_tiplab(size = 2, color = cols[pop(vcf.gl)]) + 
-  xlim(-0.1, 0.3) + 
+  	xlim(-0.1, 0.3) + 
 	geom_nodelab(size = 2, nudge_x = -0.006, nudge_y = 1) + 
 	theme_tree2(legend.position = 'centre')
 
@@ -600,6 +616,7 @@ First, lets calculate allele frequencies per country, and integrate this with th
 
 ```R
 # Calculate allele frequencies per country
+
 myDiff_pops <- genetic_diff(vcf,pops = vcf.gl@pop)
 AF_data <- myDiff_pops[,c(1:19)]
 AF_data <- melt(AF_data)
@@ -626,7 +643,8 @@ head(AF_data_coords)
 
 ```R
 # Lets make a map, and plot the sampling locations on it. 
-par(fg = "black”)
+
+par(fg = "black")
 map("world", col = "grey85", fill = TRUE, border = FALSE)
 map.axes()
 points(metadata$longitude, metadata$latitude, cex = 1.5, pch = 20, col = cols[pop(vcf.gl)])
@@ -645,6 +663,7 @@ on the PC1 and PC2 variance. We can identify these in the “loadings” data se
 
 ```R
 # we can find the loadings in the PCA of our SNP data
+
 vcf.pca 
 
 ```
@@ -655,11 +674,13 @@ vcf.pca
 
 ```R
 # We will make a new data frame, containing the SNP names and the loadings for the first two PCs
-snp_loadings <- data.frame(vcf.gl@loc.names,vcf.pca$loadings[,1:2])
+
+snp_loadings <- data.frame(vcf.gl@loc.names, vcf.pca$loadings[,1:2])
 
 
 # sort the SNP loadings by the Axis 1 using the following:
-head(snp_loadings[order(snp_loadings$Axis1,decreasing=T),])
+
+head(snp_loadings[order(snp_loadings$Axis1, decreasing = T),])
 
 ```
 ![](figures/figure6.17.PNG)  
@@ -667,11 +688,12 @@ head(snp_loadings[order(snp_loadings$Axis1,decreasing=T),])
 
 ```R
 # select a SNP of interest based on its position 
-AF_SNP_coords <- AF_data_coords[AF_data_coords$POS == ”7859",]
+AF_SNP_coords <- AF_data_coords[AF_data_coords$POS == "7859",]
 
 
 # Remake your map, but this time, we’ll add a pie chart describing the population allele frequency per country. 
-par(fg = “black”)
+
+par(fg = "black")
 
 map("world", col = "grey85", fill = TRUE, border = FALSE)
 
@@ -684,17 +706,17 @@ for (i in 1:nrow(AF_SNP_coords)){
 	1-AF_SNP_coords$allele_frequency[i]), 
 	x = AF_SNP_coords$longitude[i]+10, 
 	y = AF_SNP_coords$latitude[i], 
-	radius = 5, col = c(alpha("orange", 0.5), 	alpha("blue", 0.5)), labels = "") 
+	radius = 5, col = c(alpha("orange", 0.5), alpha("blue", 0.5)), labels = "") 
 	}
 
-legend(title=“Country”, x = ”topleft", 
+legend(title="Country", x = "topleft", 
 	legend = unique(pop(vcf.gl)), 
 	col = cols[unique(pop(vcf.gl))], pch = 20, 
 	box.lwd = 0, cex = 0.9)
   
-legend(title=“Allele frequency”, x = ”bottomleft", 
+legend(title="Allele frequency", x = "bottomleft", 
 	legend = c("reference","variant"), 
-	col = c(alpha("blue", 0.5), alpha("orange", 0.5)), 	pch = 15, box.lwd = 0, cex = 0.9)
+	col = c(alpha("blue", 0.5), alpha("orange", 0.5)), pch = 15, box.lwd = 0, cex = 0.9)
 
 ```
 You should now have a map containing both sampling locations and pie charts showing the variant allele frequency of the SNP at position 7859. 
