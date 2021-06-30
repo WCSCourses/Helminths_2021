@@ -124,11 +124,11 @@ bwa mem hcontortus_mtDNA.fasta ../raw_reads/AUS_WAL_OA_001_1.fastq.gz ../raw_rea
 
 
 # convert the sam file to a bam file. We will also filter the reads using the “q” parameter
-samtools view –q 15 –b –o single_sample.tmp.bam single_sample.tmp.sam
+samtools view -q 15 -b -o single_sample.tmp.bam single_sample.tmp.sam
 
 
 # sort the reads in the bam file 
-samtools sort single_sample.tmp.bam –o single_sample.tmp.sorted.bam
+samtools sort single_sample.tmp.bam -o single_sample.tmp.sorted.bam
 
 
 # finally, index the bam file
@@ -176,11 +176,11 @@ bcftools index single_sample.tmp.bcf
 
 
 # convert the bcf file to a vcf file
-bcftools view single_sample.tmp.bcf –Oz > single_sample.tmp.vcf.gz
+bcftools view single_sample.tmp.bcf -Oz > single_sample.tmp.vcf.gz
  
 
 # index the vcf.gz file using tabix
-tabix –p vcf single_sample.tmp.vcf.gz
+tabix -p vcf single_sample.tmp.vcf.gz
 
 
 # you can have a look at the vcf using the following - "zless" allows you to look inside a zipped file
@@ -299,7 +299,7 @@ ls -1 *.sorted.bam > bam.fofn
 
 
 # call SNPs in the bam files using bam.fofn to generate a multi-sample bcf
-bcftools mpileup –Ou --annotate FORMAT/DP --fasta-ref hcontortus_mtDNA.fasta --bam-list bam.fofn | bcftools call -v -c --ploidy 1 -Ob --skip-variants indels > all_samples.bcf
+bcftools mpileup -Ou --annotate FORMAT/DP --fasta-ref hcontortus_mtDNA.fasta --bam-list bam.fofn | bcftools call -v -c --ploidy 1 -Ob --skip-variants indels > all_samples.bcf
 
 
 # index the multi-sample bcf
