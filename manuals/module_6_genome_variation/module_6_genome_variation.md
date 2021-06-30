@@ -395,7 +395,12 @@ all out, we will open an R environment that has them already loaded:
 
 restore.session(file =	"wtac_helminths.workbook.Rdata")
 
-# We can save this environment for later by using the following:
+# we can double-check which packages are loaded in the saved session using the following command
+
+(.packages())
+
+
+# Once we have done some work, we can save this environment for later by using the following:
 
 save.session(file = "wtac_helminths.workbook.Rdata")
 
