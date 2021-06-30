@@ -172,7 +172,7 @@ bcftools mpileup -Ou -f hcontortus_mtDNA.fasta single_sample.tmp.sorted.bam | bc
 
 
 # index the bcf variant file
-$ bcftools index single_sample.tmp.bcf
+bcftools index single_sample.tmp.bcf
 
 
 # convert the bcf file to a vcf file
