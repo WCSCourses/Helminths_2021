@@ -243,11 +243,17 @@ comes from writing scripts that automates this process for you.
 Here, we will  use a “for loop” to iterate over the 176 samples we have provided. 
 
 ```bash
-# make a new directory to do this next step in. First, go back to the module home directory, and then do the following:
+# First, go back to the module home directory:
+
+cd ~/Module_6_Genetic_Variation
+
+# make a new directory to do this next step in.
+
 mkdir multi_sample_analysis
 cd multi_sample_analysis
 
 # lets copy your reference sequence into the new working dir and index it as before
+
 cp ../hcontortus_mtDNA.fasta .
 bwa index hcontortus_mtDNA.fasta
 
@@ -359,7 +365,9 @@ provides a convenient user interface that combines a scripting window, a command
 
 ```bash
 # In the unix shell, lets prepare your data
-cd R_analysis
+
+
+cd ~/Module_6_Genetic_Variation/R_analysis
 cp ../multi_sample_analysis/all_samples.filtered.recode.vcf .
 cp ../sample_metadata.txt .
 
