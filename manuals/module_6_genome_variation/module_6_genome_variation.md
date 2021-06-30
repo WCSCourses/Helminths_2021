@@ -373,6 +373,9 @@ cp ../sample_metadata.txt .
 
 # Once you have completed this, open Rstudio. Note that there is a script that you use called "walk_through_genetic_diversity.R" to help you out.
 
+# Alternatively, you can load R on the command line simply by typing :
+
+R
 ```
 
 ```R
@@ -381,8 +384,7 @@ cp ../sample_metadata.txt .
  
 > 
 
-# R relies on packages or libraries that we need to load. They have previously been installed for you, but you will need to call on them each 
-time to start R. Try load the following:
+# R relies on packages or libraries that we need to load. They have previously been installed for you, but you will need to call on them each time to start R. Try load the following:
 
 library(ggplot2)
 library(dplyr)
