@@ -328,7 +328,7 @@ our SNPs that were kept after filtering.
 # 1. a minor allele frequence (maf) greater than 0.05, and
 # 2. minimum and maximum allele count of 2 
 
-$ vcftools --gzvcf all_samples.vcf.gz --maf 0.05 --min-alleles 2 --max-alleles 2 --recode --out all_samples.filtered
+vcftools --gzvcf all_samples.vcf.gz --maf 0.05 --min-alleles 2 --max-alleles 2 --recode --out all_samples.filtered
 
 ```
 Lets have a quick look in Artemis to see what our new data looks like. 
