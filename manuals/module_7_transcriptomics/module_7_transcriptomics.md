@@ -211,8 +211,18 @@ Use HTSeq-count to calculate the number of reads mapped to each gene
 See https://htseq.readthedocs.io/en/release_0.11.1/count.html or do `htseq-count --help` to see meaning of these options. The manual and `--help` option can also be useful if you encounter an error message.
 
 ```bash
-# htseq-count <various options> <sorted BAM file> <GTF or GFF file with gene annotation>
+# First, unzip the GTF file so that it can be read by htseq-count
+# Go to Reference_v5 directory which is where the file is kept
+cd ../References_v5/
+ls  # you should see a file called Sm_v5_canonical_geneset.gtf.gz
+gunzip Sm_v5_canonical_geneset.gtf.gz
+ls  # now the file Sm_v5_canonical_geneset.gtf.gz should become Sm_v5_canonical_geneset.gtf
 
+# Go back to Mapping directory
+cd ../Mapping/
+
+# Run htseq-count
+# htseq-count <various options> <sorted BAM file> <GTF or GFF file with gene annotation>
 # For Sm_PE_sorted.bam file
 # The > means 'take the screen output to this file'
 htseq-count -a 30 -t CDS -i gene_id -s yes -m union Sm_PE_sorted.bam ../References_v5/Sm_v5_canonical_geneset.gtf > Sm_PE_htseqcount.txt
