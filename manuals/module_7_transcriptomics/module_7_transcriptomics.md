@@ -544,9 +544,13 @@ res_D13D06[which(res_D13D06$log2FoldChange > 1 & res_D13D06$padj < 0.01),]
 ---
 ### Exercise 7.2
 Look at the result of differential gene expression analysis between day-13 and day-6 worms. 
+
 1) How many genes are up-regulated in day-13 worms compared to day-6 worms?
+
 2) How many genes are up-regulated in day-6 worms? 
+
 3) Try using WormbaseParasite to explore some of the top differentially expressed genes ranked by log2FC.
+
 ---
 
 [↥ **Back to top**](#top)
@@ -673,8 +677,11 @@ main = "Top 20 DE genes: day-13 / day-6")
 
 ---
 ### Exercise 7.3
+
 1) Compare volcano plot or MA plot of D13vsD06 and D17vsD13 worms. What do you notice about the range of log2FC and adjusted p-values? It might be more informative to show plots from both comparison on the same axis ranges. Try using `ylim()` and `xlim()` argument to set the range of x and y axes. 
+
 2) Select a gene from top differentially expressed genes between D13vsD06 and produce a gene plot. Find out a product name of that gene and add to the title of the gene plot.
+
 ---
 [↥ **Back to top**](#top)
 
@@ -729,9 +736,13 @@ topGO_D13D06_upinD13[,1:7]
 
 ---
 ### Exercise 7.4
+
 1) Run topGO using genes that were up-regulated in day-6 worms, compared to day-13 worms ()
+
 2) What do we notice about differences in day-6 and day-13 worms according to the GO enrichment? 
+
 3) What genes are responsible for the enrichment of the top GO term? Try using WormbaseParasites and other databases to gain more information about those genes and GO term.
+
 ---
 
 ### Other ways to inspect your RNA-seq data
