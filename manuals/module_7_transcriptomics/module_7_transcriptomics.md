@@ -539,7 +539,7 @@ Using the same `results()` command, with additional arguments, we can explore pa
 Using `contrast()`, we can specify groups of samples to be compared. _Notice the order by which the condition names are mentioned for the `contrast`_; this example means `D06` is denominator in the log2 fold change calculation.
 
 ```R
-# Create a result table for adult female vs adult male
+# Create a result table for D13 vs D06
 # alpha = 0.01 specify the adjusted p-value cut off to use when summary() function count the number of differentially expressed genes
 res_D13D06 <- results(dds, contrast = c("condition", "D13", "D06"), test = "Wald", alpha = 0.01) 
 
