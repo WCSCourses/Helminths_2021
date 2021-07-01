@@ -414,13 +414,13 @@ To output R graphics into other file types, first we run one of the following co
 Then run a command that create a plot, this will be plotted onto the file we just created
 Then we do dev.off() to close the file so that it can be viewed
 ```R
-pdf(file = “filename.pdf”, ...)
-jpeg(filename = “filename.jpg”, ...)
-png(filename = “filename.png”, ...)
-postscript(file = “filename.ps”, ...)
+pdf(file = "filename.pdf", ...)
+jpeg(filename = "filename.jpg", ...)
+png(filename = "filename.png", ...)
+postscript(file = "filename.ps", ...)
 
 # For example
-jpeg(filename = “top20.jpg”, width = 800, height = 600)
+jpeg(filename = "top20.jpg", width = 800, height = 600)
 pheatmap(top20_genes)
 dev.off()
 ```
