@@ -284,16 +284,16 @@ cd
 cd /home/manager/Module_2_Linux_scripting
 
 ```
-- we have subtly introduced you to a new concept of moving around your directories - **"absolute" and "relative" paths.** 
+- we have subtly introduced you to a new concept of moving around between your directories - **"absolute" and "relative" paths.** 
 - an absolute path is one where we write the **full path** to the directory, eg. "/home/manager/Module_2_Linux_scripting" . 
 	- The advantage of writing the full path is that regardless of where you are in the directory structure, the opererating system will know where to go. 
-	- The disadvantage is the it requires more typing...
-- a relative path is a short desciption of a path, that is **relative and specific** to where you are in the directory structure. eg. if I am in the "/home/manager/Module_2_Linux_scripting/genome_1/" directory, I can move up one directory using "cd .." or two directories to the home directory using "cd ../../", or even move directories using " cd ../genome_2/" . 
+	- The disadvantage is that it requires more typing.
+- a relative path is a short desciption of a path, that is **relative and specific** to where you are in the directory structure. eg. if you are in the "/home/manager/Module_2_Linux_scripting/genome_1/" directory, you can move up one directory using "cd ..", two directories to the home directory using "cd ../../", or even move directories using " cd ../genome_2/" . 
 	- The advantage of using a relative path is that is it quick to type. 
-	- The disadvantage is that it is very specific to where you currently are in the directory strucutre, and if you move, the same command will not work. 
+	- The disadvantage is that it is very specific to where you currently are in the directory strucutre, and if you move to a different location, the same command will not work. 
 - You will see some examples of relative and absolute paths in later modules. 
-- If you use relatively paths, great, but it does require a good understanding of your directory structure and where everything is located.
-- A common error message is "file not found" and is commonly related to (1) being in the wrong directory, (2) a relative path is used and becasue you might be in the wrong directory, the relative path is incorrect. 
+- If you use relative paths, great, but it does require a good understanding of your directory structure and where everything is located.
+- A common error message on the command line is "file not found" and is commonly related to (1) being in the wrong directory, (2) a relative path is used in the command and because you might be in the wrong directory, the relative path is incorrect. 
 - To avoid these problems, always knowing where you are using the "pwd" command, or checking that you have the expected files present in your working directory using "ls -lrt", is good practice.
 
 
