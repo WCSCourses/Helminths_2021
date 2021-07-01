@@ -128,13 +128,13 @@ First, we will use HISAT2 (PMID: 25751142) to map RNA-seq data (in FASTQ format)
 
 **Note:** For RNA-seq we can often get away without trimming reads before the mapping step. This is because contaminated reads or reads with low-quality would also have low mapping score and will be excluded during the read counting step. However, if the number of mapped reads or mapping results seem off, you may want to look at QC of the raw read data to figure out where things might have gone wrong. 
 
-**Use the following command on your Terminal window.**
+Use the following command on your Terminal window.
 
-**Information inside pointy brackets `<>` need to be changed to fit your computer setting**
+⭐ **Information inside pointy brackets `<>` need to be changed to fit your computer setting**
 
-**if you see `<some text>` just copy-paste will not work**
+🚩 **if you see `<some text>` just copy-paste will not work**
 
-**Remember to use TAB for auto-completion**
+🚩 **Remember to use TAB for auto-completion**
 
 ```bash 
 # Go to the location of the reference genome
