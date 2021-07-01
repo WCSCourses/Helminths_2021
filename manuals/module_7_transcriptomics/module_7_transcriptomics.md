@@ -204,8 +204,8 @@ Now we have output from the mapping as BAM file. This explains where on the geno
 ### Annotation files
 The file that contains annotated information of a genome is known as GFF (General Feature Format) or GTF (General Transfer Format) file. These are annotation files, with each line containing one feature and its related information. The information is displayed in tab-separated fields. Both file types contain similar information but formatting are slightly different (more details: http://m.ensembl.org/info/website/upload/gff.html). Some software can take either type as input. For software that asks for a specific type, they can be converted using a tool such as gffread.
 
-![](figures/gff.png)
-**Figure 5.** Example of a GFF file
+![](figures/gtf.png)
+**Figure 5.** Example of a GTF file
 
 Use HTSeq-count to calculate the number of reads mapped to each gene
 See https://htseq.readthedocs.io/en/release_0.11.1/count.html or do `htseq-count --help` to see meaning of these options. The manual and `--help` option can also be useful if you encounter an error message.
