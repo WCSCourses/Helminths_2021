@@ -186,8 +186,10 @@ samtools sort -n -O BAM -o Sm_PE_sorted.bam Sm_PE.bam
 ---
 ### Exercise 7.1
 Now that SAM files have been converted to BAM, the SAM are no longer useful and they take up a lot of space. Use Unix commands to:
+
 1) List all SAM files in the current directory
 2) Remove all SAM files *Make sure you do not accidentally delete BAM files; they are needed for the next step!*
+
 ---
 [↥ **Back to top**](#top)
 
