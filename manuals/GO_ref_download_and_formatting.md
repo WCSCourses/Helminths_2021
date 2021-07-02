@@ -4,11 +4,19 @@ Before we can perform GO term enrichment analysis, we need a reference file that
 
 ![](./figures/wbpsGO1.png)
 
+---
+
 ![](./figures/wbpsGO2.png)
+
+---
 
 ![](./figures/wbpsGO3.png)
 
+---
+
 ![](./figures/wbpsGO4.png)
+
+---
 
 ![](./figures/wbpsGO5.png)
 
