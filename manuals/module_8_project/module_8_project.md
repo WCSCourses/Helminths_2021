@@ -68,20 +68,31 @@ The accession IDs are for the original FASTQ files, and the IDs are there for yo
 
 ## The steps that were done for you are
 1)	Download the FASTQ files from a public repository (see appendix [Finding and download sequence data from public repository](https://wgcadvancedcourses.github.io/Helminths_2021/manuals/Sequence_data_on_public_repo.html) if you want to learn how to do this)
+
 2)	Download the reference genome and annotation file (GTF) of the worms from WormBaseParaSite (see [WormBaseParaSite module 1](https://wgcadvancedcourses.github.io/Helminths_2021/manuals/module_1_WBP1/module_1_WBP1.html#wbps_genomes))
     Additionally, for project 4, download the reference genome of Wolbachia of _B. malayi_ from [Ensembl Bacteria](http://bacteria.ensembl.org/index.html). The usage is very similar to WormBaseParaSite
+
 3)	Index the reference genome using `hisat2` (see [transcriptomics module](https://wgcadvancedcourses.github.io/Helminths_2021/manuals/module_7_transcriptomics/module_7_transcriptomics.html))
+
 4)	Mapped the FASTQ to the reference genome using `hisat2` (see [transcriptomics module](https://wgcadvancedcourses.github.io/Helminths_2021/manuals/module_7_transcriptomics/module_7_transcriptomics.html))
+
 5)	Convert SAM to BAM using `samtools view` (see [transcriptomics module](https://wgcadvancedcourses.github.io/Helminths_2021/manuals/module_7_transcriptomics/module_7_transcriptomics.html))
+
 6)	Sort BAM files by read names using `samtools sort` (see [transcriptomics module](https://wgcadvancedcourses.github.io/Helminths_2021/manuals/module_7_transcriptomics/module_7_transcriptomics.html))
+
 7)	Count reads per features (in this case, reads per gene) using `htseq-count` (see [transcriptomics module](https://wgcadvancedcourses.github.io/Helminths_2021/manuals/module_7_transcriptomics/module_7_transcriptomics.html))
 
 ## The steps that you will perform by yourself in this project are (most of them refer to the [transcriptomics module](https://wgcadvancedcourses.github.io/Helminths_2021/manuals/module_7_transcriptomics/module_7_transcriptomics.html))
 1)	Starting in RStudio
+
 2)	Import the read counts data into RStudio
+
 3)	Explore the data using various data visualisation
+
 4)	Perform pair-wise comparison of any comparisons that you are interested in and produce relevant plots
+
 5)	Look at your results, compare your results, follow the lead of your results, explore genes using public databases e.g. WormBaseParaSite, InterProScan etc. 
+
 6)	Perform functional analysis using GO term enrichment
 
 ### GO enrichment tips!!!! 
