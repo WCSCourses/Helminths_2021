@@ -2,6 +2,12 @@
 
 Congratulation!! You have reached the final day of the course. This is where you will gather the skills you have learnt and practice them on a new problem. Exchange the knowledge, tips and solutions with your coursemates, and ask your instructors if you get stuck.  
 
+---
+
+The google folder for your group work is (here)[https://drive.google.com/drive/folders/1yWvj4hK0mT_KOReHRjDsBgGkeSmr92xM?usp=sharing]
+
+---
+
 The project files that you have downloaded should look like this for [project 3](https://wgcadvancedcourses.github.io/Helminths_2021/manuals/module_4_project_intro/module_4_project_introduction.html#proj3)
 
 `HELM319-material-Project3_Schisto.tar.gz`
