@@ -10,6 +10,8 @@ And this for [project 4](https://wgcadvancedcourses.github.io/Helminths_2021/man
 
 `HELM319-material-Project4_Brugia.tar.gz`
 
+`HELM319-material-Project4_Wol.tar.gz`
+
 `HELM319-material-Project4_Bm_RNAseq_F120.tar.gz`
 
 First, we need to access the content of this file. Notice that it ends with `.tar.gz`
