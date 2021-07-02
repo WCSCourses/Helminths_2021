@@ -101,7 +101,9 @@ You may find a short online course on **Introduction to Genomics** beneficial fo
 
 **Appendix**  
      - [Creating a shared folder between your computer and VM](https://github.com/WGCAdvancedCourses/Helminths_2021/blob/main/manuals/creating_a_shared_folder_in_VM.md)  
+     
      - [Finding and download sequence data from public repository](https://github.com/WGCAdvancedCourses/Helminths_2021/blob/main/manuals/Sequence_data_on_public_repo.md)
+     
      - [Downloading GO term annotation from WormBase ParaSite and formatting it for topGO](https://github.com/WGCAdvancedCourses/Helminths_2021/blob/main/manuals/GO_ref_download_and_formatting.md)
 
 
