@@ -34,16 +34,16 @@ ls DIRECTORYNAME/
 ls -1 DIRECTORYNAME/*
 ```
 
-![](./figures/proj3files.PNG)
+![](./figures/proj3files.png)
 **Project 3 file _Project3_Schisto_**
 
-![](./figures/proj4files.PNG)
+![](./figures/proj4files.png)
 **Project 4 file _Project4_Brugia_**
 
-![](./figures/proj4files2.PNG)
+![](./figures/proj4files2.png)
 **Project 4 file _Project4_Wol_**
 
-![](./figures/proj4files3.PNG)
+![](./figures/proj4files3.png)
 **Project 4 file _Project4_Bm_RNAseq_F120_**
 
 **Note for project 4:** Don't get scared with the amount of files you have downloaded. The only directory you really need to get started is the **Project4_Brugia**. This directory contain everything you need to look at gene expression in the Brugia worms. The **Project4_Wol** is only needed if you want to do dual-RNA seq and to look at bacteria gene expression as well. The **Project4_Bm_RNAseq_F120** contains down-sized FASTQ files only for those who want to try the genome mapping step. 
