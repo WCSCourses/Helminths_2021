@@ -98,6 +98,8 @@ You may find a short online course on **Introduction to Genomics** beneficial fo
      - [Manual PDF version](manuals/)  
 
 **Module 8 - Project**  
+     - [Online manual](manuals/module_8_project/module_8_project.md)  
+     - [Manual PDF version](manuals/)
 
 **Appendix**  
 - [Creating a shared folder between your computer and VM](manuals/creating_a_shared_folder_in_VM.md)     
