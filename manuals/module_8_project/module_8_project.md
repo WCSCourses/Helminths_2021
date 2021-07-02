@@ -53,7 +53,7 @@ ls -1 DIRECTORYNAME/*
 
 
 **Note for project 4:** Don't get scared with the amount of files you have downloaded. 
-- The only directory you really need to get started is the **Project4_Brugia**. This directory contains everything you need to look at gene expression in the _Brugia_ worms. 
+- The only directory you really need to get started is the **Project4_Brugia**. This directory contains everything you need to look at gene expression in the Brugia worms. 
 - The **Project4_Wol** is only needed if you want to do dual-RNA seq and to look at bacteria gene expression as well. 
 - The **Project4_Bm_RNAseq_F120** contains down-sized FASTQ files only for those who want to try the genome mapping step. 
 
