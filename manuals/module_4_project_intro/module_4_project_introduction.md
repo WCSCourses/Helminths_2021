@@ -12,7 +12,7 @@ It could be helpful to have a group workspace on a shared document (such as Goog
 
 ## Here are the 4 projects and their questions:
 
-### 1)	_S. mansoni_ in vivo timecourse  <a name="proj1"></a>
+### 1)	_S. mansoni_ in vivo timecourse <a name="proj1"></a>
 This dataset come from the same RNA-seq data as your transcriptomic module (Module 7). These are different stages of _S. mansoni_ from infected mice, from early day-6 worms through to adult worms from [Wangwiwatsin et al. (2020)](https://journals.plos.org/plosntds/article/authors?id=10.1371/journal.pntd.0007743). However, this same dataset have been mapped to a different version of the reference genome. The data you analysed on Module 7 were mapped to an older version. For this exercise, we can find out if our interesting results from the previous genome version still remain when we use a newer version. In addition, have a go at different pairwise comparisons that were not explored in Module 7, run GO term enrichment on the list of differentially expressed genes, and explore any genes that look particularly interesting.
 
 **Key questions**
