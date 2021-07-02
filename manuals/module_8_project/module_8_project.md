@@ -4,7 +4,7 @@ Congratulation!! You have reached the final day of the course. This is where you
 
 ---
 
-The google folder for your group work is (here)[https://drive.google.com/drive/folders/1yWvj4hK0mT_KOReHRjDsBgGkeSmr92xM?usp=sharing]
+The google folder for your group work is [here](https://drive.google.com/drive/folders/1yWvj4hK0mT_KOReHRjDsBgGkeSmr92xM?usp=sharing)
 
 ---
 
