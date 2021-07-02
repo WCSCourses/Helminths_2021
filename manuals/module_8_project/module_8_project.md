@@ -27,7 +27,24 @@ ls -lrt
 Have a look inside the directory by doing
 ```bash
 ls DIRECTORYNAME/
+
+# or try this to see the output as shown below
+ls -1 DIRECTORYNAME/*
 ```
+
+![](./figures/proj3files.PNG)
+**Project 3 file _Project3_Schisto_**
+
+![](./figures/proj4files.PNG)
+**Project 4 file _Project4_Brugia_**
+
+![](./figures/proj4files2.PNG)
+**Project 4 file _Project4_Wol_**
+
+![](./figures/proj4files3.PNG)
+**Project 4 file _Project4_Bm_RNAseq_F120_**
+
+**Note for project 4:** Don't get scared with the amount of files you have downloaded. The only directory you really need to get started is the **Project4_Brugia**. This directory contain everything you need to look at gene expression in the Brugia worms. The **Project4_Wol** is only needed if you want to do dual-RNA seq and to look at bacteria gene expression as well. The **Project4_Bm_RNAseq_F120** contains down-sized FASTQ files only for those who want to try the genome mapping step. 
 
 You should see the read count files and a text file containing the accession IDs of the original data.
 The accession IDs are for the original FASTQ files, and the IDs are there for your reference only. **There is no need to download the FASTQ files for this project session because**
@@ -37,7 +54,7 @@ The accession IDs are for the original FASTQ files, and the IDs are there for yo
 2)	We have already downloaded and processed the FASTQ files for you, up to the point that the data can be analysed on a laptop. These are the read count files you see in your downloaded files. 
 
 ## The steps that have already been done for you are
-1)	Download the FASTQ files from a public repository (see appendix [Finding and download sequence data from public repository](https://github.com/WGCAdvancedCourses/Helminths_2021/blob/main/manuals/Sequence_data_on_public_repo.md) if you want to learn how to do this)
+1)	Download the FASTQ files from a public repository (see appendix [Finding and download sequence data from public repository](https://wgcadvancedcourses.github.io/Helminths_2021/manuals/Sequence_data_on_public_repo.html) if you want to learn how to do this)
 2)	Download the reference genome and annotation file (GTF) of the worms from WormBaseParaSite (see [WormBaseParaSite module 1](https://wgcadvancedcourses.github.io/Helminths_2021/manuals/module_1_WBP1/module_1_WBP1.html#wbps_genomes))
     Additionally, for project 4, download the reference genome of Wolbachia of _B. malayi_ from [Ensembl Bacteria](http://bacteria.ensembl.org/index.html). The usage is very similar to WormBaseParaSite
 3)	Index the reference genome using `hisat2` (see [transcriptomics module](https://wgcadvancedcourses.github.io/Helminths_2021/manuals/module_7_transcriptomics/module_7_transcriptomics.html))
@@ -62,9 +79,9 @@ Notice that we have provided a _GO term annotation reference_ for you in the [tr
 2) For project 4, we are using a completely different organism here. Therefore, we need a new GO annotation for this one. 
 
 You will need to download a new GO annotation by yourself using WormBaseParaSite BioMart. 🤓
-- See appendix XXX on how to do this
-c.	You are also provided with the R script to reformat the downloaded GO reference into the format the topGO require
-d.	However, this is not a complete and ready to use script, and will need some editing (real life scenario when you borrow script from someone else) 
-e.	Have a look through the script and try to figure out which part need to be edited. A simplest was (not necessarily the most effective way, the most effective way would be to turn this script into an R function which can be run from a command line – like the run_topGO.R script) to do this would be to copy the whole code from GO_formatting.R and place it into your current R script and test your editing there. 
+
+- See appendix [Downloading and formatting GO annotation](https://wgcadvancedcourses.github.io/Helminths_2021/manuals/GO_ref_download_and_formatting.html) on how to do this
+- You are also provided with the R script `GO_formatting.R` to reformat the downloaded GO reference into the format the `topGO` require. **However, this is not a complete-and-ready-to-use script**, and it will need some editing _(a real life scenario when you borrow script from someone else)_ 
+- Have a look through the script `GO_formatting.R` and try to figure out which parts need to be edited. A simple way to do this would be to copy the whole code from `GO_formatting.R` and place it into your current R script and test your editing there. 
 
 
