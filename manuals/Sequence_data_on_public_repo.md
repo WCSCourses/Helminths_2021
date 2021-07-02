@@ -11,17 +11,17 @@ This is a very general database, equivalent to the NCBI main database search whi
 In the search boxes, one can enter any term. For example, try entering “Trichuris” and see what the results bring. 
 
 https://www.ebi.ac.uk/ena
-![](./figures/repo1)
+![](./figures/repo1.png)
 
 On the left hand side, you will be given a summary of the data types that were found under the search term. If you are after sequencing data, “Read - experiment” is a good place to start. You can also try “Study” or “Submission”
 
-![](./figures/repo2)
+![](./figures/repo2.png)
 
 Under “Study/study” you will find the following list. Note that this list will change over time as new studies are submitted. Here you can see some genome sequences as well as transcriptome sequences that were submitted to the repository. 
 
-![](./figures/repo3)
+![](./figures/repo3.png)
 
-![](./figures/repo4)
+![](./figures/repo4.png)
 
 ## Downloading data using ‘wget’.
 
