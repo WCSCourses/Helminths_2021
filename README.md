@@ -39,6 +39,8 @@ You may find a short online course on **Introduction to Genomics** beneficial fo
 - [Matt Berriman](https://www.sanger.ac.uk/person/berriman-matt/), Wellcome Sanger Institute, UK
 - [Sarah Geiger](https://www.linkedin.com/in/sarah-geiger-8b8681105/), National University of Singapore (NUS) & Genome Institute of Singapore (GIS)
 - [Steve Doyle](https://www.sanger.ac.uk/person/doyle-stephen/), Wellcome Sanger Institute, UK
+- [Jutarop Phetcharaburanin](http://www.jutarop.com/), Khon Kaen University, Thailand
+- Sirinya Sitthirak, Khon Kaen University, Thailand
 
 
 
